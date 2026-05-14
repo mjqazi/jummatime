@@ -255,12 +255,14 @@ section { padding: clamp(2.2rem, 5vw, 3.6rem) 0; }
   gap: 0.1rem 0.8rem;
 }
 .skip-link {
-  position: absolute; left: -999px;
+  /* Hidden off-screen via negative top — never via negative left, which
+     becomes real horizontal overflow in RTL (the "end" edge is the left). */
+  position: absolute; top: -48px; left: var(--pad); z-index: 100;
+  background: var(--green); color: var(--paper);
+  padding: 0.5rem 1rem; border-radius: var(--radius-sm);
+  transition: top 0.15s ease;
 }
-.skip-link:focus {
-  left: var(--pad); top: 0.5rem; z-index: 100; background: var(--green);
-  color: var(--paper); padding: 0.5rem 1rem; border-radius: var(--radius-sm);
-}
+.skip-link:focus { top: 0.5rem; }
 
 @media (max-width: 760px) {
   .site-header__in {
