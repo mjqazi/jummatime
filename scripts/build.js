@@ -19,7 +19,54 @@ const WEBSITE_ID = `${SITE}/#website`;
 const ICON = `${SITE}/assets/brand/jummatime-icon-512.png`;
 const OG_IMAGE = `${SITE}/assets/brand/jummatime-og.png`;
 
-const cities = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cities.json'), 'utf8'));
+const curatedCities = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cities.json'), 'utf8'));
+const priorityCitiesPath = path.join(ROOT, 'data', 'priority-cities.json');
+const priorityCities = fs.existsSync(priorityCitiesPath)
+  ? JSON.parse(fs.readFileSync(priorityCitiesPath, 'utf8'))
+  : [];
+const translatedLocales = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'locales.json'), 'utf8'));
+const EN_LOCALE = {
+  code: 'en',
+  name: 'English',
+  localName: 'English',
+  dir: 'ltr',
+  navNear: 'Jummah near me',
+  navWhat: 'What time is Jummah',
+  navTravel: 'Traveling',
+  navMasjids: 'For masjids',
+  getApp: 'Get the app',
+  installApp: 'Install the free app',
+  useWebApp: 'Use the web app',
+  findButton: 'Find masjids near me',
+  nextLabel: 'Next Jummah',
+  widgetNote: 'Countdown is to Friday midday — exact jamat time is set by each masjid.',
+  footerFind: 'Find Jummah',
+  footerCities: 'Cities',
+  footerApp: 'App',
+  footerText: 'Find Jumma and Jummah prayer times at the nearest masjid. Powered by the Takbeer Time community.',
+  legal: 'A community project — free, no ads. Jumma and Jummah times are community-posted; always confirm with your local masjid.',
+  quickAnswer: 'Quick answer',
+  cityGridTitle: 'Jummah time by city',
+  checkMasjids: 'Check masjids',
+  bodyTitle: 'Why the exact masjid time matters',
+  body: 'A map tells you where a masjid is, but not always when the khutbah starts. Jummah times move with Dhuhr, differ between masjids, and larger masjids may run more than one congregation.',
+  cityTitle: 'Jumma / Jummah Time in {city}: Friday Prayer at Masjids | Jumma Time',
+  cityDesc: 'Find Jumma and Jummah prayer times in {city}. Check nearby masjids, multiple Friday prayer sessions, and current jamat times.',
+  cityH1: 'Jumma / Jummah time in {city}',
+  cityLead: 'Need Jummah in {city} this Friday? Compare nearby masjids and community-posted Jumma and Jummah times.',
+  cityQuick: 'Jumma in {city}, also spelled Jummah, is not one fixed city-wide time. Each masjid sets its own jamat time.',
+  cityBody: '{city} is an important city for travel, work, and study. Use a masjid-level Jummah time rather than a generic estimate.',
+  cityCheckTitle: 'How to check Jummah times in {city}',
+  cityCheckBody: 'We do not have a source-verified masjid timetable on this page yet. Use Takbeer Time to compare nearby masjids and confirm before you leave.',
+  citySourceNote: 'If you manage a masjid in {city}, publish its official Jummah time with a source link so it can be shown here.',
+  cityFaqTitle: 'Jummah in {city} — quick answers',
+  cityFaqQ1: 'What time is Jummah in {city}?',
+  cityFaqA1: 'Jummah is prayed after midday on Friday, but the exact jamat time is set by each masjid.',
+  cityFaqQ2: 'How do I find a masjid for Jummah in {city}?',
+  cityFaqA2: 'Open Takbeer Time and allow location access to see nearby masjids with community-posted Jummah times.',
+  cityMoreTitle: 'Jummah time in other cities'
+};
+const LOCALES = [EN_LOCALE].concat(translatedLocales);
 
 const esc = (s) =>
   String(s)
@@ -27,6 +74,99 @@ const esc = (s) =>
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
+
+function slugify(s) {
+  return String(s)
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function normalizeCity(c) {
+  return Object.assign(
+    {
+      slug: slugify(c.name),
+      timezone: 'local time',
+      group: 'global',
+      masjids: []
+    },
+    c
+  );
+}
+
+function combineCities(primary, expanded) {
+  const seen = new Set();
+  const counts = new Map();
+  return primary.concat(expanded).map(normalizeCity).filter((city, index) => {
+    const key = city.slug;
+    if (seen.has(key)) return false;
+    if (index >= primary.length && (counts.get(city.country) || 0) >= 4) return false;
+    seen.add(key);
+    counts.set(city.country, (counts.get(city.country) || 0) + 1);
+    return true;
+  });
+}
+
+const cities = combineCities(curatedCities, priorityCities);
+
+const TOP_PAGE_PATHS = {
+  home: '/',
+  near: '/jumma-near-me.html',
+  what: '/what-time-is-jumma.html',
+  travel: '/jumma-while-traveling.html',
+  masjid: '/jumma-in-masjid.html',
+  forMasjids: '/for-masjids.html'
+};
+
+const LOCALIZED_PAGE_KEYS = ['home', 'near', 'what', 'travel', 'masjid', 'forMasjids'];
+
+function fill(template, vars) {
+  return String(template).replace(/\{(\w+)\}/g, (_, key) => (vars[key] == null ? '' : vars[key]));
+}
+
+function localizedPath(locale, englishPath) {
+  if (locale.code === 'en') return englishPath;
+  return englishPath === '/' ? `/${locale.code}/` : `/${locale.code}${englishPath}`;
+}
+
+function absoluteUrl(localPath) {
+  return `${SITE}${localPath}`;
+}
+
+function topPath(pageKey, locale) {
+  return localizedPath(locale, TOP_PAGE_PATHS[pageKey]);
+}
+
+function cityPath(city, locale) {
+  return localizedPath(locale, `/jumma-time/${city.slug}.html`);
+}
+
+function topAlternates(pageKey) {
+  const englishHref = absoluteUrl(topPath(pageKey, EN_LOCALE));
+  return LOCALES.map((locale) => ({
+    hreflang: locale.code,
+    href: absoluteUrl(topPath(pageKey, locale))
+  })).concat([{ hreflang: 'x-default', href: englishHref }]);
+}
+
+function cityAlternates(city) {
+  const englishHref = absoluteUrl(cityPath(city, EN_LOCALE));
+  return LOCALES.map((locale) => ({
+    hreflang: locale.code,
+    href: absoluteUrl(cityPath(city, locale))
+  })).concat([{ hreflang: 'x-default', href: englishHref }]);
+}
+
+function localFilePath(localPath) {
+  const clean = localPath === '/' ? 'index.html' : localPath.replace(/^\//, '');
+  return path.join(ROOT, clean.endsWith('/') ? `${clean}index.html` : clean);
+}
+
+function ensureDirFor(filePath) {
+  fs.mkdirSync(path.dirname(filePath), { recursive: true });
+}
 
 function fileDate(relPath) {
   const p = path.join(ROOT, relPath);
@@ -62,8 +202,8 @@ function websiteNode() {
     '@id': WEBSITE_ID,
     url: `${SITE}/`,
     name: BRAND,
-    alternateName: ['JummaTime', 'Jummah Time', 'Juma Time', 'Find Jumma Near Me'],
-    description: 'Find community-posted Jumma and Friday prayer times at nearby masjids.',
+    alternateName: ['JummaTime', 'Jummah Time', 'Juma Time', 'Find Jumma Near Me', 'Find Jummah Near Me'],
+    description: 'Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.',
     inLanguage: 'en',
     publisher: { '@id': ORG_ID }
   };
@@ -78,7 +218,7 @@ function appNode() {
     applicationCategory: 'LifestyleApplication',
     url: PLAY,
     description:
-      'Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, jamat, jamaat, and iqamah times.',
+      'Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, Jummah, jamat, jamaat, and iqamah times.',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
   };
 }
@@ -101,10 +241,184 @@ function jsonld(nodes) {
   };
 }
 
+function masjidName(m) {
+  return typeof m === 'string' ? m : m.name;
+}
+
+function masjidTimeText(m) {
+  if (typeof m === 'string' || !Array.isArray(m.jummahTimes) || m.jummahTimes.length === 0) {
+    return '';
+  }
+  return m.jummahTimes.join(', ');
+}
+
+function verifiedMasjids(c) {
+  return c.masjids.filter((m) => typeof m !== 'string' && masjidTimeText(m) && m.sourceUrl);
+}
+
+function cityMasjidSection(c) {
+  const verified = verifiedMasjids(c);
+  if (verified.length > 0) {
+    const rows = verified
+      .map(
+        (m) => `<tr>
+            <th scope="row">${esc(m.name)}</th>
+            <td>${esc(masjidTimeText(m))}</td>
+            <td><a href="${esc(m.sourceUrl)}" target="_blank" rel="noopener">Official source</a>${m.lastChecked ? ` <span class="source-note">checked ${esc(m.lastChecked)}</span>` : ''}</td>
+          </tr>`
+      )
+      .join('\n          ');
+
+    return `<h2>Published Jummah times in ${esc(c.name)}</h2>
+        <p>These masjid times are included only when they can be tied to an official source. Always confirm before setting out, because Jummah schedules can change for holidays, building works, or seasonal updates.</p>
+        <div class="time-table-wrap">
+          <table class="time-table">
+            <thead>
+              <tr>
+                <th scope="col">Masjid</th>
+                <th scope="col">Jummah sessions</th>
+                <th scope="col">Source</th>
+              </tr>
+            </thead>
+            <tbody>
+          ${rows}
+            </tbody>
+          </table>
+        </div>`;
+  }
+
+  const masjidList = c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ');
+  if (!masjidList) {
+    return `<h2>How to check Jummah times in ${esc(c.name)}</h2>
+        <p>
+          We do not have a source-verified masjid timetable on this page yet. Use Takbeer Time to check nearby
+          masjids, compare community-posted Jummah sessions, and confirm the exact time with the masjid before you leave.
+        </p>
+        <p class="source-note">
+          If you manage a masjid in ${esc(c.name)}, publish your official Jummah time in Takbeer Time and include a source link.
+          Source-backed times can then be shown directly on this city page.
+        </p>`;
+  }
+
+  return `<h2>Known masjids to check in ${esc(c.name)}</h2>
+        <p>
+          These well-known masjids are starting points, not a verified timetable. Open Takbeer Time for current
+          community-posted Jummah and jamat times near your exact location, or ask the masjid directly before you set out.
+        </p>
+        <ul>
+            ${masjidList}
+        </ul>
+        <p class="source-note">
+          Want this page to show official on-page Jummah times for your masjid? Submit the masjid time in Takbeer Time,
+          then share an official source link so it can be listed with a last-checked date.
+        </p>`;
+}
+
+const groupCopy = {
+  global: {
+    blurb: (c) =>
+      `${c.name} is one of the world's major urban centers, with Friday travel, work, study, and airport schedules often making Jummah planning time-sensitive. Masjid times can vary by neighborhood and season, so check a masjid-level Jummah time before setting out.`,
+    tip: (c) =>
+      `In a large city like ${c.name}, choose a masjid close to where you will actually be at khutbah time, not just the first search result across town.`
+  },
+  'muslim-majority': {
+    blurb: (c) =>
+      `${c.name} is a major city in a Muslim-majority country, so Jummah options are usually widespread across central districts, residential neighborhoods, universities, and transport corridors. The important detail is still the specific masjid's session time, especially where large mosques run more than one congregation.`,
+    tip: (c) =>
+      `Expect busy crowds around central masjids in ${c.name}; check the session time early and give yourself extra time before the khutbah.`
+  },
+  gulf: {
+    blurb: (c) =>
+      `${c.name} is a Gulf travel and work hub where Jummah is often planned around office schedules, malls, hotels, and fast-moving traffic. Friday prayer may be easy to find, but the exact start time still differs by masjid and area.`,
+    tip: (c) =>
+      `If you are visiting ${c.name} for work or transit, pick a masjid near your hotel, office, or terminal before Friday traffic builds.`
+  },
+  'south-asia': {
+    blurb: (c) =>
+      `${c.name} has a large Muslim community and many Friday prayer options across dense neighborhoods, markets, campuses, and transport hubs. Crowds can be heavy, and nearby masjids may hold different Jummah session times.`,
+    tip: (c) =>
+      `For ${c.name}, check the masjid's own Jummah session and leave early; short distances can still take time around Friday crowds.`
+  },
+  'southeast-asia': {
+    blurb: (c) =>
+      `${c.name} is a major Southeast Asian city where Jummah may be listed as Jummah, Jumu'ah, or Jumaat depending on local usage. Large mosques and central musallas can fill quickly, so masjid-level timing matters.`,
+    tip: (c) =>
+      `Search both Jummah and Jumaat when checking local notices in ${c.name}, then confirm the exact masjid time before setting out.`
+  },
+  africa: {
+    blurb: (c) =>
+      `${c.name} is a major African city with Jummah options spread across central districts, markets, universities, and residential areas. Friday prayer times can differ between nearby masjids, especially where communities hold multiple sessions.`,
+    tip: (c) =>
+      `In ${c.name}, choose a masjid by both time and route; traffic and neighborhood distance can matter as much as the listed start time.`
+  },
+  europe: {
+    blurb: (c) =>
+      `${c.name} has Muslim communities spread across the city and surrounding suburbs, so Jummah may be held in purpose-built masjids, Islamic centres, rented halls, or campus prayer spaces. Multiple Friday sessions are common in busy areas.`,
+    tip: (c) =>
+      `In ${c.name}, do not rely on a generic prayer timetable alone; verify the specific masjid or Islamic centre's Jummah session.`
+  },
+  'north-america': {
+    blurb: (c) =>
+      `${c.name} has Jummah options across city centers, suburbs, universities, and workplace musallas. Because commutes can be long and masjids often run multiple sessions, the exact jamat time matters more than the nearest pin on a map.`,
+    tip: (c) =>
+      `For ${c.name}, compare both drive time and session time so you do not arrive after the khutbah has started.`
+  },
+  'east-asia': {
+    blurb: (c) =>
+      `${c.name} is a major destination for work, study, tourism, and transit, with Jummah options often concentrated around central mosques, embassies, universities, and international neighborhoods.`,
+    tip: (c) =>
+      `In ${c.name}, check Jummah before Friday morning if possible; options may be fewer and farther apart than in Muslim-majority cities.`
+  },
+  'latin-america': {
+    blurb: (c) =>
+      `${c.name} has Muslim communities and Islamic centres that serve locals, students, business travelers, and visitors. Jummah options may be more spread out than in Muslim-majority cities, so planning ahead matters.`,
+    tip: (c) =>
+      `For ${c.name}, confirm both the masjid location and Jummah start time before you travel across the city.`
+  }
+};
+
+function cityBlurb(c) {
+  if (c.blurb) return c.blurb;
+  return (groupCopy[c.group] || groupCopy.global).blurb(c);
+}
+
+function cityTip(c) {
+  if (c.tip) return c.tip;
+  return (groupCopy[c.group] || groupCopy.global).tip(c);
+}
+
+function ogLocale(lang) {
+  return (
+    {
+      en: 'en_US',
+      ar: 'ar_AR',
+      bn: 'bn_BD',
+      fa: 'fa_IR',
+      fr: 'fr_FR',
+      hi: 'hi_IN',
+      id: 'id_ID',
+      ms: 'ms_MY',
+      tr: 'tr_TR',
+      ur: 'ur_PK'
+    }[lang] || 'en_US'
+  );
+}
+
 /* ---------- shared fragments ---------- */
 function head(opts) {
+  const lang = opts.lang || 'en';
+  const dir = opts.dir ? ` dir="${opts.dir}"` : '';
+  const alternates =
+    opts.alternates ||
+    [
+      { hreflang: 'en', href: opts.url },
+      { hreflang: 'x-default', href: opts.url }
+    ];
+  const alternateLinks = alternates
+    .map((a) => `  <link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`)
+    .join('\n');
   return `<!doctype html>
-<html lang="en">
+<html lang="${lang}"${dir}>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
@@ -114,14 +428,13 @@ function head(opts) {
   <meta name="robots" content="index,follow,max-image-preview:large" />
   <meta name="author" content="${BRAND}" />
   <link rel="canonical" href="${opts.url}" />
-  <link rel="alternate" hreflang="en" href="${opts.url}" />
-  <link rel="alternate" hreflang="x-default" href="${opts.url}" />
+${alternateLinks}
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/brand/jummatime-icon-512.png" />
   <link rel="apple-touch-icon" href="/assets/brand/jummatime-icon-512.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="application-name" content="Jumma Time" />
   <meta name="google-play-app" content="app-id=com.takbeertime.android" />
-  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale" content="${ogLocale(lang)}" />
   <meta property="og:type" content="${opts.ogType || 'website'}" />
   <meta property="og:site_name" content="${BRAND}" />
   <meta property="og:title" content="${esc(opts.title)}" />
@@ -168,8 +481,8 @@ const HEADER = `<body>
         <span class="brand__name">Jumma Time</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="/jumma-near-me.html">Jumma near me</a>
-        <a href="/what-time-is-jumma.html">What time is Jumma</a>
+        <a href="/jumma-near-me.html">Jummah near me</a>
+        <a href="/what-time-is-jumma.html">What time is Jummah</a>
         <a href="/jumma-while-traveling.html">Traveling</a>
         <a href="/for-masjids.html">For masjids</a>
         <a class="site-nav__cta" href="${PLAY}" data-play="nav" target="_blank" rel="noopener">Get the app</a>
@@ -205,11 +518,11 @@ function footer() {
         </p>
       </div>
       <div>
-        <h4>Find Jumma</h4>
-        <a href="/jumma-near-me.html">Jumma near me</a>
-        <a href="/what-time-is-jumma.html">What time is Jumma</a>
-        <a href="/jumma-while-traveling.html">Jumma while traveling</a>
-        <a href="/jumma-in-masjid.html">Jumma in the masjid</a>
+        <h4>Find Jummah</h4>
+        <a href="/jumma-near-me.html">Jummah near me</a>
+        <a href="/what-time-is-jumma.html">What time is Jummah</a>
+        <a href="/jumma-while-traveling.html">Jummah while traveling</a>
+        <a href="/jumma-in-masjid.html">Jummah in the masjid</a>
       </div>
       <div>
         <h4>Cities</h4>
@@ -230,19 +543,128 @@ function footer() {
 </html>`;
 }
 
+function localizedHeader(locale, activeKey) {
+  const nav = [
+    ['near', locale.navNear],
+    ['what', locale.navWhat],
+    ['travel', locale.navTravel],
+    ['forMasjids', locale.navMasjids]
+  ]
+    .map(([key, label]) => `<a href="${topPath(key, locale)}"${activeKey === key ? ' aria-current="page"' : ''}>${esc(label)}</a>`)
+    .join('\n        ');
+
+  return `<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="site-header__in">
+      <a class="brand" href="${topPath('home', locale)}" aria-label="Jumma Time home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M7 28V17c0-5 4-8 9-8s9 3 9 8v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="16" cy="18" r="3.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M16 16.2v1.8l1.3 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            <line x1="4" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="5" y1="28" x2="5" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="27" y1="28" x2="27" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span class="brand__name">Jumma Time</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        ${nav}
+        <a class="site-nav__cta" href="${PLAY}" data-play="nav-${locale.code}" target="_blank" rel="noopener">${esc(locale.getApp)}</a>
+      </nav>
+    </div>
+  </header>`;
+}
+
+function localizedWidget(locale) {
+  return `<aside class="jw" data-jummah-widget aria-label="${esc(locale.nextLabel)}">
+          <span class="jw__label">${esc(locale.nextLabel)}</span>
+          <p class="jw__date" data-jw-date>This Friday</p>
+          <div class="jw__clock" role="timer" aria-live="off">
+            <span class="jw__unit"><span class="jw__num" data-jw="days">0</span><span class="jw__cap">days</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="hours">00</span><span class="jw__cap">hrs</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="mins">00</span><span class="jw__cap">min</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="secs">00</span><span class="jw__cap">sec</span></span>
+          </div>
+          <button class="btn btn--brass" type="button" data-jw-geo>${esc(locale.findButton)}</button>
+          <p class="jw__geo-status" data-jw-status></p>
+          <p class="jw__note">${esc(locale.widgetNote)}</p>
+        </aside>`;
+}
+
+function localizedCityGrid(locale) {
+  return cities
+    .map(
+      (c) =>
+        `<a class="city-link" href="${cityPath(c, locale)}">${esc(fill(locale.cityH1, { city: c.name }))} <span>${esc(c.country)}</span></a>`
+    )
+    .join('');
+}
+
+function localizedFooterCities(locale) {
+  return cities
+    .slice(0, 8)
+    .map((c) => `<a href="${cityPath(c, locale)}">${esc(fill(locale.cityH1, { city: c.name }))}</a>`)
+    .join('');
+}
+
+function languageLinks(currentPath) {
+  return LOCALES.map((locale) => {
+    const href = locale.code === 'en' ? currentPath.replace(/^\/[a-z]{2}(?=\/)/, '') : `/${locale.code}${currentPath.replace(/^\/[a-z]{2}(?=\/)/, '')}`;
+    return `<a href="${href === '' ? '/' : href}">${esc(locale.localName)}</a>`;
+  }).join('');
+}
+
+function localizedFooter(locale, currentPath) {
+  return `  <footer class="site-footer">
+    <div class="wrap site-footer__grid">
+      <div>
+        <a class="brand" href="${topPath('home', locale)}" aria-label="Jumma Time home"><span class="brand__name">Jumma Time</span></a>
+        <p style="font-size:0.9rem;max-width:34ch;margin-top:0.4rem">${esc(locale.footerText)}</p>
+      </div>
+      <div>
+        <h4>${esc(locale.footerFind)}</h4>
+        <a href="${topPath('near', locale)}">${esc(locale.navNear)}</a>
+        <a href="${topPath('what', locale)}">${esc(locale.navWhat)}</a>
+        <a href="${topPath('travel', locale)}">${esc(locale.navTravel)}</a>
+        <a href="${topPath('masjid', locale)}">${esc(locale.masjidH1)}</a>
+      </div>
+      <div>
+        <h4>${esc(locale.footerCities)}</h4>
+        <div>${localizedFooterCities(locale)}</div>
+      </div>
+      <div>
+        <h4>${esc(locale.footerApp)}</h4>
+        <a href="${PLAY}" data-play="footer-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+        <a href="${WEBAPP}" target="_blank" rel="noopener">${esc(locale.useWebApp)}</a>
+        <a href="${topPath('forMasjids', locale)}">${esc(locale.navMasjids)}</a>
+      </div>
+      <div>
+        <h4>${esc(locale.footerLanguages || 'Languages')}</h4>
+        <div class="language-links">${languageLinks(currentPath)}</div>
+      </div>
+    </div>
+    <div class="wrap site-footer__legal"><p>&copy; 2026 Jumma Time. ${esc(locale.legal)}</p></div>
+  </footer>
+</body>
+</html>`;
+}
+
 /* ---------- city page template ---------- */
 function cityPage(c) {
   const url = `${SITE}/jumma-time/${c.slug}.html`;
-  const masjidList = c.masjids.map((m) => `<li>${esc(m)}</li>`).join('\n            ');
   const jsonldGraph = jsonld([
     imageNode(`${url}#primaryimage`),
     {
       '@type': 'WebPage',
       '@id': `${url}#webpage`,
       url: url,
-      name: `Jumma time in ${c.name}`,
-      description: `Find community-posted Jumma and Friday prayer times at masjids in ${c.name}, ${c.country}.`,
-      about: `Finding Jumma (Friday prayer) times at masjids in ${c.name}, ${c.country}`,
+      name: `Jumma / Jummah time in ${c.name}`,
+      description: `Find community-posted Jumma and Jummah Friday prayer times at masjids in ${c.name}, ${c.country}.`,
+      about: `Finding Jumma and Jummah (Friday prayer) times at masjids in ${c.name}, ${c.country}`,
       isPartOf: { '@id': WEBSITE_ID },
       primaryImageOfPage: { '@id': `${url}#primaryimage` },
       dateModified: fileDate('data/cities.json'),
@@ -255,8 +677,8 @@ function cityPage(c) {
       '@id': `${url}#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-        { '@type': 'ListItem', position: 2, name: 'Jumma time by city', item: `${SITE}/jumma-near-me.html` },
-        { '@type': 'ListItem', position: 3, name: `Jumma time in ${c.name}` }
+        { '@type': 'ListItem', position: 2, name: 'Jummah time by city', item: `${SITE}/jumma-near-me.html` },
+        { '@type': 'ListItem', position: 3, name: `Jummah time in ${c.name}` }
       ]
     },
     {
@@ -265,18 +687,18 @@ function cityPage(c) {
       mainEntity: [
         {
           '@type': 'Question',
-          name: `What time is Jumma in ${c.name}?`,
+          name: `What time is Jumma or Jummah in ${c.name}?`,
           acceptedAnswer: {
             '@type': 'Answer',
-              text: `Jumma in ${c.name} is prayed after midday on Friday, replacing the Dhuhr prayer. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${c.timezone}). To find the current time at a masjid near you, use the Find masjids near me button or install the free Takbeer Time app.`
+            text: `Jumma, also spelled Jummah, is prayed after midday on Friday in ${c.name}, replacing the Dhuhr prayer. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${c.timezone}). To find the current time at a masjid near you, use the Find masjids near me button or install the free Takbeer Time app.`
           }
         },
         {
           '@type': 'Question',
-          name: `How do I find a masjid for Jumma in ${c.name}?`,
+          name: `How do I find a masjid for Jummah in ${c.name}?`,
           acceptedAnswer: {
             '@type': 'Answer',
-              text: `Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${c.name} with current Jumma and jamat times posted by local timekeepers.`
+            text: `Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${c.name} with current Jumma, Jummah, and jamat times posted by local timekeepers.`
           }
         }
       ]
@@ -284,16 +706,17 @@ function cityPage(c) {
   ]);
 
   return `${head({
-    title: `Jumma Time in ${c.name}: Friday Prayer at Masjids | Jumma Time`,
-    description: `Find community-posted Jumma times in ${c.name}. See nearby masjids, multiple Friday prayer sessions, and current jamat times in the free Takbeer Time app.`,
+    title: `Jumma / Jummah Time in ${c.name}: Friday Prayer at Masjids | Jumma Time`,
+    description: `Find Jumma and Jummah prayer times in ${c.name}. Check nearby masjids, multiple Friday prayer sessions, and current jamat times in the free Takbeer Time app.`,
     url: url,
+    alternates: cityAlternates(c),
     jsonld: jsonldGraph
   })}
 ${HEADER}
   <main id="main">
     <div class="wrap">
       <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> &rsaquo; <a href="/jumma-near-me.html">Cities</a> &rsaquo; Jumma time in ${esc(c.name)}
+        <a href="/">Home</a> &rsaquo; <a href="/jumma-near-me.html">Cities</a> &rsaquo; Jummah time in ${esc(c.name)}
       </nav>
     </div>
 
@@ -301,14 +724,14 @@ ${HEADER}
       <div class="wrap hero__grid">
         <div>
           <p class="eyebrow">${esc(c.country)} &middot; ${esc(c.timezone)}</p>
-          <h1>Jumma time in <span class="accent">${esc(c.name)}</span></h1>
+          <h1>Jumma / Jummah time in <span class="accent">${esc(c.name)}</span></h1>
           <p class="hero__lead">
-            Need Jumma in ${esc(c.name)} this Friday? Compare nearby masjids and community-posted
-            Jumma times so you can choose a congregation you can actually reach.
+            Need Jummah in ${esc(c.name)} this Friday? Compare nearby masjids and community-posted
+            Jumma and Jummah times so you can choose a congregation you can actually reach.
           </p>
           <div class="btn-row">
             <a class="btn btn--primary" href="${PLAY}" data-play="city-hero" target="_blank" rel="noopener">Install the free app</a>
-            <a class="btn btn--ghost" href="#masjids">Notable masjids</a>
+            <a class="btn btn--ghost" href="#masjids">Check masjids</a>
           </div>
           <p class="hero-note">Free, no ads. Times are shared by local worshippers and masjid timekeepers in the Takbeer Time app.</p>
         </div>
@@ -321,9 +744,9 @@ ${HEADER}
         <div class="quick-answer">
           <span class="eyebrow">Quick answer</span>
           <p>
-            <strong>Jumma in ${esc(c.name)}</strong> is not one fixed city-wide time. It is prayed after Dhuhr,
+            <strong>Jumma in ${esc(c.name)}</strong>, also spelled <strong>Jummah</strong>, is not one fixed city-wide time. It is prayed after Dhuhr,
             and each masjid sets its own jamat time, often between <strong>12:30 PM and 2:00 PM</strong>.
-            To find the current <strong>Jumma time near you in ${esc(c.name)}</strong>, tap “Find masjids near me”
+            To find the current <strong>Jummah time near you in ${esc(c.name)}</strong>, tap “Find masjids near me”
             or install the free <strong>Takbeer Time</strong> app.
           </p>
         </div>
@@ -332,24 +755,20 @@ ${HEADER}
 
     <section class="section-tight">
       <div class="wrap prose">
-        <h2>Finding Jumma in ${esc(c.name)}</h2>
-        <p>${esc(c.blurb)}</p>
+        <h2>Finding Jummah in ${esc(c.name)}</h2>
+        <p>${esc(cityBlurb(c))}</p>
         <p>
-          Because Jumma times move with Dhuhr and differ from masjid to masjid, a generic prayer-time estimate
-          is not enough. Takbeer Time gives you masjid-level Jumma and jamat times that the local community keeps
-          current. If you spot a Jumma time on a masjid door in ${esc(c.name)}, you can post it to help the next traveler.
+          Because Jummah times move with Dhuhr and differ from masjid to masjid, a generic prayer-time estimate
+          is not enough. Takbeer Time gives you masjid-level Jumma, Jummah, and jamat times that the local community keeps
+          current. If you spot a Jummah time on a masjid door in ${esc(c.name)}, you can post it to help the next traveler.
         </p>
-        <p><strong>Traveler tip:</strong> ${esc(c.tip)}</p>
+        <p><strong>Traveler tip:</strong> ${esc(cityTip(c))}</p>
       </div>
     </section>
 
     <section id="masjids" class="section-tight">
       <div class="wrap prose">
-        <h2>Notable masjids in ${esc(c.name)}</h2>
-        <p>A few well-known masjids to orient you. Open Takbeer Time for the full list near your exact location, with current Jumma and jamat times:</p>
-        <ul>
-            ${masjidList}
-        </ul>
+        ${cityMasjidSection(c)}
         <div class="btn-row" style="margin-top:1.2rem">
           <a class="btn btn--primary" href="${PLAY}" data-play="city-masjids" target="_blank" rel="noopener">Find masjids in ${esc(c.name)}</a>
           <a class="btn btn--ghost" href="${WEBAPP}" target="_blank" rel="noopener">Use the web app</a>
@@ -360,15 +779,15 @@ ${HEADER}
     <section class="faq">
       <div class="wrap">
         <p class="eyebrow">Quick answers</p>
-        <h2>Jumma in ${esc(c.name)} — FAQ</h2>
+        <h2>Jumma / Jummah in ${esc(c.name)} — FAQ</h2>
         <div style="margin-top:1.2rem">
           <details>
-            <summary>What time is Jumma in ${esc(c.name)}?</summary>
-            <p>Jumma in ${esc(c.name)} is prayed after midday on Friday, replacing Dhuhr. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${esc(c.timezone)}). Use the Find masjids near me button or the Takbeer Time app for the current time at a masjid near you.</p>
+            <summary>What time is Jumma or Jummah in ${esc(c.name)}?</summary>
+            <p>Jumma, also spelled Jummah, is prayed after midday on Friday in ${esc(c.name)}, replacing Dhuhr. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${esc(c.timezone)}). Use the Find masjids near me button or the Takbeer Time app for the current time at a masjid near you.</p>
           </details>
           <details>
-            <summary>How do I find a masjid for Jumma in ${esc(c.name)}?</summary>
-            <p>Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${esc(c.name)} with current Jumma and jamat times posted by local timekeepers.</p>
+            <summary>How do I find a masjid for Jummah in ${esc(c.name)}?</summary>
+            <p>Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${esc(c.name)} with current Jumma, Jummah, and jamat times posted by local timekeepers.</p>
           </details>
           <details>
             <summary>Do masjids in ${esc(c.name)} hold more than one Jummah?</summary>
@@ -382,7 +801,7 @@ ${HEADER}
       <div class="wrap">
         <div class="cta-band">
           <p class="eyebrow" style="color:var(--brass-soft)">Don't miss the first takbeer</p>
-          <h2>Find your next Jumma in ${esc(c.name)}.</h2>
+          <h2>Find your next Jummah in ${esc(c.name)}.</h2>
           <p>Install Takbeer Time, compare nearby masjids, and stop guessing the Friday prayer time.</p>
           <div class="btn-row">
             <a class="btn btn--brass" href="${PLAY}" data-play="city-footer" target="_blank" rel="noopener">Install on Android</a>
@@ -398,7 +817,7 @@ ${HEADER}
     <section class="section-tight">
       <div class="wrap">
         <p class="eyebrow">More cities</p>
-        <h2>Jumma time in other cities</h2>
+        <h2>Jumma / Jummah time in other cities</h2>
         <div class="city-grid" style="margin-top:1.2rem"><!--CITYGRID--><!--/CITYGRID--></div>
       </div>
     </section>
@@ -408,23 +827,274 @@ ${footer()}
 `;
 }
 
+const LOCALIZED_TOP_CONFIG = {
+  home: { prefix: 'home', sectionId: 'overview' },
+  near: { prefix: 'near', sectionId: 'overview' },
+  what: { prefix: 'what', sectionId: 'explained' },
+  travel: { prefix: 'travel', sectionId: 'overview' },
+  masjid: { prefix: 'masjid', sectionId: 'masjid' },
+  forMasjids: { prefix: 'for', sectionId: 'for-masjids' }
+};
+
+function localizedTopPage(pageKey, locale) {
+  const config = LOCALIZED_TOP_CONFIG[pageKey];
+  const prefix = config.prefix;
+  const localPath = topPath(pageKey, locale);
+  const url = absoluteUrl(localPath);
+  const title = locale[`${prefix}Title`];
+  const description = locale[`${prefix}Desc`];
+  const h1 = locale[`${prefix}H1`];
+  const lead = locale[`${prefix}Lead`];
+  const quick = locale[`${prefix}Quick`];
+  const jsonldGraph = jsonld([
+    imageNode(`${url}#primaryimage`),
+    {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: title,
+      description,
+      isPartOf: { '@id': WEBSITE_ID },
+      primaryImageOfPage: { '@id': `${url}#primaryimage` },
+      dateModified: fileDate('data/locales.json'),
+      inLanguage: locale.code
+    }
+  ]);
+
+  const cityBlock =
+    pageKey === 'home' || pageKey === 'near' || pageKey === 'travel'
+      ? `<section class="section-tight" id="cities">
+      <div class="wrap">
+        <p class="eyebrow">${esc(locale.footerCities)}</p>
+        <h2>${esc(locale.cityGridTitle)}</h2>
+        <div class="city-grid" style="margin-top:1.2rem">${localizedCityGrid(locale)}</div>
+      </div>
+    </section>`
+      : '';
+
+  return `${head({
+    title,
+    description,
+    url,
+    lang: locale.code,
+    dir: locale.dir,
+    alternates: topAlternates(pageKey),
+    jsonld: jsonldGraph
+  })}
+${localizedHeader(locale, pageKey)}
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <p class="eyebrow">${esc(locale.localName)}</p>
+          <h1>${esc(h1)}</h1>
+          <p class="hero__lead">${esc(lead)}</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="${PLAY}" data-play="${pageKey}-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+            <a class="btn btn--ghost" href="${topPath('near', locale)}">${esc(locale.navNear)}</a>
+          </div>
+        </div>
+        ${localizedWidget(locale)}
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="quick-answer">
+          <span class="eyebrow">${esc(locale.quickAnswer)}</span>
+          <p>${esc(quick)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight" id="${config.sectionId}">
+      <div class="wrap prose">
+        <h2>${esc(locale.bodyTitle)}</h2>
+        <p>${esc(locale.body)}</p>
+        <div class="btn-row" style="margin-top:1.2rem">
+          <a class="btn btn--primary" href="${PLAY}" data-play="${pageKey}-body-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+          <a class="btn btn--ghost" href="${WEBAPP}" target="_blank" rel="noopener">${esc(locale.useWebApp)}</a>
+        </div>
+      </div>
+    </section>
+
+    ${cityBlock}
+  </main>
+${localizedFooter(locale, localPath)}
+`;
+}
+
+function localizedCityMasjidSection(c, locale) {
+  const list = c.masjids && c.masjids.length
+    ? `<ul>
+            ${c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ')}
+        </ul>`
+    : '';
+
+  return `<h2>${esc(fill(locale.cityCheckTitle, { city: c.name }))}</h2>
+        <p>${esc(fill(locale.cityCheckBody, { city: c.name }))}</p>
+        ${list}
+        <p class="source-note">${esc(fill(locale.citySourceNote, { city: c.name }))}</p>`;
+}
+
+function localizedCityPage(c, locale) {
+  const localPath = cityPath(c, locale);
+  const url = absoluteUrl(localPath);
+  const vars = { city: c.name, country: c.country };
+  const title = fill(locale.cityTitle, vars);
+  const description = fill(locale.cityDesc, vars);
+  const jsonldGraph = jsonld([
+    imageNode(`${url}#primaryimage`),
+    {
+      '@type': 'WebPage',
+      '@id': `${url}#webpage`,
+      url,
+      name: fill(locale.cityH1, vars),
+      description,
+      about: title,
+      isPartOf: { '@id': WEBSITE_ID },
+      primaryImageOfPage: { '@id': `${url}#primaryimage` },
+      dateModified: fileDate('data/locales.json'),
+      inLanguage: locale.code,
+      mainEntity: { '@id': `${url}#faq` }
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${url}#faq`,
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: fill(locale.cityFaqQ1, vars),
+          acceptedAnswer: { '@type': 'Answer', text: fill(locale.cityFaqA1, vars) }
+        },
+        {
+          '@type': 'Question',
+          name: fill(locale.cityFaqQ2, vars),
+          acceptedAnswer: { '@type': 'Answer', text: fill(locale.cityFaqA2, vars) }
+        }
+      ]
+    }
+  ]);
+
+  return `${head({
+    title,
+    description,
+    url,
+    lang: locale.code,
+    dir: locale.dir,
+    alternates: cityAlternates(c),
+    jsonld: jsonldGraph
+  })}
+${localizedHeader(locale, 'near')}
+  <main id="main">
+    <section class="hero">
+      <div class="wrap hero__grid">
+        <div>
+          <p class="eyebrow">${esc(c.country)} &middot; ${esc(c.timezone)}</p>
+          <h1>${esc(fill(locale.cityH1, vars))}</h1>
+          <p class="hero__lead">${esc(fill(locale.cityLead, vars))}</p>
+          <div class="btn-row">
+            <a class="btn btn--primary" href="${PLAY}" data-play="city-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+            <a class="btn btn--ghost" href="#masjids">${esc(locale.checkMasjids)}</a>
+          </div>
+        </div>
+        ${localizedWidget(locale)}
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="quick-answer">
+          <span class="eyebrow">${esc(locale.quickAnswer)}</span>
+          <p>${esc(fill(locale.cityQuick, vars))}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap prose">
+        <h2>${esc(fill(locale.cityH1, vars))}</h2>
+        <p>${esc(fill(locale.cityBody, vars))}</p>
+      </div>
+    </section>
+
+    <section id="masjids" class="section-tight">
+      <div class="wrap prose">
+        ${localizedCityMasjidSection(c, locale)}
+        <div class="btn-row" style="margin-top:1.2rem">
+          <a class="btn btn--primary" href="${PLAY}" data-play="city-masjids-${locale.code}" target="_blank" rel="noopener">${esc(locale.findButton)}</a>
+          <a class="btn btn--ghost" href="${WEBAPP}" target="_blank" rel="noopener">${esc(locale.useWebApp)}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="wrap">
+        <p class="eyebrow">${esc(locale.quickAnswer)}</p>
+        <h2>${esc(fill(locale.cityFaqTitle, vars))}</h2>
+        <div style="margin-top:1.2rem">
+          <details>
+            <summary>${esc(fill(locale.cityFaqQ1, vars))}</summary>
+            <p>${esc(fill(locale.cityFaqA1, vars))}</p>
+          </details>
+          <details>
+            <summary>${esc(fill(locale.cityFaqQ2, vars))}</summary>
+            <p>${esc(fill(locale.cityFaqA2, vars))}</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="wrap">
+        <p class="eyebrow">${esc(locale.footerCities)}</p>
+        <h2>${esc(locale.cityMoreTitle)}</h2>
+        <div class="city-grid" style="margin-top:1.2rem">${localizedCityGrid(locale)}</div>
+      </div>
+    </section>
+  </main>
+${localizedFooter(locale, localPath)}
+`;
+}
+
 /* ---------- marker injection ---------- */
 function inject(html, marker, content) {
   const re = new RegExp(`<!--${marker}-->[\\s\\S]*?<!--/${marker}-->`, 'g');
   return html.replace(re, `<!--${marker}-->${content}<!--/${marker}-->`);
 }
 
+function alternateLinkHtml(alternates) {
+  return alternates.map((a) => `  <link rel="alternate" hreflang="${a.hreflang}" href="${a.href}" />`).join('\n');
+}
+
+function injectAlternateLinks(html, alternates) {
+  const canonical = html.match(/  <link rel="canonical" href="[^"]+" \/>\n/);
+  if (!canonical) return html;
+  const re = /  <link rel="canonical" href="[^"]+" \/>\n(?:  <link rel="alternate" hreflang="[^"]+" href="[^"]+" \/>\n)+/;
+  return html.replace(re, `${canonical[0]}${alternateLinkHtml(alternates)}\n`);
+}
+
 const cityGridHtml = cities
   .map(
     (c) =>
-      `<a class="city-link" href="/jumma-time/${c.slug}.html">Jumma time in ${esc(c.name)} <span>${esc(c.country)}</span></a>`
+      `<a class="city-link" href="/jumma-time/${c.slug}.html">Jummah time in ${esc(c.name)} <span>${esc(c.country)}</span></a>`
   )
   .join('');
 
 const footerCitiesHtml = cities
   .slice(0, 8)
-  .map((c) => `<a href="/jumma-time/${c.slug}.html">Jumma time in ${esc(c.name)}</a>`)
+  .map((c) => `<a href="/jumma-time/${c.slug}.html">Jummah time in ${esc(c.name)}</a>`)
   .join('');
+
+function topPageKeyForFile(fileName) {
+  if (fileName === 'index.html') return 'home';
+  if (fileName === 'jumma-near-me.html') return 'near';
+  if (fileName === 'what-time-is-jumma.html') return 'what';
+  if (fileName === 'jumma-while-traveling.html') return 'travel';
+  if (fileName === 'jumma-in-masjid.html') return 'masjid';
+  if (fileName === 'for-masjids.html') return 'forMasjids';
+  return null;
+}
 
 /* ---------- write city pages ---------- */
 const cityDir = path.join(ROOT, 'jumma-time');
@@ -449,7 +1119,27 @@ topPages.forEach((f) => {
   if (html.indexOf('<!--CITYGRID-->') === -1 && html.indexOf('<!--FOOTERCITIES-->') === -1) return;
   html = inject(html, 'CITYGRID', cityGridHtml);
   html = inject(html, 'FOOTERCITIES', footerCitiesHtml);
+  const pageKey = topPageKeyForFile(f);
+  if (pageKey) html = injectAlternateLinks(html, topAlternates(pageKey));
   console.log(`  ${writeIfChanged(p, html) ? 'injected city links into' : 'unchanged'} ${f}`);
+});
+
+/* ---------- localized pages ---------- */
+LOCALES.filter((locale) => locale.code !== 'en').forEach((locale) => {
+  LOCALIZED_PAGE_KEYS.forEach((pageKey) => {
+    const localPath = topPath(pageKey, locale);
+    const filePath = localFilePath(localPath);
+    ensureDirFor(filePath);
+    console.log(`  ${writeIfChanged(filePath, localizedTopPage(pageKey, locale)) ? 'wrote' : 'unchanged'} ${localPath}`);
+  });
+
+  cities.forEach((city) => {
+    const localPath = cityPath(city, locale);
+    const filePath = localFilePath(localPath);
+    ensureDirFor(filePath);
+    writeIfChanged(filePath, localizedCityPage(city, locale));
+  });
+  console.log(`  wrote localized ${locale.code} city pages`);
 });
 
 /* ---------- sitemap ---------- */
@@ -468,6 +1158,27 @@ const urls = [
     freq: 'monthly'
   }))
 );
+
+LOCALES.filter((locale) => locale.code !== 'en').forEach((locale) => {
+  LOCALIZED_PAGE_KEYS.forEach((pageKey) => {
+    const localPath = topPath(pageKey, locale);
+    urls.push({
+      loc: absoluteUrl(localPath),
+      file: localPath.replace(/^\//, '').replace(/\/$/, '/index.html'),
+      pri: pageKey === 'home' ? '0.9' : '0.7',
+      freq: 'monthly'
+    });
+  });
+  cities.forEach((city) => {
+    const localPath = cityPath(city, locale);
+    urls.push({
+      loc: absoluteUrl(localPath),
+      file: localPath.replace(/^\//, ''),
+      pri: '0.6',
+      freq: 'monthly'
+    });
+  });
+});
 
 const sitemap =
   '<?xml version="1.0" encoding="UTF-8"?>\n' +
