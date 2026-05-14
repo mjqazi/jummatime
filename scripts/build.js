@@ -39,6 +39,17 @@ const EN_LOCALE = {
   useWebApp: 'Use the web app',
   findButton: 'Find masjids near me',
   nextLabel: 'Next Jummah',
+  thisFriday: 'This Friday',
+  unitDays: 'days',
+  unitHours: 'hrs',
+  unitMinutes: 'min',
+  unitSeconds: 'sec',
+  statusOpening: 'Opening the masjid finder...',
+  statusFinding: 'Finding masjids near you...',
+  statusLocationOff: 'Location off — opening the masjid finder anyway.',
+  skipLink: 'Skip to content',
+  primaryNavLabel: 'Primary',
+  homeAria: 'Jumma Time home',
   widgetNote: 'Countdown is to Friday midday — exact jamat time is set by each masjid.',
   footerFind: 'Find Jummah',
   footerCities: 'Cities',
@@ -67,6 +78,119 @@ const EN_LOCALE = {
   cityMoreTitle: 'Jummah time in other cities'
 };
 const LOCALES = [EN_LOCALE].concat(translatedLocales);
+
+const COUNTRY_CODES = {
+  Afghanistan: 'AF',
+  Algeria: 'DZ',
+  Argentina: 'AR',
+  Australia: 'AU',
+  Austria: 'AT',
+  Bahrain: 'BH',
+  Bangladesh: 'BD',
+  Belgium: 'BE',
+  Brazil: 'BR',
+  'Burkina Faso': 'BF',
+  Cambodia: 'KH',
+  Canada: 'CA',
+  Chad: 'TD',
+  Chile: 'CL',
+  China: 'CN',
+  Colombia: 'CO',
+  "Cote d'Ivoire": 'CI',
+  Denmark: 'DK',
+  Djibouti: 'DJ',
+  Ecuador: 'EC',
+  Egypt: 'EG',
+  Ethiopia: 'ET',
+  France: 'FR',
+  Germany: 'DE',
+  Ghana: 'GH',
+  Greece: 'GR',
+  Guinea: 'GN',
+  India: 'IN',
+  Indonesia: 'ID',
+  Iran: 'IR',
+  Iraq: 'IQ',
+  Italy: 'IT',
+  Japan: 'JP',
+  Jordan: 'JO',
+  Kenya: 'KE',
+  Kuwait: 'KW',
+  Lebanon: 'LB',
+  Libya: 'LY',
+  Malaysia: 'MY',
+  Maldives: 'MV',
+  Mali: 'ML',
+  Mauritania: 'MR',
+  Mexico: 'MX',
+  Morocco: 'MA',
+  Myanmar: 'MM',
+  Netherlands: 'NL',
+  'New Zealand': 'NZ',
+  Niger: 'NE',
+  Nigeria: 'NG',
+  Norway: 'NO',
+  Oman: 'OM',
+  Pakistan: 'PK',
+  Palestine: 'PS',
+  Panama: 'PA',
+  Peru: 'PE',
+  Philippines: 'PH',
+  Poland: 'PL',
+  Qatar: 'QA',
+  Russia: 'RU',
+  Rwanda: 'RW',
+  'Saudi Arabia': 'SA',
+  Senegal: 'SN',
+  'Sierra Leone': 'SL',
+  Singapore: 'SG',
+  Somalia: 'SO',
+  'South Africa': 'ZA',
+  'South Korea': 'KR',
+  Spain: 'ES',
+  'Sri Lanka': 'LK',
+  Sudan: 'SD',
+  Sweden: 'SE',
+  Switzerland: 'CH',
+  Syria: 'SY',
+  Taiwan: 'TW',
+  Tanzania: 'TZ',
+  Thailand: 'TH',
+  'The Gambia': 'GM',
+  Tunisia: 'TN',
+  Turkiye: 'TR',
+  Uganda: 'UG',
+  Ukraine: 'UA',
+  'United Arab Emirates': 'AE',
+  'United Kingdom': 'GB',
+  'United States': 'US',
+  Venezuela: 'VE',
+  Vietnam: 'VN',
+  Yemen: 'YE'
+};
+
+const COUNTRY_NAME_OVERRIDES = {
+  ar: {
+    Somaliland: 'صوماليلاند'
+  },
+  bn: {
+    Somaliland: 'সোমালিল্যান্ড'
+  },
+  fa: {
+    Somaliland: 'سومالی‌لند'
+  },
+  hi: {
+    Somaliland: 'सोमालीलैंड'
+  },
+  tr: {
+    Somaliland: 'Somaliland'
+  },
+  ur: {
+    Somaliland: 'صومالی لینڈ',
+    'United Kingdom': 'برطانیہ',
+    'United States': 'امریکہ'
+  }
+};
 
 const esc = (s) =>
   String(s)
@@ -124,6 +248,26 @@ const LOCALIZED_PAGE_KEYS = ['home', 'near', 'what', 'travel', 'masjid', 'forMas
 
 function fill(template, vars) {
   return String(template).replace(/\{(\w+)\}/g, (_, key) => (vars[key] == null ? '' : vars[key]));
+}
+
+function localizedCountryName(country, locale) {
+  if (!locale || locale.code === 'en') return country;
+  const override = COUNTRY_NAME_OVERRIDES[locale.code] && COUNTRY_NAME_OVERRIDES[locale.code][country];
+  if (override) return override;
+  const region = COUNTRY_CODES[country];
+  if (!region || typeof Intl === 'undefined' || typeof Intl.DisplayNames !== 'function') return country;
+  try {
+    return new Intl.DisplayNames([locale.code], { type: 'region' }).of(region) || country;
+  } catch (_) {
+    return country;
+  }
+}
+
+function cityVars(city, locale) {
+  return {
+    city: city.name,
+    country: localizedCountryName(city.country, locale)
+  };
 }
 
 function localizedPath(locale, englishPath) {
@@ -556,10 +700,10 @@ function localizedHeader(locale, activeKey) {
     .join('\n        ');
 
   return `<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main">${esc(locale.skipLink || EN_LOCALE.skipLink)}</a>
   <header class="site-header">
     <div class="site-header__in">
-      <a class="brand" href="${topPath('home', locale)}" aria-label="Jumma Time home">
+      <a class="brand" href="${topPath('home', locale)}" aria-label="${esc(locale.homeAria || EN_LOCALE.homeAria)}">
         <span class="brand__mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" width="28" height="28">
             <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
@@ -573,7 +717,7 @@ function localizedHeader(locale, activeKey) {
         </span>
         <span class="brand__name">Jumma Time</span>
       </a>
-      <nav class="site-nav" aria-label="Primary">
+      <nav class="site-nav" aria-label="${esc(locale.primaryNavLabel || EN_LOCALE.primaryNavLabel)}">
         ${nav}
         <a class="site-nav__cta" href="${PLAY}" data-play="nav-${locale.code}" target="_blank" rel="noopener">${esc(locale.getApp)}</a>
       </nav>
@@ -582,14 +726,14 @@ function localizedHeader(locale, activeKey) {
 }
 
 function localizedWidget(locale) {
-  return `<aside class="jw" data-jummah-widget aria-label="${esc(locale.nextLabel)}">
+  return `<aside class="jw" data-jummah-widget data-jw-locale="${esc(locale.code)}" data-jw-status-opening="${esc(locale.statusOpening || EN_LOCALE.statusOpening)}" data-jw-status-finding="${esc(locale.statusFinding || EN_LOCALE.statusFinding)}" data-jw-status-location-off="${esc(locale.statusLocationOff || EN_LOCALE.statusLocationOff)}" aria-label="${esc(locale.nextLabel)}">
           <span class="jw__label">${esc(locale.nextLabel)}</span>
-          <p class="jw__date" data-jw-date>This Friday</p>
+          <p class="jw__date" data-jw-date>${esc(locale.thisFriday || EN_LOCALE.thisFriday)}</p>
           <div class="jw__clock" role="timer" aria-live="off">
-            <span class="jw__unit"><span class="jw__num" data-jw="days">0</span><span class="jw__cap">days</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="hours">00</span><span class="jw__cap">hrs</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="mins">00</span><span class="jw__cap">min</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="secs">00</span><span class="jw__cap">sec</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="days">0</span><span class="jw__cap">${esc(locale.unitDays || EN_LOCALE.unitDays)}</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="hours">00</span><span class="jw__cap">${esc(locale.unitHours || EN_LOCALE.unitHours)}</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="mins">00</span><span class="jw__cap">${esc(locale.unitMinutes || EN_LOCALE.unitMinutes)}</span></span>
+            <span class="jw__unit"><span class="jw__num" data-jw="secs">00</span><span class="jw__cap">${esc(locale.unitSeconds || EN_LOCALE.unitSeconds)}</span></span>
           </div>
           <button class="btn btn--brass" type="button" data-jw-geo>${esc(locale.findButton)}</button>
           <p class="jw__geo-status" data-jw-status></p>
@@ -601,7 +745,7 @@ function localizedCityGrid(locale) {
   return cities
     .map(
       (c) =>
-        `<a class="city-link" href="${cityPath(c, locale)}">${esc(fill(locale.cityH1, { city: c.name }))} <span>${esc(c.country)}</span></a>`
+        `<a class="city-link" href="${cityPath(c, locale)}">${esc(fill(locale.cityH1, cityVars(c, locale)))} <span>${esc(localizedCountryName(c.country, locale))}</span></a>`
     )
     .join('');
 }
@@ -609,7 +753,7 @@ function localizedCityGrid(locale) {
 function localizedFooterCities(locale) {
   return cities
     .slice(0, 8)
-    .map((c) => `<a href="${cityPath(c, locale)}">${esc(fill(locale.cityH1, { city: c.name }))}</a>`)
+    .map((c) => `<a href="${cityPath(c, locale)}">${esc(fill(locale.cityH1, cityVars(c, locale)))}</a>`)
     .join('');
 }
 
@@ -927,22 +1071,23 @@ ${localizedFooter(locale, localPath)}
 }
 
 function localizedCityMasjidSection(c, locale) {
+  const vars = cityVars(c, locale);
   const list = c.masjids && c.masjids.length
     ? `<ul>
             ${c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ')}
         </ul>`
     : '';
 
-  return `<h2>${esc(fill(locale.cityCheckTitle, { city: c.name }))}</h2>
-        <p>${esc(fill(locale.cityCheckBody, { city: c.name }))}</p>
+  return `<h2>${esc(fill(locale.cityCheckTitle, vars))}</h2>
+        <p>${esc(fill(locale.cityCheckBody, vars))}</p>
         ${list}
-        <p class="source-note">${esc(fill(locale.citySourceNote, { city: c.name }))}</p>`;
+        <p class="source-note">${esc(fill(locale.citySourceNote, vars))}</p>`;
 }
 
 function localizedCityPage(c, locale) {
   const localPath = cityPath(c, locale);
   const url = absoluteUrl(localPath);
-  const vars = { city: c.name, country: c.country };
+  const vars = cityVars(c, locale);
   const title = fill(locale.cityTitle, vars);
   const description = fill(locale.cityDesc, vars);
   const jsonldGraph = jsonld([
@@ -992,7 +1137,7 @@ ${localizedHeader(locale, 'near')}
     <section class="hero">
       <div class="wrap hero__grid">
         <div>
-          <p class="eyebrow">${esc(c.country)} &middot; ${esc(c.timezone)}</p>
+          <p class="eyebrow">${esc(vars.country)} &middot; ${esc(c.timezone)}</p>
           <h1>${esc(fill(locale.cityH1, vars))}</h1>
           <p class="hero__lead">${esc(fill(locale.cityLead, vars))}</p>
           <div class="btn-row">

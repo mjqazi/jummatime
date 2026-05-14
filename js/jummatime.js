@@ -19,13 +19,21 @@
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
 
+  function formatTargetDate(target, locale) {
+    var opts = { weekday: 'long', month: 'long', day: 'numeric' };
+    try {
+      return target.toLocaleDateString(locale || undefined, opts);
+    } catch (e) {
+      return target.toLocaleDateString(undefined, opts);
+    }
+  }
+
   function renderCountdown(widget) {
     var target = nextFriday();
     var dateEl = widget.querySelector('[data-jw-date]');
+    var locale = widget.getAttribute('data-jw-locale') || document.documentElement.lang || undefined;
     if (dateEl) {
-      dateEl.textContent = target.toLocaleDateString(undefined, {
-        weekday: 'long', month: 'long', day: 'numeric'
-      });
+      dateEl.textContent = formatTargetDate(target, locale);
     }
     var dd = widget.querySelector('[data-jw="days"]');
     var hh = widget.querySelector('[data-jw="hours"]');
@@ -37,9 +45,7 @@
       if (diff <= 0) {
         target = nextFriday();
         if (dateEl) {
-          dateEl.textContent = target.toLocaleDateString(undefined, {
-            weekday: 'long', month: 'long', day: 'numeric'
-          });
+          dateEl.textContent = formatTargetDate(target, locale);
         }
         diff = target.getTime() - Date.now();
       }
@@ -63,11 +69,11 @@
 
     btn.addEventListener('click', function () {
       if (!navigator.geolocation) {
-        if (status) status.textContent = 'Opening the masjid finder…';
+        if (status) status.textContent = widget.getAttribute('data-jw-status-opening') || 'Opening the masjid finder...';
         go(WEB_APP);
         return;
       }
-      if (status) status.textContent = 'Finding masjids near you…';
+      if (status) status.textContent = widget.getAttribute('data-jw-status-finding') || 'Finding masjids near you...';
       btn.setAttribute('aria-busy', 'true');
       navigator.geolocation.getCurrentPosition(
         function (pos) {
@@ -76,7 +82,7 @@
           go(WEB_APP + '?lat=' + lat + '&lng=' + lng + '&utm_source=jummatime&utm_medium=widget');
         },
         function () {
-          if (status) status.textContent = 'Location off — opening the masjid finder anyway.';
+          if (status) status.textContent = widget.getAttribute('data-jw-status-location-off') || 'Location off — opening the masjid finder anyway.';
           go(WEB_APP + '?utm_source=jummatime&utm_medium=widget');
         },
         { enableHighAccuracy: false, timeout: 8000, maximumAge: 600000 }
