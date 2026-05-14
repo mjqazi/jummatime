@@ -1,0 +1,556 @@
+{
+  "amsterdam": [
+    {
+      "name": "IGMG Mevlana Moskee",
+      "jummahTimes": [
+        "13:42"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=7099dc0d-428e-40a8-ba2f-461704dac321",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Moskee Al-Ihsane",
+      "jummahTimes": [
+        "13:38"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=43ef728a-4cf1-40cb-8c6d-1790f6b255db",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Moskee Badr",
+      "jummahTimes": [
+        "13:50"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=d33bd9b4-bbcf-40af-b603-c5fe70852da8",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "barcelona": [
+    {
+      "name": "Centre Cultural Islàmic Català",
+      "jummahTimes": [
+        "13:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=a14f89a7-a4b8-4349-b957-4bdc56d8e236",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "berlin": [
+    {
+      "name": "Ditib Berlin Yeni Cami",
+      "jummahTimes": [
+        "13:08"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=5b3aef39-4a02-43b1-b2f8-0d238a11694a",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Gazi Osman Pasa Moschee eV",
+      "jummahTimes": [
+        "13:08"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=b68d6a8d-44e9-4d50-ab0b-a5274a43e5bc",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Mescidi Aksa Camii",
+      "jummahTimes": [
+        "13:08"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=1512c71e-0e8f-4599-9c0d-def5c48d43ba",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Muradiye Camii - Türkisch-Islamischer Kulturverein e.V.",
+      "jummahTimes": [
+        "13:08"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=abc4d839-d3b1-49a6-a652-4a554b3e8361",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "birmingham": [
+    {
+      "name": "Amanah Masjid",
+      "jummahTimes": [
+        "13:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=6e9a6459-0c1d-48e5-947d-b49c6029a750",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Faizan e Medina",
+      "jummahTimes": [
+        "13:30",
+        "14:30",
+        "16:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=1b78e3ee-36fb-42fd-8889-461eab03659a",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "brisbane": [
+    {
+      "name": "Moorooka Mosque",
+      "jummahTimes": [
+        "12:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=53ebd7cb-cbcf-4755-8f4c-f17447887430",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "chicago": [
+    {
+      "name": "Islamic Center of Chicago",
+      "jummahTimes": [
+        "13:30",
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=c1b5c88a-f1f3-4188-bd96-ea16208ef6f1",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Madinah Masjid (sunni sufi qadri)",
+      "jummahTimes": [
+        "13:40"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=c6f86b7c-c3ec-493e-90c5-45978116443d",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Masjid Al Muhajireen",
+      "jummahTimes": [
+        "13:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=9cbc881c-5bf0-4649-a505-ffc6369740f8",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Muslim Community Center",
+      "jummahTimes": [
+        "13:05",
+        "13:30",
+        "14:15"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=8955c6a3-b1a3-4464-917f-6862ac447619",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "houston": [
+    {
+      "name": "Islamic Society of Greater Houston",
+      "jummahTimes": [
+        "16:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=9ad4bc4c-c6f9-4c96-8e78-fbac7bc5995e",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Masjid Khulafa’a Rashideen",
+      "jummahTimes": [
+        "13:20",
+        "13:40",
+        "14:10"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=0e79e4fd-7f8e-4f7e-8a24-49b38542dfad",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "karachi": [
+    {
+      "name": "Tooba Mosque",
+      "jummahTimes": [
+        "13:15"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=d2058442-6d85-4524-afab-a08bacb6efc6",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Khair ul Bashr Mosque",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=867d7d9d-9614-4665-9ba7-a79f405c8626",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Farooq-e-Azam",
+      "jummahTimes": [
+        "14:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=6abdafac-63fd-4a03-8fc2-c9c476a5ff78",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Qudsia Masjid",
+      "jummahTimes": [
+        "13:50"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=35163517-0793-4f73-ad06-d2876736011b",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Abdul Aziz Masjid",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=0eb02333-0e58-4f98-bc4a-f5c018adfc9f",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Abu Ubaida",
+      "jummahTimes": [
+        "13:05"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=0be9e0aa-4f90-4595-a00a-8c599d4a7865",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Aik Minara",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=51ad4fcf-4607-4d33-b838-a0c8dc9947f0",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Aisha Manzil mosque",
+      "jummahTimes": [
+        "20:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=3033e658-df49-4165-b689-9883ac8fdeb3",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "lahore": [
+    {
+      "name": "Badshahi Mosque",
+      "jummahTimes": [
+        "13:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=1f122c11-e41b-4942-9a35-fe754e316337",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Askari Heights Mosque, Sector B",
+      "jummahTimes": [
+        "13:40"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=2567180a-72e9-461f-ab9b-a4ba0f0421f5",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Askari Heights Mosque, Sector B",
+      "jummahTimes": [
+        "13:40"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=c1093089-00e4-48f1-b54c-c8ef9f4feaf7",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Jamia-Tul-Muntazar",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=2488bd33-ca3c-4ad5-a683-d4b774ca4031",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "M Block Mosque",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=2959b891-61b5-4815-8992-0805d7f5a4e6",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "PCSIR Phase 1 Masjid",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=12092efc-299d-4f50-9e1a-f3d07b663c15",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "leeds": [
+    {
+      "name": "Leeds Grand Mosque",
+      "jummahTimes": [
+        "13:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=3d557751-7c51-415c-aa76-cd6eba8b0e07",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "london": [
+    {
+      "name": "Al-Risaalah Mosque & Islington Islamic Centre",
+      "jummahTimes": [
+        "12:30",
+        "13:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=515f42ea-bc4c-4c36-a336-e11cee4d3671",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Finsbury Park Mosque",
+      "jummahTimes": [
+        "13:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=9d867e64-be78-4061-be84-1527d4fd5f25",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Holloway Mosque",
+      "jummahTimes": [
+        "13:10",
+        "13:50",
+        "14:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=b81fe6c6-d2e9-4951-97cc-b0e0ba1d2a3a",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Masjid e Yusuf",
+      "jummahTimes": [
+        "13:30",
+        "14:15"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=d4ff8be5-cdf8-41f9-8514-e91f683f174f",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Masjid Stratford",
+      "jummahTimes": [
+        "13:20"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=cc80d813-71dc-4c86-95bb-015d4e460088",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Mosque and Islamic Centre of Brent",
+      "jummahTimes": [
+        "13:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=5d7daf9a-66b7-468e-b3c9-957e4061d8e0",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Muslim Welfare House",
+      "jummahTimes": [
+        "12:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=00f13eb6-993a-453c-9631-6bdc2b51434a",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Valide Sultan Mosque",
+      "jummahTimes": [
+        "13:20"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=68a75cfd-cc49-4aba-9df7-38ab2433cfef",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "madrid": [
+    {
+      "name": "Baitul Mukarram",
+      "jummahTimes": [
+        "14:45",
+        "15:45"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=4d2d13fc-1f4f-4720-a62b-b05483f68bf4",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Mezquita Central de Madrid",
+      "jummahTimes": [
+        "14:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=a54add83-501a-4fb7-b62d-2d3159d29899",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "manchester": [
+    {
+      "name": "Masjid-E-Hidayah",
+      "jummahTimes": [
+        "13:30",
+        "15:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=3b7f7cdf-95b7-4c36-a25f-970766de35ca",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Muslim Youth Foundation (MYF)",
+      "jummahTimes": [
+        "12:00",
+        "12:30",
+        "13:15"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=4ab1415d-6896-4b01-abb6-8ca31df67ca0",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "marrakesh": [
+    {
+      "name": "Mosque (OSM way 328962593)",
+      "jummahTimes": [
+        "13:33"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=78c3d910-da12-4ebb-bcf1-63bf44829131",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "marseille": [
+    {
+      "name": "Mosqué El Imane",
+      "jummahTimes": [
+        "11:00",
+        "12:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=43651562-d360-4396-87aa-d1b3adf1e7c0",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "new-york": [
+    {
+      "name": "Islamic Cultural Center of New York",
+      "jummahTimes": [
+        "13:00",
+        "13:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=78bf15e7-7460-4045-a25e-e67f307e8f73",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Masjid Malcolm Shabazz",
+      "jummahTimes": [
+        "12:00",
+        "13:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=bc934b98-2a43-414c-b4c2-eb9404b198d9",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Masjid Manhattan",
+      "jummahTimes": [
+        "13:00",
+        "13:05"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=23911e63-1671-4f75-90b1-c1336af8eedd",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "paris": [
+    {
+      "name": "Grande Mosquée de Paris",
+      "jummahTimes": [
+        "13:50",
+        "14:30"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=76f13c70-3638-4642-b75f-0aec1f3f18ff",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Mosquée A Daawa",
+      "jummahTimes": [
+        "13:47"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=a5b710f9-8616-4310-a8ba-18d3c561b0f8",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Mosquée Nour",
+      "jummahTimes": [
+        "14:00"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=c6b30514-852e-4571-adbc-57ccd64643eb",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "rotterdam": [
+    {
+      "name": "Kocatepe Cami",
+      "jummahTimes": [
+        "13:44"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=98b28ebd-edb6-461b-bee8-7b7a5c588474",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    },
+    {
+      "name": "Moskee Othman",
+      "jummahTimes": [
+        "13:43"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=cae7b4eb-dc8a-41fe-9911-023da073df09",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ],
+  "saint-petersburg": [
+    {
+      "name": "Wilmot Muslim Centre",
+      "jummahTimes": [
+        "13:15",
+        "14:15"
+      ],
+      "sourceUrl": "https://takbeertime.com/?mosque=740fd68c-1066-4834-b84c-5f18de132622",
+      "sourceLabel": "Takbeer Time",
+      "lastChecked": "2026-05-14"
+    }
+  ]
+}

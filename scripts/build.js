@@ -235,6 +235,24 @@ function combineCities(primary, expanded) {
 
 const cities = combineCities(curatedCities, priorityCities);
 
+/* Merge in real Jummah times fetched from the Takbeer Time API
+   (scripts/fetch-masjid-times.js -> data/city-masjid-times.json).
+   When a city has fetched times they replace the curated name list,
+   so the city page renders an actual times table instead of a stub. */
+(() => {
+  const p = path.join(ROOT, 'data', 'city-masjid-times.json');
+  if (!fs.existsSync(p)) return;
+  const times = JSON.parse(fs.readFileSync(p, 'utf8'));
+  let merged = 0;
+  for (const city of cities) {
+    if (Array.isArray(times[city.slug]) && times[city.slug].length) {
+      city.masjids = times[city.slug];
+      merged++;
+    }
+  }
+  console.log(`  merged real Jummah times into ${merged} cities`);
+})();
+
 const TOP_PAGE_PATHS = {
   home: '/',
   near: '/jumma-near-me.html',
@@ -400,27 +418,22 @@ function verifiedMasjids(c) {
   return c.masjids.filter((m) => typeof m !== 'string' && masjidTimeText(m) && m.sourceUrl);
 }
 
-function cityMasjidSection(c) {
-  const verified = verifiedMasjids(c);
-  if (verified.length > 0) {
-    const rows = verified
-      .map(
-        (m) => `<tr>
+function masjidTimesTable(c, verified) {
+  const rows = verified
+    .map(
+      (m) => `<tr>
             <th scope="row">${esc(m.name)}</th>
             <td>${esc(masjidTimeText(m))}</td>
-            <td><a href="${esc(m.sourceUrl)}" target="_blank" rel="noopener">Official source</a>${m.lastChecked ? ` <span class="source-note">checked ${esc(m.lastChecked)}</span>` : ''}</td>
+            <td><a href="${esc(m.sourceUrl)}" target="_blank" rel="noopener">${esc(m.sourceLabel || 'Takbeer Time')}</a>${m.lastChecked ? ` <span class="source-note">checked ${esc(m.lastChecked)}</span>` : ''}</td>
           </tr>`
-      )
-      .join('\n          ');
-
-    return `<h2>Published Jummah times in ${esc(c.name)}</h2>
-        <p>These masjid times are included only when they can be tied to an official source. Always confirm before setting out, because Jummah schedules can change for holidays, building works, or seasonal updates.</p>
-        <div class="time-table-wrap">
+    )
+    .join('\n          ');
+  return `<div class="time-table-wrap">
           <table class="time-table">
             <thead>
               <tr>
                 <th scope="col">Masjid</th>
-                <th scope="col">Jummah sessions</th>
+                <th scope="col">Jummah time</th>
                 <th scope="col">Source</th>
               </tr>
             </thead>
@@ -429,6 +442,20 @@ function cityMasjidSection(c) {
             </tbody>
           </table>
         </div>`;
+}
+
+function cityMasjidSection(c) {
+  const verified = verifiedMasjids(c);
+  if (verified.length > 0) {
+    return `<h2>Jummah times at masjids in ${esc(c.name)}</h2>
+        <p>These Jummah times are posted by the local community in <strong>Takbeer Time</strong>. They are a
+        starting point, not a guarantee — schedules shift with the season and for holidays, so confirm with the
+        masjid before you set out. Open the app to see every masjid near your exact location, with reminders.</p>
+        ${masjidTimesTable(c, verified)}
+        <p class="source-note">
+          Times last checked ${esc(verified[0].lastChecked || fileDate('data/city-masjid-times.json'))}.
+          Run a masjid in ${esc(c.name)}? Keep your Jummah time accurate for everyone by updating it in Takbeer Time.
+        </p>`;
   }
 
   const masjidList = c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ');
@@ -1072,6 +1099,17 @@ ${localizedFooter(locale, localPath)}
 
 function localizedCityMasjidSection(c, locale) {
   const vars = cityVars(c, locale);
+  const verified = verifiedMasjids(c);
+
+  // Real Jummah times from Takbeer Time — the table itself is language-neutral
+  // (masjid names + times), shown under the localized funnel heading and copy.
+  if (verified.length > 0) {
+    return `<h2>${esc(fill(locale.cityCheckTitle, vars))}</h2>
+        <p>${esc(fill(locale.cityCheckBody, vars))}</p>
+        ${masjidTimesTable(c, verified)}
+        <p class="source-note">${esc(fill(locale.citySourceNote, vars))}</p>`;
+  }
+
   const list = c.masjids && c.masjids.length
     ? `<ul>
             ${c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ')}
