@@ -289,28 +289,30 @@ function cityMasjidSection(c) {
 
   const masjidList = c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ');
   if (!masjidList) {
-    return `<h2>How to check Jummah times in ${esc(c.name)}</h2>
+    return `<h2>Find Jummah in ${esc(c.name)} with Takbeer Time</h2>
         <p>
-          We do not have a source-verified masjid timetable on this page yet. Use Takbeer Time to check nearby
-          masjids, compare community-posted Jummah sessions, and confirm the exact time with the masjid before you leave.
+          <strong>Takbeer Time</strong> is built for exactly this moment. Open the free app, allow location,
+          and see masjids around you in ${esc(c.name)} with Jummah and jamat times posted by the people who
+          actually pray there — plus reminders so you reach the masjid before the khutbah and first takbeer.
         </p>
         <p class="source-note">
-          If you manage a masjid in ${esc(c.name)}, publish your official Jummah time in Takbeer Time and include a source link.
-          Source-backed times can then be shown directly on this city page.
+          Run a masjid in ${esc(c.name)}? Publish your official Jummah time in Takbeer Time so every traveler
+          and new resident sees the correct time.
         </p>`;
   }
 
-  return `<h2>Known masjids to check in ${esc(c.name)}</h2>
+  return `<h2>Masjids to check in ${esc(c.name)} — and the fastest way to confirm</h2>
         <p>
-          These well-known masjids are starting points, not a verified timetable. Open Takbeer Time for current
-          community-posted Jummah and jamat times near your exact location, or ask the masjid directly before you set out.
+          These well-known masjids are a starting point. For the exact, current Jummah time — and every other
+          masjid near you — open <strong>Takbeer Time</strong>: it shows community-posted Jummah and jamat times
+          for masjids across ${esc(c.name)}, with reminders so you never miss the first takbeer.
         </p>
         <ul>
             ${masjidList}
         </ul>
         <p class="source-note">
-          Want this page to show official on-page Jummah times for your masjid? Submit the masjid time in Takbeer Time,
-          then share an official source link so it can be listed with a last-checked date.
+          Run one of these masjids? Publish your official Jummah time in Takbeer Time and keep your community
+          and every visitor on time.
         </p>`;
 }
 
