@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0F2A1E" />
-  <title>What Time Is Jumma? Friday Prayer (Jummah) Time Explained</title>
-  <meta name="description" content="What time is Jumma? Jumma (Friday prayer) replaces Dhuhr and is prayed shortly after midday — usually 12:30 PM to 2:00 PM, but the exact jamat time is set by each masjid. Here is how to find the exact Jumma time near you." />
+  <title>What Time Is Jumma? Friday Prayer Time Explained</title>
+  <meta name="description" content="Jumma replaces Dhuhr and is prayed after midday on Friday. Learn why each masjid sets its own time and how to find the current Jumma time near you." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="keywords" content="what time is jumma, jumma time, what time is jummah, friday prayer time, jummah prayer time, what time is juma, jumma time today, when is jumma" />
+  <meta name="author" content="Jumma Time" />
   <link rel="canonical" href="https://jummatime.com/what-time-is-jumma.html" />
   <link rel="alternate" hreflang="en" href="https://jummatime.com/what-time-is-jumma.html" />
   <link rel="alternate" hreflang="x-default" href="https://jummatime.com/what-time-is-jumma.html" />
@@ -16,16 +16,23 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="application-name" content="Jumma Time" />
   <meta name="google-play-app" content="app-id=com.takbeertime.android" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Jumma Time" />
-  <meta property="og:title" content="What Time Is Jumma? Friday Prayer (Jummah) Time Explained" />
-  <meta property="og:description" content="Jumma replaces Dhuhr and is prayed shortly after midday. Here is how to find the exact Jumma time near you." />
+  <meta property="og:title" content="What Time Is Jumma? Friday Prayer Time Explained" />
+  <meta property="og:description" content="Jumma replaces Dhuhr and is prayed after midday. Learn why masjid times differ and how to find the current time near you." />
   <meta property="og:url" content="https://jummatime.com/what-time-is-jumma.html" />
-  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-icon-512.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="What Time Is Jumma? Friday Prayer Time Explained" />
-  <meta name="twitter:description" content="Jumma replaces Dhuhr and is prayed shortly after midday. Find the exact time near you." />
-  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-icon-512.png" />
+  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta property="og:image:secure_url" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="What Time Is Jumma?" />
+  <meta name="twitter:description" content="Learn why Jumma times differ and how to find the current time near you." />
+  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta name="twitter:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -36,21 +43,118 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://jummatime.com/#organization",
+        "name": "Jumma Time",
+        "url": "https://jummatime.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jummatime.com/assets/brand/jummatime-icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://takbeertime.com/",
+          "https://play.google.com/store/apps/details?id=com.takbeertime.android"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jummatime.com/#website",
+        "url": "https://jummatime.com/",
+        "name": "Jumma Time",
+        "alternateName": [
+          "JummaTime",
+          "Jummah Time",
+          "Juma Time",
+          "Find Jumma Near Me"
+        ],
+        "description": "Find community-posted Jumma and Friday prayer times at nearby masjids.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://jummatime.com/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://jummatime.com/#app",
+        "name": "Takbeer Time",
+        "operatingSystem": "Android",
+        "applicationCategory": "LifestyleApplication",
+        "url": "https://play.google.com/store/apps/details?id=com.takbeertime.android",
+        "description": "Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, jamat, jamaat, and iqamah times.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://jummatime.com/what-time-is-jumma.html#primaryimage",
+        "url": "https://jummatime.com/assets/brand/jummatime-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "Jumma Time helps travelers find Friday prayer times at nearby masjids."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://jummatime.com/what-time-is-jumma.html#webpage",
+        "url": "https://jummatime.com/what-time-is-jumma.html",
+        "name": "What Time Is Jumma? Friday Prayer Time Explained",
+        "description": "Jumma replaces Dhuhr and is prayed after midday on Friday. Learn why each masjid sets its own time and how to find the current Jumma time near you.",
+        "isPartOf": {
+          "@id": "https://jummatime.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#primaryimage"
+        },
+        "dateModified": "2026-05-14",
+        "inLanguage": "en",
+        "breadcrumb": {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#article"
+        }
+      },
+      {
         "@type": "Article",
         "@id": "https://jummatime.com/what-time-is-jumma.html#article",
-        "headline": "What Time Is Jumma? Friday Prayer (Jummah) Time Explained",
-        "description": "An explainer on what time Jumma (Friday prayer) is held, why it varies, and how to find the exact jamat time at a masjid near you.",
+        "headline": "What Time Is Jumma? Friday Prayer Time Explained",
+        "description": "Jumma replaces Dhuhr and is prayed after midday on Friday. Learn why each masjid sets its own time and how to find the current Jumma time near you.",
         "inLanguage": "en",
-        "mainEntityOfPage": "https://jummatime.com/what-time-is-jumma.html",
-        "author": { "@id": "https://jummatime.com/#organization" },
-        "publisher": { "@id": "https://jummatime.com/#organization" }
+        "mainEntityOfPage": {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        "author": {
+          "@id": "https://jummatime.com/#organization"
+        },
+        "publisher": {
+          "@id": "https://jummatime.com/#organization"
+        },
+        "image": {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#primaryimage"
+        },
+        "datePublished": "2026-05-14",
+        "dateModified": "2026-05-14"
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jummatime.com/" },
-          { "@type": "ListItem", "position": 2, "name": "What time is Jumma" }
-        ]
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jummatime.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "What time is Jumma"
+          }
+        ],
+        "@id": "https://jummatime.com/what-time-is-jumma.html#breadcrumb"
       },
       {
         "@type": "FAQPage",
@@ -58,24 +162,37 @@
           {
             "@type": "Question",
             "name": "What time is Jumma?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Jumma (Friday prayer) replaces the Dhuhr prayer and is prayed shortly after midday on Friday — usually between 12:30 PM and 2:00 PM. The exact jamat time is set by each masjid and shifts through the year as Dhuhr moves, so always confirm with the masjid you plan to attend." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jumma (Friday prayer) replaces the Dhuhr prayer and is prayed shortly after midday on Friday — usually between 12:30 PM and 2:00 PM. The exact jamat time is set by each masjid and shifts through the year as Dhuhr moves, so always confirm with the masjid you plan to attend."
+            }
           },
           {
             "@type": "Question",
             "name": "Does Jumma time change through the year?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Jumma replaces Dhuhr, and the Dhuhr time moves gradually as the sun's position changes through the seasons. Many masjids adjust their Jumma time periodically, which is why a printed timetable can go out of date." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Jumma replaces Dhuhr, and the Dhuhr time moves gradually as the sun's position changes through the seasons. Many masjids adjust their Jumma time periodically, which is why a printed timetable can go out of date."
+            }
           },
           {
             "@type": "Question",
             "name": "Is Jumma at the same time as Dhuhr?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Jumma takes the place of Dhuhr on Friday. It begins after the sun has passed its zenith, the same window in which Dhuhr would be prayed. The khutbah (sermon) comes first, followed by a two-rak'ah congregational prayer." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Jumma takes the place of Dhuhr on Friday. It begins after the sun has passed its zenith, the same window in which Dhuhr would be prayed. The khutbah (sermon) comes first, followed by a two-rak'ah congregational prayer."
+            }
           },
           {
             "@type": "Question",
             "name": "How do I find the exact Jumma time near me?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Use the free Takbeer Time app. It shows masjids near you with the real, current Jumma jamat time for each one, posted and kept up to date by local timekeepers." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the free Takbeer Time app. It shows masjids near you with the real, current Jumma jamat time for each one, posted and kept up to date by local timekeepers."
+            }
           }
-        ]
+        ],
+        "@id": "https://jummatime.com/what-time-is-jumma.html#faq"
       }
     ]
   }
@@ -120,11 +237,11 @@
           <p class="eyebrow">Friday prayer explained</p>
           <h1>What time is <span class="accent">Jumma</span>?</h1>
           <p class="hero__lead">
-            Jumma replaces Dhuhr and is prayed shortly after midday on Friday — but the exact jamat
-            time is set by each masjid. Here is how it works, and how to find the precise time near you.
+            Jumma replaces Dhuhr and is prayed after midday on Friday, but there is no single
+            fixed time for every masjid. Here is why it varies, and how to find the current time near you.
           </p>
           <div class="btn-row">
-            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="wt-hero" target="_blank" rel="noopener">Find exact times in the app</a>
+            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="wt-hero" target="_blank" rel="noopener">Find current times in the app</a>
             <a class="btn btn--ghost" href="#explained">Read the explainer</a>
           </div>
         </div>
@@ -151,8 +268,8 @@
           <p>
             <strong>Jumma (Friday prayer) replaces the Dhuhr prayer and is prayed shortly after midday on Friday —
             usually between 12:30 PM and 2:00 PM.</strong> The exact jamat time is set by each individual masjid
-            and shifts through the year as Dhuhr moves with the sun. To find the precise <strong>Jumma time near you</strong>,
-            use the free <strong>Takbeer Time</strong> app, which shows real masjid times posted by local timekeepers.
+            and shifts through the year as Dhuhr moves with the sun. To find the current <strong>Jumma time near you</strong>,
+            use the free <strong>Takbeer Time</strong> app, which shows masjid times posted by local timekeepers.
           </p>
         </div>
       </div>
@@ -172,7 +289,7 @@
         <h2>When is Jumma prayed?</h2>
         <p>
           Jumma takes the place of the Dhuhr prayer on Friday. It begins after the sun has passed its zenith
-          (midday) — the same time window in which Dhuhr would otherwise be prayed. In practice, most masjids
+          (midday), the same time window in which Dhuhr would otherwise be prayed. In practice, many masjids
           schedule the khutbah to start somewhere between <strong>12:30 PM and 2:00 PM</strong>.
         </p>
 
@@ -180,15 +297,15 @@
         <ul>
           <li><strong>It moves with the sun.</strong> Because Jumma replaces Dhuhr, its earliest valid time shifts gradually through the year as the seasons change.</li>
           <li><strong>Each masjid sets its own time.</strong> Within the valid window, the committee chooses a start time that suits its community — so two masjids on the same street can differ by 30–45 minutes.</li>
-          <li><strong>Busy masjids hold multiple Jummahs.</strong> City-centre and large community masjids often run two or three Jummah congregations to fit everyone in.</li>
+          <li><strong>Busy masjids hold multiple Jummahs.</strong> City-center and large community masjids often run two or three Jummah congregations to fit everyone in.</li>
         </ul>
 
         <h2>How to find the exact Jumma time near you</h2>
         <p>
           Because the time depends on the date, the city, and the specific masjid, a printed timetable or a
-          generic prayer-times app is often out of date. The reliable approach is a crowd-sourced directory
+          generic prayer-times app is often out of date. The reliable approach is a community-maintained directory
           that locals keep current. The <strong>Takbeer Time</strong> app does exactly this: open the masjid
-          map, see masjids near you, and read the real Jumma jamat time for each — posted by local timekeepers.
+          map, see masjids near you, and read the current Jumma jamat time for each one.
         </p>
         <div class="btn-row" style="margin-top:1.2rem">
           <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="wt-body" target="_blank" rel="noopener">Get the free app</a>
@@ -216,7 +333,7 @@
           </details>
           <details>
             <summary>How do I find the exact Jumma time near me?</summary>
-            <p>Use the free Takbeer Time app. It shows masjids near you with the real, current Jumma jamat time for each one, posted and kept up to date by local timekeepers.</p>
+            <p>Use the free Takbeer Time app. It shows masjids near you with current Jumma jamat times posted and kept up to date by local timekeepers.</p>
           </details>
         </div>
       </div>
@@ -227,7 +344,7 @@
         <div class="cta-band">
           <p class="eyebrow" style="color:var(--brass-soft)">Don't miss the first takbeer</p>
           <h2>Find the exact Jumma time near you.</h2>
-          <p>Install Takbeer Time and see the real Friday prayer time at every masjid around you.</p>
+          <p>Install Takbeer Time and see the current Friday prayer time at every masjid around you.</p>
           <div class="btn-row">
             <a class="btn btn--brass" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="wt-footer" target="_blank" rel="noopener">Install on Android</a>
             <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="https://takbeertime.com/" target="_blank" rel="noopener">Use the web app</a>
@@ -262,7 +379,7 @@
       </div>
     </div>
     <div class="wrap site-footer__legal">
-      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadqa fe sabilillah. Jumma times are crowd-sourced; always confirm with your local masjid.</p>
+      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadaqah fi sabilillah. Jumma times are community-posted; always confirm with your local masjid.</p>
     </div>
   </footer>
 </body>

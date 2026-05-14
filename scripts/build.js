@@ -223,7 +223,7 @@ function footer() {
       </div>
     </div>
     <div class="wrap site-footer__legal">
-      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadqa fe sabilillah. Jumma times are crowd-sourced; always confirm with your local masjid.</p>
+      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadaqah fi sabilillah. Jumma times are community-posted; always confirm with your local masjid.</p>
     </div>
   </footer>
 </body>
@@ -268,7 +268,7 @@ function cityPage(c) {
           name: `What time is Jumma in ${c.name}?`,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Jumma in ${c.name} is prayed shortly after midday on Friday, replacing the Dhuhr prayer. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${c.timezone}). To find the exact time at a masjid near you, use the Find masjids near me button or install the free Takbeer Time app.`
+              text: `Jumma in ${c.name} is prayed after midday on Friday, replacing the Dhuhr prayer. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${c.timezone}). To find the current time at a masjid near you, use the Find masjids near me button or install the free Takbeer Time app.`
           }
         },
         {
@@ -276,7 +276,7 @@ function cityPage(c) {
           name: `How do I find a masjid for Jumma in ${c.name}?`,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${c.name} with real Jumma and jamat times posted by local timekeepers.`
+              text: `Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${c.name} with current Jumma and jamat times posted by local timekeepers.`
           }
         }
       ]
@@ -364,11 +364,11 @@ ${HEADER}
         <div style="margin-top:1.2rem">
           <details>
             <summary>What time is Jumma in ${esc(c.name)}?</summary>
-            <p>Jumma in ${esc(c.name)} is prayed shortly after midday on Friday, replacing Dhuhr. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${esc(c.timezone)}). Use the Find masjids near me button or the Takbeer Time app for the exact time at a masjid near you.</p>
+            <p>Jumma in ${esc(c.name)} is prayed after midday on Friday, replacing Dhuhr. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${esc(c.timezone)}). Use the Find masjids near me button or the Takbeer Time app for the current time at a masjid near you.</p>
           </details>
           <details>
             <summary>How do I find a masjid for Jumma in ${esc(c.name)}?</summary>
-            <p>Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${esc(c.name)} with real Jumma and jamat times posted by local timekeepers.</p>
+            <p>Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${esc(c.name)} with current Jumma and jamat times posted by local timekeepers.</p>
           </details>
           <details>
             <summary>Do masjids in ${esc(c.name)} hold more than one Jummah?</summary>

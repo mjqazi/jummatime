@@ -37,15 +37,16 @@ body {
   line-height: 1.62;
   font-size: 1.02rem;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--green-3); }
 h1, h2, h3 { line-height: 1.18; color: var(--green); font-weight: 700; }
-h1 { font-size: clamp(2.1rem, 7vw, 3.4rem); letter-spacing: -0.02em; }
-h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); letter-spacing: -0.01em; }
+h1 { font-size: clamp(2.1rem, 7vw, 3.4rem); letter-spacing: 0; }
+h2 { font-size: clamp(1.5rem, 4vw, 2.1rem); letter-spacing: 0; }
 h3 { font-size: clamp(1.12rem, 2.6vw, 1.32rem); }
 p { color: var(--ink-2); }
-.wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad); }
 .eyebrow {
   font-size: 0.74rem; font-weight: 700; letter-spacing: 0.14em;
   text-transform: uppercase; color: var(--brass-2);
@@ -59,13 +60,16 @@ p { color: var(--ink-2); }
   border-bottom: var(--rule);
 }
 .site-header__in {
-  max-width: var(--maxw); margin: 0 auto; padding: 0.7rem var(--pad);
+  width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0.7rem var(--pad);
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
 }
-.brand { display: flex; align-items: center; gap: 0.55rem; text-decoration: none; color: var(--green); }
+.brand {
+  display: flex; align-items: center; gap: 0.55rem; text-decoration: none;
+  color: var(--green); white-space: nowrap;
+}
 .brand__mark { color: var(--green); display: flex; }
 .brand__name { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: 0.01em; }
-.site-nav { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; }
+.site-nav { display: flex; align-items: center; gap: 0.3rem; flex-wrap: wrap; min-width: 0; }
 .site-nav a {
   text-decoration: none; color: var(--ink-2); font-weight: 600;
   font-size: 0.92rem; padding: 0.4rem 0.6rem; border-radius: var(--radius-sm);
@@ -100,6 +104,7 @@ p { color: var(--ink-2); }
   display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(1.6rem, 4vw, 3rem);
   align-items: center;
 }
+.hero__grid > * { min-width: 0; }
 .hero__lead { font-size: 1.16rem; color: var(--ink-2); margin: 1rem 0 1.4rem; max-width: 38ch; }
 .hero h1 .accent { color: var(--brass-2); font-family: var(--display); font-style: italic; }
 .hero-note { font-size: 0.88rem; color: var(--ink-3); margin-top: 1rem; max-width: 46ch; }
@@ -119,6 +124,7 @@ p { color: var(--ink-2); }
   background: var(--green); color: var(--paper-2);
   border-radius: var(--radius); padding: clamp(1.3rem, 3vw, 1.9rem);
   box-shadow: var(--shadow);
+  max-width: 100%;
 }
 .jw__label { font-size: 0.74rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass-soft); font-weight: 700; }
 .jw__date { font-family: var(--display); font-size: clamp(1.5rem, 4vw, 2rem); color: var(--paper); margin: 0.2rem 0 0.9rem; }
@@ -223,8 +229,42 @@ section { padding: clamp(2.2rem, 5vw, 3.6rem) 0; }
 }
 
 @media (max-width: 760px) {
+  .site-header__in {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+  }
+  .site-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem;
+  }
+  .site-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.2;
+    min-height: 2.35rem;
+    padding: 0.48rem 0.5rem;
+    font-size: 0.88rem;
+  }
+  .site-nav__cta { grid-column: 1 / -1; }
   .hero__grid { grid-template-columns: 1fr; }
   .hero { padding-top: 1.8rem; }
+  .hero__lead { max-width: 100%; }
+  .jw__clock { gap: 0.35rem; }
+  .jw__unit { padding: 0.5rem 0.25rem; }
+  .jw__num { font-size: clamp(1.25rem, 8vw, 1.8rem); }
+  .jw__cap { font-size: 0.56rem; letter-spacing: 0.07em; }
+  .quick-answer { padding: 0.95rem 1rem; }
+  .city-link {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

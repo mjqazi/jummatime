@@ -1,7 +1,7 @@
 {
   "name": "Jumma Time — Find Jumma Near Me",
   "short_name": "Jumma Time",
-  "description": "Find Friday prayer (Jummah) times at the nearest masjid. Built for travelers.",
+  "description": "Find community-posted Jumma and Friday prayer times at nearby masjids.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

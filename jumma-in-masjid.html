@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0F2A1E" />
-  <title>Jumma in Masjid — Find the Friday Prayer Time at a Masjid Near You</title>
-  <meta name="description" content="Jumma in masjid: how the Friday prayer works at the masjid, why jamat times differ, and how to find the exact Jumma time at a masjid near you with the free Takbeer Time app." />
+  <title>Jumma in the Masjid: Find Friday Prayer Times Near You</title>
+  <meta name="description" content="Learn how Jumma works in the masjid, why Friday jamat times differ, and how to find current community-posted Jumma times near you with Takbeer Time." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="keywords" content="jumma in masjid, jumma masjid, jumma namaz in masjid, friday prayer in mosque, jummah in masjid, masjid jumma time, jamat time masjid" />
+  <meta name="author" content="Jumma Time" />
   <link rel="canonical" href="https://jummatime.com/jumma-in-masjid.html" />
   <link rel="alternate" hreflang="en" href="https://jummatime.com/jumma-in-masjid.html" />
   <link rel="alternate" hreflang="x-default" href="https://jummatime.com/jumma-in-masjid.html" />
@@ -16,16 +16,23 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="application-name" content="Jumma Time" />
   <meta name="google-play-app" content="app-id=com.takbeertime.android" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="article" />
   <meta property="og:site_name" content="Jumma Time" />
-  <meta property="og:title" content="Jumma in Masjid — Find the Friday Prayer Time at a Masjid Near You" />
-  <meta property="og:description" content="How Jumma works at the masjid, why jamat times differ, and how to find the exact time near you." />
+  <meta property="og:title" content="Jumma in the Masjid: Find Friday Prayer Times Near You" />
+  <meta property="og:description" content="How Jumma works at the masjid, why jamat times differ, and how to find current times near you." />
   <meta property="og:url" content="https://jummatime.com/jumma-in-masjid.html" />
-  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-icon-512.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Jumma in Masjid — Find the Friday Prayer Time Near You" />
-  <meta name="twitter:description" content="How Jumma works at the masjid and how to find the exact time near you." />
-  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-icon-512.png" />
+  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta property="og:image:secure_url" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jumma in the Masjid" />
+  <meta name="twitter:description" content="Find current Friday prayer times at nearby masjids." />
+  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta name="twitter:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -36,20 +43,118 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
-        "headline": "Jumma in Masjid — Find the Friday Prayer Time at a Masjid Near You",
-        "description": "An explainer on how Jumma is held in the masjid, why jamat times differ between masjids, and how to find the exact Jumma time near you.",
+        "@type": "Organization",
+        "@id": "https://jummatime.com/#organization",
+        "name": "Jumma Time",
+        "url": "https://jummatime.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jummatime.com/assets/brand/jummatime-icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://takbeertime.com/",
+          "https://play.google.com/store/apps/details?id=com.takbeertime.android"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jummatime.com/#website",
+        "url": "https://jummatime.com/",
+        "name": "Jumma Time",
+        "alternateName": [
+          "JummaTime",
+          "Jummah Time",
+          "Juma Time",
+          "Find Jumma Near Me"
+        ],
+        "description": "Find community-posted Jumma and Friday prayer times at nearby masjids.",
         "inLanguage": "en",
-        "mainEntityOfPage": "https://jummatime.com/jumma-in-masjid.html",
-        "author": { "@id": "https://jummatime.com/#organization" },
-        "publisher": { "@id": "https://jummatime.com/#organization" }
+        "publisher": {
+          "@id": "https://jummatime.com/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://jummatime.com/#app",
+        "name": "Takbeer Time",
+        "operatingSystem": "Android",
+        "applicationCategory": "LifestyleApplication",
+        "url": "https://play.google.com/store/apps/details?id=com.takbeertime.android",
+        "description": "Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, jamat, jamaat, and iqamah times.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://jummatime.com/jumma-in-masjid.html#primaryimage",
+        "url": "https://jummatime.com/assets/brand/jummatime-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "Jumma Time helps travelers find Friday prayer times at nearby masjids."
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://jummatime.com/jumma-in-masjid.html#webpage",
+        "url": "https://jummatime.com/jumma-in-masjid.html",
+        "name": "Jumma in the Masjid: Find Friday Prayer Times Near You",
+        "description": "Learn how Jumma works in the masjid, why Friday jamat times differ, and how to find current community-posted Jumma times near you with Takbeer Time.",
+        "isPartOf": {
+          "@id": "https://jummatime.com/#website"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#primaryimage"
+        },
+        "dateModified": "2026-05-14",
+        "inLanguage": "en",
+        "breadcrumb": {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#article"
+        }
+      },
+      {
+        "@type": "Article",
+        "headline": "Jumma in the Masjid: Find Friday Prayer Times Near You",
+        "description": "Learn how Jumma works in the masjid, why Friday jamat times differ, and how to find current community-posted Jumma times near you with Takbeer Time.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        "author": {
+          "@id": "https://jummatime.com/#organization"
+        },
+        "publisher": {
+          "@id": "https://jummatime.com/#organization"
+        },
+        "@id": "https://jummatime.com/jumma-in-masjid.html#article",
+        "image": {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#primaryimage"
+        },
+        "datePublished": "2026-05-14",
+        "dateModified": "2026-05-14"
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jummatime.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Jumma in the masjid" }
-        ]
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jummatime.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Jumma in the masjid"
+          }
+        ],
+        "@id": "https://jummatime.com/jumma-in-masjid.html#breadcrumb"
       },
       {
         "@type": "FAQPage",
@@ -57,19 +162,29 @@
           {
             "@type": "Question",
             "name": "How do I find the Jumma time at a masjid near me?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Use the free Takbeer Time app or the Find masjids near me button on Jumma Time. It shows masjids around you with the real, current Jumma jamat time for each one, posted by local timekeepers." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the free Takbeer Time app or the Find masjids near me button on Jumma Time. It shows masjids around you with the real, current Jumma jamat time for each one, posted by local timekeepers."
+            }
           },
           {
             "@type": "Question",
             "name": "Why do different masjids have different Jumma times?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Each masjid committee sets its own Jumma time within the valid window after midday, choosing a time that suits its community. Busy masjids also run two or three Jummah congregations, so times can vary widely even between nearby masjids." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each masjid committee sets its own Jumma time within the valid window after midday, choosing a time that suits its community. Busy masjids also run two or three Jummah congregations, so times can vary widely even between nearby masjids."
+            }
           },
           {
             "@type": "Question",
             "name": "What happens during Jumma in the masjid?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Worshippers gather before the adhan, the imam delivers the khutbah (sermon) in two parts, and then the congregation prays two rak'ah together. Arriving before the khutbah begins is strongly encouraged." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Worshippers gather before the adhan, the imam delivers the khutbah (sermon) in two parts, and then the congregation prays two rak'ah together. Arriving before the khutbah begins is strongly encouraged."
+            }
           }
-        ]
+        ],
+        "@id": "https://jummatime.com/jumma-in-masjid.html#faq"
       }
     ]
   }
@@ -115,7 +230,7 @@
           <h1>Jumma in the <span class="accent">masjid</span>.</h1>
           <p class="hero__lead">
             What to expect from Friday prayer at the masjid, why every masjid's jamat time is a little
-            different, and how to find the exact Jumma time at a masjid near you.
+            different, and how to find the current Jumma time at a masjid near you.
           </p>
           <div class="btn-row">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="im-hero" target="_blank" rel="noopener">Find masjid Jumma times</a>
@@ -146,7 +261,7 @@
             <strong>Jumma in the masjid</strong> is the Friday congregational prayer: worshippers gather before the
             adhan, the imam gives the <strong>khutbah</strong> (sermon), and the congregation prays
             <strong>two rak'ah</strong> together. Each masjid sets its own jamat time within the valid window after
-            midday — so times differ between masjids. To find the exact <strong>Jumma time at a masjid near you</strong>,
+            midday — so times differ between masjids. To find the current <strong>Jumma time at a masjid near you</strong>,
             use the free <strong>Takbeer Time</strong> app.
           </p>
         </div>
@@ -177,9 +292,9 @@
 
         <h2>How to find the Jumma time at a masjid near you</h2>
         <p>
-          The <strong>Takbeer Time</strong> app keeps masjid Jumma times accurate through the community itself —
+          The <strong>Takbeer Time</strong> app keeps masjid Jumma times current through the community itself —
           local worshippers and timekeepers post and update each masjid's time. Open the map, see the masjids
-          around you, and read the real Jumma jamat time for each. If a masjid you visit isn't listed, you can
+          around you, and read the current Jumma jamat time for each. If a masjid you visit is not listed, you can
           add it.
         </p>
         <div class="btn-row" style="margin-top:1.2rem">
@@ -196,7 +311,7 @@
         <div style="margin-top:1.2rem">
           <details>
             <summary>How do I find the Jumma time at a masjid near me?</summary>
-            <p>Use the free Takbeer Time app or the “Find masjids near me” button on this page. It shows masjids around you with the real, current Jumma jamat time for each one, posted by local timekeepers.</p>
+            <p>Use the free Takbeer Time app or the “Find masjids near me” button on this page. It shows masjids around you with current Jumma jamat times posted by local timekeepers.</p>
           </details>
           <details>
             <summary>Why do different masjids have different Jumma times?</summary>
@@ -215,7 +330,7 @@
         <div class="cta-band">
           <p class="eyebrow" style="color:var(--brass-soft)">Don't miss the first takbeer</p>
           <h2>Find Jumma at a masjid near you.</h2>
-          <p>Install Takbeer Time and see the real Friday prayer time at every masjid around you.</p>
+          <p>Install Takbeer Time and see current Friday prayer times at masjids around you.</p>
           <div class="btn-row">
             <a class="btn btn--brass" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="im-footer" target="_blank" rel="noopener">Install on Android</a>
             <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="https://takbeertime.com/" target="_blank" rel="noopener">Use the web app</a>
@@ -250,7 +365,7 @@
       </div>
     </div>
     <div class="wrap site-footer__legal">
-      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadqa fe sabilillah. Jumma times are crowd-sourced; always confirm with your local masjid.</p>
+      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadaqah fi sabilillah. Jumma times are community-posted; always confirm with your local masjid.</p>
     </div>
   </footer>
 </body>

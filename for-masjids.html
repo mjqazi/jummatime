@@ -4,10 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0F2A1E" />
-  <title>For Masjids &amp; Timekeepers — Publish Your Jumma Time | Jumma Time</title>
-  <meta name="description" content="Imams, committee members and timekeepers: publish your masjid's Jumma and daily jamat times so travelers and locals always see the correct time. Free, no ads — via the Takbeer Time app." />
+  <title>For Masjids: Publish Your Jumma and Jamat Times</title>
+  <meta name="description" content="Help travelers and locals find the right time. Publish your masjid's Jumma and daily jamat times for free in Takbeer Time, including multiple Jummah sessions." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="keywords" content="publish masjid jumma time, add masjid prayer times, masjid timekeeper, submit jamat times, masjid jumma time online, list my masjid" />
+  <meta name="author" content="Jumma Time" />
   <link rel="canonical" href="https://jummatime.com/for-masjids.html" />
   <link rel="alternate" hreflang="en" href="https://jummatime.com/for-masjids.html" />
   <link rel="alternate" hreflang="x-default" href="https://jummatime.com/for-masjids.html" />
@@ -16,16 +16,23 @@
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="application-name" content="Jumma Time" />
   <meta name="google-play-app" content="app-id=com.takbeertime.android" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Jumma Time" />
-  <meta property="og:title" content="For Masjids &amp; Timekeepers — Publish Your Jumma Time" />
-  <meta property="og:description" content="Publish your masjid's Jumma and daily jamat times so travelers and locals always see the correct time." />
+  <meta property="og:title" content="For Masjids: Publish Your Jumma and Jamat Times" />
+  <meta property="og:description" content="Publish your masjid's Jumma and daily jamat times so travelers and locals see the correct time." />
   <meta property="og:url" content="https://jummatime.com/for-masjids.html" />
-  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-icon-512.png" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="For Masjids &amp; Timekeepers — Publish Your Jumma Time" />
-  <meta name="twitter:description" content="Publish your masjid's Jumma and daily jamat times. Free, no ads." />
-  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-icon-512.png" />
+  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta property="og:image:secure_url" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="For Masjids: Publish Your Jumma Times" />
+  <meta name="twitter:description" content="Add your masjid's Jumma and jamat times for free in Takbeer Time." />
+  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
+  <meta name="twitter:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
@@ -36,19 +43,98 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://jummatime.com/#organization",
+        "name": "Jumma Time",
+        "url": "https://jummatime.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jummatime.com/assets/brand/jummatime-icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://takbeertime.com/",
+          "https://play.google.com/store/apps/details?id=com.takbeertime.android"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://jummatime.com/#website",
+        "url": "https://jummatime.com/",
+        "name": "Jumma Time",
+        "alternateName": [
+          "JummaTime",
+          "Jummah Time",
+          "Juma Time",
+          "Find Jumma Near Me"
+        ],
+        "description": "Find community-posted Jumma and Friday prayer times at nearby masjids.",
+        "inLanguage": "en",
+        "publisher": {
+          "@id": "https://jummatime.com/#organization"
+        }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://jummatime.com/#app",
+        "name": "Takbeer Time",
+        "operatingSystem": "Android",
+        "applicationCategory": "LifestyleApplication",
+        "url": "https://play.google.com/store/apps/details?id=com.takbeertime.android",
+        "description": "Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, jamat, jamaat, and iqamah times.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://jummatime.com/for-masjids.html#primaryimage",
+        "url": "https://jummatime.com/assets/brand/jummatime-og.png",
+        "width": 1200,
+        "height": 630,
+        "caption": "Jumma Time helps travelers find Friday prayer times at nearby masjids."
+      },
+      {
         "@type": "WebPage",
         "url": "https://jummatime.com/for-masjids.html",
-        "name": "For Masjids & Timekeepers — Publish Your Jumma Time",
+        "name": "For Masjids: Publish Your Jumma and Jamat Times",
         "about": "Publishing masjid Jumma and jamat times",
-        "isPartOf": { "@id": "https://jummatime.com/#website" },
-        "inLanguage": "en"
+        "isPartOf": {
+          "@id": "https://jummatime.com/#website"
+        },
+        "inLanguage": "en",
+        "@id": "https://jummatime.com/for-masjids.html#webpage",
+        "description": "Help travelers and locals find the right time. Publish your masjid's Jumma and daily jamat times for free in Takbeer Time, including multiple Jummah sessions.",
+        "primaryImageOfPage": {
+          "@id": "https://jummatime.com/for-masjids.html#primaryimage"
+        },
+        "dateModified": "2026-05-14",
+        "breadcrumb": {
+          "@id": "https://jummatime.com/for-masjids.html#breadcrumb"
+        },
+        "mainEntity": {
+          "@id": "https://jummatime.com/for-masjids.html#faq"
+        }
       },
       {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jummatime.com/" },
-          { "@type": "ListItem", "position": 2, "name": "For masjids & timekeepers" }
-        ]
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://jummatime.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "For masjids & timekeepers"
+          }
+        ],
+        "@id": "https://jummatime.com/for-masjids.html#breadcrumb"
       },
       {
         "@type": "FAQPage",
@@ -56,19 +142,29 @@
           {
             "@type": "Question",
             "name": "How do I publish my masjid's Jumma time?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Install the free Takbeer Time app, sign in, find or add your masjid, and submit its Jumma and daily jamat times. Once published, anyone searching for Jumma near them will see your masjid's correct time." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Install the free Takbeer Time app, sign in, find or add your masjid, and submit its Jumma and daily jamat times. Once published, anyone searching for Jumma near them will see your masjid's correct time."
+            }
           },
           {
             "@type": "Question",
             "name": "Can I add more than one Jummah congregation?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can add multiple Jummah times — Jummah 1, Jummah 2, Jummah 3 — so worshippers can pick the congregation they can reach." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can add multiple Jummah times — Jummah 1, Jummah 2, Jummah 3 — so worshippers can pick the congregation they can reach."
+            }
           },
           {
             "@type": "Question",
             "name": "Is it free for masjids?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Publishing and updating your masjid's times is completely free, with no ads. It is offered as sadqa fe sabilillah." }
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Publishing and updating your masjid's times is completely free, with no ads. It is offered as sadaqah fi sabilillah."
+            }
           }
-        ]
+        ],
+        "@id": "https://jummatime.com/for-masjids.html#faq"
       }
     ]
   }
@@ -111,16 +207,16 @@
       <div class="wrap hero__grid">
         <div>
           <p class="eyebrow">For imams, committees &amp; timekeepers</p>
-          <h1>Publish your masjid's <span class="accent">Jumma time</span>.</h1>
+          <h1>Publish your masjid's <span class="accent">Jumma and jamat times</span>.</h1>
           <p class="hero__lead">
             Every week, travelers and new residents search for Jumma near them. Make sure they find
-            <em>your</em> masjid — with the correct time — by publishing it yourself.
+            your masjid with the correct time before they start walking, driving, or booking a ride.
           </p>
           <div class="btn-row">
             <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="fm-hero" target="_blank" rel="noopener">Get the app &amp; add your masjid</a>
             <a class="btn btn--ghost" href="#how">How it works</a>
           </div>
-          <p class="hero-note">Free, no ads, sadqa fe sabilillah. You stay in control of your masjid's times.</p>
+          <p class="hero-note">Free, no ads, sadaqah fi sabilillah. You stay in control of your masjid's times.</p>
         </div>
         <aside class="jw" data-jummah-widget aria-label="Next Jummah countdown">
           <span class="jw__label">Next Jummah</span>
@@ -169,7 +265,7 @@
       <div class="wrap prose">
         <h2>Why publish your Jumma time?</h2>
         <ul>
-          <li><strong>Travelers find you.</strong> People searching “jumma near me” in your area see your masjid with the correct, current time — not an out-of-date guess.</li>
+          <li><strong>Travelers find you.</strong> People searching “jumma near me” in your area see your masjid with the correct, current time instead of an out-of-date guess.</li>
           <li><strong>Fewer wrong-time arrivals.</strong> Accurate times mean fewer people turning up after the khutbah or at the wrong masjid.</li>
           <li><strong>You stay in control.</strong> As a verified timekeeper, you manage your masjid's times and can review community-suggested corrections.</li>
           <li><strong>It's sadaqah jariyah.</strong> Every person who prays Jumma on time because of your update is ongoing reward, in shaa Allah.</li>
@@ -196,7 +292,7 @@
           </details>
           <details>
             <summary>Is it free for masjids?</summary>
-            <p>Yes. Publishing and updating your masjid's times is completely free, with no ads. It is offered as sadqa fe sabilillah.</p>
+            <p>Yes. Publishing and updating your masjid's times is completely free, with no ads. It is offered as sadaqah fi sabilillah.</p>
           </details>
         </div>
       </div>
@@ -207,7 +303,7 @@
         <div class="cta-band">
           <p class="eyebrow" style="color:var(--brass-soft)">Help your community &amp; every traveler</p>
           <h2>Add your masjid's Jumma time today.</h2>
-          <p>It takes a few minutes and helps every traveler and new resident find your masjid on time.</p>
+          <p>It takes a few minutes and helps travelers, new residents, and regular worshippers arrive on time.</p>
           <div class="btn-row">
             <a class="btn btn--brass" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="fm-footer" target="_blank" rel="noopener">Install on Android</a>
             <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="https://takbeertime.com/" target="_blank" rel="noopener">Use the web app</a>
@@ -242,7 +338,7 @@
       </div>
     </div>
     <div class="wrap site-footer__legal">
-      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadqa fe sabilillah. Jumma times are crowd-sourced; always confirm with your local masjid.</p>
+      <p>&copy; 2026 Jumma Time. A community project — free, no ads, sadaqah fi sabilillah. Jumma times are community-posted; always confirm with your local masjid.</p>
     </div>
   </footer>
 </body>
