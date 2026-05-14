@@ -1,0 +1,110 @@
+[
+  {
+    "slug": "london",
+    "name": "London",
+    "country": "United Kingdom",
+    "timezone": "GMT / BST",
+    "blurb": "London has hundreds of masjids, and most hold Jumma shortly after midday. Larger masjids in areas like East London, Tooting and Harrow often run two or three Jummah congregations to manage the crowds.",
+    "masjids": ["East London Mosque", "London Central Mosque (Regent's Park)", "Harrow Central Mosque"],
+    "tip": "Central London masjids fill up fast — aim to arrive 20–30 minutes before the khutbah."
+  },
+  {
+    "slug": "birmingham",
+    "name": "Birmingham",
+    "country": "United Kingdom",
+    "timezone": "GMT / BST",
+    "blurb": "Birmingham has one of the largest Muslim communities in the UK, with masjids across Small Heath, Sparkbrook and Aston. Jumma is typically held just after Dhuhr, with times shifting through the year.",
+    "masjids": ["Birmingham Central Mosque", "Green Lane Masjid", "Jame Masjid Birmingham"],
+    "tip": "Many Birmingham masjids hold a second Jummah — check both times in the app before you set out."
+  },
+  {
+    "slug": "manchester",
+    "name": "Manchester",
+    "country": "United Kingdom",
+    "timezone": "GMT / BST",
+    "blurb": "Greater Manchester has masjids spread across Rusholme, Cheetham Hill, Longsight and beyond. Most hold a single Jumma congregation shortly after midday.",
+    "masjids": ["Manchester Central Mosque (Victoria Park)", "Cheetham Hill Masjid", "Didsbury Mosque"],
+    "tip": "If you're near the universities, several masjids run a campus-friendly early Jummah."
+  },
+  {
+    "slug": "new-york",
+    "name": "New York City",
+    "country": "United States",
+    "timezone": "Eastern Time",
+    "blurb": "New York City has masjids in every borough, from Manhattan to Astoria, the Bronx and Brooklyn. Many city-centre masjids run multiple Jummah sessions to fit working crowds.",
+    "masjids": ["Islamic Cultural Center of New York", "Masjid Manhattan", "Muslim Community Center (Brooklyn)"],
+    "tip": "Midtown masjids may hold 1:00 PM and 2:00 PM Jummah sessions — pick whichever fits your schedule."
+  },
+  {
+    "slug": "chicago",
+    "name": "Chicago",
+    "country": "United States",
+    "timezone": "Central Time",
+    "blurb": "Chicago and its suburbs — Bridgeview, Rogers Park, Villa Park — have a long-established Muslim community with many masjids holding Jumma just after midday.",
+    "masjids": ["Mosque Foundation (Bridgeview)", "Downtown Islamic Center", "Muslim Community Center"],
+    "tip": "The Downtown Islamic Center is convenient if you're working or visiting the Loop on a Friday."
+  },
+  {
+    "slug": "houston",
+    "name": "Houston",
+    "country": "United States",
+    "timezone": "Central Time",
+    "blurb": "Houston has one of the fastest-growing Muslim populations in the US, with large masjids across Southwest Houston, Sugar Land and Katy. Many run multiple Jummah congregations.",
+    "masjids": ["ISGH Masjid Bilal", "Maryam Islamic Center", "Masjid Hamza"],
+    "tip": "Houston's larger Islamic centres often hold three Jummah sessions — the app shows each start time."
+  },
+  {
+    "slug": "los-angeles",
+    "name": "Los Angeles",
+    "country": "United States",
+    "timezone": "Pacific Time",
+    "blurb": "Greater Los Angeles has masjids spread from the Westside to the San Gabriel Valley and Orange County. Jumma is generally held shortly after midday.",
+    "masjids": ["Islamic Center of Southern California", "King Fahad Mosque (Culver City)", "Masjid Omar Ibn Al-Khattab"],
+    "tip": "LA traffic is unpredictable on Fridays — set a reminder and leave early."
+  },
+  {
+    "slug": "toronto",
+    "name": "Toronto",
+    "country": "Canada",
+    "timezone": "Eastern Time",
+    "blurb": "The Greater Toronto Area has masjids across Scarborough, Mississauga, North York and downtown. Many hold two or more Jummah congregations.",
+    "masjids": ["Jami Mosque", "TARIC Islamic Centre", "ISNA Canada (Mississauga)"],
+    "tip": "Downtown Toronto offices often have a nearby musalla — but full Jumma with khutbah is at the masjids listed in the app."
+  },
+  {
+    "slug": "dubai",
+    "name": "Dubai",
+    "country": "United Arab Emirates",
+    "timezone": "Gulf Standard Time",
+    "blurb": "Dubai has masjids in nearly every neighbourhood, and Jumma times are closely tied to the official Dhuhr time, which shifts through the year.",
+    "masjids": ["Jumeirah Mosque", "Al Farooq Omar Bin Al Khattab Mosque", "Grand Mosque (Bur Dubai)"],
+    "tip": "In Dubai the Jumma khutbah usually begins very close to the official Dhuhr time — check the exact minute in the app."
+  },
+  {
+    "slug": "sydney",
+    "name": "Sydney",
+    "country": "Australia",
+    "timezone": "Australian Eastern Time",
+    "blurb": "Sydney's masjids are concentrated in the west and south-west — Lakemba, Auburn, Bankstown — with others across the city. Most hold Jumma shortly after midday.",
+    "masjids": ["Lakemba Mosque", "Auburn Gallipoli Mosque", "Masjid Al-Hijrah (Tempe)"],
+    "tip": "Lakemba Mosque is one of the largest in the Southern Hemisphere — arrive early on Fridays."
+  },
+  {
+    "slug": "singapore",
+    "name": "Singapore",
+    "country": "Singapore",
+    "timezone": "Singapore Time",
+    "blurb": "Singapore's mosques are managed with MUIS oversight, and Jumma (Jumaat) is held across the island shortly after midday, often with two sessions at busier mosques.",
+    "masjids": ["Masjid Sultan", "Masjid Al-Falah (Orchard)", "Masjid Maarof"],
+    "tip": "City-centre mosques like Masjid Al-Falah are convenient if you're working near Orchard Road."
+  },
+  {
+    "slug": "kuala-lumpur",
+    "name": "Kuala Lumpur",
+    "country": "Malaysia",
+    "timezone": "Malaysia Time",
+    "blurb": "Kuala Lumpur has masjids throughout the city, and Jumma (Jumaat) is held shortly after midday. Larger masjids draw big congregations on Fridays.",
+    "masjids": ["Masjid Negara", "Masjid Jamek", "Masjid Wilayah Persekutuan"],
+    "tip": "Masjid Jamek is central and easy to reach by LRT if you're travelling through KL on a Friday."
+  }
+]

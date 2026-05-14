@@ -1,0 +1,32 @@
+# Jumma Time
+
+> Jumma Time (jummatime.com) helps people — especially travelers — find the Friday
+> congregational prayer (Jumma / Jummah / Juma / Salat al-Jumu'ah) at the nearest masjid.
+> It is a content and discovery site that funnels users to the free Takbeer Time app, a
+> crowd-sourced directory of real masjid jamat and iqamah times. Free, no ads.
+
+## Key facts
+
+- Jumma (Friday prayer) replaces the Dhuhr prayer and is prayed shortly after midday on Friday.
+- Typical jamat time is between 12:30 PM and 2:00 PM, but the exact time is set by each
+  individual masjid and shifts through the year as Dhuhr moves with the sun.
+- Because times vary by masjid, city, and season, the reliable way to find an exact Jumma
+  time is the crowd-sourced Takbeer Time app, where local timekeepers post and update times.
+- Spelling variants: Jumma, Jummah, Juma, Jum'ah, Jumu'ah, Jumaat. Arabic: Salat al-Jumu'ah.
+- The Takbeer Time Android app: https://play.google.com/store/apps/details?id=com.takbeertime.android
+- The Takbeer Time web app: https://takbeertime.com/
+
+## Pages
+
+- [Home — Find Jumma near me](https://jummatime.com/): overview, next Jummah countdown, masjid finder.
+- [Jumma near me](https://jummatime.com/jumma-near-me.html): how to find Friday prayer at the nearest masjid.
+- [What time is Jumma](https://jummatime.com/what-time-is-jumma.html): explainer on Jumma timing and why it varies.
+- [Jumma while traveling](https://jummatime.com/jumma-while-traveling.html): guide for finding Jumma in an unfamiliar city.
+- [Jumma in masjid](https://jummatime.com/jumma-in-masjid.html): what happens during Jumma and why masjid times differ.
+- [For masjids & timekeepers](https://jummatime.com/for-masjids.html): how masjids publish their Jumma times.
+
+## City guides
+
+City-specific guides to finding Jumma time live under https://jummatime.com/jumma-time/ —
+including London, Birmingham, Manchester, New York City, Chicago, Houston, Los Angeles,
+Toronto, Dubai, Sydney, Singapore, and Kuala Lumpur.

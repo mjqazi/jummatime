@@ -1,0 +1,19 @@
+{
+  "name": "Jumma Time — Find Jumma Near Me",
+  "short_name": "Jumma Time",
+  "description": "Find Friday prayer (Jummah) times at the nearest masjid. Built for travelers.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FDFAF3",
+  "theme_color": "#0F2A1E",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/brand/jummatime-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

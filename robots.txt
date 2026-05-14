@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /jumma-time/
+
+Disallow: /scripts/
+Disallow: /data/
+Disallow: /tasks/
+Disallow: /.git/
+Disallow: /docs/
+
+# AI search and answer engines are welcome.
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://jummatime.com/sitemap.xml

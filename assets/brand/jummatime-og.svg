@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Jumma Time social preview</title>
+  <desc id="desc">Find the next Jumma near you with community-posted Friday prayer times at nearby masjids.</desc>
+  <rect width="1200" height="630" fill="#0F2A1E"/>
+  <circle cx="1040" cy="94" r="210" fill="#1F3A2C"/>
+  <circle cx="112" cy="548" r="180" fill="#1F3A2C"/>
+  <rect x="72" y="72" width="1056" height="486" rx="32" fill="#FDFAF3"/>
+  <rect x="94" y="94" width="1012" height="442" rx="22" fill="#F5EFE0" stroke="#E5D2B0" stroke-width="2"/>
+  <g transform="translate(112 118) scale(4.125)" fill="none" stroke="#0F2A1E" stroke-linecap="round">
+    <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" stroke-width="1.6"/>
+    <path d="M7 28V17c0-5 4-8 9-8s9 3 9 8v11" stroke-width="1.8" stroke-linejoin="round"/>
+    <circle cx="16" cy="18" r="3.4" stroke-width="1.5"/>
+    <path d="M16 16.2v1.8l1.3 1" stroke-width="1.4"/>
+    <line x1="4" y1="28" x2="28" y2="28" stroke-width="1.6"/>
+    <line x1="5" y1="28" x2="5" y2="16" stroke-width="1.6"/>
+    <line x1="27" y1="28" x2="27" y2="16" stroke-width="1.6"/>
+  </g>
+  <text x="276" y="156" fill="#9C7639" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="5">JUMMA TIME</text>
+  <text x="112" y="346" fill="#0F2A1E" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="700">Find the next</text>
+  <text x="112" y="434" fill="#9C7639" font-family="Georgia, 'Times New Roman', serif" font-size="92" font-style="italic" font-weight="700">Jumma near you</text>
+  <text x="112" y="494" fill="#3F3D38" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="600">Community-posted Friday prayer times at nearby masjids.</text>
+  <rect x="838" y="128" width="226" height="64" rx="32" fill="#0F2A1E"/>
+  <text x="951" y="169" text-anchor="middle" fill="#FDFAF3" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Free app</text>
+</svg>
