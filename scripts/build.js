@@ -18,6 +18,7 @@ const ORG_ID = `${SITE}/#organization`;
 const WEBSITE_ID = `${SITE}/#website`;
 const ICON = `${SITE}/assets/brand/jummatime-icon-512.png`;
 const OG_IMAGE = `${SITE}/assets/brand/jummatime-og.png`;
+const GA_MEASUREMENT_ID = 'G-W9QBC0PLVN';
 
 const curatedCities = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cities.json'), 'utf8'));
 const priorityCitiesPath = path.join(ROOT, 'data', 'priority-cities.json');
@@ -578,6 +579,18 @@ function ogLocale(lang) {
 }
 
 /* ---------- shared fragments ---------- */
+function googleAnalyticsTag() {
+  return `  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  </script>`;
+}
+
 function head(opts) {
   const lang = opts.lang || 'en';
   const dir = opts.dir ? ` dir="${opts.dir}"` : '';
@@ -629,6 +642,7 @@ ${alternateLinks}
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/css/jummatime.css" />
   <script src="/js/jummatime.js" defer></script>
+${googleAnalyticsTag()}
   <script type="application/ld+json">
 ${JSON.stringify(opts.jsonld, null, 2)}
   </script>
@@ -1259,6 +1273,15 @@ function injectAlternateLinks(html, alternates) {
   return html.replace(re, `${canonical[0]}${alternateLinkHtml(alternates)}\n`);
 }
 
+function injectGoogleAnalytics(html) {
+  if (html.includes(GA_MEASUREMENT_ID)) return html;
+  const tag = `${googleAnalyticsTag()}\n`;
+  if (html.includes('  <script type="application/ld+json">')) {
+    return html.replace('  <script type="application/ld+json">', `${tag}  <script type="application/ld+json">`);
+  }
+  return html.replace('</head>', `${tag}</head>`);
+}
+
 const cityGridHtml = cities
   .map(
     (c) =>
@@ -1301,12 +1324,15 @@ const topPages = fs
 topPages.forEach((f) => {
   const p = path.join(ROOT, f);
   let html = fs.readFileSync(p, 'utf8');
-  if (html.indexOf('<!--CITYGRID-->') === -1 && html.indexOf('<!--FOOTERCITIES-->') === -1) return;
-  html = inject(html, 'CITYGRID', cityGridHtml);
-  html = inject(html, 'FOOTERCITIES', footerCitiesHtml);
+  const hasInjectableMarkers = html.indexOf('<!--CITYGRID-->') !== -1 || html.indexOf('<!--FOOTERCITIES-->') !== -1;
+  if (hasInjectableMarkers) {
+    html = inject(html, 'CITYGRID', cityGridHtml);
+    html = inject(html, 'FOOTERCITIES', footerCitiesHtml);
+  }
+  html = injectGoogleAnalytics(html);
   const pageKey = topPageKeyForFile(f);
   if (pageKey) html = injectAlternateLinks(html, topAlternates(pageKey));
-  console.log(`  ${writeIfChanged(p, html) ? 'injected city links into' : 'unchanged'} ${f}`);
+  console.log(`  ${writeIfChanged(p, html) ? 'updated' : 'unchanged'} ${f}`);
 });
 
 /* ---------- localized pages ---------- */
