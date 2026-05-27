@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "fa",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/fa/jumma-time/lahore.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/fa/jumma-time/lahore.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/fa/jumma-time/lahore.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/fa/jumma-time/lahore.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "خانه Jumma Time",
+          "item": "https://jummatime.com/fa/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "نماز جمعه نزدیک من",
+          "item": "https://jummatime.com/fa/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "زمان نماز جمعه / Jummah در Lahore",
+          "item": "https://jummatime.com/fa/jumma-time/lahore.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,136 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time را باز کنید و اجازه دسترسی به موقعیت مکانی بدهید تا مساجد نزدیک و زمان‌های ثبت‌شده را ببینید."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/fa/jumma-time/lahore.html#masjid-times",
+      "name": "Community-posted Jummah times in Lahore",
+      "description": "Masjids in Lahore, Pakistan with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 6,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Badshahi Mosque",
+            "url": "https://takbeertime.com/?mosque=1f122c11-e41b-4942-9a35-fe754e316337",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Badshahi Mosque",
+              "text": "Badshahi Mosque has community-posted Jummah time: 13:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Askari Heights Mosque, Sector B",
+            "url": "https://takbeertime.com/?mosque=2567180a-72e9-461f-ab9b-a4ba0f0421f5",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Askari Heights Mosque, Sector B",
+              "text": "Askari Heights Mosque, Sector B has community-posted Jummah time: 13:40.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Askari Heights Mosque, Sector B",
+            "url": "https://takbeertime.com/?mosque=c1093089-00e4-48f1-b54c-c8ef9f4feaf7",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Askari Heights Mosque, Sector B",
+              "text": "Askari Heights Mosque, Sector B has community-posted Jummah time: 13:40.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Mosque",
+            "name": "Jamia-Tul-Muntazar",
+            "url": "https://takbeertime.com/?mosque=2488bd33-ca3c-4ad5-a683-d4b774ca4031",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Jamia-Tul-Muntazar",
+              "text": "Jamia-Tul-Muntazar has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Mosque",
+            "name": "M Block Mosque",
+            "url": "https://takbeertime.com/?mosque=2959b891-61b5-4815-8992-0805d7f5a4e6",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for M Block Mosque",
+              "text": "M Block Mosque has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Mosque",
+            "name": "PCSIR Phase 1 Masjid",
+            "url": "https://takbeertime.com/?mosque=12092efc-299d-4f50-9e1a-f3d07b663c15",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Lahore",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for PCSIR Phase 1 Masjid",
+              "text": "PCSIR Phase 1 Masjid has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

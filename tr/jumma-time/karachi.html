@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "tr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/tr/jumma-time/karachi.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/tr/jumma-time/karachi.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/tr/jumma-time/karachi.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/tr/jumma-time/karachi.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jumma Time ana sayfa",
+          "item": "https://jummatime.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yakınımdaki cuma namazı",
+          "item": "https://jummatime.com/tr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Karachi cuma / Jummah saati",
+          "item": "https://jummatime.com/tr/jumma-time/karachi.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,176 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time'ı açın ve konuma izin vererek yakındaki camileri ve yerel cemaatin paylaştığı saatleri görün."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/tr/jumma-time/karachi.html#masjid-times",
+      "name": "Community-posted Jummah times in Karachi",
+      "description": "Masjids in Karachi, Pakistan with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 8,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Tooba Mosque",
+            "url": "https://takbeertime.com/?mosque=d2058442-6d85-4524-afab-a08bacb6efc6",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Tooba Mosque",
+              "text": "Tooba Mosque has community-posted Jummah time: 13:15.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Khair ul Bashr Mosque",
+            "url": "https://takbeertime.com/?mosque=867d7d9d-9614-4665-9ba7-a79f405c8626",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Khair ul Bashr Mosque",
+              "text": "Khair ul Bashr Mosque has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Farooq-e-Azam",
+            "url": "https://takbeertime.com/?mosque=6abdafac-63fd-4a03-8fc2-c9c476a5ff78",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Farooq-e-Azam",
+              "text": "Farooq-e-Azam has community-posted Jummah time: 14:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Mosque",
+            "name": "Qudsia Masjid",
+            "url": "https://takbeertime.com/?mosque=35163517-0793-4f73-ad06-d2876736011b",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Qudsia Masjid",
+              "text": "Qudsia Masjid has community-posted Jummah time: 13:50.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Mosque",
+            "name": "Abdul Aziz Masjid",
+            "url": "https://takbeertime.com/?mosque=0eb02333-0e58-4f98-bc4a-f5c018adfc9f",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Abdul Aziz Masjid",
+              "text": "Abdul Aziz Masjid has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Mosque",
+            "name": "Abu Ubaida",
+            "url": "https://takbeertime.com/?mosque=0be9e0aa-4f90-4595-a00a-8c599d4a7865",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Abu Ubaida",
+              "text": "Abu Ubaida has community-posted Jummah time: 13:05.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Mosque",
+            "name": "Aik Minara",
+            "url": "https://takbeertime.com/?mosque=51ad4fcf-4607-4d33-b838-a0c8dc9947f0",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Aik Minara",
+              "text": "Aik Minara has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Mosque",
+            "name": "Aisha Manzil mosque",
+            "url": "https://takbeertime.com/?mosque=3033e658-df49-4165-b689-9883ac8fdeb3",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Karachi",
+              "addressCountry": "Pakistan"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Aisha Manzil mosque",
+              "text": "Aisha Manzil mosque has community-posted Jummah time: 20:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

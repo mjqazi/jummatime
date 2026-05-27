@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "id",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/id/jumma-time/leeds.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/id/jumma-time/leeds.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/id/jumma-time/leeds.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/id/jumma-time/leeds.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda Jumma Time",
+          "item": "https://jummatime.com/id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Jumat dekat saya",
+          "item": "https://jummatime.com/id/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Waktu Jumat / Jummah di Leeds",
+          "item": "https://jummatime.com/id/jumma-time/leeds.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Buka Takbeer Time dan izinkan lokasi untuk melihat masjid terdekat serta jadwal yang dibagikan jemaah."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/id/jumma-time/leeds.html#masjid-times",
+      "name": "Community-posted Jummah times in Leeds",
+      "description": "Masjids in Leeds, United Kingdom with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Leeds Grand Mosque",
+            "url": "https://takbeertime.com/?mosque=3d557751-7c51-415c-aa76-cd6eba8b0e07",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Leeds",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Leeds Grand Mosque",
+              "text": "Leeds Grand Mosque has community-posted Jummah time: 13:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

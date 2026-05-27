@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -123,6 +156,7 @@
       "name": "Jumma / Jummah time in Saint Petersburg",
       "description": "Find community-posted Jumma and Jummah Friday prayer times at masjids in Saint Petersburg, Russia.",
       "about": "Finding Jumma and Jummah (Friday prayer) times at masjids in Saint Petersburg, Russia",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah, Jumma time in Saint Petersburg, Jummah time in Saint Petersburg, Friday prayer in Saint Petersburg, masjid times in Saint Petersburg",
       "isPartOf": {
         "@id": "https://jummatime.com/#website"
       },
@@ -136,6 +170,9 @@
       },
       "mainEntity": {
         "@id": "https://jummatime.com/jumma-time/saint-petersburg.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/jumma-time/saint-petersburg.html#masjid-times"
       }
     },
     {
@@ -157,7 +194,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Jummah time in Saint Petersburg"
+          "name": "Jummah time in Saint Petersburg",
+          "item": "https://jummatime.com/jumma-time/saint-petersburg.html"
         }
       ]
     },
@@ -179,6 +217,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in Saint Petersburg with current Jumma, Jummah, and jamat times posted by local timekeepers."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/jumma-time/saint-petersburg.html#masjid-times",
+      "name": "Community-posted Jummah times in Saint Petersburg",
+      "description": "Masjids in Saint Petersburg, Russia with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Wilmot Muslim Centre",
+            "url": "https://takbeertime.com/?mosque=740fd68c-1066-4834-b84c-5f18de132622",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Saint Petersburg",
+              "addressCountry": "Russia"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Wilmot Muslim Centre",
+              "text": "Wilmot Muslim Centre has community-posted Jummah times: 13:15, 14:15.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

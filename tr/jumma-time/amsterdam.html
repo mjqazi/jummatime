@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "tr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/tr/jumma-time/amsterdam.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/tr/jumma-time/amsterdam.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/tr/jumma-time/amsterdam.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/tr/jumma-time/amsterdam.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jumma Time ana sayfa",
+          "item": "https://jummatime.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yakınımdaki cuma namazı",
+          "item": "https://jummatime.com/tr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Amsterdam cuma / Jummah saati",
+          "item": "https://jummatime.com/tr/jumma-time/amsterdam.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,76 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time'ı açın ve konuma izin vererek yakındaki camileri ve yerel cemaatin paylaştığı saatleri görün."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/tr/jumma-time/amsterdam.html#masjid-times",
+      "name": "Community-posted Jummah times in Amsterdam",
+      "description": "Masjids in Amsterdam, Netherlands with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 3,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "IGMG Mevlana Moskee",
+            "url": "https://takbeertime.com/?mosque=7099dc0d-428e-40a8-ba2f-461704dac321",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Amsterdam",
+              "addressCountry": "Netherlands"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for IGMG Mevlana Moskee",
+              "text": "IGMG Mevlana Moskee has community-posted Jummah time: 13:42.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Moskee Al-Ihsane",
+            "url": "https://takbeertime.com/?mosque=43ef728a-4cf1-40cb-8c6d-1790f6b255db",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Amsterdam",
+              "addressCountry": "Netherlands"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Moskee Al-Ihsane",
+              "text": "Moskee Al-Ihsane has community-posted Jummah time: 13:38.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Moskee Badr",
+            "url": "https://takbeertime.com/?mosque=d33bd9b4-bbcf-40af-b603-c5fe70852da8",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Amsterdam",
+              "addressCountry": "Netherlands"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Moskee Badr",
+              "text": "Moskee Badr has community-posted Jummah time: 13:50.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

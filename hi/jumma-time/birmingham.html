@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "hi",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/hi/jumma-time/birmingham.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/hi/jumma-time/birmingham.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/hi/jumma-time/birmingham.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/hi/jumma-time/birmingham.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jumma Time होम",
+          "item": "https://jummatime.com/hi/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "मेरे पास जुमे की नमाज़",
+          "item": "https://jummatime.com/hi/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Birmingham में जुमा / Jummah समय",
+          "item": "https://jummatime.com/hi/jumma-time/birmingham.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,56 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time खोलें और स्थान की अनुमति दें ताकि नज़दीकी मस्जिदें और साझा किए गए समय दिखें।"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/hi/jumma-time/birmingham.html#masjid-times",
+      "name": "Community-posted Jummah times in Birmingham",
+      "description": "Masjids in Birmingham, United Kingdom with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 2,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Amanah Masjid",
+            "url": "https://takbeertime.com/?mosque=6e9a6459-0c1d-48e5-947d-b49c6029a750",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Birmingham",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Amanah Masjid",
+              "text": "Amanah Masjid has community-posted Jummah time: 13:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Faizan e Medina",
+            "url": "https://takbeertime.com/?mosque=1b78e3ee-36fb-42fd-8889-461eab03659a",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Birmingham",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Faizan e Medina",
+              "text": "Faizan e Medina has community-posted Jummah times: 13:30, 14:30, 16:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

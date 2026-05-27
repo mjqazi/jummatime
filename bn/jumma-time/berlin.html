@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "bn",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/bn/jumma-time/berlin.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/bn/jumma-time/berlin.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/bn/jumma-time/berlin.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/bn/jumma-time/berlin.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jumma Time হোম",
+          "item": "https://jummatime.com/bn/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "আমার কাছে জুমার নামাজ",
+          "item": "https://jummatime.com/bn/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Berlin-এ জুমা / Jummah সময়",
+          "item": "https://jummatime.com/bn/jumma-time/berlin.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,96 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time খুলুন এবং লোকেশন অনুমতি দিন, কাছের মসজিদ ও মুসুল্লিদের শেয়ার করা সময় দেখতে।"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/bn/jumma-time/berlin.html#masjid-times",
+      "name": "Community-posted Jummah times in Berlin",
+      "description": "Masjids in Berlin, Germany with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 4,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Ditib Berlin Yeni Cami",
+            "url": "https://takbeertime.com/?mosque=5b3aef39-4a02-43b1-b2f8-0d238a11694a",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Berlin",
+              "addressCountry": "Germany"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Ditib Berlin Yeni Cami",
+              "text": "Ditib Berlin Yeni Cami has community-posted Jummah time: 13:08.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Gazi Osman Pasa Moschee eV",
+            "url": "https://takbeertime.com/?mosque=b68d6a8d-44e9-4d50-ab0b-a5274a43e5bc",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Berlin",
+              "addressCountry": "Germany"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Gazi Osman Pasa Moschee eV",
+              "text": "Gazi Osman Pasa Moschee eV has community-posted Jummah time: 13:08.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mescidi Aksa Camii",
+            "url": "https://takbeertime.com/?mosque=1512c71e-0e8f-4599-9c0d-def5c48d43ba",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Berlin",
+              "addressCountry": "Germany"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mescidi Aksa Camii",
+              "text": "Mescidi Aksa Camii has community-posted Jummah time: 13:08.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Mosque",
+            "name": "Muradiye Camii - Türkisch-Islamischer Kulturverein e.V.",
+            "url": "https://takbeertime.com/?mosque=abc4d839-d3b1-49a6-a652-4a554b3e8361",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Berlin",
+              "addressCountry": "Germany"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Muradiye Camii - Türkisch-Islamischer Kulturverein e.V.",
+              "text": "Muradiye Camii - Türkisch-Islamischer Kulturverein e.V. has community-posted Jummah time: 13:08.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

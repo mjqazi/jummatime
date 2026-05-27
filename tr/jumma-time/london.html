@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "tr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/tr/jumma-time/london.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/tr/jumma-time/london.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/tr/jumma-time/london.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/tr/jumma-time/london.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jumma Time ana sayfa",
+          "item": "https://jummatime.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yakınımdaki cuma namazı",
+          "item": "https://jummatime.com/tr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "London cuma / Jummah saati",
+          "item": "https://jummatime.com/tr/jumma-time/london.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,176 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time'ı açın ve konuma izin vererek yakındaki camileri ve yerel cemaatin paylaştığı saatleri görün."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/tr/jumma-time/london.html#masjid-times",
+      "name": "Community-posted Jummah times in London",
+      "description": "Masjids in London, United Kingdom with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 8,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Al-Risaalah Mosque & Islington Islamic Centre",
+            "url": "https://takbeertime.com/?mosque=515f42ea-bc4c-4c36-a336-e11cee4d3671",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Al-Risaalah Mosque & Islington Islamic Centre",
+              "text": "Al-Risaalah Mosque & Islington Islamic Centre has community-posted Jummah times: 12:30, 13:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Finsbury Park Mosque",
+            "url": "https://takbeertime.com/?mosque=9d867e64-be78-4061-be84-1527d4fd5f25",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Finsbury Park Mosque",
+              "text": "Finsbury Park Mosque has community-posted Jummah time: 13:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Holloway Mosque",
+            "url": "https://takbeertime.com/?mosque=b81fe6c6-d2e9-4951-97cc-b0e0ba1d2a3a",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Holloway Mosque",
+              "text": "Holloway Mosque has community-posted Jummah times: 13:10, 13:50, 14:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "Mosque",
+            "name": "Masjid e Yusuf",
+            "url": "https://takbeertime.com/?mosque=d4ff8be5-cdf8-41f9-8514-e91f683f174f",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Masjid e Yusuf",
+              "text": "Masjid e Yusuf has community-posted Jummah times: 13:30, 14:15.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "Mosque",
+            "name": "Masjid Stratford",
+            "url": "https://takbeertime.com/?mosque=cc80d813-71dc-4c86-95bb-015d4e460088",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Masjid Stratford",
+              "text": "Masjid Stratford has community-posted Jummah time: 13:20.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mosque and Islamic Centre of Brent",
+            "url": "https://takbeertime.com/?mosque=5d7daf9a-66b7-468e-b3c9-957e4061d8e0",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mosque and Islamic Centre of Brent",
+              "text": "Mosque and Islamic Centre of Brent has community-posted Jummah time: 13:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "item": {
+            "@type": "Mosque",
+            "name": "Muslim Welfare House",
+            "url": "https://takbeertime.com/?mosque=00f13eb6-993a-453c-9631-6bdc2b51434a",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Muslim Welfare House",
+              "text": "Muslim Welfare House has community-posted Jummah time: 12:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "item": {
+            "@type": "Mosque",
+            "name": "Valide Sultan Mosque",
+            "url": "https://takbeertime.com/?mosque=68a75cfd-cc49-4aba-9df7-38ab2433cfef",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "London",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Valide Sultan Mosque",
+              "text": "Valide Sultan Mosque has community-posted Jummah time: 13:20.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

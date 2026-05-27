@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "ar",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/ar/jumma-time/new-york.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/ar/jumma-time/new-york.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/ar/jumma-time/new-york.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/ar/jumma-time/new-york.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الصفحة الرئيسية لـ Jumma Time",
+          "item": "https://jummatime.com/ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "صلاة الجمعة بالقرب مني",
+          "item": "https://jummatime.com/ar/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "أوقات صلاة الجمعة / Jummah في New York City",
+          "item": "https://jummatime.com/ar/jumma-time/new-york.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,76 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "افتح Takbeer Time واسمح بالوصول إلى الموقع لرؤية المساجد القريبة وأوقات صلاة الجمعة التي يشاركها المصلون."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/ar/jumma-time/new-york.html#masjid-times",
+      "name": "Community-posted Jummah times in New York City",
+      "description": "Masjids in New York City, United States with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 3,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Islamic Cultural Center of New York",
+            "url": "https://takbeertime.com/?mosque=78bf15e7-7460-4045-a25e-e67f307e8f73",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "New York City",
+              "addressCountry": "United States"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Islamic Cultural Center of New York",
+              "text": "Islamic Cultural Center of New York has community-posted Jummah times: 13:00, 13:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Masjid Malcolm Shabazz",
+            "url": "https://takbeertime.com/?mosque=bc934b98-2a43-414c-b4c2-eb9404b198d9",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "New York City",
+              "addressCountry": "United States"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Masjid Malcolm Shabazz",
+              "text": "Masjid Malcolm Shabazz has community-posted Jummah times: 12:00, 13:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Masjid Manhattan",
+            "url": "https://takbeertime.com/?mosque=23911e63-1671-4f75-90b1-c1336af8eedd",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "New York City",
+              "addressCountry": "United States"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Masjid Manhattan",
+              "text": "Masjid Manhattan has community-posted Jummah times: 13:00, 13:05.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -123,6 +156,7 @@
       "name": "Jumma / Jummah time in Marrakesh",
       "description": "Find community-posted Jumma and Jummah Friday prayer times at masjids in Marrakesh, Morocco.",
       "about": "Finding Jumma and Jummah (Friday prayer) times at masjids in Marrakesh, Morocco",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah, Jumma time in Marrakesh, Jummah time in Marrakesh, Friday prayer in Marrakesh, masjid times in Marrakesh",
       "isPartOf": {
         "@id": "https://jummatime.com/#website"
       },
@@ -136,6 +170,9 @@
       },
       "mainEntity": {
         "@id": "https://jummatime.com/jumma-time/marrakesh.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/jumma-time/marrakesh.html#masjid-times"
       }
     },
     {
@@ -157,7 +194,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Jummah time in Marrakesh"
+          "name": "Jummah time in Marrakesh",
+          "item": "https://jummatime.com/jumma-time/marrakesh.html"
         }
       ]
     },
@@ -179,6 +217,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in Marrakesh with current Jumma, Jummah, and jamat times posted by local timekeepers."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/jumma-time/marrakesh.html#masjid-times",
+      "name": "Community-posted Jummah times in Marrakesh",
+      "description": "Masjids in Marrakesh, Morocco with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mosque (OSM way 328962593)",
+            "url": "https://takbeertime.com/?mosque=78c3d910-da12-4ebb-bcf1-63bf44829131",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Marrakesh",
+              "addressCountry": "Morocco"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mosque (OSM way 328962593)",
+              "text": "Mosque (OSM way 328962593) has community-posted Jummah time: 13:33.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

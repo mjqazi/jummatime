@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -123,6 +156,7 @@
       "name": "Jumma / Jummah time in Brisbane",
       "description": "Find community-posted Jumma and Jummah Friday prayer times at masjids in Brisbane, Australia.",
       "about": "Finding Jumma and Jummah (Friday prayer) times at masjids in Brisbane, Australia",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah, Jumma time in Brisbane, Jummah time in Brisbane, Friday prayer in Brisbane, masjid times in Brisbane",
       "isPartOf": {
         "@id": "https://jummatime.com/#website"
       },
@@ -136,6 +170,9 @@
       },
       "mainEntity": {
         "@id": "https://jummatime.com/jumma-time/brisbane.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/jumma-time/brisbane.html#masjid-times"
       }
     },
     {
@@ -157,7 +194,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Jummah time in Brisbane"
+          "name": "Jummah time in Brisbane",
+          "item": "https://jummatime.com/jumma-time/brisbane.html"
         }
       ]
     },
@@ -179,6 +217,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in Brisbane with current Jumma, Jummah, and jamat times posted by local timekeepers."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/jumma-time/brisbane.html#masjid-times",
+      "name": "Community-posted Jummah times in Brisbane",
+      "description": "Masjids in Brisbane, Australia with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Moorooka Mosque",
+            "url": "https://takbeertime.com/?mosque=53ebd7cb-cbcf-4755-8f4c-f17447887430",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Brisbane",
+              "addressCountry": "Australia"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Moorooka Mosque",
+              "text": "Moorooka Mosque has community-posted Jummah time: 12:30.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

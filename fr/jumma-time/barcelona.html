@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "fr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/fr/jumma-time/barcelona.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/fr/jumma-time/barcelona.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/fr/jumma-time/barcelona.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/fr/jumma-time/barcelona.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil Jumma Time",
+          "item": "https://jummatime.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prière du vendredi près de moi",
+          "item": "https://jummatime.com/fr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Horaire de Jumu'a / Jummah à Barcelona",
+          "item": "https://jummatime.com/fr/jumma-time/barcelona.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ouvrez Takbeer Time et autorisez la localisation pour voir les mosquées à proximité et leurs horaires."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/fr/jumma-time/barcelona.html#masjid-times",
+      "name": "Community-posted Jummah times in Barcelona",
+      "description": "Masjids in Barcelona, Spain with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Centre Cultural Islàmic Català",
+            "url": "https://takbeertime.com/?mosque=a14f89a7-a4b8-4349-b957-4bdc56d8e236",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Barcelona",
+              "addressCountry": "Spain"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Centre Cultural Islàmic Català",
+              "text": "Centre Cultural Islàmic Català has community-posted Jummah time: 13:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

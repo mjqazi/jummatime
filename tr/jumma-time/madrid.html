@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "tr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/tr/jumma-time/madrid.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/tr/jumma-time/madrid.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/tr/jumma-time/madrid.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/tr/jumma-time/madrid.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jumma Time ana sayfa",
+          "item": "https://jummatime.com/tr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yakınımdaki cuma namazı",
+          "item": "https://jummatime.com/tr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Madrid cuma / Jummah saati",
+          "item": "https://jummatime.com/tr/jumma-time/madrid.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,56 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Takbeer Time'ı açın ve konuma izin vererek yakındaki camileri ve yerel cemaatin paylaştığı saatleri görün."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/tr/jumma-time/madrid.html#masjid-times",
+      "name": "Community-posted Jummah times in Madrid",
+      "description": "Masjids in Madrid, Spain with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 2,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Baitul Mukarram",
+            "url": "https://takbeertime.com/?mosque=4d2d13fc-1f4f-4720-a62b-b05483f68bf4",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Madrid",
+              "addressCountry": "Spain"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Baitul Mukarram",
+              "text": "Baitul Mukarram has community-posted Jummah times: 14:45, 15:45.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mezquita Central de Madrid",
+            "url": "https://takbeertime.com/?mosque=a54add83-501a-4fb7-b62d-2d3159d29899",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Madrid",
+              "addressCountry": "Spain"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mezquita Central de Madrid",
+              "text": "Mezquita Central de Madrid has community-posted Jummah time: 14:30.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

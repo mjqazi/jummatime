@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -123,6 +156,7 @@
       "name": "Jumma / Jummah time in Leeds",
       "description": "Find community-posted Jumma and Jummah Friday prayer times at masjids in Leeds, United Kingdom.",
       "about": "Finding Jumma and Jummah (Friday prayer) times at masjids in Leeds, United Kingdom",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah, Jumma time in Leeds, Jummah time in Leeds, Friday prayer in Leeds, masjid times in Leeds",
       "isPartOf": {
         "@id": "https://jummatime.com/#website"
       },
@@ -136,6 +170,9 @@
       },
       "mainEntity": {
         "@id": "https://jummatime.com/jumma-time/leeds.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/jumma-time/leeds.html#masjid-times"
       }
     },
     {
@@ -157,7 +194,8 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Jummah time in Leeds"
+          "name": "Jummah time in Leeds",
+          "item": "https://jummatime.com/jumma-time/leeds.html"
         }
       ]
     },
@@ -179,6 +217,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in Leeds with current Jumma, Jummah, and jamat times posted by local timekeepers."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/jumma-time/leeds.html#masjid-times",
+      "name": "Community-posted Jummah times in Leeds",
+      "description": "Masjids in Leeds, United Kingdom with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Leeds Grand Mosque",
+            "url": "https://takbeertime.com/?mosque=3d557751-7c51-415c-aa76-cd6eba8b0e07",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Leeds",
+              "addressCountry": "United Kingdom"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Leeds Grand Mosque",
+              "text": "Leeds Grand Mosque has community-posted Jummah time: 13:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

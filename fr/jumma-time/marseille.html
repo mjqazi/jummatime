@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "fr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/fr/jumma-time/marseille.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/fr/jumma-time/marseille.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/fr/jumma-time/marseille.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/fr/jumma-time/marseille.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil Jumma Time",
+          "item": "https://jummatime.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prière du vendredi près de moi",
+          "item": "https://jummatime.com/fr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Horaire de Jumu'a / Jummah à Marseille",
+          "item": "https://jummatime.com/fr/jumma-time/marseille.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,36 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ouvrez Takbeer Time et autorisez la localisation pour voir les mosquées à proximité et leurs horaires."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/fr/jumma-time/marseille.html#masjid-times",
+      "name": "Community-posted Jummah times in Marseille",
+      "description": "Masjids in Marseille, France with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 1,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mosqué El Imane",
+            "url": "https://takbeertime.com/?mosque=43651562-d360-4396-87aa-d1b3adf1e7c0",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Marseille",
+              "addressCountry": "France"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mosqué El Imane",
+              "text": "Mosqué El Imane has community-posted Jummah times: 11:00, 12:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

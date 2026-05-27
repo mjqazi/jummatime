@@ -19,6 +19,18 @@ const WEBSITE_ID = `${SITE}/#website`;
 const ICON = `${SITE}/assets/brand/jummatime-icon-512.png`;
 const OG_IMAGE = `${SITE}/assets/brand/jummatime-og.png`;
 const GA_MEASUREMENT_ID = 'G-W9QBC0PLVN';
+const SITE_KEYWORDS = [
+  'Jumma time',
+  'Jummah time',
+  'Juma time',
+  'Friday prayer time',
+  'Jummah near me',
+  'Jumma near me',
+  'masjid prayer times',
+  'jamat times',
+  'khutbah time',
+  'Salat al-Jumuah'
+];
 
 const curatedCities = JSON.parse(fs.readFileSync(path.join(ROOT, 'data', 'cities.json'), 'utf8'));
 const priorityCitiesPath = path.join(ROOT, 'data', 'priority-cities.json');
@@ -367,8 +379,18 @@ function websiteNode() {
     name: BRAND,
     alternateName: ['JummaTime', 'Jummah Time', 'Juma Time', 'Find Jumma Near Me', 'Find Jummah Near Me'],
     description: 'Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.',
+    keywords: SITE_KEYWORDS.join(', '),
     inLanguage: 'en',
-    publisher: { '@id': ORG_ID }
+    availableLanguage: LOCALES.map((locale) => locale.code),
+    publisher: { '@id': ORG_ID },
+    hasPart: [
+      { '@id': `${SITE}/#webpage` },
+      { '@id': `${SITE}/jumma-near-me.html#webpage` },
+      { '@id': `${SITE}/what-time-is-jumma.html#webpage` },
+      { '@id': `${SITE}/jumma-while-traveling.html#webpage` },
+      { '@id': `${SITE}/jumma-in-masjid.html#webpage` },
+      { '@id': `${SITE}/for-masjids.html#webpage` }
+    ]
   };
 }
 
@@ -394,6 +416,52 @@ function imageNode(id) {
     width: 1200,
     height: 630,
     caption: 'Jumma Time helps travelers find Friday prayer times at nearby masjids.'
+  };
+}
+
+function breadcrumbNode(id, items) {
+  return {
+    '@type': 'BreadcrumbList',
+    '@id': id,
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.item
+    }))
+  };
+}
+
+function cityMasjidItemListNode(c, url) {
+  const verified = verifiedMasjids(c);
+  if (!verified.length) return null;
+  return {
+    '@type': 'ItemList',
+    '@id': `${url}#masjid-times`,
+    name: `Community-posted Jummah times in ${c.name}`,
+    description: `Masjids in ${c.name}, ${c.country} with community-posted Jummah times surfaced by Takbeer Time.`,
+    numberOfItems: verified.length,
+    itemListOrder: 'https://schema.org/ItemListOrderAscending',
+    itemListElement: verified.map((m, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Mosque',
+        name: m.name,
+        url: m.sourceUrl,
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: c.name,
+          addressCountry: c.country
+        },
+        subjectOf: {
+          '@type': 'CreativeWork',
+          name: `Jummah times for ${m.name}`,
+          text: `${m.name} has community-posted Jummah time${m.jummahTimes.length > 1 ? 's' : ''}: ${masjidTimeText(m)}.`,
+          ...(m.lastChecked ? { dateModified: m.lastChecked } : {})
+        }
+      }
+    }))
   };
 }
 
@@ -843,7 +911,8 @@ function localizedFooter(locale, currentPath) {
 /* ---------- city page template ---------- */
 function cityPage(c) {
   const url = `${SITE}/jumma-time/${c.slug}.html`;
-  const jsonldGraph = jsonld([
+  const masjidListNode = cityMasjidItemListNode(c, url);
+  const jsonldNodes = [
     imageNode(`${url}#primaryimage`),
     {
       '@type': 'WebPage',
@@ -852,22 +921,25 @@ function cityPage(c) {
       name: `Jumma / Jummah time in ${c.name}`,
       description: `Find community-posted Jumma and Jummah Friday prayer times at masjids in ${c.name}, ${c.country}.`,
       about: `Finding Jumma and Jummah (Friday prayer) times at masjids in ${c.name}, ${c.country}`,
+      keywords: SITE_KEYWORDS.concat([
+        `Jumma time in ${c.name}`,
+        `Jummah time in ${c.name}`,
+        `Friday prayer in ${c.name}`,
+        `masjid times in ${c.name}`
+      ]).join(', '),
       isPartOf: { '@id': WEBSITE_ID },
       primaryImageOfPage: { '@id': `${url}#primaryimage` },
       dateModified: fileDate('data/cities.json'),
       inLanguage: 'en',
       breadcrumb: { '@id': `${url}#breadcrumb` },
-      mainEntity: { '@id': `${url}#faq` }
+      mainEntity: { '@id': `${url}#faq` },
+      ...(masjidListNode ? { hasPart: { '@id': `${url}#masjid-times` } } : {})
     },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-        { '@type': 'ListItem', position: 2, name: 'Jummah time by city', item: `${SITE}/jumma-near-me.html` },
-        { '@type': 'ListItem', position: 3, name: `Jummah time in ${c.name}` }
-      ]
-    },
+    breadcrumbNode(`${url}#breadcrumb`, [
+      { name: 'Home', item: `${SITE}/` },
+      { name: 'Jummah time by city', item: `${SITE}/jumma-near-me.html` },
+      { name: `Jummah time in ${c.name}`, item: url }
+    ]),
     {
       '@type': 'FAQPage',
       '@id': `${url}#faq`,
@@ -890,7 +962,9 @@ function cityPage(c) {
         }
       ]
     }
-  ]);
+  ];
+  if (masjidListNode) jsonldNodes.push(masjidListNode);
+  const jsonldGraph = jsonld(jsonldNodes);
 
   return `${head({
     title: `Jumma / Jummah Time in ${c.name}: Friday Prayer at Masjids | Jumma Time`,
@@ -1023,6 +1097,11 @@ const LOCALIZED_TOP_CONFIG = {
   forMasjids: { prefix: 'for', sectionId: 'for-masjids' }
 };
 
+function localizedTopPageName(pageKey, locale) {
+  const prefix = LOCALIZED_TOP_CONFIG[pageKey].prefix;
+  return locale[`${prefix}H1`] || locale[`${prefix}Title`];
+}
+
 function localizedTopPage(pageKey, locale) {
   const config = LOCALIZED_TOP_CONFIG[pageKey];
   const prefix = config.prefix;
@@ -1033,7 +1112,7 @@ function localizedTopPage(pageKey, locale) {
   const h1 = locale[`${prefix}H1`];
   const lead = locale[`${prefix}Lead`];
   const quick = locale[`${prefix}Quick`];
-  const jsonldGraph = jsonld([
+  const jsonldNodes = [
     imageNode(`${url}#primaryimage`),
     {
       '@type': 'WebPage',
@@ -1044,9 +1123,19 @@ function localizedTopPage(pageKey, locale) {
       isPartOf: { '@id': WEBSITE_ID },
       primaryImageOfPage: { '@id': `${url}#primaryimage` },
       dateModified: fileDate('data/locales.json'),
-      inLanguage: locale.code
+      inLanguage: locale.code,
+      ...(pageKey !== 'home' ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {})
     }
-  ]);
+  ];
+  if (pageKey !== 'home') {
+    jsonldNodes.push(
+      breadcrumbNode(`${url}#breadcrumb`, [
+        { name: locale.homeAria || 'Home', item: absoluteUrl(topPath('home', locale)) },
+        { name: localizedTopPageName(pageKey, locale), item: url }
+      ])
+    );
+  }
+  const jsonldGraph = jsonld(jsonldNodes);
 
   const cityBlock =
     pageKey === 'home' || pageKey === 'near' || pageKey === 'travel'
@@ -1142,7 +1231,8 @@ function localizedCityPage(c, locale) {
   const vars = cityVars(c, locale);
   const title = fill(locale.cityTitle, vars);
   const description = fill(locale.cityDesc, vars);
-  const jsonldGraph = jsonld([
+  const masjidListNode = cityMasjidItemListNode(c, url);
+  const jsonldNodes = [
     imageNode(`${url}#primaryimage`),
     {
       '@type': 'WebPage',
@@ -1155,8 +1245,15 @@ function localizedCityPage(c, locale) {
       primaryImageOfPage: { '@id': `${url}#primaryimage` },
       dateModified: fileDate('data/locales.json'),
       inLanguage: locale.code,
-      mainEntity: { '@id': `${url}#faq` }
+      breadcrumb: { '@id': `${url}#breadcrumb` },
+      mainEntity: { '@id': `${url}#faq` },
+      ...(masjidListNode ? { hasPart: { '@id': `${url}#masjid-times` } } : {})
     },
+    breadcrumbNode(`${url}#breadcrumb`, [
+      { name: locale.homeAria || 'Home', item: absoluteUrl(topPath('home', locale)) },
+      { name: locale.navNear, item: absoluteUrl(topPath('near', locale)) },
+      { name: fill(locale.cityH1, vars), item: url }
+    ]),
     {
       '@type': 'FAQPage',
       '@id': `${url}#faq`,
@@ -1173,7 +1270,9 @@ function localizedCityPage(c, locale) {
         }
       ]
     }
-  ]);
+  ];
+  if (masjidListNode) jsonldNodes.push(masjidListNode);
+  const jsonldGraph = jsonld(jsonldNodes);
 
   return `${head({
     title,

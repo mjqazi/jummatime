@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "id",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/id/jumma-time/paris.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/id/jumma-time/paris.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/id/jumma-time/paris.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/id/jumma-time/paris.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Beranda Jumma Time",
+          "item": "https://jummatime.com/id/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Jumat dekat saya",
+          "item": "https://jummatime.com/id/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Waktu Jumat / Jummah di Paris",
+          "item": "https://jummatime.com/id/jumma-time/paris.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,76 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Buka Takbeer Time dan izinkan lokasi untuk melihat masjid terdekat serta jadwal yang dibagikan jemaah."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/id/jumma-time/paris.html#masjid-times",
+      "name": "Community-posted Jummah times in Paris",
+      "description": "Masjids in Paris, France with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 3,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Grande Mosquée de Paris",
+            "url": "https://takbeertime.com/?mosque=76f13c70-3638-4642-b75f-0aec1f3f18ff",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paris",
+              "addressCountry": "France"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Grande Mosquée de Paris",
+              "text": "Grande Mosquée de Paris has community-posted Jummah times: 13:50, 14:30.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mosquée A Daawa",
+            "url": "https://takbeertime.com/?mosque=a5b710f9-8616-4310-a8ba-18d3c561b0f8",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paris",
+              "addressCountry": "France"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mosquée A Daawa",
+              "text": "Mosquée A Daawa has community-posted Jummah time: 13:47.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "Mosque",
+            "name": "Mosquée Nour",
+            "url": "https://takbeertime.com/?mosque=c6b30514-852e-4571-adbc-57ccd64643eb",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Paris",
+              "addressCountry": "France"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Mosquée Nour",
+              "text": "Mosquée Nour has community-posted Jummah time: 14:00.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]

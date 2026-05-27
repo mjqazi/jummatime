@@ -89,10 +89,43 @@
         "Find Jummah Near Me"
       ],
       "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
+      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
       "inLanguage": "en",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "bn",
+        "fa",
+        "fr",
+        "hi",
+        "id",
+        "ms",
+        "tr",
+        "ur"
+      ],
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      }
+      },
+      "hasPart": [
+        {
+          "@id": "https://jummatime.com/#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
+        },
+        {
+          "@id": "https://jummatime.com/for-masjids.html#webpage"
+        }
+      ]
     },
     {
       "@type": "SoftwareApplication",
@@ -131,9 +164,39 @@
       },
       "dateModified": "2026-05-27",
       "inLanguage": "fr",
+      "breadcrumb": {
+        "@id": "https://jummatime.com/fr/jumma-time/houston.html#breadcrumb"
+      },
       "mainEntity": {
         "@id": "https://jummatime.com/fr/jumma-time/houston.html#faq"
+      },
+      "hasPart": {
+        "@id": "https://jummatime.com/fr/jumma-time/houston.html#masjid-times"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://jummatime.com/fr/jumma-time/houston.html#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Accueil Jumma Time",
+          "item": "https://jummatime.com/fr/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Prière du vendredi près de moi",
+          "item": "https://jummatime.com/fr/jumma-near-me.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Horaire de Jumu'a / Jummah à Houston",
+          "item": "https://jummatime.com/fr/jumma-time/houston.html"
+        }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -153,6 +216,56 @@
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "Ouvrez Takbeer Time et autorisez la localisation pour voir les mosquées à proximité et leurs horaires."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://jummatime.com/fr/jumma-time/houston.html#masjid-times",
+      "name": "Community-posted Jummah times in Houston",
+      "description": "Masjids in Houston, United States with community-posted Jummah times surfaced by Takbeer Time.",
+      "numberOfItems": 2,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "Mosque",
+            "name": "Islamic Society of Greater Houston",
+            "url": "https://takbeertime.com/?mosque=9ad4bc4c-c6f9-4c96-8e78-fbac7bc5995e",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Houston",
+              "addressCountry": "United States"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Islamic Society of Greater Houston",
+              "text": "Islamic Society of Greater Houston has community-posted Jummah time: 16:00.",
+              "dateModified": "2026-05-14"
+            }
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "Mosque",
+            "name": "Masjid Khulafa’a Rashideen",
+            "url": "https://takbeertime.com/?mosque=0e79e4fd-7f8e-4f7e-8a24-49b38542dfad",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Houston",
+              "addressCountry": "United States"
+            },
+            "subjectOf": {
+              "@type": "CreativeWork",
+              "name": "Jummah times for Masjid Khulafa’a Rashideen",
+              "text": "Masjid Khulafa’a Rashideen has community-posted Jummah times: 13:20, 13:40, 14:10.",
+              "dateModified": "2026-05-14"
+            }
           }
         }
       ]
