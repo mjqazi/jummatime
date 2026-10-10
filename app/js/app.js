@@ -4354,6 +4354,7 @@
     const updatedDays = daysSince(m.effectiveKeeperUpdatedAt || effectiveKeeper?.updatedAt || effectiveKeeper?.submittedAt || effectiveKeeper?.latestSubmittedAt);
     if (timings) {
       R.renderTimingsTable(timings).forEach(row => drawerEls.times.appendChild(row));
+      paintDrawerJummah(m, timings, updatedDays);
       timesTable.style.display = '';
       if (timesEmpty) timesEmpty.hidden = true;
       if (drawerEls.timesUpdated) {
@@ -4393,6 +4394,7 @@
       if (credit) credit.hidden = true;
       credit?.classList.remove('is-stale');
       if (drawerEls.timesUpdated) drawerEls.timesUpdated.hidden = true;
+      paintDrawerJummah(m, null, null);
       if (drawerEls.stalePill) drawerEls.stalePill.hidden = true;
     }
 
@@ -5606,6 +5608,73 @@
     });
     R.clearScanSourceMarker(drawerEls.submitForm);
     scanState = null;
+  }
+
+
+  // ─── Drawer: Jummah block ───
+  // Sessions large at the top of the drawer, freshness under them, then the
+  // two follow-on actions. Reuses the same handlers as the drawer's action
+  // list (directions → openNavigation, reminder → hero bell panel) so there
+  // is one behaviour, not two.
+  function paintDrawerJummah(m, timings, updatedDays) {
+    const wrap = document.getElementById('drawer-jummah');
+    const missing = document.getElementById('drawer-jummah-missing');
+    if (!wrap || !missing) return;
+    const sessions = timings ? R.jummahTimesForTimings(timings) : [];
+    const isClosed = m?.status === 'closed';
+    if (isClosed || !m) { wrap.hidden = true; missing.hidden = true; return; }
+    if (!sessions.length) {
+      wrap.hidden = true;
+      missing.hidden = false;
+      const add = document.getElementById('drawer-jummah-add');
+      if (add) add.onclick = () => openSubmitForm({ scroll: true, focusPrayer: 'jummah' });
+      return;
+    }
+    missing.hidden = true;
+    wrap.hidden = false;
+    const list = document.getElementById('drawer-jummah-sessions');
+    list.innerHTML = '';
+    const next = R.computeNextJummah ? R.computeNextJummah(timings) : null;
+    sessions.forEach((row, i) => {
+      const item = document.createElement('div');
+      item.className = 'drawer-jummah__session' + (next && next.key === row.key && sessions.length > 1 ? ' is-next' : '');
+      const t = document.createElement('strong');
+      t.className = 'drawer-jummah__time';
+      t.textContent = R.fmt12(row.time);
+      item.appendChild(t);
+      if (sessions.length > 1) {
+        const l = document.createElement('span');
+        l.className = 'drawer-jummah__session-label';
+        l.textContent = window.i18n?.t(`prayer.${row.key}`) ?? row.label;
+        item.appendChild(l);
+      }
+      list.appendChild(item);
+    });
+    const fresh = document.getElementById('drawer-jummah-fresh');
+    if (fresh) {
+      if (updatedDays == null || updatedDays < 30) { fresh.hidden = true; }
+      else {
+        fresh.hidden = false;
+        fresh.classList.toggle('is-stale', updatedDays >= 90);
+        fresh.textContent = updatedDays >= 90
+          ? (window.i18n?.t('card.staleDays', { n: updatedDays }) ?? `updated ${updatedDays} days ago · check before you go`)
+          : (window.i18n?.t('card.updatedDays', { n: updatedDays }) ?? `updated ${updatedDays} days ago`);
+      }
+    }
+    const dir = document.getElementById('drawer-jummah-directions');
+    if (dir) {
+      dir.hidden = !R.hasCoordinates(m);
+      dir.onclick = () => openNavigation(m);
+    }
+    const remind = document.getElementById('drawer-jummah-remind');
+    if (remind) {
+      remind.onclick = () => {
+        // Make this masjid the one reminders follow, then open the bell panel.
+        if (effectiveDefaultMosqueId() !== m.id) drawerEls.setDefaultBtn?.click();
+        closeDrawerInternal();
+        setTimeout(() => document.getElementById('next-bell')?.click(), 250);
+      };
+    }
   }
 
   // ─── Toast ───

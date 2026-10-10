@@ -52,7 +52,7 @@
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/jamat.css?v=86">
-  <link rel="stylesheet" href="css/jumma.css?v=3">
+  <link rel="stylesheet" href="css/jumma.css?v=4">
   <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
@@ -171,7 +171,7 @@
       <!-- Compact top: kicker + WhatsApp share glyph on one row, headline
            full-width beneath (owner: simple logo, less vertical space). -->
       <div class="hero-top-row">
-        <h1 class="headline" id="hero-headline" data-i18n="hero.headlineHtml:html">জুমার সময়</h1>
+        <h1 class="headline headline--compact" id="hero-headline" data-i18n="hero.headlineHtml:html">জুমার সময়</h1>
         <button class="share-app-btn hero-share-btn" id="share-app-btn" type="button" data-i18n-aria-label="share.aria" data-i18n-title="share.button" title="শেয়ার করুন" aria-label="JummaTime শেয়ার করুন">
           <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.23 3.7 8.23 8.24 0 4.54-3.7 8.23-8.23 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01" fill="currentColor"></path></svg>
           <span class="visually-hidden" data-i18n="share.button">শেয়ার করুন</span>
@@ -534,6 +534,26 @@
         </div>
       </header>
 
+      <!-- The one thing a JummaTime visitor opened this masjid for: the
+           Friday sessions, large, with freshness and the two actions that
+           follow (directions, Friday reminder). Painted by paintDrawerJummah. -->
+      <section class="drawer-jummah" id="drawer-jummah" hidden="">
+        <p class="drawer-jummah__label" data-i18n="drawer.jummahLabel">জুমা</p>
+        <div class="drawer-jummah__sessions" id="drawer-jummah-sessions"></div>
+        <p class="drawer-jummah__fresh" id="drawer-jummah-fresh" hidden=""></p>
+        <div class="drawer-jummah__actions">
+          <button class="btn btn--primary" id="drawer-jummah-directions" type="button" hidden="">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 2 4 21l8-4 8 4-8-19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M12 2v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
+            <span data-i18n="nav.navigate">যাওয়ার পথ</span>
+          </button>
+          <button class="btn btn--ghost" id="drawer-jummah-remind" type="button" data-i18n="drawer.jummahRemind">শুক্রবারে মনে করিয়ে দিন</button>
+        </div>
+      </section>
+      <section class="drawer-jummah drawer-jummah--missing" id="drawer-jummah-missing" hidden="">
+        <p class="drawer-jummah__label" data-i18n="drawer.jummahLabel">জুমা</p>
+        <p class="drawer-jummah__none" data-i18n="drawer.jummahMissing">জুমার সময় এখনও যোগ করা হয়নি।</p>
+        <button class="btn btn--primary" id="drawer-jummah-add" type="button" data-i18n="drawer.jummahAdd">জুমার সময় যোগ করুন</button>
+      </section>
       <section id="drawer-times-section">
         <div class="drawer-times-head">
           <h3 class="section-title" data-i18n="drawer.today">আজকের জামাত</h3>
@@ -990,14 +1010,14 @@
   <script src="js/auth-exchange.js?v=1"></script>
   <script type="module" src="js/auth.js"></script>
   <script src="js/state.js?v=2"></script>
-  <script src="js/i18n.js?v=71"></script>
+  <script src="js/i18n.js?v=72"></script>
   <script src="js/sun.js?v=36"></script>
   <script src="js/timetable-reader.js?v=4"></script>
   <script src="js/timetable-capture.js?v=1"></script>
   <script src="js/api.js?v=47"></script>
-  <script src="js/components.js?v=57"></script>
+  <script src="js/components.js?v=58"></script>
   <script src="js/reminders.js?v=37"></script>
-  <script src="js/app.js?v=84"></script>
+  <script src="js/app.js?v=85"></script>
   <script src="js/delete-account.js?v=1"></script>
 
 

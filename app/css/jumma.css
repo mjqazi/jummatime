@@ -76,3 +76,49 @@ body { background-image: none; }
 /* Schedule age on directory cards (see renderCardFreshness). */
 .card__fresh { font-size: 0.7rem; color: var(--ink-4); letter-spacing: 0; text-transform: none; margin-top: 0.15rem; }
 .card__fresh--stale { color: #9b5a1e; }
+
+/* ── Drawer: Jummah block (the reason the masjid was opened) ── */
+.drawer-jummah {
+  margin: 0 0 1rem;
+  padding: 0.9rem 1rem 1rem;
+  border: 1px solid var(--paper-3);
+  border-radius: var(--radius);
+  background: var(--paper-2);
+}
+.drawer-jummah__label {
+  margin: 0 0 0.35rem;
+  font: 800 0.66rem/1.2 var(--ui);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--green);
+}
+.drawer-jummah__sessions { display: flex; flex-wrap: wrap; gap: 0.4rem 1.25rem; align-items: baseline; }
+.drawer-jummah__session { display: flex; flex-direction: column; gap: 0.1rem; }
+.drawer-jummah__time { font-family: var(--mono); font-size: 2rem; line-height: 1.1; color: var(--ink); font-weight: 700; }
+.drawer-jummah__session-label { font-size: 0.72rem; color: var(--ink-4); }
+.drawer-jummah__session.is-next .drawer-jummah__time { color: var(--green); }
+.drawer-jummah__fresh { margin: 0.45rem 0 0; font-size: 0.74rem; color: var(--ink-4); }
+.drawer-jummah__fresh.is-stale { color: #9b5a1e; }
+.drawer-jummah__none { margin: 0 0 0.6rem; color: var(--ink-2); }
+.drawer-jummah__actions { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
+.drawer-jummah__actions .btn { min-height: 40px; }
+/* The Jummah block owns the head's wayfinding; the keeper credit is a
+   detail now, so it reads as one. */
+.keeper-credit { margin-top: 0.6rem; }
+
+/* ── First screen: let the locate button be the hero ── */
+.headline--compact { font-size: 1.25rem; line-height: 1.3; color: var(--ink-2); font-weight: 600; }
+.hero-top-row { margin-bottom: 0.5rem; }
+.hero { padding-top: 0.8rem; }
+.sun-tools { padding: 0.35rem 0; }
+.daily-times summary, .sun-tools summary { font-size: 0.82rem; color: var(--ink-4); }
+@media (max-width: 600px) { .headline--compact { font-size: 1.1rem; } }
+
+/* ── Directory cards: tighter, so four fit a phone screen ── */
+.card { padding: 0.75rem 0.85rem 0.7rem; row-gap: 0.35rem; }
+.card__name { font-size: 1rem; line-height: 1.3; }
+.card__addr { font-size: 0.8rem; }
+.card__meta { margin-top: 0.3rem; }
+.card__actions { margin-top: 0.3rem; }
+.card__navigate, .card__set-default { min-height: 36px; font-size: 0.82rem; }
+.card__jummah-time { font-size: 1.05rem; line-height: 1.3; }

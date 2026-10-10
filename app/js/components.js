@@ -1536,7 +1536,7 @@ window.JAMAT_RENDER = {
   shouldTryBracket, chooseScanResult, scanHasAnyReading,
   buildScanSubmissionExtras, clearScanSourceMarker,
   el, renderCard, renderTimingsTable, renderAmenities, renderKeeper,
-  computeNextPrayer, computeNextJummah, clockParts, fmtDistance, fmt12, timingsFromMosque,
+  computeNextPrayer, computeNextJummah, clockParts, fmtDistance, fmt12, timingsFromMosque, hasCoordinates,
   normalizePrayerTime, normalizeSubmittedPrayerTime, defaultSubmittedPrayerTime, timingForPrayer,
   jummahTimesForTimings, orderedTimingKeysForDate, scheduleAgeDays, renderCardFreshness,
   prettifyMosqueName, prettifyPersonName, isPlaceholderField, isTestFixture,

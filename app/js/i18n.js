@@ -192,6 +192,10 @@ window.i18n = (() => {
 
     'quick.locate': 'Jummah near me',
     'card.updatedDays': 'updated {n} days ago',
+    'drawer.jummahLabel': 'Jummah',
+    'drawer.jummahRemind': 'Remind me on Friday',
+    'drawer.jummahMissing': 'No Jummah time added yet.',
+    'drawer.jummahAdd': 'Add the Jummah time',
     'card.staleDays': 'updated {n} days ago · check before you go',
     'quick.openMap': 'Open map',
 
