@@ -15,12 +15,18 @@ const { JSDOM } = appRequire('jsdom');
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://jummatime.com';
 const PLAY = 'https://play.google.com/store/apps/details?id=com.jummatime.android';
+/* Official Google Play badges (self-hosted copies of play.google.com/intl/en_us/badges). */
+const PLAY_BADGE_ALT = {"en":"Get it on Google Play","ar":"احصل عليه من Google Play","bn":"Google Play থেকে ডাউনলোড করুন","fa":"دریافت از Google Play","fr":"Disponible sur Google Play","hi":"Google Play पर पाएं","id":"Temukan di Google Play","ms":"Dapatkan di Google Play","tr":"Google Play'den alın","ur":"Google Play سے حاصل کریں"};
+function playBadge(lang, where) {
+  const l = PLAY_BADGE_ALT[lang] ? lang : 'en';
+  return `<a class="play-badge" href="${PLAY}" data-play="${where}" target="_blank" rel="noopener"><img src="/assets/badges/google-play-${l}.png" width="166" height="64" alt="${PLAY_BADGE_ALT[l]}" decoding="async" /></a>`;
+}
 const WEBAPP = 'https://jummatime.com/app/';
 const BRAND = 'Jumma Time';
 const ORG_ID = `${SITE}/#organization`;
 const WEBSITE_ID = `${SITE}/#website`;
 const ICON = `${SITE}/assets/brand/jummatime-icon-512.png`;
-const OG_IMAGE = `${SITE}/assets/brand/jummatime-og.png`;
+const OG_IMAGE = `${SITE}/assets/brand/jummatime-og.png?v=3`;
 const GA_MEASUREMENT_ID = 'G-W9QBC0PLVN';
 const SITE_KEYWORDS = [
   'Jumma time',
@@ -731,8 +737,11 @@ function head(opts) {
   <meta name="author" content="${BRAND}" />
   <link rel="canonical" href="${opts.url}" />
 ${alternateLinks}
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/brand/jummatime-icon-512.png" />
-  <link rel="apple-touch-icon" href="/assets/brand/jummatime-icon-512.png" />
+  <link rel="icon" href="/favicon.ico?v=3" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="/assets/brand/jummatime-icon.svg?v=3" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png?v=3" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/brand/jummatime-icon-192.png?v=3" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png?v=3" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="application-name" content="Jumma Time" />
   <meta name="google-play-app" content="app-id=com.jummatime.android" />
@@ -756,7 +765,7 @@ ${alternateLinks}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/jummatime.css?v=2" />
+  <link rel="stylesheet" href="/css/jummatime.css?v=3" />
   <script src="/js/jummatime.js" defer></script>
 ${googleAnalyticsTag()}
   <script type="application/ld+json">
@@ -770,17 +779,7 @@ const HEADER = `<body>
   <header class="site-header">
     <div class="site-header__in">
       <a class="brand" href="/" aria-label="Jumma Time home">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M7 28V17c0-5 4-8 9-8s9 3 9 8v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <circle cx="16" cy="18" r="3.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16 16.2v1.8l1.3 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="4" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="5" y1="28" x2="5" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="27" y1="28" x2="27" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </span>
+        <span class="brand__mark" aria-hidden="true"><img src="/assets/brand/jummatime-icon.svg?v=3" width="32" height="32" alt="" decoding="async" /></span>
         <span class="brand__name">Jumma Time</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -861,17 +860,7 @@ function localizedHeader(locale, activeKey) {
   <header class="site-header">
     <div class="site-header__in">
       <a class="brand" href="${topPath('home', locale)}" aria-label="${esc(locale.homeAria || EN_LOCALE.homeAria)}">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M7 28V17c0-5 4-8 9-8s9 3 9 8v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <circle cx="16" cy="18" r="3.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16 16.2v1.8l1.3 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="4" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="5" y1="28" x2="5" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="27" y1="28" x2="27" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-          </svg>
-        </span>
+        <span class="brand__mark" aria-hidden="true"><img src="/assets/brand/jummatime-icon.svg?v=3" width="32" height="32" alt="" decoding="async" /></span>
         <span class="brand__name">Jumma Time</span>
       </a>
       <nav class="site-nav" aria-label="${esc(locale.primaryNavLabel || EN_LOCALE.primaryNavLabel)}">
@@ -1041,7 +1030,7 @@ ${HEADER}
           ${heroAnswerStrip(c)}
           <div class="btn-row">
             <a class="btn btn--primary" href="${WEBAPP}" data-webapp="city-hero">Jummah near me</a>
-            <a class="btn btn--ghost" href="${PLAY}" data-play="city-hero" target="_blank" rel="noopener">Get the Android app</a>
+            ${playBadge('en', 'city-hero')}
           </div>
           <p class="hero-note">Free, no ads. Times are posted by local worshippers and masjid timekeepers; confirm with the masjid before you set out.</p>
         </div>
@@ -1081,7 +1070,7 @@ ${HEADER}
         ${cityMasjidSection(c)}
         <div class="btn-row" style="margin-top:1.2rem">
           <a class="btn btn--primary" href="${WEBAPP}" data-webapp="city-masjids">Find every masjid in ${esc(c.name)}</a>
-          <a class="btn btn--ghost" href="${PLAY}" data-play="city-masjids" target="_blank" rel="noopener">Get the Android app</a>
+          ${playBadge('en', 'city-masjids')}
         </div>
       </div>
     </section>
@@ -1114,7 +1103,7 @@ ${HEADER}
           <h2>Find your next Jummah in ${esc(c.name)}.</h2>
           <p>Install JummaTime, compare nearby masjids, and stop guessing the Friday prayer time.</p>
           <div class="btn-row">
-            <a class="btn btn--brass" href="${PLAY}" data-play="city-footer" target="_blank" rel="noopener">Install on Android</a>
+            ${playBadge('en', 'city-footer')}
             <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="${WEBAPP}" target="_blank" rel="noopener">Use the web app</a>
           </div>
           <p style="margin-top:1rem;font-size:0.9rem;color:#b9c9bd">
@@ -1215,7 +1204,7 @@ ${localizedHeader(locale, pageKey)}
           <h1>${esc(h1)}</h1>
           <p class="hero__lead">${esc(lead)}</p>
           <div class="btn-row">
-            <a class="btn btn--primary" href="${PLAY}" data-play="${pageKey}-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+            ${playBadge(locale.code, `${pageKey}-${locale.code}`)}
             <a class="btn btn--ghost" href="${topPath('near', locale)}">${esc(locale.navNear)}</a>
           </div>
         </div>
@@ -1237,7 +1226,7 @@ ${localizedHeader(locale, pageKey)}
         <h2>${esc(locale.bodyTitle)}</h2>
         <p>${esc(locale.body)}</p>
         <div class="btn-row" style="margin-top:1.2rem">
-          <a class="btn btn--primary" href="${PLAY}" data-play="${pageKey}-body-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+          ${playBadge(locale.code, `${pageKey}-body-${locale.code}`)}
           <a class="btn btn--ghost" href="${WEBAPP}" target="_blank" rel="noopener">${esc(locale.useWebApp)}</a>
         </div>
       </div>
@@ -1341,7 +1330,7 @@ ${localizedHeader(locale, 'near')}
           <h1>${esc(fill(locale.cityH1, vars))}</h1>
           <p class="hero__lead">${esc(fill(locale.cityLead, vars))}</p>
           <div class="btn-row">
-            <a class="btn btn--primary" href="${PLAY}" data-play="city-${locale.code}" target="_blank" rel="noopener">${esc(locale.installApp)}</a>
+            ${playBadge(locale.code, `city-${locale.code}`)}
             <a class="btn btn--ghost" href="#masjids">${esc(locale.checkMasjids)}</a>
           </div>
         </div>

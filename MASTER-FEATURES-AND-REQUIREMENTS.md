@@ -67,6 +67,13 @@ deployment is included here. Read this section first for variant-specific status
   Android signing or Play release is part of this change.
   A "Get the app" pill in the top bar (icon-only on phones) and every Play link
   on the guide and city pages point to `com.jummatime.android` on Google Play.
+  Install calls to action use the official Google Play badge, self-hosted under
+  `assets/badges/` in all ten site languages with localized alt text; the web-app
+  footer shows the badge for the active language. Nav and footer text links stay.
+  Logo, favicons (ICO, SVG, 32 px, 192 px, 180 px touch, maskable 512 px), header
+  mark and the 1200x630 social image use the clock-and-crescent JummaTime mark
+  (master: `assets/brand/jummatime-icon.svg`). Canonical, hreflang, JSON-LD and
+  meta descriptions are unchanged.
   The listing is in internal testing; the public link resolves once the app is
   promoted to production. App copy names JummaTime; the footer keeps the
   "Powered by the Takbeer Time community" credit.

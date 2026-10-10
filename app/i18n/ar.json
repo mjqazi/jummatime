@@ -217,6 +217,7 @@
   "share.aria": "Share JummaTime with someone",
   "getApp.label": "احصل على التطبيق",
   "getApp.aria": "حمّل JummaTime لأندرويد من Google Play",
+  "getApp.badgeAlt": "احصل عليه من Google Play",
   "account.eyebrow": "Account",
   "account.followers": "followers",
   "account.title": "Signed in",

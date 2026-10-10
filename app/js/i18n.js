@@ -57,6 +57,7 @@ window.i18n = (() => {
     'share.button': 'Share App on WhatsApp',
     'getApp.label': 'Get the app',
     'getApp.aria': 'Get JummaTime for Android on Google Play',
+    'getApp.badgeAlt': 'Get it on Google Play',
     'share.aria': 'Share JummaTime with someone',
     'share.title': 'JummaTime',
     'share.message': 'Assalamu alaikum, I use JummaTime to find exact Jummah and jamaat times near masjids.\nWebsite: https://jummatime.com/app/',
@@ -540,6 +541,13 @@ window.i18n = (() => {
     });
     r.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
       el.setAttribute('aria-label', t(el.getAttribute('data-i18n-aria-label')));
+    });
+    r.querySelectorAll('[data-i18n-alt]').forEach(el => {
+      el.alt = t(el.getAttribute('data-i18n-alt'));
+    });
+    // Official Google Play badge artwork exists for every supported language.
+    r.querySelectorAll('img[data-play-badge]').forEach(el => {
+      el.src = '/assets/badges/google-play-' + (['ar','bn','fa','fr','hi','id','ms','tr','ur'].includes(current) ? current : 'en') + '.png';
     });
     r.querySelectorAll('[data-i18n-title]').forEach(el => {
       el.title = t(el.getAttribute('data-i18n-title'));

@@ -332,9 +332,9 @@ html[dir="rtl"] .faq summary::before {
   border-radius: var(--radius);
 }
 .answer-strip__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
-.answer-strip__item { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
-.answer-strip__name { color: var(--ink-2); font-size: 0.98rem; overflow-wrap: anywhere; }
-.answer-strip__time { font-family: var(--mono, ui-monospace, monospace); font-size: 1.2rem; color: var(--green); white-space: nowrap; }
+.answer-strip__item { display: flex; justify-content: space-between; align-items: baseline; gap: 0.15rem 1rem; flex-wrap: wrap; }
+.answer-strip__name { color: var(--ink-2); font-size: 0.98rem; overflow-wrap: break-word; flex: 1 1 12ch; min-width: 0; }
+.answer-strip__time { font-family: var(--mono, ui-monospace, monospace); font-size: 1.2rem; color: var(--green); white-space: nowrap; margin-inline-start: auto; }
 .answer-strip__meta {
   display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
   margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-3);
@@ -345,3 +345,9 @@ html[dir="rtl"] .faq summary::before {
   .hero { padding-top: 1.6rem; }
   .hero__lead { font-size: 1.02rem; margin: 0.6rem 0 0.9rem; }
 }
+
+/* Official Google Play badge: keep Google's built-in padding, scale only. */
+.play-badge { display: inline-flex; align-items: center; line-height: 0; border-radius: 10px; }
+.play-badge img { display: block; height: 64px; width: auto; }
+.play-badge:focus-visible { outline: 2px solid var(--brass, #9C7639); outline-offset: 2px; }
+@media (max-width: 480px) { .play-badge img { height: 58px; } }

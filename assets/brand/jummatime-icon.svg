@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1b5238"/><stop offset="1" stop-color="#0b261a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6dc93"/><stop offset="1" stop-color="#c2963c"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bg)"/>
+  <!-- crescent cradling the clock -->
+  <path d="M256 92 A174 174 0 1 0 430 266 A148 148 0 1 1 256 92 Z" fill="url(#gold)"/>
+  <!-- clock face -->
+  <circle cx="276" cy="262" r="108" fill="#fbf6e8"/>
+  <circle cx="276" cy="262" r="108" fill="none" stroke="#c2963c" stroke-width="6"/>
+  <!-- hour ticks -->
+  <g stroke="#17452f" stroke-width="7" stroke-linecap="round">
+    <line x1="276" y1="170" x2="276" y2="186"/>
+    <line x1="368" y1="262" x2="352" y2="262"/>
+    <line x1="276" y1="354" x2="276" y2="338"/>
+    <line x1="184" y1="262" x2="200" y2="262"/>
+  </g>
+  <!-- hands at 1:30 -->
+  <line x1="276" y1="262" x2="304" y2="214" stroke="#17452f" stroke-width="11" stroke-linecap="round"/>
+  <line x1="276" y1="262" x2="276" y2="330" stroke="#17452f" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="276" cy="262" r="10" fill="#c2963c"/>
+  <!-- small dome + finial on top of the clock -->
+  <path d="M236 160 C236 134 254 120 276 112 C298 120 316 134 316 160 Z" fill="#fbf6e8"/>
+  <rect x="273" y="88" width="6" height="26" rx="3" fill="url(#gold)"/>
+  <circle cx="276" cy="86" r="7" fill="url(#gold)"/>
+</svg>
