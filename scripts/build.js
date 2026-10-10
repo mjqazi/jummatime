@@ -14,7 +14,7 @@ const { JSDOM } = appRequire('jsdom');
 
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://jummatime.com';
-const PLAY = 'https://play.google.com/store/apps/details?id=com.takbeertime.android';
+const PLAY = 'https://play.google.com/store/apps/details?id=com.jummatime.android';
 const WEBAPP = 'https://jummatime.com/app/';
 const BRAND = 'Jumma Time';
 const ORG_ID = `${SITE}/#organization`;
@@ -84,13 +84,13 @@ const EN_LOCALE = {
   cityQuick: 'Jumma in {city}, also spelled Jummah, is not one fixed city-wide time. Each masjid sets its own jamat time.',
   cityBody: '{city} is an important city for travel, work, and study. Use a masjid-level Jummah time rather than a generic estimate.',
   cityCheckTitle: 'How to check Jummah times in {city}',
-  cityCheckBody: 'We do not have a source-verified masjid timetable on this page yet. Use Takbeer Time to compare nearby masjids and confirm before you leave.',
+  cityCheckBody: 'We do not have a source-verified masjid timetable on this page yet. Use JummaTime to compare nearby masjids and confirm before you leave.',
   citySourceNote: 'If you manage a masjid in {city}, publish its official Jummah time with a source link so it can be shown here.',
   cityFaqTitle: 'Jummah in {city} — quick answers',
   cityFaqQ1: 'What time is Jummah in {city}?',
   cityFaqA1: 'Jummah is prayed after midday on Friday, but the exact jamat time is set by each masjid.',
   cityFaqQ2: 'How do I find a masjid for Jummah in {city}?',
-  cityFaqA2: 'Open Takbeer Time and allow location access to see nearby masjids with community-posted Jummah times.',
+  cityFaqA2: 'Open JummaTime and allow location access to see nearby masjids with community-posted Jummah times.',
   cityMoreTitle: 'Jummah time in other cities'
 };
 const LOCALES = [EN_LOCALE].concat(translatedLocales);
@@ -401,12 +401,12 @@ function appNode() {
   return {
     '@type': 'SoftwareApplication',
     '@id': `${SITE}/#app`,
-    name: 'Takbeer Time',
+    name: 'JummaTime',
     operatingSystem: 'Android',
     applicationCategory: 'LifestyleApplication',
     url: PLAY,
     description:
-      'Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, Jummah, jamat, jamaat, and iqamah times.',
+      'JummaTime helps travelers and local worshippers find nearby masjids with community-posted Jumma, Jummah, jamat, jamaat, and iqamah times.',
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' }
   };
 }
@@ -442,7 +442,7 @@ function cityMasjidItemListNode(c, url) {
     '@type': 'ItemList',
     '@id': `${url}#masjid-times`,
     name: `Community-posted Jummah times in ${c.name}`,
-    description: `Masjids in ${c.name}, ${c.country} with community-posted Jummah times surfaced by Takbeer Time.`,
+    description: `Masjids in ${c.name}, ${c.country} with community-posted Jummah times surfaced by JummaTime.`,
     numberOfItems: verified.length,
     itemListOrder: 'https://schema.org/ItemListOrderAscending',
     itemListElement: verified.map((m, index) => ({
@@ -565,26 +565,26 @@ function cityMasjidSection(c) {
   const verified = verifiedMasjids(c);
   if (verified.length > 0) {
     return `<h2>Jummah times at masjids in ${esc(c.name)}</h2>
-        <p>These Jummah times are posted by the local community in <strong>Takbeer Time</strong>. They are a
+        <p>These Jummah times are posted by the local community in <strong>JummaTime</strong>. They are a
         starting point, not a guarantee — schedules shift with the season and for holidays, so confirm with the
         masjid before you set out. Open the app to see every masjid near your exact location, with reminders.</p>
         ${masjidTimesTable(c, verified)}
         <p class="source-note">
           Times last checked ${esc(verified[0].lastChecked || fileDate('data/city-masjid-times.json'))}.
-          Run a masjid in ${esc(c.name)}? Keep your Jummah time accurate for everyone by updating it in Takbeer Time.
+          Run a masjid in ${esc(c.name)}? Keep your Jummah time accurate for everyone by updating it in JummaTime.
         </p>`;
   }
 
   const masjidList = c.masjids.map((m) => `<li>${esc(masjidName(m))}</li>`).join('\n            ');
   if (!masjidList) {
-    return `<h2>Find Jummah in ${esc(c.name)} with Takbeer Time</h2>
+    return `<h2>Find Jummah in ${esc(c.name)} with JummaTime</h2>
         <p>
-          <strong>Takbeer Time</strong> is built for exactly this moment. Open the free app, allow location,
+          <strong>JummaTime</strong> is built for exactly this moment. Open the free app, allow location,
           and see masjids around you in ${esc(c.name)} with Jummah and jamat times posted by the people who
           actually pray there — plus reminders so you reach the masjid before the khutbah and first takbeer.
         </p>
         <p class="source-note">
-          Run a masjid in ${esc(c.name)}? Publish your official Jummah time in Takbeer Time so every traveler
+          Run a masjid in ${esc(c.name)}? Publish your official Jummah time in JummaTime so every traveler
           and new resident sees the correct time.
         </p>`;
   }
@@ -592,14 +592,14 @@ function cityMasjidSection(c) {
   return `<h2>Masjids to check in ${esc(c.name)} — and the fastest way to confirm</h2>
         <p>
           These well-known masjids are a starting point. For the exact, current Jummah time — and every other
-          masjid near you — open <strong>Takbeer Time</strong>: it shows community-posted Jummah and jamat times
+          masjid near you — open <strong>JummaTime</strong>: it shows community-posted Jummah and jamat times
           for masjids across ${esc(c.name)}, with reminders so you never miss the first takbeer.
         </p>
         <ul>
             ${masjidList}
         </ul>
         <p class="source-note">
-          Run one of these masjids? Publish your official Jummah time in Takbeer Time and keep your community
+          Run one of these masjids? Publish your official Jummah time in JummaTime and keep your community
           and every visitor on time.
         </p>`;
 }
@@ -735,7 +735,7 @@ ${alternateLinks}
   <link rel="apple-touch-icon" href="/assets/brand/jummatime-icon-512.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="application-name" content="Jumma Time" />
-  <meta name="google-play-app" content="app-id=com.takbeertime.android" />
+  <meta name="google-play-app" content="app-id=com.jummatime.android" />
   <meta property="og:locale" content="${ogLocale(lang)}" />
   <meta property="og:type" content="${opts.ogType || 'website'}" />
   <meta property="og:site_name" content="${BRAND}" />
@@ -997,7 +997,7 @@ function cityPage(c) {
           name: `What time is Jumma or Jummah in ${c.name}?`,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Jumma, also spelled Jummah, is prayed after midday on Friday in ${c.name}, replacing the Dhuhr prayer. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${c.timezone}). To find the current time at a masjid near you, use the Find masjids near me button or install the free Takbeer Time app.`
+            text: `Jumma, also spelled Jummah, is prayed after midday on Friday in ${c.name}, replacing the Dhuhr prayer. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${c.timezone}). To find the current time at a masjid near you, use the Find masjids near me button or install the free JummaTime app.`
           }
         },
         {
@@ -1005,7 +1005,7 @@ function cityPage(c) {
           name: `How do I find a masjid for Jummah in ${c.name}?`,
           acceptedAnswer: {
             '@type': 'Answer',
-            text: `Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${c.name} with current Jumma, Jummah, and jamat times posted by local timekeepers.`
+            text: `Install JummaTime, allow location access, and open the masjid map. It shows masjids near you in ${c.name} with current Jumma, Jummah, and jamat times posted by local timekeepers.`
           }
         }
       ]
@@ -1016,7 +1016,7 @@ function cityPage(c) {
 
   return `${head({
     title: `Jumma / Jummah Time in ${c.name}: Friday Prayer at Masjids | Jumma Time`,
-    description: `Find Jumma and Jummah prayer times in ${c.name}. Check nearby masjids, multiple Friday prayer sessions, and current jamat times in the free Takbeer Time app.`,
+    description: `Find Jumma and Jummah prayer times in ${c.name}. Check nearby masjids, multiple Friday prayer sessions, and current jamat times in the free JummaTime app.`,
     url: url,
     alternates: cityAlternates(c),
     jsonld: jsonldGraph
@@ -1057,7 +1057,7 @@ ${HEADER}
             <strong>Jumma in ${esc(c.name)}</strong>, also spelled <strong>Jummah</strong>, is not one fixed city-wide time. It is prayed after Dhuhr,
             and each masjid sets its own jamat time, often between <strong>12:30 PM and 2:00 PM</strong>.
             To find the current <strong>Jummah time near you in ${esc(c.name)}</strong>, tap “Find masjids near me”
-            or install the free <strong>Takbeer Time</strong> app.
+            or install the free <strong>JummaTime</strong> app.
           </p>
         </div>
       </div>
@@ -1069,7 +1069,7 @@ ${HEADER}
         <p>${esc(cityBlurb(c))}</p>
         <p>
           Because Jummah times move with Dhuhr and differ from masjid to masjid, a generic prayer-time estimate
-          is not enough. Takbeer Time gives you masjid-level Jumma, Jummah, and jamat times that the local community keeps
+          is not enough. JummaTime gives you masjid-level Jumma, Jummah, and jamat times that the local community keeps
           current. If you spot a Jummah time on a masjid door in ${esc(c.name)}, you can post it to help the next traveler.
         </p>
         <p><strong>Traveler tip:</strong> ${esc(cityTip(c))}</p>
@@ -1093,11 +1093,11 @@ ${HEADER}
         <div style="margin-top:1.2rem">
           <details>
             <summary>What time is Jumma or Jummah in ${esc(c.name)}?</summary>
-            <p>Jumma, also spelled Jummah, is prayed after midday on Friday in ${esc(c.name)}, replacing Dhuhr. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${esc(c.timezone)}). Use the Find masjids near me button or the Takbeer Time app for the current time at a masjid near you.</p>
+            <p>Jumma, also spelled Jummah, is prayed after midday on Friday in ${esc(c.name)}, replacing Dhuhr. The exact jamat time is set by each masjid and shifts through the year with Dhuhr (${esc(c.timezone)}). Use the Find masjids near me button or the JummaTime app for the current time at a masjid near you.</p>
           </details>
           <details>
             <summary>How do I find a masjid for Jummah in ${esc(c.name)}?</summary>
-            <p>Install Takbeer Time, allow location access, and open the masjid map. It shows masjids near you in ${esc(c.name)} with current Jumma, Jummah, and jamat times posted by local timekeepers.</p>
+            <p>Install JummaTime, allow location access, and open the masjid map. It shows masjids near you in ${esc(c.name)} with current Jumma, Jummah, and jamat times posted by local timekeepers.</p>
           </details>
           <details>
             <summary>Do masjids in ${esc(c.name)} hold more than one Jummah?</summary>
@@ -1112,7 +1112,7 @@ ${HEADER}
         <div class="cta-band">
           <p class="eyebrow" style="color:var(--brass-soft)">Don't miss the first takbeer</p>
           <h2>Find your next Jummah in ${esc(c.name)}.</h2>
-          <p>Install Takbeer Time, compare nearby masjids, and stop guessing the Friday prayer time.</p>
+          <p>Install JummaTime, compare nearby masjids, and stop guessing the Friday prayer time.</p>
           <div class="btn-row">
             <a class="btn btn--brass" href="${PLAY}" data-play="city-footer" target="_blank" rel="noopener">Install on Android</a>
             <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="${WEBAPP}" target="_blank" rel="noopener">Use the web app</a>
@@ -1253,7 +1253,7 @@ function localizedCityMasjidSection(c, locale) {
   const vars = cityVars(c, locale);
   const verified = verifiedMasjids(c);
 
-  // Real Jummah times from Takbeer Time — the table itself is language-neutral
+  // Real Jummah times from JummaTime — the table itself is language-neutral
   // (masjid names + times), shown under the localized funnel heading and copy.
   if (verified.length > 0) {
     return `<h2>${esc(fill(locale.cityCheckTitle, vars))}</h2>

@@ -55,6 +55,8 @@ window.i18n = (() => {
     'auth.signIn': 'Sign in or sign up',
     'auth.signOut': 'Sign out',
     'share.button': 'Share App on WhatsApp',
+    'getApp.label': 'Get the app',
+    'getApp.aria': 'Get JummaTime for Android on Google Play',
     'share.aria': 'Share JummaTime with someone',
     'share.title': 'JummaTime',
     'share.message': 'Assalamu alaikum, I use JummaTime to find exact Jummah and jamaat times near masjids.\nWebsite: https://jummatime.com/app/',

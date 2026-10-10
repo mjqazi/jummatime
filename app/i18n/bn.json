@@ -215,6 +215,8 @@
   "lang.choose": "আপনার ভাষা নির্বাচন করুন",
   "share.button": "WhatsApp-এ অ্যাপ শেয়ার করুন",
   "share.aria": "Share JummaTime with someone",
+  "getApp.label": "অ্যাপ নিন",
+  "getApp.aria": "Google Play থেকে Android-এর জন্য JummaTime নিন",
   "account.eyebrow": "Account",
   "account.followers": "followers",
   "account.title": "Signed in",

@@ -65,13 +65,22 @@ deployment is included here. Read this section first for variant-specific status
   runtime; `_config.yml` excludes development dependencies, tests and internal
   documentation from the hosted files. No native build, Firebase provisioning,
   Android signing or Play release is part of this change.
-  Unpublished JummaTime Play download promotion is removed from the app.
-- **Release gate:** read-only API CORS succeeds, but the live write/auth CORS
-  preflight lacks `Access-Control-Allow-Origin` for `https://jummatime.com`.
-  The operator must allow JummaTime's origins before account actions can work.
-  Google sign-in additionally needs the domain authorized in the shared Firebase
-  project; live testing reproduces `auth/unauthorized-domain` on JummaTime.
-  Local email impersonation is disabled.
+  A "Get the app" pill in the top bar (icon-only on phones) and every Play link
+  on the guide and city pages point to `com.jummatime.android` on Google Play.
+  The listing is in internal testing; the public link resolves once the app is
+  promoted to production. App copy names JummaTime; the footer keeps the
+  "Powered by the Takbeer Time community" credit.
+- Production authentication configuration updated with operator approval on
+  2026-10-10: shared API `ALLOWED_ORIGINS` includes `https://jummatime.com` and
+  `https://www.jummatime.com`; shared Firebase `takbeerapp` authorized domains
+  include both hosts. Existing Takbeer origins and domains remain unchanged.
+  CORS preflights for both JummaTime origins and Takbeer succeed; an unrelated
+  origin remains blocked. Google reaches its account picker in Chrome, replacing
+  the former `auth/unauthorized-domain` failure. A complete user sign-in and
+  account creation still require interactive verification. The API container was
+  recreated without code changes or database migration, after configuration and
+  database backups; production health is OK. Local preview origins remain
+  unauthorized in the API, and local email impersonation is disabled.
 - Email authentication exposes separate Sign in and Create account actions.
   Create account calls the shared registration preview, then asks for explicit
   confirmation before registration. Failed sign-in never silently becomes sign-up.

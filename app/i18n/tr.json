@@ -215,6 +215,8 @@
   "lang.choose": "Dilinizi seçin",
   "share.button": "Uygulamayı WhatsApp’ta paylaş",
   "share.aria": "Share JummaTime with someone",
+  "getApp.label": "Uygulamayı indir",
+  "getApp.aria": "JummaTime'ı Google Play'den Android için indir",
   "account.eyebrow": "Account",
   "account.followers": "followers",
   "account.title": "Signed in",
