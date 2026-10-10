@@ -321,3 +321,27 @@ html[dir="rtl"] .faq summary::before {
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* ---- Hero answer strip: the times, before the prose ---- */
+.answer-strip {
+  margin: 1.2rem 0 1.3rem;
+  padding: 0.9rem 1.1rem 0.8rem;
+  background: var(--paper);
+  border: 1px solid var(--paper-3);
+  border-left: 5px solid var(--green-3);
+  border-radius: var(--radius);
+}
+.answer-strip__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.45rem; }
+.answer-strip__item { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.answer-strip__name { color: var(--ink-2); font-size: 0.98rem; overflow-wrap: anywhere; }
+.answer-strip__time { font-family: var(--mono, ui-monospace, monospace); font-size: 1.2rem; color: var(--green); white-space: nowrap; }
+.answer-strip__meta {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin: 0.7rem 0 0; font-size: 0.8rem; color: var(--ink-3);
+}
+.answer-strip__more { color: var(--green); font-weight: 600; text-decoration: none; }
+.answer-strip__more:hover { text-decoration: underline; }
+@media (max-width: 720px) {
+  .hero { padding-top: 1.6rem; }
+  .hero__lead { font-size: 1.02rem; margin: 0.6rem 0 0.9rem; }
+}

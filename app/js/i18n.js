@@ -431,6 +431,7 @@ window.i18n = (() => {
     'suggest.toastFail': 'Could not send: {err}',
 
     'login.title': 'Sign in or sign up',
+    'login.createAccount': 'Create account',
     'login.body': 'Continue with Google, or enter your email and password. New email accounts require your confirmation.',
     'login.signupBody': 'A new account will be created for this email address:',
     'login.signupConfirm': 'Yes, create my account',

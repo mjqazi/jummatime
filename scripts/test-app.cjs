@@ -136,6 +136,52 @@ async function run() {
       await page.close();
     }
     const copy = require('../app/data/jumma-copy.json');
+    const authPage = await browser.newPage();
+    const authRequests = [];
+    let accountExists = false;
+    await authPage.setRequestInterception(true);
+    authPage.on('request', req => {
+      if (!req.url().startsWith('https://takbeertime.com/api')) return req.continue();
+      const route = new URL(req.url()).pathname;
+      const headers = { 'access-control-allow-origin': '*',
+        'access-control-allow-headers': 'content-type,authorization', 'content-type': 'application/json' };
+      if (req.method() === 'OPTIONS') return req.respond({ status: 204, headers });
+      if (req.method() === 'POST') {
+        authRequests.push(route);
+        if (route === '/api/auth/login') return req.respond({ status: 401, headers, body: JSON.stringify({ error: 'Invalid credentials' }) });
+        if (route === '/api/auth/register/preview') return req.respond({ status: accountExists ? 409 : 200, headers,
+          body: JSON.stringify(accountExists ? { error: 'Account already exists' } : { registrationRequired: true, email: 'test@example.com' }) });
+        return req.abort();
+      }
+      return req.respond({ status: 200, headers, body: JSON.stringify({ data: [], pagination: { totalCount: 0 } }) });
+    });
+    for (const width of [1440, 390, 320]) {
+      accountExists = false;
+      authRequests.length = 0;
+      await authPage.setViewport({ width, height: 900 });
+      await authPage.goto(base + '/app/?lang=en#login', { waitUntil: 'networkidle2' });
+      await authPage.waitForSelector('#login-modal[aria-hidden="false"]');
+      await authPage.type('#login-form [name=email]', 'test@example.com');
+      await authPage.type('#login-form [name=password]', 'test-password');
+      await authPage.click('#login-form .btn--primary');
+      await authPage.waitForFunction(() => document.querySelector('#login-modal').getAttribute('aria-busy') === 'false');
+      assert.deepEqual(authRequests, ['/api/auth/login'], 'Failed sign-in must not offer registration automatically');
+      await authPage.click('#login-create-account');
+      await authPage.waitForFunction(() => !document.querySelector('#signup-confirmation').hidden);
+      assert.deepEqual(authRequests, ['/api/auth/login', '/api/auth/register/preview']);
+      assert.equal(await authPage.$eval('#signup-email', el => el.textContent), 'test@example.com');
+      assert.equal(await authPage.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
+      await authPage.click('#signup-cancel');
+      assert.equal(await authPage.$eval('#signup-confirmation', el => el.hidden), true);
+      accountExists = true;
+      await authPage.click('#login-create-account');
+      await authPage.waitForFunction(() => document.querySelector('#login-modal').getAttribute('aria-busy') === 'false');
+      assert.equal(await authPage.$eval('#signup-confirmation', el => el.hidden), true);
+      assert(!authRequests.includes('/api/auth/register'), 'No account should be created without confirmation');
+      await authPage.screenshot({ path: path.join(artifacts, `jumma-auth-${width}.png`) });
+      console.log(`PASS ${width}: explicit sign-in, registration preview, cancellation, existing-account guard`);
+    }
+    await authPage.close();
     const languagePage = await browser.newPage();
     await languagePage.evaluateOnNewDocument(() => {
       if (!sessionStorage.getItem('test.languages')) {

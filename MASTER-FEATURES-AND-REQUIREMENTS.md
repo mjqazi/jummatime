@@ -70,7 +70,11 @@ deployment is included here. Read this section first for variant-specific status
   preflight lacks `Access-Control-Allow-Origin` for `https://jummatime.com`.
   The operator must allow JummaTime's origins before account actions can work.
   Google sign-in additionally needs the domain authorized in the shared Firebase
-  project; this has not been verified. Local email impersonation is disabled.
+  project; live testing reproduces `auth/unauthorized-domain` on JummaTime.
+  Local email impersonation is disabled.
+- Email authentication exposes separate Sign in and Create account actions.
+  Create account calls the shared registration preview, then asks for explicit
+  confirmation before registration. Failed sign-in never silently becomes sign-up.
 - The imported `app/` files must be reviewed against upstream updates; this is a
   source snapshot, not an automatic synchronization service. See
   `docs/jummatime-app-plan.md` for provenance, verification and remaining work.

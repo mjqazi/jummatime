@@ -15,7 +15,7 @@ const { JSDOM } = appRequire('jsdom');
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://jummatime.com';
 const PLAY = 'https://play.google.com/store/apps/details?id=com.takbeertime.android';
-const WEBAPP = 'https://takbeertime.com/';
+const WEBAPP = 'https://jummatime.com/app/';
 const BRAND = 'Jumma Time';
 const ORG_ID = `${SITE}/#organization`;
 const WEBSITE_ID = `${SITE}/#website`;
@@ -479,15 +479,36 @@ function masjidName(m) {
   return typeof m === 'string' ? m : m.name;
 }
 
+// Data arrives as 24-hour "13:30"; the site reads as 12-hour everywhere
+// else, so render "1:30 pm". Anything that is not HH:mm passes through.
+function fmt12(t) {
+  const m = /^(\d{1,2}):(\d{2})$/.exec(String(t || '').trim());
+  if (!m) return String(t || '');
+  let h = parseInt(m[1], 10);
+  if (h > 23) return String(t);
+  const period = h >= 12 ? 'pm' : 'am';
+  h = h % 12 || 12;
+  return `${h}:${m[2]} ${period}`;
+}
+
 function masjidTimeText(m) {
   if (typeof m === 'string' || !Array.isArray(m.jummahTimes) || m.jummahTimes.length === 0) {
     return '';
   }
-  return m.jummahTimes.join(', ');
+  return m.jummahTimes.map(fmt12).join(', ');
 }
 
+// The source feed can repeat a masjid (same name, same sessions). Keep the
+// first occurrence so neither the hero strip nor the table shows a row twice.
 function verifiedMasjids(c) {
-  return c.masjids.filter((m) => typeof m !== 'string' && masjidTimeText(m) && m.sourceUrl);
+  const seen = new Set();
+  return c.masjids.filter((m) => {
+    if (typeof m === 'string' || !masjidTimeText(m) || !m.sourceUrl) return false;
+    const key = `${String(m.name).trim().toLowerCase()}|${masjidTimeText(m)}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function masjidTimesTable(c, verified) {
@@ -513,6 +534,30 @@ function masjidTimesTable(c, verified) {
           ${rows}
             </tbody>
           </table>
+        </div>`;
+}
+
+
+// The searcher typed "jumma time <city>". Give them the times first: a
+// strip of the first few verified masjids in the hero, with the checked
+// date, and a jump to the full table. Cities without verified data get
+// nothing here (no invented times) and keep the finder widget as the hero.
+function heroAnswerStrip(c) {
+  const verified = verifiedMasjids(c);
+  if (!verified.length) return '';
+  const top = verified.slice(0, 3);
+  const checked = top.find((m) => m.lastChecked)?.lastChecked || fileDate('data/city-masjid-times.json');
+  const items = top
+    .map((m) => `<li class="answer-strip__item"><span class="answer-strip__name">${esc(m.name)}</span><strong class="answer-strip__time">${esc(masjidTimeText(m))}</strong></li>`)
+    .join('\n            ');
+  const more = verified.length > top.length
+    ? `<a class="answer-strip__more" href="#masjids">All ${verified.length} masjids</a>`
+    : `<a class="answer-strip__more" href="#masjids">Details</a>`;
+  return `<div class="answer-strip" aria-label="Jummah times in ${esc(c.name)}">
+          <ul class="answer-strip__list">
+            ${items}
+          </ul>
+          <p class="answer-strip__meta"><span>Community-posted · checked ${esc(checked)}</span>${more}</p>
         </div>`;
 }
 
@@ -711,7 +756,7 @@ ${alternateLinks}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/jummatime.css" />
+  <link rel="stylesheet" href="/css/jummatime.css?v=2" />
   <script src="/js/jummatime.js" defer></script>
 ${googleAnalyticsTag()}
   <script type="application/ld+json">
@@ -993,11 +1038,12 @@ ${HEADER}
             Need Jummah in ${esc(c.name)} this Friday? Compare nearby masjids and community-posted
             Jumma and Jummah times so you can choose a congregation you can actually reach.
           </p>
+          ${heroAnswerStrip(c)}
           <div class="btn-row">
-            <a class="btn btn--primary" href="${PLAY}" data-play="city-hero" target="_blank" rel="noopener">Install the free app</a>
-            <a class="btn btn--ghost" href="#masjids">Check masjids</a>
+            <a class="btn btn--primary" href="${WEBAPP}" data-webapp="city-hero">Jummah near me</a>
+            <a class="btn btn--ghost" href="${PLAY}" data-play="city-hero" target="_blank" rel="noopener">Get the Android app</a>
           </div>
-          <p class="hero-note">Free, no ads. Times are shared by local worshippers and masjid timekeepers in the Takbeer Time app.</p>
+          <p class="hero-note">Free, no ads. Times are posted by local worshippers and masjid timekeepers; confirm with the masjid before you set out.</p>
         </div>
         ${widget()}
       </div>
@@ -1034,8 +1080,8 @@ ${HEADER}
       <div class="wrap prose">
         ${cityMasjidSection(c)}
         <div class="btn-row" style="margin-top:1.2rem">
-          <a class="btn btn--primary" href="${PLAY}" data-play="city-masjids" target="_blank" rel="noopener">Find masjids in ${esc(c.name)}</a>
-          <a class="btn btn--ghost" href="${WEBAPP}" target="_blank" rel="noopener">Use the web app</a>
+          <a class="btn btn--primary" href="${WEBAPP}" data-webapp="city-masjids">Find every masjid in ${esc(c.name)}</a>
+          <a class="btn btn--ghost" href="${PLAY}" data-play="city-masjids" target="_blank" rel="noopener">Get the Android app</a>
         </div>
       </div>
     </section>

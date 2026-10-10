@@ -620,38 +620,30 @@
         if (password) {
           const exch = window.authExchange;
           if (!exch) throw new Error('Auth exchange module not loaded');
-          let res;
-          try {
-            res = await api.authLogin(email, password);
-          } catch (err) {
-            // Login keeps its generic 401. Only a read-only registration
-            // preview may offer sign-up; the user must then confirm it.
-            if (err.status === 401) {
+          if (e.submitter?.id === 'login-create-account') {
+            // Preview never creates an account; creation requires confirmation.
+            try {
+              const preview = await api.authRegister(email, password, { preview: true });
               if (view.loginAttempt !== attempt) return;
-              try {
-                const preview = await api.authRegister(email, password, { preview: true });
-                if (view.loginAttempt !== attempt) return;
-                if (preview?.registrationRequired !== true || preview.email !== email) {
-                  throw new Error(window.i18n.t('login.signupCheckFailed'));
-                }
-                document.getElementById('signup-email').textContent = email;
-                document.getElementById('login-entry').hidden = true;
-                document.getElementById('signup-confirmation').hidden = false;
-                setLoginBusy(false);
-                document.getElementById('signup-confirm').focus();
-                return;
-              } catch (err2) {
-                if (view.loginAttempt !== attempt) return;
-                if (err2.status === 409) {
-                  toast(window.i18n.t('login.existingAccount'));
-                  return;
-                }
-                throw err2;
+              if (preview?.registrationRequired !== true || preview.email !== email) {
+                throw new Error(window.i18n.t('login.signupCheckFailed'));
               }
-            } else {
+              document.getElementById('signup-email').textContent = email;
+              document.getElementById('login-entry').hidden = true;
+              document.getElementById('signup-confirmation').hidden = false;
+              setLoginBusy(false);
+              document.getElementById('signup-confirm').focus();
+              return;
+            } catch (err) {
+              if (view.loginAttempt !== attempt) return;
+              if (err.status === 409) {
+                toast(window.i18n.t('login.existingAccount'));
+                return;
+              }
               throw err;
             }
           }
+          const res = await api.authLogin(email, password);
           await completePasswordSignIn(res, attempt);
           return;
         } else {

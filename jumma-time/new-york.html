@@ -45,7 +45,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/jummatime.css" />
+  <link rel="stylesheet" href="/css/jummatime.css?v=2" />
   <script src="/js/jummatime.js" defer></script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9QBC0PLVN"></script>
@@ -72,7 +72,7 @@
         "height": 512
       },
       "sameAs": [
-        "https://takbeertime.com/",
+        "https://jummatime.com/app/",
         "https://play.google.com/store/apps/details?id=com.takbeertime.android"
       ]
     },
@@ -244,7 +244,7 @@
             "subjectOf": {
               "@type": "CreativeWork",
               "name": "Jummah times for Islamic Cultural Center of New York",
-              "text": "Islamic Cultural Center of New York has community-posted Jummah times: 13:00, 13:30.",
+              "text": "Islamic Cultural Center of New York has community-posted Jummah times: 1:00 pm, 1:30 pm.",
               "dateModified": "2026-05-14"
             }
           }
@@ -264,7 +264,7 @@
             "subjectOf": {
               "@type": "CreativeWork",
               "name": "Jummah times for Masjid Malcolm Shabazz",
-              "text": "Masjid Malcolm Shabazz has community-posted Jummah times: 12:00, 13:00.",
+              "text": "Masjid Malcolm Shabazz has community-posted Jummah times: 12:00 pm, 1:00 pm.",
               "dateModified": "2026-05-14"
             }
           }
@@ -284,7 +284,7 @@
             "subjectOf": {
               "@type": "CreativeWork",
               "name": "Jummah times for Masjid Manhattan",
-              "text": "Masjid Manhattan has community-posted Jummah times: 13:00, 13:05.",
+              "text": "Masjid Manhattan has community-posted Jummah times: 1:00 pm, 1:05 pm.",
               "dateModified": "2026-05-14"
             }
           }
@@ -338,11 +338,19 @@
             Need Jummah in New York City this Friday? Compare nearby masjids and community-posted
             Jumma and Jummah times so you can choose a congregation you can actually reach.
           </p>
+          <div class="answer-strip" aria-label="Jummah times in New York City">
+          <ul class="answer-strip__list">
+            <li class="answer-strip__item"><span class="answer-strip__name">Islamic Cultural Center of New York</span><strong class="answer-strip__time">1:00 pm, 1:30 pm</strong></li>
+            <li class="answer-strip__item"><span class="answer-strip__name">Masjid Malcolm Shabazz</span><strong class="answer-strip__time">12:00 pm, 1:00 pm</strong></li>
+            <li class="answer-strip__item"><span class="answer-strip__name">Masjid Manhattan</span><strong class="answer-strip__time">1:00 pm, 1:05 pm</strong></li>
+          </ul>
+          <p class="answer-strip__meta"><span>Community-posted · checked 2026-05-14</span><a class="answer-strip__more" href="#masjids">Details</a></p>
+        </div>
           <div class="btn-row">
-            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="city-hero" target="_blank" rel="noopener">Install the free app</a>
-            <a class="btn btn--ghost" href="#masjids">Check masjids</a>
+            <a class="btn btn--primary" href="https://jummatime.com/app/" data-webapp="city-hero">Jummah near me</a>
+            <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="city-hero" target="_blank" rel="noopener">Get the Android app</a>
           </div>
-          <p class="hero-note">Free, no ads. Times are shared by local worshippers and masjid timekeepers in the Takbeer Time app.</p>
+          <p class="hero-note">Free, no ads. Times are posted by local worshippers and masjid timekeepers; confirm with the masjid before you set out.</p>
         </div>
         <aside class="jw" data-jummah-widget aria-label="Next Jummah countdown and masjid finder">
           <span class="jw__label">Next Jummah</span>
@@ -405,17 +413,17 @@
             <tbody>
           <tr>
             <th scope="row">Islamic Cultural Center of New York</th>
-            <td>13:00, 13:30</td>
+            <td>1:00 pm, 1:30 pm</td>
             <td><a href="https://takbeertime.com/?mosque=78bf15e7-7460-4045-a25e-e67f307e8f73" target="_blank" rel="noopener">Takbeer Time</a> <span class="source-note">checked 2026-05-14</span></td>
           </tr>
           <tr>
             <th scope="row">Masjid Malcolm Shabazz</th>
-            <td>12:00, 13:00</td>
+            <td>12:00 pm, 1:00 pm</td>
             <td><a href="https://takbeertime.com/?mosque=bc934b98-2a43-414c-b4c2-eb9404b198d9" target="_blank" rel="noopener">Takbeer Time</a> <span class="source-note">checked 2026-05-14</span></td>
           </tr>
           <tr>
             <th scope="row">Masjid Manhattan</th>
-            <td>13:00, 13:05</td>
+            <td>1:00 pm, 1:05 pm</td>
             <td><a href="https://takbeertime.com/?mosque=23911e63-1671-4f75-90b1-c1336af8eedd" target="_blank" rel="noopener">Takbeer Time</a> <span class="source-note">checked 2026-05-14</span></td>
           </tr>
             </tbody>
@@ -426,8 +434,8 @@
           Run a masjid in New York City? Keep your Jummah time accurate for everyone by updating it in Takbeer Time.
         </p>
         <div class="btn-row" style="margin-top:1.2rem">
-          <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="city-masjids" target="_blank" rel="noopener">Find masjids in New York City</a>
-          <a class="btn btn--ghost" href="https://takbeertime.com/" target="_blank" rel="noopener">Use the web app</a>
+          <a class="btn btn--primary" href="https://jummatime.com/app/" data-webapp="city-masjids">Find every masjid in New York City</a>
+          <a class="btn btn--ghost" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="city-masjids" target="_blank" rel="noopener">Get the Android app</a>
         </div>
       </div>
     </section>
@@ -461,7 +469,7 @@
           <p>Install Takbeer Time, compare nearby masjids, and stop guessing the Friday prayer time.</p>
           <div class="btn-row">
             <a class="btn btn--brass" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="city-footer" target="_blank" rel="noopener">Install on Android</a>
-            <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="https://takbeertime.com/" target="_blank" rel="noopener">Use the web app</a>
+            <a class="btn btn--ghost" style="color:var(--paper-2);border-color:var(--green-3)" href="https://jummatime.com/app/" target="_blank" rel="noopener">Use the web app</a>
           </div>
           <p style="margin-top:1rem;font-size:0.9rem;color:#b9c9bd">
             Already use it? <a style="color:var(--brass-soft)" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="review" target="_blank" rel="noopener">Leave a review</a> so more travelers find it.
@@ -503,7 +511,7 @@
       <div>
         <h4>App</h4>
         <a href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="footer-link" target="_blank" rel="noopener">Install on Android</a>
-        <a href="https://takbeertime.com/" target="_blank" rel="noopener">Use the web app</a>
+        <a href="https://jummatime.com/app/" target="_blank" rel="noopener">Use the web app</a>
         <a href="/for-masjids.html">For masjids &amp; timekeepers</a>
       </div>
     </div>

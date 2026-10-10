@@ -10,6 +10,7 @@ describe('Generated language homepages', () => {
     const doc = new DOMParser().parseFromString(fs.readFileSync(file, 'utf8'), 'text/html');
     expect(doc.querySelector('h1').textContent).toBe(copy[lang]['hero.headlineHtml']);
     expect(doc.querySelector('#search').placeholder).toBe(copy[lang]['dir.searchPh']);
+    expect(doc.querySelector('#login-create-account').textContent).toBe(copy[lang]['login.createAccount']);
     expect(doc.documentElement.lang).toBe(lang);
     expect(doc.querySelector('[rel=canonical]').href).toBe('https://jummatime.com' + route);
     expect(doc.querySelectorAll('link[hreflang]')).toHaveLength(11);
