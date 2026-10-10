@@ -190,7 +190,9 @@ window.i18n = (() => {
 
     'qaza.pill': 'Qaza Namaz Tracker',
 
-    'quick.locate': 'Find the next Jummah near me',
+    'quick.locate': 'Jummah near me',
+    'card.updatedDays': 'updated {n} days ago',
+    'card.staleDays': 'updated {n} days ago · check before you go',
     'quick.openMap': 'Open map',
 
     'appDownload.kicker': 'JummaTime mobile app',

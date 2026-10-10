@@ -337,6 +337,31 @@ function computeNextJummah(timings) {
   return computeNextPrayer(timings, { jummahOnly: true });
 }
 
+// How old the schedule behind a card is. The drawer already says "updated
+// N days ago"; the directory card said nothing, so a Verified badge next to a
+// four-month-old time read as current. Fresh (≤ 30 days) stays quiet; older
+// gets a muted age line; ≥ 90 days is flagged so the user opens the masjid
+// and nudges or submits.
+const CARD_FRESH_DAYS = 30;
+const CARD_STALE_DAYS = 90;
+function scheduleAgeDays(m) {
+  const raw = m?.effectiveKeeperUpdatedAt || m?.effectiveTimings?.updatedAt || m?.defaultJamaatTimings?.updatedAt || m?.updatedAt;
+  if (!raw) return null;
+  const ms = Date.now() - new Date(raw).getTime();
+  if (!Number.isFinite(ms)) return null;
+  return Math.max(0, Math.floor(ms / 86_400_000));
+}
+function renderCardFreshness(m) {
+  const days = scheduleAgeDays(m);
+  if (days == null || days < CARD_FRESH_DAYS) return null;
+  const t = (k, fb, params) => window.i18n?.t(k, params) ?? fb;
+  const stale = days >= CARD_STALE_DAYS;
+  const text = stale
+    ? t('card.staleDays', `updated ${days} days ago · check before you go`, { n: days })
+    : t('card.updatedDays', `updated ${days} days ago`, { n: days });
+  return el('span', { class: 'card__fresh' + (stale ? ' card__fresh--stale' : ''), title: text }, text);
+}
+
 // ───── Mosque card ─────
 // `isDefault` (when truthy) renders the set-default pill in the
 // confirmed-state ("✓ Default") rather than the call-to-action state.
@@ -404,6 +429,7 @@ function renderCard(m, { highlightNext = true, isDefault = false } = {}) {
         next && jummahTimes.length > 1
           ? el('span', { class: 'card__next card__next--secondary' }, `${window.i18n?.t('next.tag') ?? 'Next'}: ${window.i18n?.t(`prayer.${next.key}`) ?? next.label} ${fmt12(next.time)}`)
           : null,
+        renderCardFreshness(m),
         m.distanceKm != null ? el('span', { class: 'card__distance' }, fmtDistance(m.distanceKm)) : null,
       ]
     : [
@@ -1512,7 +1538,7 @@ window.JAMAT_RENDER = {
   el, renderCard, renderTimingsTable, renderAmenities, renderKeeper,
   computeNextPrayer, computeNextJummah, clockParts, fmtDistance, fmt12, timingsFromMosque,
   normalizePrayerTime, normalizeSubmittedPrayerTime, defaultSubmittedPrayerTime, timingForPrayer,
-  jummahTimesForTimings, orderedTimingKeysForDate,
+  jummahTimesForTimings, orderedTimingKeysForDate, scheduleAgeDays, renderCardFreshness,
   prettifyMosqueName, prettifyPersonName, isPlaceholderField, isTestFixture,
   keeperSourceHint,
   PRAYER_LABEL, PRAYER_ORDER, prayerOrderForDate,

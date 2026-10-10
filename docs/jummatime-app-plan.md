@@ -53,7 +53,7 @@ defaults, metadata/assets and desktop/mobile layouts. Screenshots go into ignore
 `.artifacts/`. Live API checks must stay read-only. No test should submit a timing
 or create an account in production.
 
-Verified: 351 web unit tests, with Chrome smoke
+Verified: 356 web unit tests, with Chrome smoke
 checks at 1440, 390 and 320 px; the expanded language checks cover all ten locales,
 RTL, saved preferences and localized URLs. See test output for the latest count.
 The native push suite is excluded because native code is not in this snapshot.

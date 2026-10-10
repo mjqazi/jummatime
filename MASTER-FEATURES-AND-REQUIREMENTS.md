@@ -17,6 +17,16 @@ deployment is included here. Read this section first for variant-specific status
   2 and 3, across the upcoming seven days. Daily prayer times remain secondary.
   A localized target date and day/hour/minute/second counter identify the Friday.
   Missing Friday times must be shown as missing, never inferred from Dhuhr.
+- Directory cards show the schedule's age. Within 30 days nothing is shown;
+  30–89 days a muted "updated N days ago" line; 90 days and older an amber
+  "updated N days ago · check before you go" line (`renderCardFreshness`,
+  from `effectiveKeeperUpdatedAt`). The drawer already carried this; the card
+  used to show a Verified badge beside months-old times with no hint.
+- The primary action is labelled "Jummah near me" in all ten languages. The
+  label lives in one place per layer — `app/js/i18n.js` + `app/i18n/*.json`
+  for the running app and `app/data/jumma-copy.json` for the generated
+  homepages — and the three must agree; a stale generated copy had read
+  "Nearby masjids" while the source said "Find masjids near me".
 - Cards, detail tables and timing forms lead with Jummah. Existing daily timing,
   favorites, default-masjid, keeper, Qaza and on-device photo-scan features remain.
 - Directory search queries the shared backend by masjid/city, with debouncing and
