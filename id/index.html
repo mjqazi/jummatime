@@ -1,285 +1,1004 @@
-<!doctype html>
-<html lang="id" dir="ltr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0F2A1E" />
-  <title>Jumma Time: cari salat Jumat dekat Anda</title>
-  <meta name="description" content="Cari masjid terdekat serta jadwal Jumma/Jummah/Jumat dan salat berjemaah yang dibagikan jemaah." />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="author" content="Jumma Time" />
-  <link rel="canonical" href="https://jummatime.com/id/" />
-  <link rel="alternate" hreflang="en" href="https://jummatime.com/" />
-  <link rel="alternate" hreflang="ar" href="https://jummatime.com/ar/" />
-  <link rel="alternate" hreflang="bn" href="https://jummatime.com/bn/" />
-  <link rel="alternate" hreflang="fa" href="https://jummatime.com/fa/" />
-  <link rel="alternate" hreflang="fr" href="https://jummatime.com/fr/" />
-  <link rel="alternate" hreflang="hi" href="https://jummatime.com/hi/" />
-  <link rel="alternate" hreflang="id" href="https://jummatime.com/id/" />
-  <link rel="alternate" hreflang="ms" href="https://jummatime.com/ms/" />
-  <link rel="alternate" hreflang="tr" href="https://jummatime.com/tr/" />
-  <link rel="alternate" hreflang="ur" href="https://jummatime.com/ur/" />
-  <link rel="alternate" hreflang="x-default" href="https://jummatime.com/" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/brand/jummatime-icon-512.png" />
-  <link rel="apple-touch-icon" href="/assets/brand/jummatime-icon-512.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="application-name" content="Jumma Time" />
-  <meta name="google-play-app" content="app-id=com.takbeertime.android" />
-  <meta property="og:locale" content="id_ID" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Jumma Time" />
-  <meta property="og:title" content="Jumma Time: cari salat Jumat dekat Anda" />
-  <meta property="og:description" content="Cari masjid terdekat serta jadwal Jumma/Jummah/Jumat dan salat berjemaah yang dibagikan jemaah." />
-  <meta property="og:url" content="https://jummatime.com/id/" />
-  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
-  <meta property="og:image:secure_url" content="https://jummatime.com/assets/brand/jummatime-og.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jumma Time: cari salat Jumat dekat Anda" />
-  <meta name="twitter:description" content="Cari masjid terdekat serta jadwal Jumma/Jummah/Jumat dan salat berjemaah yang dibagikan jemaah." />
-  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
-  <meta name="twitter:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/jummatime.css" />
-  <script src="/js/jummatime.js" defer></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9QBC0PLVN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!DOCTYPE html><html lang="id" dir="ltr" data-app-language="id"><head><base href="/app/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F2A1E">
+  <title>JummaTime - Waktu Salat Jumat</title>
+  <meta name="description" content="Cari masjid, lihat waktu salat Jumat, dan dapatkan petunjuk arah.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="application-name" content="JummaTime">
+  <meta name="apple-mobile-web-app-title" content="JummaTime">
+  <link rel="canonical" href="https://jummatime.com/id/">
+  <!-- The <html lang> + <title> + meta will be re-set by i18n.js once the user's language is detected. -->
 
-    gtag('config', 'G-W9QBC0PLVN');
-  </script>
-  <script type="application/ld+json">
-{
+
+  <link rel="manifest" href="/app/site.webmanifest">
+  <link rel="icon" href="/app/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/app/assets/brand/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/app/assets/brand/favicon-16x16.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/app/assets/brand/takbeer-time-icon-192.png?v=2">
+  <link rel="icon" type="image/png" sizes="512x512" href="/app/assets/brand/takbeer-time-icon-512.png?v=2">
+  <link rel="apple-touch-icon" href="/app/assets/brand/apple-touch-icon.png?v=2">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JummaTime">
+  <meta property="og:title" content="JummaTime - Waktu Salat Jumat">
+  <meta property="og:description" content="Cari masjid, lihat waktu salat Jumat, dan dapatkan petunjuk arah.">
+  <meta property="og:url" content="https://jummatime.com/id/">
+  <meta property="og:image" content="https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="JummaTime app icon">
+  <meta property="og:locale" content="id_ID">
+
+
+
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JummaTime - Waktu Salat Jumat">
+  <meta name="twitter:description" content="Cari masjid, lihat waktu salat Jumat, dan dapatkan petunjuk arah.">
+  <meta name="twitter:image" content="https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png">
+  <meta name="twitter:image:alt" content="JummaTime app icon">
+  <script src="/app/js/analytics.js?v=1" defer=""></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin="">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Cinzel:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&amp;family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/jamat.css?v=86">
+  <link rel="stylesheet" href="css/jumma.css?v=2">
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://jummatime.com/#organization",
-      "name": "Jumma Time",
+      "name": "JummaTime",
       "url": "https://jummatime.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://jummatime.com/assets/brand/jummatime-icon-512.png",
-        "width": 512,
-        "height": 512
-      },
+      "logo": "https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png",
       "sameAs": [
-        "https://takbeertime.com/",
-        "https://play.google.com/store/apps/details?id=com.takbeertime.android"
+        "https://github.com/mjqazi/jummatime"
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://jummatime.com/#website",
       "url": "https://jummatime.com/",
-      "name": "Jumma Time",
+      "name": "JummaTime",
       "alternateName": [
-        "JummaTime",
-        "Jummah Time",
-        "Juma Time",
-        "Find Jumma Near Me",
-        "Find Jummah Near Me"
+        "Jumma Time",
+        "Jummah Times Directory",
+        "Masjid Iqamah Times"
       ],
-      "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
-      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
-      "inLanguage": "en",
-      "availableLanguage": [
-        "en",
-        "ar",
-        "bn",
-        "fa",
-        "fr",
-        "hi",
-        "id",
-        "ms",
-        "tr",
-        "ur"
-      ],
+      "description": "Cari masjid, lihat waktu salat Jumat, dan dapatkan petunjuk arah.",
+      "inLanguage": "id",
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      },
-      "hasPart": [
-        {
-          "@id": "https://jummatime.com/#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/for-masjids.html#webpage"
-        }
-      ]
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://jummatime.com/#app",
-      "name": "Takbeer Time",
-      "operatingSystem": "Android",
-      "applicationCategory": "LifestyleApplication",
-      "url": "https://play.google.com/store/apps/details?id=com.takbeertime.android",
-      "description": "Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, Jummah, jamat, jamaat, and iqamah times.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
       }
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://jummatime.com/id/#primaryimage",
-      "url": "https://jummatime.com/assets/brand/jummatime-og.png",
-      "width": 1200,
-      "height": 630,
-      "caption": "Jumma Time helps travelers find Friday prayer times at nearby masjids."
     },
     {
       "@type": "WebPage",
       "@id": "https://jummatime.com/id/#webpage",
       "url": "https://jummatime.com/id/",
-      "name": "Jumma Time: cari salat Jumat dekat Anda",
-      "description": "Cari masjid terdekat serta jadwal Jumma/Jummah/Jumat dan salat berjemaah yang dibagikan jemaah.",
+      "name": "JummaTime - Waktu Salat Jumat",
+      "description": "Cari masjid, lihat waktu salat Jumat, dan dapatkan petunjuk arah.",
       "isPartOf": {
         "@id": "https://jummatime.com/#website"
       },
+      "about": "Crowd-sourced masjid jamat and iqamah times",
       "primaryImageOfPage": {
-        "@id": "https://jummatime.com/id/#primaryimage"
+        "@type": "ImageObject",
+        "url": "https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png",
+        "width": 512,
+        "height": 512
       },
-      "dateModified": "2026-05-27",
       "inLanguage": "id"
     }
   ]
-}
-  </script>
-</head>
+}</script>
+<link rel="alternate" hreflang="en" href="https://jummatime.com/"><link rel="alternate" hreflang="ar" href="https://jummatime.com/ar/"><link rel="alternate" hreflang="bn" href="https://jummatime.com/bn/"><link rel="alternate" hreflang="fa" href="https://jummatime.com/fa/"><link rel="alternate" hreflang="fr" href="https://jummatime.com/fr/"><link rel="alternate" hreflang="hi" href="https://jummatime.com/hi/"><link rel="alternate" hreflang="id" href="https://jummatime.com/id/"><link rel="alternate" hreflang="ms" href="https://jummatime.com/ms/"><link rel="alternate" hreflang="tr" href="https://jummatime.com/tr/"><link rel="alternate" hreflang="ur" href="https://jummatime.com/ur/"><link rel="alternate" hreflang="x-default" href="https://jummatime.com/"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="ar_SA"><meta property="og:locale:alternate" content="bn_BD"><meta property="og:locale:alternate" content="fa_IR"><meta property="og:locale:alternate" content="fr_FR"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="ms_MY"><meta property="og:locale:alternate" content="tr_TR"><meta property="og:locale:alternate" content="ur_PK"></head>
 <body>
-  <a class="skip-link" href="#main">Lewati ke konten</a>
-  <header class="site-header">
-    <div class="site-header__in">
-      <a class="brand" href="/id/" aria-label="Beranda Jumma Time">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M7 28V17c0-5 4-8 9-8s9 3 9 8v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <circle cx="16" cy="18" r="3.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16 16.2v1.8l1.3 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="4" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="5" y1="28" x2="5" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="27" y1="28" x2="27" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- ─── INBOX BANNER (only shown to keepers with pending suggestions) ─── -->
+  <div class="inbox-banner" id="inbox-banner" hidden="" role="alert" aria-live="polite">
+    <span class="inbox-banner__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 7l9 6 9-6M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7M3 7l2-2h14l2 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg>
+    </span>
+    <span class="inbox-banner__text" id="inbox-banner-text">—</span>
+    <button class="inbox-banner__btn" id="inbox-banner-btn" type="button" data-i18n="inbox.review">Tinjau</button>
+  </div>
+
+  <!-- ─── TOP BAR ─── -->
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="JummaTime — home">
+      <img class="brand__mark" src="assets/branding/logo-icon.png?v=1" width="30" height="27" alt="" aria-hidden="true" decoding="async">
+      <span class="brand__name" data-i18n="app.title">JummaTime</span>
+    </a>
+
+    <div class="topbar__actions">
+      <button class="qaza-pill" id="qaza-pill" type="button" aria-controls="qaza-drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          <path d="M12 7.5V12l3 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span data-i18n="qaza.pill">Salat terlewat</span>
+        <span class="qaza-pill__count" id="qaza-pill-count" hidden="">0</span>
+      </button>
+      <div class="langmenu" id="langmenu">
+        <button class="langmenu__trigger" id="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-pop" data-i18n-aria-label="lang.aria" data-i18n-title="lang.aria" aria-label="Pilih bahasa" title="Pilih bahasa">
+          <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+            <path d="M3 12h18 M12 3a14 14 0 0 1 0 18 M12 3a14 14 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="1.6"></path>
           </svg>
-        </span>
-        <span class="brand__name">Jumma Time</span>
-      </a>
-      <nav class="site-nav" aria-label="Navigasi utama">
-        <a href="/id/jumma-near-me.html">Jumat dekat saya</a>
-        <a href="/id/what-time-is-jumma.html">Waktu Jumat</a>
-        <a href="/id/jumma-while-traveling.html">Perjalanan</a>
-        <a href="/id/for-masjids.html">Untuk masjid</a>
-        <a class="site-nav__cta" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="nav-id" target="_blank" rel="noopener">Dapatkan aplikasi</a>
-      </nav>
+          <span class="langmenu__current" id="lang-current">English</span>
+          <span class="langmenu__caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="langmenu__pop" id="lang-pop" role="listbox" tabindex="-1" aria-label="Language" hidden="">
+          <div class="langmenu__pointer" aria-hidden="true"></div>
+          <div class="langmenu__head">
+            <p class="langmenu__eyebrow" data-i18n="lang.eyebrow">Bahasa</p>
+            <p class="langmenu__title" data-i18n="lang.choose">Pilih bahasa Anda</p>
+          </div>
+          <div class="langmenu__list" id="lang-list"></div>
+        </div>
+      </div>
+      <button class="auth-btn" id="auth-btn" type="button" data-i18n-aria-label="auth.signIn" aria-label="Masuk">
+        <span class="auth-btn__avatar" aria-hidden="true">?</span>
+        <span class="auth-btn__label" data-i18n="auth.signIn">Masuk</span>
+        <span class="auth-btn__followers" id="auth-followers" hidden=""></span>
+      </button>
+      <div class="account-menu" id="account-menu" hidden="" role="dialog" aria-labelledby="account-title">
+        <p class="account-menu__eyebrow" data-i18n="account.eyebrow">Account</p>
+        <h2 class="account-menu__title" id="account-title" data-i18n="account.title">Signed in</h2>
+        <p class="account-menu__email" id="account-email"></p>
+        <div class="account-menu__stat" aria-live="polite">
+          <span class="account-menu__stat-number" id="account-followers-count">0</span>
+          <span class="account-menu__stat-label" id="account-followers-label" data-i18n="account.followers">followers</span>
+        </div>
+        <button class="account-menu__logout" id="account-logout" type="button" data-i18n="auth.signOut">Keluar</button>
+      </div>
     </div>
   </header>
-  <main id="main">
-    <section class="hero">
-      <div class="wrap hero__grid">
-        <div>
-          <p class="eyebrow">Bahasa Indonesia</p>
-          <h1>Cari salat Jumat berikutnya di dekat Anda</h1>
-          <p class="hero__lead">Di kota baru pada hari Jumat? Jumma Time membantu menemukan masjid terdekat dan jadwal Jumat yang dibagikan jemaah.</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="home-id" target="_blank" rel="noopener">Instal aplikasi gratis</a>
-            <a class="btn btn--ghost" href="/id/jumma-near-me.html">Jumat dekat saya</a>
+
+  <!-- ─── HERO ─── -->
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-headline">
+      <!-- Compact top: kicker + WhatsApp share glyph on one row, headline
+           full-width beneath (owner: simple logo, less vertical space). -->
+      <div class="hero-top-row">
+        <h1 class="headline" id="hero-headline" data-i18n="hero.headlineHtml:html">Waktu salat Jumat</h1>
+        <button class="share-app-btn hero-share-btn" id="share-app-btn" type="button" data-i18n-aria-label="share.aria" data-i18n-title="share.button" title="Bagikan" aria-label="Bagikan JummaTime">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.23 3.7 8.23 8.24 0 4.54-3.7 8.23-8.23 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01" fill="currentColor"></path></svg>
+          <span class="visually-hidden" data-i18n="share.button">Bagikan</span>
+        </button>
+      </div>
+
+      <div class="hero-cards">
+      <!-- The next-prayer card for the user's default mosque -->
+      <article class="next-card" id="next-card" aria-live="polite" hidden="">
+
+        <div class="next-card__name-row">
+          <div class="next-card__name-text">
+            <h2 class="next-card__mosque" id="next-mosque" data-i18n="next.empty">Belum ada masjid yang dipilih</h2>
+            <p class="next-card__sub" id="next-sub" data-i18n="next.emptyHint">Pilih masjid di bawah lalu pilih "Jadikan utama".</p>
+          </div>
+          <!-- Bell (+ refresh when available) shares the name row —
+               the old header row above the name is gone (owner: compact). -->
+          <div class="next-card__head-actions">
+            <button class="next-card__refresh" id="next-refresh" type="button" hidden="" data-i18n-aria-label="next.refreshAria" data-i18n-title="next.refreshAria" aria-label="Pull the latest jamat times from the server" title="Pull the latest jamat times from the server">
+              <svg class="next-card__refresh-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <span class="visually-hidden" data-i18n="next.refresh">Refresh times</span>
+            </button>
+            <div class="reminder-toggle" id="reminder-toggle-wrap" hidden="">
+              <button class="next-card__bell" id="next-bell" type="button" data-i18n-aria-label="next.bellOpenAria" aria-expanded="false" aria-pressed="false" aria-label="Buka pengaturan pengingat">
+                <svg class="next-card__bell-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9zM10 21a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+                <span class="next-card__bell-badge" id="next-bell-count" hidden="">0</span>
+                <span class="visually-hidden" id="next-bell-label" data-i18n="next.bell">Ingatkan saya</span>
+              </button>
+            </div>
           </div>
         </div>
-        <aside class="jw" data-jummah-widget data-jw-locale="id" data-jw-status-opening="Membuka pencari masjid..." data-jw-status-finding="Mencari masjid terdekat..." data-jw-status-location-off="Lokasi nonaktif - pencari masjid tetap dibuka." aria-label="Jumat berikutnya">
-          <span class="jw__label">Jumat berikutnya</span>
-          <p class="jw__date" data-jw-date>Jumat ini</p>
-          <div class="jw__clock" role="timer" aria-live="off">
-            <span class="jw__unit"><span class="jw__num" data-jw="days">0</span><span class="jw__cap">hari</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="hours">00</span><span class="jw__cap">jam</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="mins">00</span><span class="jw__cap">mnt</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="secs">00</span><span class="jw__cap">dtk</span></span>
+        <button class="next-card__locate" id="next-locate" type="button" hidden="">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="currentColor"></circle><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          <span data-i18n="next.findNearby">Find nearby masjid</span>
+        </button>
+        <div class="next-card__clock" id="next-clock" hidden="">
+          <div class="next-card__row">
+            <span class="next-card__label" data-i18n="next.label">Jumat berikutnya</span>
+            <span class="next-card__prayer" id="next-prayer">—</span>
+            <span class="next-card__at" id="next-at">—</span>
           </div>
-          <button class="btn btn--brass" type="button" data-jw-geo>Cari masjid terdekat</button>
-          <p class="jw__geo-status" data-jw-status></p>
-          <p class="jw__note">Hitung mundur menuju Jumat siang; jadwal salat Jumat yang tepat ditentukan masing-masing masjid.</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="wrap">
-        <div class="quick-answer">
-          <span class="eyebrow">Jawaban singkat</span>
-          <p>Salat Jumat, juga dicari sebagai Jummah atau Jumma, dilaksanakan setelah zuhur. Waktu tepatnya berbeda di tiap masjid, jadi cek jadwal masjid sebelum berangkat.</p>
+          <p class="next-card__date" id="next-date"></p>
+          <div class="next-card__countdown">
+            <span class="next-card__in" data-i18n="next.in">dalam</span>
+            <span class="cd-unit">
+              <span class="cd-num" id="cd-d">0</span>
+              <span class="cd-label" id="cd-day-label">day</span>
+            </span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit">
+              <span class="cd-num" id="cd-h">00</span>
+              <span class="cd-label" data-i18n="next.unitH">jam</span>
+            </span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit">
+              <span class="cd-num" id="cd-m">00</span>
+              <span class="cd-label" data-i18n="next.unitM">mnt</span>
+            </span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit">
+              <span class="cd-num cd-sec" id="cd-s">00</span>
+              <span class="cd-label" data-i18n="next.unitS">dtk</span>
+            </span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section-tight" id="overview">
-      <div class="wrap prose">
-        <h2>Mengapa jadwal khusus masjid penting</h2>
-        <p>Peta memberi lokasi masjid, tetapi tidak selalu memberi tahu kapan khutbah dimulai. Jadwal Jumat berubah mengikuti zuhur dan berbeda antar masjid.</p>
-        <div class="btn-row" style="margin-top:1.2rem">
-          <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="home-body-id" target="_blank" rel="noopener">Instal aplikasi gratis</a>
-          <a class="btn btn--ghost" href="https://takbeertime.com/" target="_blank" rel="noopener">Gunakan aplikasi web</a>
+        <div class="next-card__jummah" id="next-jummah" hidden="">
+          <span class="next-card__jummah-kicker" data-i18n="next.jummahFirst">Waktu salat Jumat</span>
+          <strong class="next-card__jummah-times" id="next-jummah-times"></strong>
         </div>
+
+        <!-- Two equal actions: photograph the LED board, or type the times.
+             The photo is decoded on-device and lands in the submit form
+             pre-filled for review. Keeper choice lives in the detail drawer. -->
+
+        <!-- Reminder settings panel (slides in below clock when bell is tapped) -->
+        <div class="reminder-panel" id="reminder-panel" hidden="">
+          <!-- Populated by app.js updateNextReminderLine(); shows the very
+               next reminder that's queued so the user gets immediate
+               feedback after tweaking minutes / prayer toggles. -->
+          <p class="reminder-panel__next" id="reminder-next-line" hidden=""></p>
+          <p class="reminder-panel__line reminder-panel__line--friday" data-i18n="reminders.fridayHintHtml:html"><em>Jumat menggantikan Zuhur di hari Jumat — atur keduanya, yang sesuai akan berbunyi.</em></p>
+          <ul class="reminder-prayer-list" id="reminder-prayer-list">
+            <li data-prayer="fajr">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="fajr" aria-label="Enable Fajr reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.fajr">Subuh</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="fajr">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">menit sebelumnya</span>
+            </li>
+            <li data-prayer="dhuhr">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="dhuhr" aria-label="Enable Dhuhr reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.dhuhr">Zuhur</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="dhuhr">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">menit sebelumnya</span>
+            </li>
+            <li data-prayer="asr">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="asr" aria-label="Enable Asr reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.asr">Asar</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="asr">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">menit sebelumnya</span>
+            </li>
+            <li data-prayer="maghrib">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="maghrib" aria-label="Enable Maghrib reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.maghrib">Maghrib</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="maghrib">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">menit sebelumnya</span>
+            </li>
+            <li data-prayer="isha">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="isha" aria-label="Enable Isha reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.isha">Isya</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="isha">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">menit sebelumnya</span>
+            </li>
+            <li data-prayer="jummah">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="jummah" aria-label="Enable Jummah reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.jummah">Jumat</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="jummah">
+              <span class="rpl__suffix" data-i18n="reminders.minBeforeFri">menit sebelumnya · hanya Jumat</span>
+            </li>
+          </ul>
+          <div class="reminder-panel__actions">
+            <button type="button" class="btn btn--primary" id="reminder-save" data-i18n="reminders.save">Simpan</button>
+            <button type="button" class="btn btn--ghost" id="reminder-test" data-i18n="reminders.test">Uji nada</button>
+            <button type="button" class="btn btn--ghost" id="reminder-off" data-i18n="reminders.off">Matikan semua</button>
+          </div>
+          <p class="reminder-panel__hint" id="reminder-status"></p>
+        </div>
+
+        <!-- Jummah-first timing list for the selected mosque -->
+        <div class="next-card__all" id="next-all-wrap" hidden="">
+          <details class="daily-times">
+          <summary data-i18n="next.allTimesToday">Semua waktu salat</summary>
+          <div class="next-card__all-head">
+            <span class="next-card__all-count" id="next-all-count"></span>
+          </div>
+          <div class="next-card__all-cols" aria-hidden="true">
+            <span></span>
+            <span class="next-card__col-jamat" data-i18n="next.colJamat">Jamaah</span>
+            <span class="next-card__col-sun" data-i18n="next.colStarts">Mulai</span>
+            <span class="next-card__col-sun" data-i18n="next.colEnds">Selesai</span>
+          </div>
+          <ul class="next-card__all-list" id="next-all-list"></ul>
+          </details>
+        </div>
+
+        <!-- Action row (Take a pic / Enter the time yourself) sits under the
+             times table and above Navigate (owner ruling). -->
+        <div class="next-card__keeper-row" id="next-keeper-row" hidden="">
+          <div class="next-card__actions">
+          <button class="next-card__scan" id="next-scan" type="button" data-i18n-aria-label="scan.aria" data-i18n-title="scan.aria" aria-label="Foto papan jadwal salat masjid" title="Foto papan jadwal salat masjid">
+            <svg class="next-card__scan-icon" viewBox="0 0 40 32" width="34" height="27" aria-hidden="true">
+              <!-- timetable board: dark panel with five glowing rows -->
+              <rect x="1.5" y="1.5" width="21" height="29" rx="2" fill="#0b1a13" stroke="currentColor" stroke-width="1.4"></rect>
+              <rect x="4.5" y="5" width="15" height="2.4" rx="1" fill="#f0c14b"></rect>
+              <rect x="4.5" y="9.6" width="15" height="2.4" rx="1" fill="#ff5a4a"></rect>
+              <rect x="4.5" y="14.2" width="15" height="2.4" rx="1" fill="#ff5a4a"></rect>
+              <rect x="4.5" y="18.8" width="15" height="2.4" rx="1" fill="#5be08a"></rect>
+              <rect x="4.5" y="23.4" width="15" height="2.4" rx="1" fill="#ff5a4a"></rect>
+              <!-- camera overlapping the board's lower-right corner -->
+              <path d="M17.5 14.5h4.2l1.6-2.4h6.4l1.6 2.4h4.2a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-18a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z" fill="var(--pine, #0f2f22)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              <circle cx="26.5" cy="22" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+              <circle cx="26.5" cy="22" r="1.6" fill="currentColor"></circle>
+            </svg>
+            <span class="next-card__scan-label" data-i18n="scan.takePic">Pindai jadwal</span>
+          </button>
+          <button class="next-card__scan" id="next-enter" type="button" data-i18n-aria-label="scan.enterAria" data-i18n-title="scan.enterAria" aria-label="Ketik sendiri waktu jamat masjid ini" title="Ketik sendiri waktu jamat masjid ini">
+            <svg class="next-card__scan-icon" viewBox="0 0 40 32" width="34" height="27" aria-hidden="true">
+              <!-- clock face -->
+              <circle cx="11" cy="16" r="9.5" fill="#0b1a13" stroke="currentColor" stroke-width="1.5"></circle>
+              <path d="M11 10v6.2l4.2 2.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <!-- keyboard -->
+              <rect x="21" y="10.5" width="17.5" height="12.5" rx="2" fill="var(--pine, #0f2f22)" stroke="currentColor" stroke-width="1.5"></rect>
+              <rect x="23.4" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="26.8" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="30.2" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="33.6" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="24.4" y="17.4" width="10.8" height="2.3" rx="0.4" fill="currentColor"></rect>
+            </svg>
+            <span class="next-card__scan-label" data-i18n="scan.enterYourself">Tambah waktu</span>
+          </button>
+          </div>
+          <input type="file" id="scan-file" accept="image/*" capture="environment" hidden="" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <!-- Directions: sits under the times table (owner: "below Jummah")
+             as a full-width row; same #next-navigate wiring as before. -->
+          <button class="next-card__go next-card__go--row" id="next-navigate" type="button" hidden="" data-i18n-aria-label="nav.navigate" data-i18n-title="nav.navigate" title="Petunjuk arah" aria-label="Petunjuk arah">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2 4 21l8-4 8 4-8-19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg>
+            <span class="next-card__go-label" data-i18n="nav.navigate">Petunjuk arah</span>
+          </button>
+      </article>
+
+      <!-- "Find masjids near me" sits between the two cards (owner ruling):
+           on phones it follows the default-masjid card and precedes the
+           sun-position card; on wide layouts CSS `order` keeps it as the
+           full-width row under both cards. -->
+      <div class="quick">
+        <button class="quick__btn quick__btn--primary" id="btn-locate" type="button">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="currentColor"></circle><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          <span data-i18n="quick.locate">Masjid terdekat</span>
+        </button>
       </div>
+      <!-- Sun-position salah times: computed from the user's GPS + chosen fiqh.
+           Pure client-side astronomy — no server call required. Persists the
+           fiqh choice in localStorage so subsequent loads pick up where the
+           user left off. Sits visually beside the next-card on desktop. -->
+      <details class="sun-tools">
+      <summary data-i18n="tools.daily">Hitung waktu salat harian</summary>
+      <article class="sun-card" id="sun-card" hidden="">
+        <header class="sun-card__head">
+          <h3 class="sun-card__title" data-i18n="sun.title">Salat menurut posisi matahari</h3>
+          <label class="sun-card__fiqh">
+            <span class="sun-card__fiqh-label" data-i18n="sun.fiqh">Fiqh</span>
+            <select id="sun-fiqh">
+              <option value="hanafi" data-i18n="sun.fiqh.hanafi">Hanafi</option>
+              <option value="shafi" data-i18n="sun.fiqh.shafi">Syafi'i</option>
+              <option value="maliki" data-i18n="sun.fiqh.maliki">Maliki</option>
+              <option value="hanbali" data-i18n="sun.fiqh.hanbali">Hanbali</option>
+              <option value="jafari" data-i18n="sun.fiqh.jafari">Jafari (Syiah)</option>
+              <option value="isna" data-i18n="sun.fiqh.isna">ISNA (Amerika Utara)</option>
+              <option value="egypt" data-i18n="sun.fiqh.egypt">Otoritas Mesir</option>
+              <option value="ummalqura" data-i18n="sun.fiqh.ummalqura">Umm al-Qura</option>
+            </select>
+          </label>
+        </header>
+        <p class="sun-card__sub" id="sun-loc-sub" data-i18n="sun.locHint">Dihitung dari lokasi GPS ponsel Anda.</p>
+        <button class="sun-card__locate" id="sun-locate" type="button" hidden="" data-i18n="sun.locate">Gunakan lokasi saya</button>
+        <ul class="sun-card__list" id="sun-list"></ul>
+      </article>
+      </details>
+      </div>
+
+      <!-- Quick actions — only locate, the map opens automatically as part of the locate flow. -->
     </section>
 
-    <section class="section-tight" id="cities">
-      <div class="wrap">
-        <p class="eyebrow">Kota</p>
-        <h2>Waktu Jumat berdasarkan kota</h2>
-        <div class="city-grid" style="margin-top:1.2rem"><a class="city-link" href="/id/jumma-time/london.html">Waktu Jumat / Jummah di London <span>Inggris Raya</span></a><a class="city-link" href="/id/jumma-time/birmingham.html">Waktu Jumat / Jummah di Birmingham <span>Inggris Raya</span></a><a class="city-link" href="/id/jumma-time/manchester.html">Waktu Jumat / Jummah di Manchester <span>Inggris Raya</span></a><a class="city-link" href="/id/jumma-time/new-york.html">Waktu Jumat / Jummah di New York City <span>Amerika Serikat</span></a><a class="city-link" href="/id/jumma-time/chicago.html">Waktu Jumat / Jummah di Chicago <span>Amerika Serikat</span></a><a class="city-link" href="/id/jumma-time/houston.html">Waktu Jumat / Jummah di Houston <span>Amerika Serikat</span></a><a class="city-link" href="/id/jumma-time/los-angeles.html">Waktu Jumat / Jummah di Los Angeles <span>Amerika Serikat</span></a><a class="city-link" href="/id/jumma-time/toronto.html">Waktu Jumat / Jummah di Toronto <span>Kanada</span></a><a class="city-link" href="/id/jumma-time/dubai.html">Waktu Jumat / Jummah di Dubai <span>Uni Emirat Arab</span></a><a class="city-link" href="/id/jumma-time/sydney.html">Waktu Jumat / Jummah di Sydney <span>Australia</span></a><a class="city-link" href="/id/jumma-time/singapore.html">Waktu Jumat / Jummah di Singapore <span>Singapura</span></a><a class="city-link" href="/id/jumma-time/kuala-lumpur.html">Waktu Jumat / Jummah di Kuala Lumpur <span>Malaysia</span></a><a class="city-link" href="/id/jumma-time/jakarta.html">Waktu Jumat / Jummah di Jakarta <span>Indonesia</span></a><a class="city-link" href="/id/jumma-time/surabaya.html">Waktu Jumat / Jummah di Surabaya <span>Indonesia</span></a><a class="city-link" href="/id/jumma-time/bandung.html">Waktu Jumat / Jummah di Bandung <span>Indonesia</span></a><a class="city-link" href="/id/jumma-time/medan.html">Waktu Jumat / Jummah di Medan <span>Indonesia</span></a><a class="city-link" href="/id/jumma-time/dhaka.html">Waktu Jumat / Jummah di Dhaka <span>Bangladesh</span></a><a class="city-link" href="/id/jumma-time/chittagong.html">Waktu Jumat / Jummah di Chittagong <span>Bangladesh</span></a><a class="city-link" href="/id/jumma-time/khulna.html">Waktu Jumat / Jummah di Khulna <span>Bangladesh</span></a><a class="city-link" href="/id/jumma-time/sylhet.html">Waktu Jumat / Jummah di Sylhet <span>Bangladesh</span></a><a class="city-link" href="/id/jumma-time/karachi.html">Waktu Jumat / Jummah di Karachi <span>Pakistan</span></a><a class="city-link" href="/id/jumma-time/lahore.html">Waktu Jumat / Jummah di Lahore <span>Pakistan</span></a><a class="city-link" href="/id/jumma-time/faisalabad.html">Waktu Jumat / Jummah di Faisalabad <span>Pakistan</span></a><a class="city-link" href="/id/jumma-time/rawalpindi.html">Waktu Jumat / Jummah di Rawalpindi <span>Pakistan</span></a><a class="city-link" href="/id/jumma-time/delhi.html">Waktu Jumat / Jummah di Delhi <span>India</span></a><a class="city-link" href="/id/jumma-time/mumbai.html">Waktu Jumat / Jummah di Mumbai <span>India</span></a><a class="city-link" href="/id/jumma-time/kolkata.html">Waktu Jumat / Jummah di Kolkata <span>India</span></a><a class="city-link" href="/id/jumma-time/bengaluru.html">Waktu Jumat / Jummah di Bengaluru <span>India</span></a><a class="city-link" href="/id/jumma-time/kabul.html">Waktu Jumat / Jummah di Kabul <span>Afganistan</span></a><a class="city-link" href="/id/jumma-time/herat.html">Waktu Jumat / Jummah di Herat <span>Afganistan</span></a><a class="city-link" href="/id/jumma-time/kandahar.html">Waktu Jumat / Jummah di Kandahar <span>Afganistan</span></a><a class="city-link" href="/id/jumma-time/mazar-i-sharif.html">Waktu Jumat / Jummah di Mazar-i-Sharif <span>Afganistan</span></a><a class="city-link" href="/id/jumma-time/male.html">Waktu Jumat / Jummah di Male <span>Maladewa</span></a><a class="city-link" href="/id/jumma-time/colombo.html">Waktu Jumat / Jummah di Colombo <span>Sri Lanka</span></a><a class="city-link" href="/id/jumma-time/cairo.html">Waktu Jumat / Jummah di Cairo <span>Mesir</span></a><a class="city-link" href="/id/jumma-time/alexandria.html">Waktu Jumat / Jummah di Alexandria <span>Mesir</span></a><a class="city-link" href="/id/jumma-time/giza.html">Waktu Jumat / Jummah di Giza <span>Mesir</span></a><a class="city-link" href="/id/jumma-time/casablanca.html">Waktu Jumat / Jummah di Casablanca <span>Maroko</span></a><a class="city-link" href="/id/jumma-time/rabat.html">Waktu Jumat / Jummah di Rabat <span>Maroko</span></a><a class="city-link" href="/id/jumma-time/fez.html">Waktu Jumat / Jummah di Fez <span>Maroko</span></a><a class="city-link" href="/id/jumma-time/marrakesh.html">Waktu Jumat / Jummah di Marrakesh <span>Maroko</span></a><a class="city-link" href="/id/jumma-time/algiers.html">Waktu Jumat / Jummah di Algiers <span>Aljazair</span></a><a class="city-link" href="/id/jumma-time/oran.html">Waktu Jumat / Jummah di Oran <span>Aljazair</span></a><a class="city-link" href="/id/jumma-time/tunis.html">Waktu Jumat / Jummah di Tunis <span>Tunisia</span></a><a class="city-link" href="/id/jumma-time/sfax.html">Waktu Jumat / Jummah di Sfax <span>Tunisia</span></a><a class="city-link" href="/id/jumma-time/tripoli.html">Waktu Jumat / Jummah di Tripoli <span>Libya</span></a><a class="city-link" href="/id/jumma-time/benghazi.html">Waktu Jumat / Jummah di Benghazi <span>Libya</span></a><a class="city-link" href="/id/jumma-time/khartoum.html">Waktu Jumat / Jummah di Khartoum <span>Sudan</span></a><a class="city-link" href="/id/jumma-time/omdurman.html">Waktu Jumat / Jummah di Omdurman <span>Sudan</span></a><a class="city-link" href="/id/jumma-time/mogadishu.html">Waktu Jumat / Jummah di Mogadishu <span>Somalia</span></a><a class="city-link" href="/id/jumma-time/hargeisa.html">Waktu Jumat / Jummah di Hargeisa <span>Somaliland</span></a><a class="city-link" href="/id/jumma-time/djibouti-city.html">Waktu Jumat / Jummah di Djibouti City <span>Jibuti</span></a><a class="city-link" href="/id/jumma-time/nouakchott.html">Waktu Jumat / Jummah di Nouakchott <span>Mauritania</span></a><a class="city-link" href="/id/jumma-time/dakar.html">Waktu Jumat / Jummah di Dakar <span>Senegal</span></a><a class="city-link" href="/id/jumma-time/bamako.html">Waktu Jumat / Jummah di Bamako <span>Mali</span></a><a class="city-link" href="/id/jumma-time/conakry.html">Waktu Jumat / Jummah di Conakry <span>Guinea</span></a><a class="city-link" href="/id/jumma-time/freetown.html">Waktu Jumat / Jummah di Freetown <span>Sierra Leone</span></a><a class="city-link" href="/id/jumma-time/banjul.html">Waktu Jumat / Jummah di Banjul <span>Gambia</span></a><a class="city-link" href="/id/jumma-time/kano.html">Waktu Jumat / Jummah di Kano <span>Nigeria</span></a><a class="city-link" href="/id/jumma-time/lagos.html">Waktu Jumat / Jummah di Lagos <span>Nigeria</span></a><a class="city-link" href="/id/jumma-time/abuja.html">Waktu Jumat / Jummah di Abuja <span>Nigeria</span></a><a class="city-link" href="/id/jumma-time/ibadan.html">Waktu Jumat / Jummah di Ibadan <span>Nigeria</span></a><a class="city-link" href="/id/jumma-time/niamey.html">Waktu Jumat / Jummah di Niamey <span>Niger</span></a><a class="city-link" href="/id/jumma-time/n-djamena.html">Waktu Jumat / Jummah di N'Djamena <span>Chad</span></a><a class="city-link" href="/id/jumma-time/ouagadougou.html">Waktu Jumat / Jummah di Ouagadougou <span>Burkina Faso</span></a><a class="city-link" href="/id/jumma-time/abidjan.html">Waktu Jumat / Jummah di Abidjan <span>Côte d’Ivoire</span></a><a class="city-link" href="/id/jumma-time/accra.html">Waktu Jumat / Jummah di Accra <span>Ghana</span></a><a class="city-link" href="/id/jumma-time/addis-ababa.html">Waktu Jumat / Jummah di Addis Ababa <span>Etiopia</span></a><a class="city-link" href="/id/jumma-time/nairobi.html">Waktu Jumat / Jummah di Nairobi <span>Kenya</span></a><a class="city-link" href="/id/jumma-time/mombasa.html">Waktu Jumat / Jummah di Mombasa <span>Kenya</span></a><a class="city-link" href="/id/jumma-time/dar-es-salaam.html">Waktu Jumat / Jummah di Dar es Salaam <span>Tanzania</span></a><a class="city-link" href="/id/jumma-time/kampala.html">Waktu Jumat / Jummah di Kampala <span>Uganda</span></a><a class="city-link" href="/id/jumma-time/kigali.html">Waktu Jumat / Jummah di Kigali <span>Rwanda</span></a><a class="city-link" href="/id/jumma-time/johannesburg.html">Waktu Jumat / Jummah di Johannesburg <span>Afrika Selatan</span></a><a class="city-link" href="/id/jumma-time/cape-town.html">Waktu Jumat / Jummah di Cape Town <span>Afrika Selatan</span></a><a class="city-link" href="/id/jumma-time/istanbul.html">Waktu Jumat / Jummah di Istanbul <span>Turki</span></a><a class="city-link" href="/id/jumma-time/ankara.html">Waktu Jumat / Jummah di Ankara <span>Turki</span></a><a class="city-link" href="/id/jumma-time/izmir.html">Waktu Jumat / Jummah di Izmir <span>Turki</span></a><a class="city-link" href="/id/jumma-time/bursa.html">Waktu Jumat / Jummah di Bursa <span>Turki</span></a><a class="city-link" href="/id/jumma-time/tehran.html">Waktu Jumat / Jummah di Tehran <span>Iran</span></a><a class="city-link" href="/id/jumma-time/mashhad.html">Waktu Jumat / Jummah di Mashhad <span>Iran</span></a><a class="city-link" href="/id/jumma-time/isfahan.html">Waktu Jumat / Jummah di Isfahan <span>Iran</span></a><a class="city-link" href="/id/jumma-time/tabriz.html">Waktu Jumat / Jummah di Tabriz <span>Iran</span></a><a class="city-link" href="/id/jumma-time/baghdad.html">Waktu Jumat / Jummah di Baghdad <span>Irak</span></a><a class="city-link" href="/id/jumma-time/basra.html">Waktu Jumat / Jummah di Basra <span>Irak</span></a><a class="city-link" href="/id/jumma-time/erbil.html">Waktu Jumat / Jummah di Erbil <span>Irak</span></a><a class="city-link" href="/id/jumma-time/mosul.html">Waktu Jumat / Jummah di Mosul <span>Irak</span></a><a class="city-link" href="/id/jumma-time/damascus.html">Waktu Jumat / Jummah di Damascus <span>Suriah</span></a><a class="city-link" href="/id/jumma-time/aleppo.html">Waktu Jumat / Jummah di Aleppo <span>Suriah</span></a><a class="city-link" href="/id/jumma-time/amman.html">Waktu Jumat / Jummah di Amman <span>Yordania</span></a><a class="city-link" href="/id/jumma-time/zarqa.html">Waktu Jumat / Jummah di Zarqa <span>Yordania</span></a><a class="city-link" href="/id/jumma-time/beirut.html">Waktu Jumat / Jummah di Beirut <span>Lebanon</span></a><a class="city-link" href="/id/jumma-time/jerusalem.html">Waktu Jumat / Jummah di Jerusalem <span>Wilayah Palestina</span></a><a class="city-link" href="/id/jumma-time/gaza-city.html">Waktu Jumat / Jummah di Gaza City <span>Wilayah Palestina</span></a><a class="city-link" href="/id/jumma-time/ramallah.html">Waktu Jumat / Jummah di Ramallah <span>Wilayah Palestina</span></a><a class="city-link" href="/id/jumma-time/nablus.html">Waktu Jumat / Jummah di Nablus <span>Wilayah Palestina</span></a><a class="city-link" href="/id/jumma-time/sana-a.html">Waktu Jumat / Jummah di Sana'a <span>Yaman</span></a><a class="city-link" href="/id/jumma-time/aden.html">Waktu Jumat / Jummah di Aden <span>Yaman</span></a><a class="city-link" href="/id/jumma-time/taiz.html">Waktu Jumat / Jummah di Taiz <span>Yaman</span></a><a class="city-link" href="/id/jumma-time/riyadh.html">Waktu Jumat / Jummah di Riyadh <span>Arab Saudi</span></a><a class="city-link" href="/id/jumma-time/jeddah.html">Waktu Jumat / Jummah di Jeddah <span>Arab Saudi</span></a><a class="city-link" href="/id/jumma-time/makkah.html">Waktu Jumat / Jummah di Makkah <span>Arab Saudi</span></a><a class="city-link" href="/id/jumma-time/madinah.html">Waktu Jumat / Jummah di Madinah <span>Arab Saudi</span></a><a class="city-link" href="/id/jumma-time/doha.html">Waktu Jumat / Jummah di Doha <span>Qatar</span></a><a class="city-link" href="/id/jumma-time/kuwait-city.html">Waktu Jumat / Jummah di Kuwait City <span>Kuwait</span></a><a class="city-link" href="/id/jumma-time/manama.html">Waktu Jumat / Jummah di Manama <span>Bahrain</span></a><a class="city-link" href="/id/jumma-time/muscat.html">Waktu Jumat / Jummah di Muscat <span>Oman</span></a><a class="city-link" href="/id/jumma-time/salalah.html">Waktu Jumat / Jummah di Salalah <span>Oman</span></a><a class="city-link" href="/id/jumma-time/abu-dhabi.html">Waktu Jumat / Jummah di Abu Dhabi <span>Uni Emirat Arab</span></a><a class="city-link" href="/id/jumma-time/sharjah.html">Waktu Jumat / Jummah di Sharjah <span>Uni Emirat Arab</span></a><a class="city-link" href="/id/jumma-time/ajman.html">Waktu Jumat / Jummah di Ajman <span>Uni Emirat Arab</span></a><a class="city-link" href="/id/jumma-time/johor-bahru.html">Waktu Jumat / Jummah di Johor Bahru <span>Malaysia</span></a><a class="city-link" href="/id/jumma-time/george-town.html">Waktu Jumat / Jummah di George Town <span>Malaysia</span></a><a class="city-link" href="/id/jumma-time/kota-kinabalu.html">Waktu Jumat / Jummah di Kota Kinabalu <span>Malaysia</span></a><a class="city-link" href="/id/jumma-time/bangkok.html">Waktu Jumat / Jummah di Bangkok <span>Thailand</span></a><a class="city-link" href="/id/jumma-time/chiang-mai.html">Waktu Jumat / Jummah di Chiang Mai <span>Thailand</span></a><a class="city-link" href="/id/jumma-time/pattani.html">Waktu Jumat / Jummah di Pattani <span>Thailand</span></a><a class="city-link" href="/id/jumma-time/phuket.html">Waktu Jumat / Jummah di Phuket <span>Thailand</span></a><a class="city-link" href="/id/jumma-time/manila.html">Waktu Jumat / Jummah di Manila <span>Filipina</span></a><a class="city-link" href="/id/jumma-time/quezon-city.html">Waktu Jumat / Jummah di Quezon City <span>Filipina</span></a><a class="city-link" href="/id/jumma-time/davao.html">Waktu Jumat / Jummah di Davao <span>Filipina</span></a><a class="city-link" href="/id/jumma-time/cebu.html">Waktu Jumat / Jummah di Cebu <span>Filipina</span></a><a class="city-link" href="/id/jumma-time/ho-chi-minh-city.html">Waktu Jumat / Jummah di Ho Chi Minh City <span>Vietnam</span></a><a class="city-link" href="/id/jumma-time/hanoi.html">Waktu Jumat / Jummah di Hanoi <span>Vietnam</span></a><a class="city-link" href="/id/jumma-time/phnom-penh.html">Waktu Jumat / Jummah di Phnom Penh <span>Kamboja</span></a><a class="city-link" href="/id/jumma-time/yangon.html">Waktu Jumat / Jummah di Yangon <span>Myanmar (Burma)</span></a><a class="city-link" href="/id/jumma-time/mandalay.html">Waktu Jumat / Jummah di Mandalay <span>Myanmar (Burma)</span></a><a class="city-link" href="/id/jumma-time/beijing.html">Waktu Jumat / Jummah di Beijing <span>Tiongkok</span></a><a class="city-link" href="/id/jumma-time/shanghai.html">Waktu Jumat / Jummah di Shanghai <span>Tiongkok</span></a><a class="city-link" href="/id/jumma-time/guangzhou.html">Waktu Jumat / Jummah di Guangzhou <span>Tiongkok</span></a><a class="city-link" href="/id/jumma-time/shenzhen.html">Waktu Jumat / Jummah di Shenzhen <span>Tiongkok</span></a><a class="city-link" href="/id/jumma-time/tokyo.html">Waktu Jumat / Jummah di Tokyo <span>Jepang</span></a><a class="city-link" href="/id/jumma-time/osaka.html">Waktu Jumat / Jummah di Osaka <span>Jepang</span></a><a class="city-link" href="/id/jumma-time/seoul.html">Waktu Jumat / Jummah di Seoul <span>Korea Selatan</span></a><a class="city-link" href="/id/jumma-time/busan.html">Waktu Jumat / Jummah di Busan <span>Korea Selatan</span></a><a class="city-link" href="/id/jumma-time/taipei.html">Waktu Jumat / Jummah di Taipei <span>Taiwan</span></a><a class="city-link" href="/id/jumma-time/mexico-city.html">Waktu Jumat / Jummah di Mexico City <span>Meksiko</span></a><a class="city-link" href="/id/jumma-time/sao-paulo.html">Waktu Jumat / Jummah di Sao Paulo <span>Brasil</span></a><a class="city-link" href="/id/jumma-time/rio-de-janeiro.html">Waktu Jumat / Jummah di Rio de Janeiro <span>Brasil</span></a><a class="city-link" href="/id/jumma-time/buenos-aires.html">Waktu Jumat / Jummah di Buenos Aires <span>Argentina</span></a><a class="city-link" href="/id/jumma-time/lima.html">Waktu Jumat / Jummah di Lima <span>Peru</span></a><a class="city-link" href="/id/jumma-time/bogota.html">Waktu Jumat / Jummah di Bogota <span>Kolombia</span></a><a class="city-link" href="/id/jumma-time/santiago.html">Waktu Jumat / Jummah di Santiago <span>Cile</span></a><a class="city-link" href="/id/jumma-time/caracas.html">Waktu Jumat / Jummah di Caracas <span>Venezuela</span></a><a class="city-link" href="/id/jumma-time/quito.html">Waktu Jumat / Jummah di Quito <span>Ekuador</span></a><a class="city-link" href="/id/jumma-time/guayaquil.html">Waktu Jumat / Jummah di Guayaquil <span>Ekuador</span></a><a class="city-link" href="/id/jumma-time/panama-city.html">Waktu Jumat / Jummah di Panama City <span>Panama</span></a><a class="city-link" href="/id/jumma-time/moscow.html">Waktu Jumat / Jummah di Moscow <span>Rusia</span></a><a class="city-link" href="/id/jumma-time/saint-petersburg.html">Waktu Jumat / Jummah di Saint Petersburg <span>Rusia</span></a><a class="city-link" href="/id/jumma-time/kyiv.html">Waktu Jumat / Jummah di Kyiv <span>Ukraina</span></a><a class="city-link" href="/id/jumma-time/warsaw.html">Waktu Jumat / Jummah di Warsaw <span>Polandia</span></a><a class="city-link" href="/id/jumma-time/berlin.html">Waktu Jumat / Jummah di Berlin <span>Jerman</span></a><a class="city-link" href="/id/jumma-time/paris.html">Waktu Jumat / Jummah di Paris <span>Prancis</span></a><a class="city-link" href="/id/jumma-time/marseille.html">Waktu Jumat / Jummah di Marseille <span>Prancis</span></a><a class="city-link" href="/id/jumma-time/madrid.html">Waktu Jumat / Jummah di Madrid <span>Spanyol</span></a><a class="city-link" href="/id/jumma-time/barcelona.html">Waktu Jumat / Jummah di Barcelona <span>Spanyol</span></a><a class="city-link" href="/id/jumma-time/milan.html">Waktu Jumat / Jummah di Milan <span>Italia</span></a><a class="city-link" href="/id/jumma-time/rome.html">Waktu Jumat / Jummah di Rome <span>Italia</span></a><a class="city-link" href="/id/jumma-time/vienna.html">Waktu Jumat / Jummah di Vienna <span>Austria</span></a><a class="city-link" href="/id/jumma-time/amsterdam.html">Waktu Jumat / Jummah di Amsterdam <span>Belanda</span></a><a class="city-link" href="/id/jumma-time/rotterdam.html">Waktu Jumat / Jummah di Rotterdam <span>Belanda</span></a><a class="city-link" href="/id/jumma-time/brussels.html">Waktu Jumat / Jummah di Brussels <span>Belgia</span></a><a class="city-link" href="/id/jumma-time/stockholm.html">Waktu Jumat / Jummah di Stockholm <span>Swedia</span></a><a class="city-link" href="/id/jumma-time/oslo.html">Waktu Jumat / Jummah di Oslo <span>Norwegia</span></a><a class="city-link" href="/id/jumma-time/copenhagen.html">Waktu Jumat / Jummah di Copenhagen <span>Denmark</span></a><a class="city-link" href="/id/jumma-time/zurich.html">Waktu Jumat / Jummah di Zurich <span>Swiss</span></a><a class="city-link" href="/id/jumma-time/geneva.html">Waktu Jumat / Jummah di Geneva <span>Swiss</span></a><a class="city-link" href="/id/jumma-time/athens.html">Waktu Jumat / Jummah di Athens <span>Yunani</span></a><a class="city-link" href="/id/jumma-time/leeds.html">Waktu Jumat / Jummah di Leeds <span>Inggris Raya</span></a><a class="city-link" href="/id/jumma-time/montreal.html">Waktu Jumat / Jummah di Montreal <span>Kanada</span></a><a class="city-link" href="/id/jumma-time/vancouver.html">Waktu Jumat / Jummah di Vancouver <span>Kanada</span></a><a class="city-link" href="/id/jumma-time/calgary.html">Waktu Jumat / Jummah di Calgary <span>Kanada</span></a><a class="city-link" href="/id/jumma-time/melbourne.html">Waktu Jumat / Jummah di Melbourne <span>Australia</span></a><a class="city-link" href="/id/jumma-time/brisbane.html">Waktu Jumat / Jummah di Brisbane <span>Australia</span></a><a class="city-link" href="/id/jumma-time/perth.html">Waktu Jumat / Jummah di Perth <span>Australia</span></a><a class="city-link" href="/id/jumma-time/auckland.html">Waktu Jumat / Jummah di Auckland <span>Selandia Baru</span></a></div>
+    <!-- ─── DIRECTORY ─── -->
+    <section class="directory" aria-label="Masjid directory">
+      <div class="dir-tabs" role="tablist">
+        <button class="dir-tab is-active" data-tab="nearby" role="tab" aria-selected="true" data-i18n="dir.tabBrowse">Masjid</button>
+        <button class="dir-tab" data-tab="favorites" role="tab" aria-selected="false" data-i18n="dir.tabFavorites">Tersimpan</button>
       </div>
+
+      <label class="dir-search">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <input type="search" id="search" data-i18n-placeholder="dir.searchPh" placeholder="Cari masjid atau kota" autocomplete="off">
+      </label>
+
+      <ol class="cards" id="list-nearby" data-panel="nearby"></ol>
+      <ol class="cards is-hidden" id="list-favorites" data-panel="favorites"></ol>
+
+      <p class="empty" id="empty-state" hidden="">
+        <span data-i18n="dir.empty">Belum ada apa-apa.</span> <button class="link" id="empty-locate" type="button" data-i18n="dir.emptyLocate">Cari masjid di sekitar →</button>
+      </p>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="wrap site-footer__grid">
-      <div>
-        <a class="brand" href="/id/" aria-label="Jumma Time home"><span class="brand__name">Jumma Time</span></a>
-        <p style="font-size:0.9rem;max-width:34ch;margin-top:0.4rem">Cari waktu salat Jumat di masjid terdekat. Didukung komunitas Takbeer Time.</p>
+
+  <!-- ─── MAP VIEW (full-screen takeover) ─── -->
+  <section class="mapview" id="mapview" aria-hidden="true" aria-label="Map of nearby masjids">
+    <header class="mapview__head">
+      <h2 data-i18n="map.title">Masjid di sekitar Anda</h2>
+      <div class="mapview__head-actions">
+        <button class="mapview__addbtn" id="map-add" type="button" data-i18n-title="map.addTitle" title="Tambah masjid ke direktori">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          <span data-i18n="map.addBtn">Tambah masjid</span>
+        </button>
+        <button class="mapview__close" id="map-close" type="button" data-i18n-aria-label="map.closeAria" aria-label="Tutup peta">×</button>
       </div>
-      <div>
-        <h4>Cari salat Jumat</h4>
-        <a href="/id/jumma-near-me.html">Jumat dekat saya</a>
-        <a href="/id/what-time-is-jumma.html">Waktu Jumat</a>
-        <a href="/id/jumma-while-traveling.html">Perjalanan</a>
-        <a href="/id/jumma-in-masjid.html">Salat Jumat di masjid</a>
+    </header>
+
+    <!-- Add flow panel: details first, then tap/drag the pin to set location -->
+    <form class="mapview__addform" id="map-addform" hidden="">
+      <div class="mapview__addform-head">
+        <div>
+          <p class="mapview__addform-eyebrow">New masjid</p>
+          <h3>Add details and place the pin</h3>
+        </div>
       </div>
-      <div>
-        <h4>Kota</h4>
-        <div><a href="/id/jumma-time/london.html">Waktu Jumat / Jummah di London</a><a href="/id/jumma-time/birmingham.html">Waktu Jumat / Jummah di Birmingham</a><a href="/id/jumma-time/manchester.html">Waktu Jumat / Jummah di Manchester</a><a href="/id/jumma-time/new-york.html">Waktu Jumat / Jummah di New York City</a><a href="/id/jumma-time/chicago.html">Waktu Jumat / Jummah di Chicago</a><a href="/id/jumma-time/houston.html">Waktu Jumat / Jummah di Houston</a><a href="/id/jumma-time/los-angeles.html">Waktu Jumat / Jummah di Los Angeles</a><a href="/id/jumma-time/toronto.html">Waktu Jumat / Jummah di Toronto</a></div>
+      <p class="mapview__addform-help" id="addform-help">Enter the masjid name, then tap the map, drag the pin, or use the current map center for the exact location. City and country fill in automatically from the pin — adjust them if needed.</p>
+      <p class="mapview__addform-location" aria-live="polite">
+        <span id="addform-location-status">No location selected</span>
+        <span id="addform-coords">Tap map or use center</span>
+      </p>
+      <div class="mapview__addform-grid">
+        <label><span data-i18n="add.name">Nama</span> <input name="name" required="" maxlength="120" data-i18n-placeholder="add.namePh" placeholder="mis. Masjid Al-Falah"></label>
+        <label><span data-i18n="add.city">Kota</span> <input name="city" required="" maxlength="80" data-i18n-placeholder="add.cityPh" placeholder="mis. Jakarta"></label>
+        <label><span data-i18n="add.country">Negara</span> <input name="country" required="" maxlength="80" data-i18n-placeholder="add.countryPh" placeholder="mis. Indonesia"></label>
+        <label class="mapview__addform-full"><span data-i18n="add.address">Alamat</span> <input name="addressLine1" maxlength="200" data-i18n-placeholder="add.addressPh" placeholder="opsional — mis. Blok 4, Garden Town"></label>
+        <label class="mapview__addform-full mapview__captcha">
+          <span>Human check</span>
+          <div class="mapview__captcha-row">
+            <strong id="addform-captcha-question">Loading question…</strong>
+            <button class="btn btn--ghost" type="button" id="map-addform-captcha-refresh">Refresh</button>
+          </div>
+          <input name="captchaAnswer" required="" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="Answer">
+        </label>
       </div>
-      <div>
-        <h4>Aplikasi</h4>
-        <a href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="footer-id" target="_blank" rel="noopener">Instal aplikasi gratis</a>
-        <a href="https://takbeertime.com/" target="_blank" rel="noopener">Gunakan aplikasi web</a>
-        <a href="/id/for-masjids.html">Untuk masjid</a>
+      <div class="mapview__addform-actions">
+        <button class="btn btn--ghost" type="button" id="map-addform-center">Use map center</button>
+        <button class="btn btn--primary" type="submit" data-i18n="add.submit">Tambah masjid</button>
+        <button class="btn btn--ghost" type="button" id="map-addform-cancel" data-i18n="add.cancel">Batal</button>
       </div>
-      <div>
-        <h4>Bahasa</h4>
-        <div class="language-links"><a href="/">English</a><a href="/ar/">العربية</a><a href="/bn/">বাংলা</a><a href="/fa/">فارسی</a><a href="/fr/">Français</a><a href="/hi/">हिन्दी</a><a href="/id/">Bahasa Indonesia</a><a href="/ms/">Bahasa Melayu</a><a href="/tr/">Türkçe</a><a href="/ur/">اردو</a></div>
+    </form>
+
+    <div class="mapview__addhint" id="map-addhint" hidden="">
+      <span data-i18n="map.tapHint">Ketuk peta di lokasi masjid berada.</span>
+      <button class="link" type="button" id="map-addhint-cancel" data-i18n="map.cancel">batal</button>
+    </div>
+
+    <div id="map" class="mapview__canvas"></div>
+    <ol class="mapview__list" id="mapview-list"></ol>
+  </section>
+
+  <!-- ─── DETAIL DRAWER ─── -->
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title">
+    <div class="drawer__scrim" data-close-drawer=""></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true">
+      <header class="drawer__head">
+        <button class="drawer__close" data-close-drawer="" data-i18n-aria-label="drawer.closeAria" aria-label="Tutup">×</button>
+        <div class="drawer__hero-mark" aria-hidden="true">
+          <span class="drawer__hero-moon"></span>
+          <span class="drawer__hero-dome"></span>
+          <span class="drawer__hero-minaret drawer__hero-minaret--left"></span>
+          <span class="drawer__hero-minaret drawer__hero-minaret--right"></span>
+        </div>
+        <div class="drawer__status">
+          <span class="drawer__status-dot" aria-hidden="true"></span>
+          <span class="drawer__status-label" id="drawer-status" data-i18n="drawer.statusCommunity">Community masjid</span>
+          <span class="drawer__status-sep" aria-hidden="true">·</span>
+          <span class="drawer__status-distance" id="drawer-distance">nearby</span>
+        </div>
+        <div class="drawer__title-row">
+          <h2 class="drawer__title" id="drawer-title">—</h2>
+          <button class="drawer__rename" id="btn-rename-masjid" type="button" hidden="" data-i18n-aria-label="drawer.renameAria" aria-label="Name this masjid">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path d="M14.5 4.5 19.5 9.5 8.5 20.5 3 22 4.5 16.5Z M13 6l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="drawer__addr" id="drawer-addr">—</p>
+        <button class="drawer__head-default" id="btn-set-default" type="button" aria-pressed="false">
+          <span class="drawer__head-default-icon" aria-hidden="true">☆</span>
+          <span data-i18n="drawer.makeDefault">Jadikan sebagai utama</span>
+        </button>
+        <div class="keeper-credit" id="keeper-credit" hidden="">
+          <div class="keeper-credit__avatar" id="keeper-credit-avatar" aria-hidden="true">TK</div>
+          <div class="keeper-credit__body">
+            <p class="keeper-credit__meta">
+              <span data-i18n="drawer.byKeeper">Waktu oleh</span>
+              <span id="keeper-credit-rating">★ —</span>
+            </p>
+            <p class="keeper-credit__name">
+              <strong id="keeper-credit-name">—</strong>
+            </p>
+            <p class="keeper-credit__hint">
+              <span id="keeper-credit-hint">—</span>
+              <span id="keeper-credit-count"></span>
+            </p>
+          </div>
+          <button class="keeper-credit__switch" id="keeper-credit-switch" type="button" data-i18n="keeper.switch">Switch</button>
+        </div>
+      </header>
+
+      <section id="drawer-times-section">
+        <div class="drawer-times-head">
+          <h3 class="section-title" data-i18n="drawer.today">Jamaah hari ini</h3>
+          <p class="drawer-times-updated" id="drawer-times-updated" hidden=""></p>
+        </div>
+        <table class="times" id="drawer-times"><tbody></tbody></table>
+        <div class="stale-pill" id="stale-pill" hidden="">
+          <div class="stale-pill__icon" aria-hidden="true">!</div>
+          <div class="stale-pill__body">
+            <p class="stale-pill__title" data-i18n="stale.title">These timings look stale</p>
+            <p class="stale-pill__sub">
+              <span data-i18n="stale.nudgePrefix">Nudge</span>
+              <strong id="stale-keeper-name">—</strong>
+              <span data-i18n="stale.nudgeSuffix">to refresh them — or submit your own.</span>
+            </p>
+          </div>
+          <button class="stale-pill__cta" id="btn-open-nudge" type="button" data-i18n="stale.cta">Nudge</button>
+        </div>
+        <div class="times-empty" id="times-empty" hidden="">
+          <div class="times-empty__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="36" height="36" fill="none">
+              <rect x="5" y="14" width="2" height="13" fill="currentColor"></rect>
+              <path d="M4.5 14Q6 11.5 7.5 14Z" fill="currentColor"></path>
+              <rect x="25" y="14" width="2" height="13" fill="currentColor"></rect>
+              <path d="M24.5 14Q26 11.5 27.5 14Z" fill="currentColor"></path>
+              <rect x="9" y="18" width="14" height="9" fill="currentColor"></rect>
+              <path d="M11 18C11 12 21 12 21 18Z" fill="currentColor"></path>
+              <path d="M14.5 8A2.5 2.5 0 1 0 14.5 4A2 2 0 1 1 14.5 8Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <p class="times-empty__lead" data-i18n="drawer.emptyLead">Be the first to add jamat times here.</p>
+          <button class="btn btn--primary times-empty__cta" id="btn-submit-from-empty" type="button" data-i18n="drawer.beFirst">Jadi yang pertama — kirim jadwal jamaah</button>
+          <div class="jumma-shortcut">
+            <div class="jumma-shortcut__chip" aria-hidden="true">ج</div>
+            <div class="jumma-shortcut__body">
+              <p class="jumma-shortcut__title" data-i18n="drawer.jummaTitle">Waktu salat Jumat</p>
+            </div>
+            <button class="btn jumma-shortcut__cta" id="btn-submit-jumma-only" type="button" data-i18n="drawer.jummaCta">Tambah waktu</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="keepers-section" hidden="">
+        <div class="keepers-screen__head">
+          <p class="keepers-screen__masjid" id="keepers-screen-masjid">—</p>
+          <h3 class="keepers-screen__title" data-i18n="drawer.keepers">Penjaga waktu</h3>
+          <button class="keepers-screen__close" id="btn-close-keeper-screen" type="button" aria-label="Back to masjid details">×</button>
+        </div>
+        <div class="keepers-banner">
+          <span class="keepers-banner__icon" aria-hidden="true">ⓘ</span>
+          <p>
+            <span data-i18n="keepers.bannerBody1">Your app uses the</span>
+            <strong data-i18n="keepers.bannerBody2">highest-rated keeper</strong>
+            <span data-i18n="keepers.bannerBody3">by default. Switch by tapping</span>
+            <em data-i18n="keepers.useThese">Use these times</em>
+            <span data-i18n="keepers.bannerBody4">on any card.</span>
+          </p>
+        </div>
+        <ol class="keepers-list" id="keepers-list"></ol>
+      </section>
+
+      <section class="amenities-section">
+        <div class="amenities-section__head">
+          <h3 class="section-title" data-i18n="amenities.title">Masjid details</h3>
+          <span class="amenities-section__eyebrow" data-i18n="amenities.eyebrow">community-rated</span>
+        </div>
+        <ol class="amenities-list" id="drawer-amenities"></ol>
+        <button class="amenities-cta" id="btn-rate-masjid" type="button" data-i18n="amenities.rate">Rate this masjid</button>
+      </section>
+
+      <section class="drawer__actions">
+        <button class="btn btn--primary" id="btn-navigate" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 2 4 21l8-4 8 4-8-19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M12 2v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
+          <span data-i18n="nav.navigate">Petunjuk arah</span>
+        </button>
+        <button class="btn btn--primary" id="btn-favorite" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+          <span data-i18n="drawer.favSave">Simpan ke favorit</span>
+        </button>
+        <button class="btn btn--ghost" id="btn-submit-update" type="button" data-i18n="drawer.submitUpdate">Kirim pembaruan jadwal</button>
+        <button class="btn btn--ghost" id="btn-edit-mosque" type="button" hidden="">Edit masjid details</button>
+        <button class="btn btn--ghost btn--danger" id="btn-close-mosque" type="button" hidden="" data-i18n="drawer.closedForever">Laporkan: masjid ini sudah tutup permanen</button>
+        <button class="btn btn--ghost" id="btn-reactivate-mosque" type="button" hidden="">Reactivate masjid</button>
+      </section>
+
+      <section class="drawer__edit" id="edit-mosque-form" hidden="">
+        <h3 class="section-title">Edit masjid details</h3>
+        <p class="muted" id="edit-mosque-hint">You can edit the masjid details you added.</p>
+        <div class="submit-grid">
+          <label><span>Name</span> <input name="name" required="" maxlength="120"></label>
+          <label><span>City</span> <input name="city" required="" maxlength="80"></label>
+          <label><span>Country</span> <input name="country" required="" maxlength="80"></label>
+          <label><span>Address</span> <input name="addressLine1" maxlength="200"></label>
+        </div>
+        <div class="submit-actions">
+          <button class="btn btn--primary" id="btn-edit-confirm" type="button">Save details</button>
+          <button class="btn btn--ghost" id="btn-edit-cancel" type="button">Cancel</button>
+        </div>
+      </section>
+
+      <section class="drawer__submit" id="submit-form" hidden="">
+        <h3 class="section-title" data-i18n="submit.titleNew">Tambah waktu salat</h3>
+        <p class="muted" data-i18n="submit.noteNew">Kosongkan waktu yang belum diketahui.</p>
+        <!-- Filled by the timetable photo flow (js/app.js applyTimetableScan):
+             what the camera read, what differs from the current schedule,
+             and how far the board's clock is from the phone's. -->
+        <div class="submit-scan" id="submit-scan" hidden="" aria-live="polite">
+          <p class="submit-scan__title" data-i18n="scan.summaryTitle">Dibaca dari foto Anda</p>
+          <ul class="submit-scan__changes" id="submit-scan-changes"></ul>
+          <p class="submit-scan__clock muted muted--small" id="submit-scan-clock" hidden=""></p>
+          <p class="submit-scan__extras muted muted--small" id="submit-scan-extras" hidden=""></p>
+          <p class="submit-scan__note muted muted--small" id="submit-scan-note" hidden=""></p>
+        </div>
+        <div class="submit-grid">
+          <label class="submit-grid__primary"><span data-i18n="prayer.jummah">Jumat</span> <input type="time" name="jummah"></label>
+          <label><span data-i18n="prayer.jummah_2">Jumat 2</span> <input type="time" name="jummah_2"></label>
+          <label><span data-i18n="prayer.jummah_3">Jumat 3</span> <input type="time" name="jummah_3"></label>
+          <label><span data-i18n="prayer.fajr">Subuh</span> <input type="time" name="fajr"></label>
+          <label><span data-i18n="prayer.dhuhr">Zuhur</span> <input type="time" name="dhuhr"></label>
+          <label><span data-i18n="prayer.asr">Asar</span> <input type="time" name="asr"></label>
+          <label><span data-i18n="submit.maghribLabel">Maghrib (terbenam + …)</span>
+            <select name="maghribOffset">
+              <option value="0" data-i18n="submit.offsetAt">saat terbenam</option>
+              <option value="1">+1 min</option>
+              <option value="2">+2 min</option>
+              <option value="3" selected="">+3 min</option>
+              <option value="4">+4 min</option>
+              <option value="5">+5 min</option>
+              <option value="7">+7 min</option>
+              <option value="10">+10 min</option>
+              <option value="15">+15 min</option>
+            </select>
+          </label>
+          <label><span data-i18n="prayer.isha">Isya</span> <input type="time" name="isha"></label>
+        </div>
+        <label class="submit-notes"><span data-i18n="submit.notes">Catatan (opsional)</span>
+          <textarea name="notes" rows="2" data-i18n-placeholder="submit.notesPh" placeholder="mis. jadwal musim dingin, papan di pintu utama"></textarea>
+        </label>
+        <div class="submit-actions">
+          <button class="btn btn--primary" id="btn-submit-confirm" type="button" data-i18n="submit.send">Kirim</button>
+          <button class="btn btn--ghost" id="btn-submit-cancel" type="button" data-i18n="submit.cancel">Batal</button>
+        </div>
+      </section>
+
+      <section id="recent-section">
+        <h3 class="section-title" data-i18n="drawer.recent">Kontribusi terbaru</h3>
+        <ul class="contributors" id="drawer-contributors"><li class="muted" data-i18n="drawer.loading">Memuat…</li></ul>
+      </section>
+    </div>
+  </aside>
+
+  <!-- ─── QAZA DRAWER ─── -->
+  <aside class="drawer qaza-drawer" id="qaza-drawer" aria-hidden="true" aria-labelledby="qaza-title">
+    <div class="drawer__scrim" data-close-qaza=""></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true">
+      <header class="drawer__head qaza-drawer__head">
+        <button class="drawer__close" data-close-qaza="" aria-label="Close qaza drawer">×</button>
+        <p class="drawer__eyebrow">Personal record</p>
+        <h2 class="drawer__title" id="qaza-title">Qaza Namaz</h2>
+        <p class="drawer__addr" id="qaza-summary">Record missed namaz and mark them prayed later.</p>
+      </header>
+
+      <section class="qaza-record">
+        <h3 class="section-title">Mark missed for a day</h3>
+        <label class="qaza-date">
+          <span>Date</span>
+          <input type="date" id="qaza-date">
+        </label>
+        <div class="qaza-prayers" id="qaza-prayers" aria-label="Select missed namaz"></div>
+        <div class="submit-actions qaza-actions">
+          <button class="btn btn--primary" id="qaza-record-btn" type="button">Record selected</button>
+          <button class="btn btn--ghost" id="qaza-today-btn" type="button">Today</button>
+        </div>
+      </section>
+
+      <section class="qaza-pending">
+        <h3 class="section-title">Unprayed qaza</h3>
+        <p class="muted muted--small" id="qaza-next-hint" hidden=""></p>
+        <ul class="qaza-list" id="qaza-list"></ul>
+        <p class="qaza-empty" id="qaza-empty" hidden="">No qaza namaz pending.</p>
+      </section>
+    </div>
+  </aside>
+
+  <aside class="nudge-sheet" id="nudge-sheet" aria-hidden="true" aria-labelledby="nudge-title">
+    <div class="nudge-sheet__scrim" data-close-nudge=""></div>
+    <div class="nudge-sheet__panel" role="dialog" aria-modal="true">
+      <div class="nudge-sheet__grabber" aria-hidden="true"></div>
+      <header class="nudge-sheet__head">
+        <div class="nudge-sheet__avatar" id="nudge-keeper-avatar" aria-hidden="true">—</div>
+        <div class="nudge-sheet__credit">
+          <p class="nudge-sheet__eyebrow" data-i18n="nudge.eyebrow">Suggest an update</p>
+          <p class="nudge-sheet__to">
+            <span data-i18n="nudge.toPrefix">To</span>
+            <strong id="nudge-keeper-name">—</strong>
+            <span class="nudge-sheet__sep">·</span>
+            <span id="nudge-masjid-name">—</span>
+          </p>
+        </div>
+      </header>
+      <h2 class="nudge-sheet__title" id="nudge-title" data-i18n="nudge.title">Suggest the right times</h2>
+      <p class="nudge-sheet__lede" data-i18n="nudge.lede">Tap any prayer to propose a new time. Leave them as-is to just send a heads-up.</p>
+      <ol class="nudge-sheet__list" id="nudge-prayer-list"></ol>
+      <p class="nudge-sheet__summary" id="nudge-summary" hidden="">
+        <span class="nudge-sheet__count" id="nudge-count">0</span>
+        <span data-i18n="nudge.changesProposed">changes proposed</span>
+        <span class="nudge-sheet__sep">·</span>
+        <span data-i18n="nudge.willSee">will see the diff</span>
+      </p>
+      <button class="nudge-sheet__alt" id="btn-nudge-become-keeper" type="button">
+        <span class="nudge-sheet__alt-icon" aria-hidden="true">✎</span>
+        <span class="nudge-sheet__alt-body">
+          <span class="nudge-sheet__alt-title" data-i18n="nudge.becomeTitle">I want to become a time keeper · earn ajar</span>
+          <span class="nudge-sheet__alt-sub" data-i18n="nudge.becomeSub">Submit your own timings — every prayer prayed earns ajar for you.</span>
+        </span>
+        <span aria-hidden="true">›</span>
+      </button>
+      <div class="nudge-sheet__actions">
+        <button class="btn btn--primary" id="btn-send-nudge" type="button" data-i18n="nudge.send">Send nudge</button>
+        <button class="btn btn--ghost" data-close-nudge="" type="button" data-i18n="nudge.cancel">Cancel</button>
       </div>
     </div>
-    <div class="wrap site-footer__legal"><p>&copy; 2026 Jumma Time. Proyek komunitas gratis tanpa iklan. Jadwal dibagikan oleh jemaah; selalu konfirmasi ke masjid setempat.</p></div>
+  </aside>
+
+  <div class="nudge-time-popup" id="nudge-time-popup" aria-hidden="true" role="dialog" aria-labelledby="nudge-time-title">
+    <div class="nudge-time-popup__scrim" data-close-nudge-time=""></div>
+    <div class="nudge-time-popup__card">
+      <button class="modal__close" data-close-nudge-time="" aria-label="Close">×</button>
+      <p class="modal__eyebrow" data-i18n="nudge.timeEyebrow">Edit time</p>
+      <h2 id="nudge-time-title">Fajr</h2>
+      <p class="nudge-time-popup__current">
+        <span data-i18n="nudge.currentTime">Current</span>
+        <strong id="nudge-time-current">—</strong>
+      </p>
+      <label class="nudge-time-popup__field">
+        <span data-i18n="nudge.newTime">New time</span>
+        <input id="nudge-time-input" type="time">
+      </label>
+      <div class="nudge-time-popup__actions">
+        <button class="btn btn--primary" id="btn-nudge-time-apply" type="button" data-i18n="nudge.applyTime">Apply</button>
+        <button class="btn btn--ghost" id="btn-nudge-time-clear" type="button" data-i18n="nudge.clearTime">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUGGESTIONS INBOX MODAL ─── -->
+  <div class="modal" id="inbox-modal" aria-hidden="true" role="dialog" aria-labelledby="inbox-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card modal__card--wide">
+      <button class="modal__close" data-close-modal="" data-i18n-aria-label="drawer.closeAria" aria-label="Tutup">×</button>
+      <h2 id="inbox-title" data-i18n="inbox.title">Saran pembaruan waktu</h2>
+      <p class="muted muted--small" data-i18n="inbox.body">Pengguna menyarankan waktu baru untuk masjid yang Anda jaga. Terima untuk memperbarui catatan Anda (pengikut melihat waktu baru) atau tolak.</p>
+      <div class="inbox-alerts" id="inbox-alerts" hidden="">
+        <span class="inbox-alerts__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9zM10 21a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+        </span>
+        <span class="inbox-alerts__copy">
+          <strong id="inbox-alerts-title" data-i18n="inbox.alertsTitle">Phone alerts are off</strong>
+          <span id="inbox-alerts-body" data-i18n="inbox.alertsBody">Requests remain available in this inbox. Enable phone alerts to be notified when JummaTime is closed.</span>
+        </span>
+        <button class="btn btn--primary btn--small" id="inbox-alerts-enable" type="button" data-i18n="inbox.alertsEnable">Enable alerts</button>
+      </div>
+      <ol class="inbox-list" id="inbox-list"></ol>
+    </div>
+  </div>
+
+  <!-- ─── FIRST-RUN TIME KEEPER EXPLAINER ─── -->
+  <div class="modal keeper-intro" id="keeper-intro-modal" aria-hidden="true" role="dialog" aria-labelledby="keeper-intro-title">
+    <div class="modal__scrim" data-close-keeper-intro=""></div>
+    <div class="modal__card modal__card--wide">
+      <button class="modal__close" data-close-keeper-intro="" aria-label="Close">×</button>
+      <p class="modal__eyebrow" data-i18n="keeperIntro.eyebrow">Time keeper ratings</p>
+      <h2 id="keeper-intro-title" data-i18n="keeperIntro.title">One masjid can have several time keepers.</h2>
+      <p class="muted" data-i18n="keeperIntro.body">JummaTime chooses the highest-rated time keeper by default, so the app starts with the timings most likely to be trusted.</p>
+      <div class="keeper-intro__points">
+        <p data-i18n="keeperIntro.rating">Rating uses votes, fresh updates, verification, contribution history, and keeper trust.</p>
+        <p data-i18n="keeperIntro.followers">Followers show how many people use that keeper's timings.</p>
+        <p data-i18n="keeperIntro.choose">To use someone else's timings, open a masjid, scroll to Time keepers, and tap "Use this time keeper's timings."</p>
+      </div>
+      <button class="btn btn--primary keeper-intro__ok" type="button" data-close-keeper-intro="" data-i18n="keeperIntro.ok">I understand</button>
+    </div>
+  </div>
+
+  <!-- ─── SUGGEST-UPDATE MODAL (compose a new suggestion) ─── -->
+  <div class="modal" id="suggest-modal" aria-hidden="true" role="dialog" aria-labelledby="suggest-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal="" data-i18n-aria-label="drawer.closeAria" aria-label="Tutup">×</button>
+      <h2 id="suggest-title"><span data-i18n="suggest.title">Sarankan pembaruan waktu</span></h2>
+      <p class="muted muted--small" id="suggest-target">—</p>
+      <div class="submit-grid">
+        <label class="submit-grid__primary"><span data-i18n="prayer.jummah">Jumat</span> <input type="time" name="jummah"></label>
+        <label><span data-i18n="prayer.jummah_2">Jumat 2</span> <input type="time" name="jummah_2"></label>
+        <label><span data-i18n="prayer.jummah_3">Jumat 3</span> <input type="time" name="jummah_3"></label>
+        <label><span data-i18n="prayer.fajr">Subuh</span> <input type="time" name="fajr"></label>
+        <label><span data-i18n="prayer.dhuhr">Zuhur</span> <input type="time" name="dhuhr"></label>
+        <label><span data-i18n="prayer.asr">Asar</span> <input type="time" name="asr"></label>
+        <label><span data-i18n="submit.maghribLabel">Maghrib (terbenam + …)</span>
+          <select name="maghribOffset">
+            <option value="0" data-i18n="submit.offsetAt">saat terbenam</option>
+            <option value="1">+1 min</option>
+            <option value="2">+2 min</option>
+            <option value="3" selected="">+3 min</option>
+            <option value="5">+5 min</option>
+            <option value="7">+7 min</option>
+            <option value="10">+10 min</option>
+            <option value="15">+15 min</option>
+          </select>
+        </label>
+        <label><span data-i18n="prayer.isha">Isya</span> <input type="time" name="isha"></label>
+      </div>
+      <label class="submit-notes"><span data-i18n="suggest.notes">Catatan untuk penjaga (opsional)</span>
+        <textarea name="notes" rows="2" data-i18n-placeholder="suggest.notesPh" placeholder="mis. jadwal Ramadan mulai besok"></textarea>
+      </label>
+      <div class="submit-actions">
+        <button class="btn btn--primary" id="suggest-send" type="button" data-i18n="suggest.send">Kirim saran</button>
+        <button class="btn btn--ghost" data-close-modal="" type="button" data-i18n="submit.cancel">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── MASJID RATING MODAL ─── -->
+  <div class="modal rating-modal" id="rating-modal" aria-hidden="true" role="dialog" aria-labelledby="rating-title">
+    <div class="modal__scrim" data-close-rating=""></div>
+    <div class="modal__card rating-modal__card">
+      <button class="modal__close" data-close-rating="" data-i18n-aria-label="drawer.closeAria" aria-label="Tutup">×</button>
+      <p class="modal__eyebrow" data-i18n="amenities.ratingEyebrow">Masjid rating</p>
+      <h2 id="rating-title" data-i18n="amenities.ratingTitle">Rate this masjid</h2>
+      <p class="muted muted--small" id="rating-target">—</p>
+      <label class="rating-modal__field">
+        <span data-i18n="amenities.ratingCategory">Category</span>
+        <select id="rating-kind">
+          <option value="size" data-i18n="amenities.size">Size</option>
+          <option value="wudu" data-i18n="amenities.wudu">Wudu area</option>
+          <option value="washrooms" data-i18n="amenities.washrooms">Washrooms</option>
+          <option value="accessibility" data-i18n="amenities.accessibility">Accessibility</option>
+        </select>
+      </label>
+      <div class="rating-modal__stars" id="rating-stars" role="radiogroup" aria-label="Rating out of five">
+        <button type="button" data-rating-value="1" aria-label="1 star">★</button>
+        <button type="button" data-rating-value="2" aria-label="2 stars">★</button>
+        <button type="button" data-rating-value="3" aria-label="3 stars">★</button>
+        <button type="button" data-rating-value="4" aria-label="4 stars">★</button>
+        <button type="button" data-rating-value="5" aria-label="5 stars">★</button>
+      </div>
+      <div class="submit-actions">
+        <button class="btn btn--primary" id="rating-save" type="button" data-i18n="amenities.ratingSave">Save rating</button>
+        <button class="btn btn--ghost" data-close-rating="" type="button" data-i18n="submit.cancel">Batal</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── LOGIN MODAL ─── -->
+  <div class="modal" id="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal="" data-i18n-aria-label="drawer.closeAria" aria-label="Tutup">×</button>
+      <h2 id="login-title" data-i18n="login.title">Masuk atau daftar</h2>
+      <div id="login-entry">
+      <p class="muted" data-i18n="login.body">Lanjutkan dengan Google, atau masukkan email dan kata sandi. Pembuatan akun email baru memerlukan konfirmasi Anda.</p>
+      <button class="btn btn--google" id="login-google" type="button" hidden="">
+        <svg class="login-google__icon" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.17-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"></path>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.34 0-4.32-1.58-5.03-3.71H.96v2.33A9 9 0 0 0 9 18z"></path>
+          <path fill="#FBBC05" d="M3.97 10.71c-.18-.54-.28-1.12-.28-1.71 0-.59.1-1.17.28-1.71V4.96H.96A9 9 0 0 0 0 9c0 1.45.35 2.82.96 4.04l3.01-2.33z"></path>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.96l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"></path>
+        </svg>
+        <span data-i18n="login.google">Continue with Google</span>
+      </button>
+      <p class="muted muted--small" id="login-divider" hidden="" data-i18n="login.or">or with email</p>
+      <form id="login-form">
+        <input type="email" name="email" data-i18n-placeholder="login.emailPh" placeholder="anda@example.com" required="" autocomplete="email">
+        <input type="password" name="password" data-i18n-placeholder="login.passwordPh" placeholder="Password" autocomplete="current-password" minlength="8">
+        <p class="login-form__hint muted muted--small" data-i18n="login.passwordHint">8+ characters. Email-only sign-in is available in local development only.</p>
+        <button class="btn btn--primary" type="submit" data-i18n="login.continue">Lanjutkan</button>
+      </form>
+      </div>
+      <div id="signup-confirmation" hidden="" aria-live="polite">
+        <p data-i18n="login.signupBody">Akun baru akan dibuat untuk alamat email ini:</p>
+        <p class="signup-email"><strong id="signup-email" dir="ltr"></strong></p>
+        <div class="signup-actions">
+          <button class="btn btn--primary" id="signup-confirm" type="button" data-i18n="login.signupConfirm">Ya, buat akun saya</button>
+          <button class="btn btn--ghost" id="signup-cancel" type="button" data-i18n="login.signupCancel">Saya salah mengetik email</button>
+        </div>
+      </div>
+      <p class="login-version muted muted--small" id="login-version" hidden="">Version</p>
+    </div>
+  </div>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden=""></div>
+
+  <!-- ─── PLEDGE MODAL (opens when the brand / logo is tapped) ─── -->
+  <div class="modal pledge-modal" id="pledge-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pledge-modal-title">
+    <div class="modal__scrim" data-close-pledge=""></div>
+    <div class="modal__card pledge-modal__card">
+      <button class="modal__close" data-close-pledge="" data-i18n-aria-label="drawer.closeAria" aria-label="Tutup">×</button>
+      <p class="foot__pledge">
+        <span class="foot__pledge-line" id="pledge-modal-title" data-i18n="footer.noAds">Gratis. Tanpa iklan.</span>
+        <span class="foot__pledge-arabic" lang="ar" data-i18n="footer.sadqaArabic">صدقة في سبيل الله</span>
+        <span class="foot__pledge-trans" data-i18n="footer.sadqaTrans">Inisiatif ini adalah sadaqah fi sabilillah.</span>
+      </p>
+      <p class="foot__sadqa" data-i18n="footer.sadqaJariaHtml:html"><strong>This is sadqa jaria.</strong> <a href="https://takbeertime.com/api-docs.html" target="_blank" rel="noopener">The API</a> is open — call it from your own app, your masjid's website, anywhere a jamat time is needed. One shared database, kept by volunteer timekeepers — please use the API rather than copy the data, so their work reaches everyone. There's an angel out there counting every API hit. Not us.</p>
+      <p class="foot__colophon" data-i18n="footer.colophon">Untuk umat · Sumber terbuka</p>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="foot">
+    <p data-i18n="footer.noAds">Gratis. Tanpa iklan.</p>
+    <p class="foot__version" id="app-version" hidden="">Version</p>
+    <p class="foot__links">
+      <a href="https://takbeertime.com/privacy.html" data-i18n="footer.privacy">Privasi</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://takbeertime.com/terms.html" data-i18n="footer.terms">Ketentuan</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://takbeertime.com/api-docs.html" data-i18n="footer.apiDocs">API</a>
+      <span aria-hidden="true">·</span>
+      <!-- In-app account deletion: hidden by js/delete-account.js until
+           the user is signed in. Authenticated click triggers an in-page
+           confirm dialog and DELETE /api/users/me. The fallback href
+           points at the no-auth public form for the same outcome. -->
+      <a href="https://takbeertime.com/delete-account.html" id="foot-delete-account" data-action="delete-account" data-i18n="footer.deleteAccount" hidden="">Hapus akun</a>
+      <a href="https://takbeertime.com/delete-account.html" id="foot-delete-request" data-i18n="footer.deleteAccount">Hapus akun</a>
+    </p>
   </footer>
-</body>
-</html>
+
+  <!-- ─── DELETE-ACCOUNT CONFIRM MODAL (in-app, signed-in users only) ─── -->
+  <div class="modal" id="delete-modal" aria-hidden="true" role="dialog" aria-labelledby="delete-modal-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal="" aria-label="Close">×</button>
+      <h2 id="delete-modal-title">Delete your account?</h2>
+      <p class="muted">This is permanent. Here's exactly what happens:</p>
+      <ul class="muted muted--small" style="padding-left: 1.2rem; list-style: disc; line-height: 1.55; margin-bottom: 0.8rem;">
+        <li>Your account row (email, name, password hash, Firebase ID) is removed.</li>
+        <li>Your favourites, default masjid, preferred keepers, and reminder preferences are deleted.</li>
+        <li>Suggestions you've sent to time-keepers are deleted.</li>
+        <li>Submitted jamat timings stay in the directory but are re-attributed as "Deleted user," because other users are relying on them right now.</li>
+        <li>Your push-notification subscriptions on this device are dropped.</li>
+        <li>You'll be signed out and the page will reload.</li>
+      </ul>
+      <p class="muted muted--small">If you want specific submissions removed too, email <a href="mailto:qazi.junaid@gmail.com">qazi.junaid@gmail.com</a>.</p>
+      <div class="submit-actions">
+        <button class="btn btn--primary" id="delete-confirm" type="button" style="background: var(--crimson); color: var(--paper);">Yes, delete my account</button>
+        <button class="btn btn--ghost" data-close-modal="" type="button">Cancel</button>
+      </div>
+      <p class="delete-form-status" id="delete-modal-status" hidden="" style="margin-top: 0.8rem; font-size: 0.92rem;"></p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/config.js?v=5"></script>
+  <script src="js/auth-exchange.js?v=1"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="js/state.js?v=2"></script>
+  <script src="js/i18n.js?v=71"></script>
+  <script src="js/sun.js?v=36"></script>
+  <script src="js/timetable-reader.js?v=4"></script>
+  <script src="js/timetable-capture.js?v=1"></script>
+  <script src="js/api.js?v=47"></script>
+  <script src="js/components.js?v=57"></script>
+  <script src="js/reminders.js?v=37"></script>
+  <script src="js/app.js?v=84"></script>
+  <script src="js/delete-account.js?v=1"></script>
+
+
+</body></html>

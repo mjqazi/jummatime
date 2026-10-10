@@ -3,7 +3,7 @@
 (function () {
   'use strict';
 
-  var WEB_APP = 'https://takbeertime.com/';
+  var WEB_APP = '/app/';
   var PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.takbeertime.android';
 
   /* ---- Next Jummah countdown ---- */

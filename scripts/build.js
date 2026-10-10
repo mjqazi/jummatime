@@ -3,11 +3,14 @@
    - Generates /jumma-time/<slug>.html from data/cities.json
    - Injects the city grid + footer city list into pages that carry the markers
    - Regenerates sitemap.xml
-   Run: node scripts/build.js   (no dependencies) */
+   Run: npm ci --prefix app, then node scripts/build.js */
 'use strict';
 
 const fs = require('fs');
 const path = require('path');
+const { createRequire } = require('module');
+const appRequire = createRequire(path.join(__dirname, '..', 'app', 'package.json'));
+const { JSDOM } = appRequire('jsdom');
 
 const ROOT = path.join(__dirname, '..');
 const SITE = 'https://jummatime.com';
@@ -1403,6 +1406,81 @@ function topPageKeyForFile(fileName) {
   return null;
 }
 
+function applicationHome(locale) {
+  const copy = JSON.parse(fs.readFileSync(path.join(ROOT, 'app/data/jumma-copy.json'), 'utf8'));
+  const baseline = locale.code === 'en' ? {} : JSON.parse(fs.readFileSync(path.join(ROOT, `app/i18n/${locale.code}.json`), 'utf8'));
+  const strings = { ...baseline, ...copy.en, ...copy[locale.code] };
+  const dom = new JSDOM(fs.readFileSync(path.join(ROOT, 'app/index.html'), 'utf8'));
+  const document = dom.window.document;
+  document.documentElement.lang = locale.code;
+  document.documentElement.dir = locale.dir;
+  // English homepage may use the visitor's saved language; localized URLs are explicit.
+  document.documentElement.dataset.appLanguage = locale.code === 'en' ? '' : locale.code;
+  const base = document.createElement('base');
+  base.href = '/app/';
+  document.head.prepend(base);
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n.replace(/:html$/, '');
+    if (!strings[key]) return;
+    if (el.dataset.i18n.endsWith(':html')) el.innerHTML = strings[key];
+    else el.textContent = strings[key];
+  });
+  ['placeholder', 'aria-label', 'title'].forEach(attribute => {
+    document.querySelectorAll(`[data-i18n-${attribute}]`).forEach(el => {
+      const value = strings[el.getAttribute(`data-i18n-${attribute}`)];
+      if (value) el.setAttribute(attribute, value);
+    });
+  });
+  const url = absoluteUrl(topPath('home', locale));
+  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(el => el.remove());
+  topAlternates('home').forEach(alternate => {
+    const link = document.createElement('link');
+    link.rel = 'alternate';
+    link.hreflang = alternate.hreflang;
+    link.href = alternate.href;
+    document.head.appendChild(link);
+  });
+  document.title = strings['app.pageTitle'];
+  document.querySelector('link[rel="canonical"]').href = url;
+  document.querySelector('meta[property="og:url"]').content = url;
+  const ogLocales = { en: 'en_US', ar: 'ar_SA', ur: 'ur_PK', fa: 'fa_IR', bn: 'bn_BD',
+    hi: 'hi_IN', id: 'id_ID', ms: 'ms_MY', tr: 'tr_TR', fr: 'fr_FR' };
+  document.querySelector('meta[property="og:locale"]').content = ogLocales[locale.code];
+  document.querySelectorAll('meta[property="og:locale:alternate"]').forEach(el => el.remove());
+  LOCALES.filter(other => other.code !== locale.code).forEach(other => {
+    const meta = document.createElement('meta');
+    meta.setAttribute('property', 'og:locale:alternate');
+    meta.content = ogLocales[other.code];
+    document.head.appendChild(meta);
+  });
+  ['meta[property="og:title"]', 'meta[name="twitter:title"]'].forEach(selector => {
+    document.querySelector(selector).content = document.title;
+  });
+  ['meta[name="description"]', 'meta[property="og:description"]', 'meta[name="twitter:description"]'].forEach(selector => {
+    document.querySelector(selector).content = strings['app.pageDescription'];
+  });
+  const schema = document.querySelector('script[type="application/ld+json"]');
+  const graph = JSON.parse(schema.textContent);
+  graph['@graph'].forEach(node => {
+    node['@id'] = node['@id'].replace(`${SITE}/app/`, `${SITE}/`);
+    node.url = node['@type'] === 'WebPage' ? url : `${SITE}/`;
+    if (node.publisher) node.publisher['@id'] = ORG_ID;
+    if (node.isPartOf) node.isPartOf['@id'] = WEBSITE_ID;
+    if (node['@type'] !== 'Organization') {
+      node.inLanguage = locale.code;
+      node.description = strings['app.pageDescription'];
+    }
+    if (node['@type'] === 'WebPage') {
+      node['@id'] = `${url}#webpage`;
+      node.name = document.title;
+    }
+  });
+  schema.textContent = JSON.stringify(graph, null, 2);
+  const html = dom.serialize().replace(/^[ \t]+(?=\r?$)/gm, '');
+  dom.window.close();
+  return html;
+}
+
 /* ---------- write city pages ---------- */
 const cityDir = path.join(ROOT, 'jumma-time');
 if (!fs.existsSync(cityDir)) fs.mkdirSync(cityDir, { recursive: true });
@@ -1416,6 +1494,7 @@ cities.forEach((c) => {
 });
 
 /* ---------- inject markers into hand-written pages ---------- */
+writeIfChanged(path.join(ROOT, 'index.html'), applicationHome(EN_LOCALE));
 const topPages = fs
   .readdirSync(ROOT)
   .filter((f) => f.endsWith('.html'));
@@ -1428,7 +1507,7 @@ topPages.forEach((f) => {
     html = inject(html, 'CITYGRID', cityGridHtml);
     html = inject(html, 'FOOTERCITIES', footerCitiesHtml);
   }
-  html = injectGoogleAnalytics(html);
+  if (f !== 'index.html') html = injectGoogleAnalytics(html);
   const pageKey = topPageKeyForFile(f);
   if (pageKey) html = injectAlternateLinks(html, topAlternates(pageKey));
   console.log(`  ${writeIfChanged(p, html) ? 'updated' : 'unchanged'} ${f}`);
@@ -1440,7 +1519,8 @@ LOCALES.filter((locale) => locale.code !== 'en').forEach((locale) => {
     const localPath = topPath(pageKey, locale);
     const filePath = localFilePath(localPath);
     ensureDirFor(filePath);
-    console.log(`  ${writeIfChanged(filePath, localizedTopPage(pageKey, locale)) ? 'wrote' : 'unchanged'} ${localPath}`);
+    const html = pageKey === 'home' ? applicationHome(locale) : localizedTopPage(pageKey, locale);
+    console.log(`  ${writeIfChanged(filePath, html) ? 'wrote' : 'unchanged'} ${localPath}`);
   });
 
   cities.forEach((city) => {

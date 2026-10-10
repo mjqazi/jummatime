@@ -1,0 +1,29 @@
+{
+  "name": "JummaTime",
+  "short_name": "JummaTime",
+  "description": "Find the next Jummah near me, then real jamat and iqamah times at nearby masjids.",
+  "start_url": "/app/",
+  "scope": "/app/",
+  "display": "standalone",
+  "background_color": "#FDF7EA",
+  "theme_color": "#0F2A1E",
+  "categories": [
+    "lifestyle",
+    "utilities",
+    "navigation"
+  ],
+  "icons": [
+    {
+      "src": "/app/assets/brand/takbeer-time-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/app/assets/brand/takbeer-time-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

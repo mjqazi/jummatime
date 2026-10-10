@@ -1,285 +1,1004 @@
-<!doctype html>
-<html lang="ur" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0F2A1E" />
-  <title>Jumma Time: اپنے قریب نمازِ جمعہ تلاش کریں</title>
-  <meta name="description" content="قریبی مساجد اور مقامی نمازیوں کے شیئر کردہ Jumma/Jummah اور جماعت کے اوقات تلاش کریں۔" />
-  <meta name="robots" content="index,follow,max-image-preview:large" />
-  <meta name="author" content="Jumma Time" />
-  <link rel="canonical" href="https://jummatime.com/ur/" />
-  <link rel="alternate" hreflang="en" href="https://jummatime.com/" />
-  <link rel="alternate" hreflang="ar" href="https://jummatime.com/ar/" />
-  <link rel="alternate" hreflang="bn" href="https://jummatime.com/bn/" />
-  <link rel="alternate" hreflang="fa" href="https://jummatime.com/fa/" />
-  <link rel="alternate" hreflang="fr" href="https://jummatime.com/fr/" />
-  <link rel="alternate" hreflang="hi" href="https://jummatime.com/hi/" />
-  <link rel="alternate" hreflang="id" href="https://jummatime.com/id/" />
-  <link rel="alternate" hreflang="ms" href="https://jummatime.com/ms/" />
-  <link rel="alternate" hreflang="tr" href="https://jummatime.com/tr/" />
-  <link rel="alternate" hreflang="ur" href="https://jummatime.com/ur/" />
-  <link rel="alternate" hreflang="x-default" href="https://jummatime.com/" />
-  <link rel="icon" type="image/png" sizes="512x512" href="/assets/brand/jummatime-icon-512.png" />
-  <link rel="apple-touch-icon" href="/assets/brand/jummatime-icon-512.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="application-name" content="Jumma Time" />
-  <meta name="google-play-app" content="app-id=com.takbeertime.android" />
-  <meta property="og:locale" content="ur_PK" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Jumma Time" />
-  <meta property="og:title" content="Jumma Time: اپنے قریب نمازِ جمعہ تلاش کریں" />
-  <meta property="og:description" content="قریبی مساجد اور مقامی نمازیوں کے شیئر کردہ Jumma/Jummah اور جماعت کے اوقات تلاش کریں۔" />
-  <meta property="og:url" content="https://jummatime.com/ur/" />
-  <meta property="og:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
-  <meta property="og:image:secure_url" content="https://jummatime.com/assets/brand/jummatime-og.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Jumma Time: اپنے قریب نمازِ جمعہ تلاش کریں" />
-  <meta name="twitter:description" content="قریبی مساجد اور مقامی نمازیوں کے شیئر کردہ Jumma/Jummah اور جماعت کے اوقات تلاش کریں۔" />
-  <meta name="twitter:image" content="https://jummatime.com/assets/brand/jummatime-og.png" />
-  <meta name="twitter:image:alt" content="Jumma Time helps travelers find Friday prayer times at nearby masjids." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/css/jummatime.css" />
-  <script src="/js/jummatime.js" defer></script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W9QBC0PLVN"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<!DOCTYPE html><html lang="ur" dir="rtl" data-app-language="ur"><head><base href="/app/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0F2A1E">
+  <title>JummaTime - جمعہ کے اوقات</title>
+  <meta name="description" content="مسجد تلاش کریں، جمعہ کا وقت دیکھیں اور راستہ معلوم کریں۔">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="application-name" content="JummaTime">
+  <meta name="apple-mobile-web-app-title" content="JummaTime">
+  <link rel="canonical" href="https://jummatime.com/ur/">
+  <!-- The <html lang> + <title> + meta will be re-set by i18n.js once the user's language is detected. -->
 
-    gtag('config', 'G-W9QBC0PLVN');
-  </script>
-  <script type="application/ld+json">
-{
+
+  <link rel="manifest" href="/app/site.webmanifest">
+  <link rel="icon" href="/app/favicon.ico?v=2" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/app/assets/brand/favicon-32x32.png?v=2">
+  <link rel="icon" type="image/png" sizes="16x16" href="/app/assets/brand/favicon-16x16.png?v=2">
+  <link rel="icon" type="image/png" sizes="192x192" href="/app/assets/brand/takbeer-time-icon-192.png?v=2">
+  <link rel="icon" type="image/png" sizes="512x512" href="/app/assets/brand/takbeer-time-icon-512.png?v=2">
+  <link rel="apple-touch-icon" href="/app/assets/brand/apple-touch-icon.png?v=2">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="JummaTime">
+  <meta property="og:title" content="JummaTime - جمعہ کے اوقات">
+  <meta property="og:description" content="مسجد تلاش کریں، جمعہ کا وقت دیکھیں اور راستہ معلوم کریں۔">
+  <meta property="og:url" content="https://jummatime.com/ur/">
+  <meta property="og:image" content="https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png">
+  <meta property="og:image:width" content="512">
+  <meta property="og:image:height" content="512">
+  <meta property="og:image:alt" content="JummaTime app icon">
+  <meta property="og:locale" content="ur_PK">
+
+
+
+
+
+
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="JummaTime - جمعہ کے اوقات">
+  <meta name="twitter:description" content="مسجد تلاش کریں، جمعہ کا وقت دیکھیں اور راستہ معلوم کریں۔">
+  <meta name="twitter:image" content="https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png">
+  <meta name="twitter:image:alt" content="JummaTime app icon">
+  <script src="/app/js/analytics.js?v=1" defer=""></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://unpkg.com" crossorigin="">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&amp;family=Cinzel:wght@500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&amp;family=Inter+Tight:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="css/jamat.css?v=86">
+  <link rel="stylesheet" href="css/jumma.css?v=2">
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
       "@id": "https://jummatime.com/#organization",
-      "name": "Jumma Time",
+      "name": "JummaTime",
       "url": "https://jummatime.com/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://jummatime.com/assets/brand/jummatime-icon-512.png",
-        "width": 512,
-        "height": 512
-      },
+      "logo": "https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png",
       "sameAs": [
-        "https://takbeertime.com/",
-        "https://play.google.com/store/apps/details?id=com.takbeertime.android"
+        "https://github.com/mjqazi/jummatime"
       ]
     },
     {
       "@type": "WebSite",
       "@id": "https://jummatime.com/#website",
       "url": "https://jummatime.com/",
-      "name": "Jumma Time",
+      "name": "JummaTime",
       "alternateName": [
-        "JummaTime",
-        "Jummah Time",
-        "Juma Time",
-        "Find Jumma Near Me",
-        "Find Jummah Near Me"
+        "Jumma Time",
+        "Jummah Times Directory",
+        "Masjid Iqamah Times"
       ],
-      "description": "Find community-posted Jumma, Jummah, and Friday prayer times at nearby masjids.",
-      "keywords": "Jumma time, Jummah time, Juma time, Friday prayer time, Jummah near me, Jumma near me, masjid prayer times, jamat times, khutbah time, Salat al-Jumuah",
-      "inLanguage": "en",
-      "availableLanguage": [
-        "en",
-        "ar",
-        "bn",
-        "fa",
-        "fr",
-        "hi",
-        "id",
-        "ms",
-        "tr",
-        "ur"
-      ],
+      "description": "مسجد تلاش کریں، جمعہ کا وقت دیکھیں اور راستہ معلوم کریں۔",
+      "inLanguage": "ur",
       "publisher": {
         "@id": "https://jummatime.com/#organization"
-      },
-      "hasPart": [
-        {
-          "@id": "https://jummatime.com/#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/jumma-near-me.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/what-time-is-jumma.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/jumma-while-traveling.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/jumma-in-masjid.html#webpage"
-        },
-        {
-          "@id": "https://jummatime.com/for-masjids.html#webpage"
-        }
-      ]
-    },
-    {
-      "@type": "SoftwareApplication",
-      "@id": "https://jummatime.com/#app",
-      "name": "Takbeer Time",
-      "operatingSystem": "Android",
-      "applicationCategory": "LifestyleApplication",
-      "url": "https://play.google.com/store/apps/details?id=com.takbeertime.android",
-      "description": "Takbeer Time helps travelers and local worshippers find nearby masjids with community-posted Jumma, Jummah, jamat, jamaat, and iqamah times.",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
       }
-    },
-    {
-      "@type": "ImageObject",
-      "@id": "https://jummatime.com/ur/#primaryimage",
-      "url": "https://jummatime.com/assets/brand/jummatime-og.png",
-      "width": 1200,
-      "height": 630,
-      "caption": "Jumma Time helps travelers find Friday prayer times at nearby masjids."
     },
     {
       "@type": "WebPage",
       "@id": "https://jummatime.com/ur/#webpage",
       "url": "https://jummatime.com/ur/",
-      "name": "Jumma Time: اپنے قریب نمازِ جمعہ تلاش کریں",
-      "description": "قریبی مساجد اور مقامی نمازیوں کے شیئر کردہ Jumma/Jummah اور جماعت کے اوقات تلاش کریں۔",
+      "name": "JummaTime - جمعہ کے اوقات",
+      "description": "مسجد تلاش کریں، جمعہ کا وقت دیکھیں اور راستہ معلوم کریں۔",
       "isPartOf": {
         "@id": "https://jummatime.com/#website"
       },
+      "about": "Crowd-sourced masjid jamat and iqamah times",
       "primaryImageOfPage": {
-        "@id": "https://jummatime.com/ur/#primaryimage"
+        "@type": "ImageObject",
+        "url": "https://jummatime.com/app/assets/brand/takbeer-time-icon-512.png",
+        "width": 512,
+        "height": 512
       },
-      "dateModified": "2026-05-27",
       "inLanguage": "ur"
     }
   ]
-}
-  </script>
-</head>
+}</script>
+<link rel="alternate" hreflang="en" href="https://jummatime.com/"><link rel="alternate" hreflang="ar" href="https://jummatime.com/ar/"><link rel="alternate" hreflang="bn" href="https://jummatime.com/bn/"><link rel="alternate" hreflang="fa" href="https://jummatime.com/fa/"><link rel="alternate" hreflang="fr" href="https://jummatime.com/fr/"><link rel="alternate" hreflang="hi" href="https://jummatime.com/hi/"><link rel="alternate" hreflang="id" href="https://jummatime.com/id/"><link rel="alternate" hreflang="ms" href="https://jummatime.com/ms/"><link rel="alternate" hreflang="tr" href="https://jummatime.com/tr/"><link rel="alternate" hreflang="ur" href="https://jummatime.com/ur/"><link rel="alternate" hreflang="x-default" href="https://jummatime.com/"><meta property="og:locale:alternate" content="en_US"><meta property="og:locale:alternate" content="ar_SA"><meta property="og:locale:alternate" content="bn_BD"><meta property="og:locale:alternate" content="fa_IR"><meta property="og:locale:alternate" content="fr_FR"><meta property="og:locale:alternate" content="hi_IN"><meta property="og:locale:alternate" content="id_ID"><meta property="og:locale:alternate" content="ms_MY"><meta property="og:locale:alternate" content="tr_TR"></head>
 <body>
-  <a class="skip-link" href="#main">مرکزی مواد پر جائیں</a>
-  <header class="site-header">
-    <div class="site-header__in">
-      <a class="brand" href="/ur/" aria-label="Jumma Time ہوم">
-        <span class="brand__mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" width="28" height="28">
-            <path d="M16 2.5c1.6 1.3 2.2 3 1.4 4.6-.7 1.4-.5 2.2.3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <path d="M7 28V17c0-5 4-8 9-8s9 3 9 8v11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
-            <circle cx="16" cy="18" r="3.4" fill="none" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M16 16.2v1.8l1.3 1" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
-            <line x1="4" y1="28" x2="28" y2="28" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="5" y1="28" x2="5" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            <line x1="27" y1="28" x2="27" y2="16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- ─── INBOX BANNER (only shown to keepers with pending suggestions) ─── -->
+  <div class="inbox-banner" id="inbox-banner" hidden="" role="alert" aria-live="polite">
+    <span class="inbox-banner__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 7l9 6 9-6M3 7v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7M3 7l2-2h14l2 2" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg>
+    </span>
+    <span class="inbox-banner__text" id="inbox-banner-text">—</span>
+    <button class="inbox-banner__btn" id="inbox-banner-btn" type="button" data-i18n="inbox.review">دیکھیں</button>
+  </div>
+
+  <!-- ─── TOP BAR ─── -->
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="JummaTime — home">
+      <img class="brand__mark" src="assets/branding/logo-icon.png?v=1" width="30" height="27" alt="" aria-hidden="true" decoding="async">
+      <span class="brand__name" data-i18n="app.title">JummaTime</span>
+    </a>
+
+    <div class="topbar__actions">
+      <button class="qaza-pill" id="qaza-pill" type="button" aria-controls="qaza-drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+          <path d="M12 7.5V12l3 1.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span data-i18n="qaza.pill">قضا نمازیں</span>
+        <span class="qaza-pill__count" id="qaza-pill-count" hidden="">0</span>
+      </button>
+      <div class="langmenu" id="langmenu">
+        <button class="langmenu__trigger" id="lang-trigger" type="button" aria-haspopup="listbox" aria-expanded="false" aria-controls="lang-pop" data-i18n-aria-label="lang.aria" data-i18n-title="lang.aria" aria-label="زبان منتخب کریں" title="زبان منتخب کریں">
+          <svg viewBox="0 0 24 24" width="13" height="13" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.6"></circle>
+            <path d="M3 12h18 M12 3a14 14 0 0 1 0 18 M12 3a14 14 0 0 0 0 18" fill="none" stroke="currentColor" stroke-width="1.6"></path>
           </svg>
-        </span>
-        <span class="brand__name">Jumma Time</span>
-      </a>
-      <nav class="site-nav" aria-label="مرکزی نیویگیشن">
-        <a href="/ur/jumma-near-me.html">میرے قریب نمازِ جمعہ</a>
-        <a href="/ur/what-time-is-jumma.html">نمازِ جمعہ کا وقت</a>
-        <a href="/ur/jumma-while-traveling.html">سفر</a>
-        <a href="/ur/for-masjids.html">مساجد کے لیے</a>
-        <a class="site-nav__cta" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="nav-ur" target="_blank" rel="noopener">ایپ حاصل کریں</a>
-      </nav>
+          <span class="langmenu__current" id="lang-current">English</span>
+          <span class="langmenu__caret" aria-hidden="true">▾</span>
+        </button>
+        <div class="langmenu__pop" id="lang-pop" role="listbox" tabindex="-1" aria-label="Language" hidden="">
+          <div class="langmenu__pointer" aria-hidden="true"></div>
+          <div class="langmenu__head">
+            <p class="langmenu__eyebrow" data-i18n="lang.eyebrow">زبان</p>
+            <p class="langmenu__title" data-i18n="lang.choose">اپنی زبان منتخب کریں</p>
+          </div>
+          <div class="langmenu__list" id="lang-list"></div>
+        </div>
+      </div>
+      <button class="auth-btn" id="auth-btn" type="button" data-i18n-aria-label="auth.signIn" aria-label="لاگ اِن">
+        <span class="auth-btn__avatar" aria-hidden="true">?</span>
+        <span class="auth-btn__label" data-i18n="auth.signIn">لاگ اِن</span>
+        <span class="auth-btn__followers" id="auth-followers" hidden=""></span>
+      </button>
+      <div class="account-menu" id="account-menu" hidden="" role="dialog" aria-labelledby="account-title">
+        <p class="account-menu__eyebrow" data-i18n="account.eyebrow">Account</p>
+        <h2 class="account-menu__title" id="account-title" data-i18n="account.title">Signed in</h2>
+        <p class="account-menu__email" id="account-email"></p>
+        <div class="account-menu__stat" aria-live="polite">
+          <span class="account-menu__stat-number" id="account-followers-count">0</span>
+          <span class="account-menu__stat-label" id="account-followers-label" data-i18n="account.followers">followers</span>
+        </div>
+        <button class="account-menu__logout" id="account-logout" type="button" data-i18n="auth.signOut">سائن آؤٹ</button>
+      </div>
     </div>
   </header>
-  <main id="main">
-    <section class="hero">
-      <div class="wrap hero__grid">
-        <div>
-          <p class="eyebrow">اردو</p>
-          <h1>اپنے قریب اگلی نمازِ جمعہ تلاش کریں</h1>
-          <p class="hero__lead">جمعہ کے دن نئے شہر میں ہیں؟ Jumma Time قریبی مساجد اور مقامی نمازیوں کے شیئر کردہ اوقات دکھاتا ہے۔</p>
-          <div class="btn-row">
-            <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="home-ur" target="_blank" rel="noopener">مفت ایپ انسٹال کریں</a>
-            <a class="btn btn--ghost" href="/ur/jumma-near-me.html">میرے قریب نمازِ جمعہ</a>
+
+  <!-- ─── HERO ─── -->
+  <main class="page">
+    <section class="hero" aria-labelledby="hero-headline">
+      <!-- Compact top: kicker + WhatsApp share glyph on one row, headline
+           full-width beneath (owner: simple logo, less vertical space). -->
+      <div class="hero-top-row">
+        <h1 class="headline" id="hero-headline" data-i18n="hero.headlineHtml:html">جمعہ کے اوقات</h1>
+        <button class="share-app-btn hero-share-btn" id="share-app-btn" type="button" data-i18n-aria-label="share.aria" data-i18n-title="share.button" title="شیئر کریں" aria-label="JummaTime شیئر کریں">
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2m0 1.67c4.54 0 8.23 3.7 8.23 8.24 0 4.54-3.7 8.23-8.23 8.23-1.48 0-2.93-.39-4.19-1.15l-.3-.17-3.12.82.83-3.04-.2-.32a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23M8.53 7.33c-.16 0-.43.06-.66.31-.22.25-.87.86-.87 2.07 0 1.22.89 2.39 1 2.56.14.17 1.76 2.67 4.25 3.73.59.27 1.05.42 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.46-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.07-.1-.23-.16-.48-.27-.25-.14-1.47-.74-1.69-.82-.23-.08-.37-.12-.56.12-.16.25-.64.81-.78.97-.15.17-.29.19-.53.07-.26-.13-1.06-.39-2-1.23-.74-.66-1.23-1.47-1.38-1.72-.12-.24-.01-.39.11-.5.11-.11.27-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.11-.56-1.35-.77-1.84-.2-.48-.4-.42-.56-.43-.14 0-.3-.01-.47-.01" fill="currentColor"></path></svg>
+          <span class="visually-hidden" data-i18n="share.button">شیئر کریں</span>
+        </button>
+      </div>
+
+      <div class="hero-cards">
+      <!-- The next-prayer card for the user's default mosque -->
+      <article class="next-card" id="next-card" aria-live="polite" hidden="">
+
+        <div class="next-card__name-row">
+          <div class="next-card__name-text">
+            <h2 class="next-card__mosque" id="next-mosque" data-i18n="next.empty">ابھی کوئی مسجد منتخب نہیں</h2>
+            <p class="next-card__sub" id="next-sub" data-i18n="next.emptyHint">نیچے سے کوئی مسجد منتخب کر کے "اسے میری ڈیفالٹ بنائیں" دبائیں۔</p>
+          </div>
+          <!-- Bell (+ refresh when available) shares the name row —
+               the old header row above the name is gone (owner: compact). -->
+          <div class="next-card__head-actions">
+            <button class="next-card__refresh" id="next-refresh" type="button" hidden="" data-i18n-aria-label="next.refreshAria" data-i18n-title="next.refreshAria" aria-label="Pull the latest jamat times from the server" title="Pull the latest jamat times from the server">
+              <svg class="next-card__refresh-icon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.34-5.66M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              <span class="visually-hidden" data-i18n="next.refresh">Refresh times</span>
+            </button>
+            <div class="reminder-toggle" id="reminder-toggle-wrap" hidden="">
+              <button class="next-card__bell" id="next-bell" type="button" data-i18n-aria-label="next.bellOpenAria" aria-expanded="false" aria-pressed="false" aria-label="یاد دہانی کی ترتیبات">
+                <svg class="next-card__bell-icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9zM10 21a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+                <span class="next-card__bell-badge" id="next-bell-count" hidden="">0</span>
+                <span class="visually-hidden" id="next-bell-label" data-i18n="next.bell">یاد دلائیں</span>
+              </button>
+            </div>
           </div>
         </div>
-        <aside class="jw" data-jummah-widget data-jw-locale="ur" data-jw-status-opening="مسجد تلاش کھولی جا رہی ہے..." data-jw-status-finding="آپ کے قریب مساجد تلاش کی جا رہی ہیں..." data-jw-status-location-off="لوکیشن بند ہے - مسجد تلاش پھر بھی کھولی جا رہی ہے۔" aria-label="اگلی نمازِ جمعہ">
-          <span class="jw__label">اگلی نمازِ جمعہ</span>
-          <p class="jw__date" data-jw-date>اس جمعہ</p>
-          <div class="jw__clock" role="timer" aria-live="off">
-            <span class="jw__unit"><span class="jw__num" data-jw="days">0</span><span class="jw__cap">دن</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="hours">00</span><span class="jw__cap">گھنٹے</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="mins">00</span><span class="jw__cap">منٹ</span></span>
-            <span class="jw__unit"><span class="jw__num" data-jw="secs">00</span><span class="jw__cap">سیکنڈ</span></span>
+        <button class="next-card__locate" id="next-locate" type="button" hidden="">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="currentColor"></circle><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          <span data-i18n="next.findNearby">Find nearby masjid</span>
+        </button>
+        <div class="next-card__clock" id="next-clock" hidden="">
+          <div class="next-card__row">
+            <span class="next-card__label" data-i18n="next.label">اگلا جمعہ</span>
+            <span class="next-card__prayer" id="next-prayer">—</span>
+            <span class="next-card__at" id="next-at">—</span>
           </div>
-          <button class="btn btn--brass" type="button" data-jw-geo>قریبی مساجد تلاش کریں</button>
-          <p class="jw__geo-status" data-jw-status></p>
-          <p class="jw__note">کاؤنٹ ڈاؤن جمعہ دوپہر تک ہے؛ نمازِ جمعہ کا درست وقت ہر مسجد مقرر کرتی ہے۔</p>
-        </aside>
-      </div>
-    </section>
-
-    <section class="section-tight">
-      <div class="wrap">
-        <div class="quick-answer">
-          <span class="eyebrow">مختصر جواب</span>
-          <p>نمازِ جمعہ، جسے Jummah یا Jumma بھی لکھا جاتا ہے، جمعہ کو زوال کے بعد ادا کی جاتی ہے۔ درست وقت ہر مسجد میں مختلف ہوتا ہے، اس لیے نکلنے سے پہلے مسجد کا وقت دیکھ لیں۔</p>
+          <p class="next-card__date" id="next-date"></p>
+          <div class="next-card__countdown">
+            <span class="next-card__in" data-i18n="next.in">میں</span>
+            <span class="cd-unit">
+              <span class="cd-num" id="cd-d">0</span>
+              <span class="cd-label" id="cd-day-label">day</span>
+            </span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit">
+              <span class="cd-num" id="cd-h">00</span>
+              <span class="cd-label" data-i18n="next.unitH">گھنٹے</span>
+            </span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit">
+              <span class="cd-num" id="cd-m">00</span>
+              <span class="cd-label" data-i18n="next.unitM">منٹ</span>
+            </span>
+            <span class="cd-sep">:</span>
+            <span class="cd-unit">
+              <span class="cd-num cd-sec" id="cd-s">00</span>
+              <span class="cd-label" data-i18n="next.unitS">سیکنڈ</span>
+            </span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <section class="section-tight" id="overview">
-      <div class="wrap prose">
-        <h2>مسجد کے مخصوص وقت کی اہمیت</h2>
-        <p>نقشہ مسجد کی جگہ بتاتا ہے، مگر خطبہ کب شروع ہوگا یہ ہمیشہ نہیں بتاتا۔ نمازِ جمعہ کا وقت ظہر کے ساتھ بدلتا ہے اور مسجدوں میں مختلف ہوتا ہے۔</p>
-        <div class="btn-row" style="margin-top:1.2rem">
-          <a class="btn btn--primary" href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="home-body-ur" target="_blank" rel="noopener">مفت ایپ انسٹال کریں</a>
-          <a class="btn btn--ghost" href="https://takbeertime.com/" target="_blank" rel="noopener">ویب ایپ استعمال کریں</a>
+        <div class="next-card__jummah" id="next-jummah" hidden="">
+          <span class="next-card__jummah-kicker" data-i18n="next.jummahFirst">نمازِ جمعہ کے اوقات</span>
+          <strong class="next-card__jummah-times" id="next-jummah-times"></strong>
         </div>
+
+        <!-- Two equal actions: photograph the LED board, or type the times.
+             The photo is decoded on-device and lands in the submit form
+             pre-filled for review. Keeper choice lives in the detail drawer. -->
+
+        <!-- Reminder settings panel (slides in below clock when bell is tapped) -->
+        <div class="reminder-panel" id="reminder-panel" hidden="">
+          <!-- Populated by app.js updateNextReminderLine(); shows the very
+               next reminder that's queued so the user gets immediate
+               feedback after tweaking minutes / prayer toggles. -->
+          <p class="reminder-panel__next" id="reminder-next-line" hidden=""></p>
+          <p class="reminder-panel__line reminder-panel__line--friday" data-i18n="reminders.fridayHintHtml:html"><em>جمعہ کے دن جمعہ ظہر کی جگہ ہوتی ہے — دونوں سیٹ کریں، صحیح والی اپنے دن چلے گی۔</em></p>
+          <ul class="reminder-prayer-list" id="reminder-prayer-list">
+            <li data-prayer="fajr">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="fajr" aria-label="Enable Fajr reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.fajr">فجر</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="fajr">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">منٹ پہلے</span>
+            </li>
+            <li data-prayer="dhuhr">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="dhuhr" aria-label="Enable Dhuhr reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.dhuhr">ظہر</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="dhuhr">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">منٹ پہلے</span>
+            </li>
+            <li data-prayer="asr">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="asr" aria-label="Enable Asr reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.asr">عصر</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="asr">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">منٹ پہلے</span>
+            </li>
+            <li data-prayer="maghrib">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="maghrib" aria-label="Enable Maghrib reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.maghrib">مغرب</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="maghrib">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">منٹ پہلے</span>
+            </li>
+            <li data-prayer="isha">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="isha" aria-label="Enable Isha reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.isha">عشاء</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="isha">
+              <span class="rpl__suffix" data-i18n="reminders.minBefore">منٹ پہلے</span>
+            </li>
+            <li data-prayer="jummah">
+              <button type="button" class="rpl__toggle" role="switch" aria-checked="false" data-prayer-toggle="jummah" aria-label="Enable Jummah reminder"><span class="rpl__toggle-track"></span><span class="rpl__toggle-thumb"></span></button>
+              <span class="rpl__name" data-i18n="prayer.jummah">جمعہ</span>
+              <input type="number" inputmode="numeric" min="0" max="180" data-prayer-input="jummah">
+              <span class="rpl__suffix" data-i18n="reminders.minBeforeFri">منٹ پہلے · صرف جمعہ</span>
+            </li>
+          </ul>
+          <div class="reminder-panel__actions">
+            <button type="button" class="btn btn--primary" id="reminder-save" data-i18n="reminders.save">محفوظ کریں</button>
+            <button type="button" class="btn btn--ghost" id="reminder-test" data-i18n="reminders.test">آواز کی جانچ</button>
+            <button type="button" class="btn btn--ghost" id="reminder-off" data-i18n="reminders.off">سب بند کریں</button>
+          </div>
+          <p class="reminder-panel__hint" id="reminder-status"></p>
+        </div>
+
+        <!-- Jummah-first timing list for the selected mosque -->
+        <div class="next-card__all" id="next-all-wrap" hidden="">
+          <details class="daily-times">
+          <summary data-i18n="next.allTimesToday">تمام نمازوں کے اوقات</summary>
+          <div class="next-card__all-head">
+            <span class="next-card__all-count" id="next-all-count"></span>
+          </div>
+          <div class="next-card__all-cols" aria-hidden="true">
+            <span></span>
+            <span class="next-card__col-jamat" data-i18n="next.colJamat">جماعت</span>
+            <span class="next-card__col-sun" data-i18n="next.colStarts">شروع</span>
+            <span class="next-card__col-sun" data-i18n="next.colEnds">اختتام</span>
+          </div>
+          <ul class="next-card__all-list" id="next-all-list"></ul>
+          </details>
+        </div>
+
+        <!-- Action row (Take a pic / Enter the time yourself) sits under the
+             times table and above Navigate (owner ruling). -->
+        <div class="next-card__keeper-row" id="next-keeper-row" hidden="">
+          <div class="next-card__actions">
+          <button class="next-card__scan" id="next-scan" type="button" data-i18n-aria-label="scan.aria" data-i18n-title="scan.aria" aria-label="مسجد کے ٹائم ٹیبل بورڈ کی تصویر لیں" title="مسجد کے ٹائم ٹیبل بورڈ کی تصویر لیں">
+            <svg class="next-card__scan-icon" viewBox="0 0 40 32" width="34" height="27" aria-hidden="true">
+              <!-- timetable board: dark panel with five glowing rows -->
+              <rect x="1.5" y="1.5" width="21" height="29" rx="2" fill="#0b1a13" stroke="currentColor" stroke-width="1.4"></rect>
+              <rect x="4.5" y="5" width="15" height="2.4" rx="1" fill="#f0c14b"></rect>
+              <rect x="4.5" y="9.6" width="15" height="2.4" rx="1" fill="#ff5a4a"></rect>
+              <rect x="4.5" y="14.2" width="15" height="2.4" rx="1" fill="#ff5a4a"></rect>
+              <rect x="4.5" y="18.8" width="15" height="2.4" rx="1" fill="#5be08a"></rect>
+              <rect x="4.5" y="23.4" width="15" height="2.4" rx="1" fill="#ff5a4a"></rect>
+              <!-- camera overlapping the board's lower-right corner -->
+              <path d="M17.5 14.5h4.2l1.6-2.4h6.4l1.6 2.4h4.2a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-18a2 2 0 0 1-2-2v-11a2 2 0 0 1 2-2Z" fill="var(--pine, #0f2f22)" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path>
+              <circle cx="26.5" cy="22" r="4.2" fill="none" stroke="currentColor" stroke-width="1.5"></circle>
+              <circle cx="26.5" cy="22" r="1.6" fill="currentColor"></circle>
+            </svg>
+            <span class="next-card__scan-label" data-i18n="scan.takePic">اوقات کا بورڈ اسکین کریں</span>
+          </button>
+          <button class="next-card__scan" id="next-enter" type="button" data-i18n-aria-label="scan.enterAria" data-i18n-title="scan.enterAria" aria-label="اس مسجد کے جماعت اوقات خود ٹائپ کریں" title="اس مسجد کے جماعت اوقات خود ٹائپ کریں">
+            <svg class="next-card__scan-icon" viewBox="0 0 40 32" width="34" height="27" aria-hidden="true">
+              <!-- clock face -->
+              <circle cx="11" cy="16" r="9.5" fill="#0b1a13" stroke="currentColor" stroke-width="1.5"></circle>
+              <path d="M11 10v6.2l4.2 2.2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+              <!-- keyboard -->
+              <rect x="21" y="10.5" width="17.5" height="12.5" rx="2" fill="var(--pine, #0f2f22)" stroke="currentColor" stroke-width="1.5"></rect>
+              <rect x="23.4" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="26.8" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="30.2" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="33.6" y="13.2" width="2.1" height="2.1" rx="0.35" fill="currentColor"></rect>
+              <rect x="24.4" y="17.4" width="10.8" height="2.3" rx="0.4" fill="currentColor"></rect>
+            </svg>
+            <span class="next-card__scan-label" data-i18n="scan.enterYourself">اوقات شامل کریں</span>
+          </button>
+          </div>
+          <input type="file" id="scan-file" accept="image/*" capture="environment" hidden="" aria-hidden="true" tabindex="-1">
+        </div>
+
+        <!-- Directions: sits under the times table (owner: "below Jummah")
+             as a full-width row; same #next-navigate wiring as before. -->
+          <button class="next-card__go next-card__go--row" id="next-navigate" type="button" hidden="" data-i18n-aria-label="nav.navigate" data-i18n-title="nav.navigate" title="راستہ" aria-label="راستہ">
+            <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 2 4 21l8-4 8 4-8-19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path></svg>
+            <span class="next-card__go-label" data-i18n="nav.navigate">راستہ</span>
+          </button>
+      </article>
+
+      <!-- "Find masjids near me" sits between the two cards (owner ruling):
+           on phones it follows the default-masjid card and precedes the
+           sun-position card; on wide layouts CSS `order` keeps it as the
+           full-width row under both cards. -->
+      <div class="quick">
+        <button class="quick__btn quick__btn--primary" id="btn-locate" type="button">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="currentColor"></circle><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M12 1v3M12 20v3M1 12h3M20 12h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+          <span data-i18n="quick.locate">قریبی مساجد</span>
+        </button>
       </div>
+      <!-- Sun-position salah times: computed from the user's GPS + chosen fiqh.
+           Pure client-side astronomy — no server call required. Persists the
+           fiqh choice in localStorage so subsequent loads pick up where the
+           user left off. Sits visually beside the next-card on desktop. -->
+      <details class="sun-tools">
+      <summary data-i18n="tools.daily">روزانہ نماز کے اوقات کا حساب</summary>
+      <article class="sun-card" id="sun-card" hidden="">
+        <header class="sun-card__head">
+          <h3 class="sun-card__title" data-i18n="sun.title">سورج کی پوزیشن کے مطابق نماز</h3>
+          <label class="sun-card__fiqh">
+            <span class="sun-card__fiqh-label" data-i18n="sun.fiqh">فقہ</span>
+            <select id="sun-fiqh">
+              <option value="hanafi" data-i18n="sun.fiqh.hanafi">حنفی</option>
+              <option value="shafi" data-i18n="sun.fiqh.shafi">شافعی</option>
+              <option value="maliki" data-i18n="sun.fiqh.maliki">مالکی</option>
+              <option value="hanbali" data-i18n="sun.fiqh.hanbali">حنبلی</option>
+              <option value="jafari" data-i18n="sun.fiqh.jafari">جعفری (شیعہ)</option>
+              <option value="isna" data-i18n="sun.fiqh.isna">ISNA (شمالی امریکہ)</option>
+              <option value="egypt" data-i18n="sun.fiqh.egypt">مصری اتھارٹی</option>
+              <option value="ummalqura" data-i18n="sun.fiqh.ummalqura">ام القری</option>
+            </select>
+          </label>
+        </header>
+        <p class="sun-card__sub" id="sun-loc-sub" data-i18n="sun.locHint">آپ کے فون کی GPS لوکیشن سے حساب۔</p>
+        <button class="sun-card__locate" id="sun-locate" type="button" hidden="" data-i18n="sun.locate">میرا مقام استعمال کریں</button>
+        <ul class="sun-card__list" id="sun-list"></ul>
+      </article>
+      </details>
+      </div>
+
+      <!-- Quick actions — only locate, the map opens automatically as part of the locate flow. -->
     </section>
 
-    <section class="section-tight" id="cities">
-      <div class="wrap">
-        <p class="eyebrow">شہر</p>
-        <h2>شہر کے لحاظ سے نمازِ جمعہ کے اوقات</h2>
-        <div class="city-grid" style="margin-top:1.2rem"><a class="city-link" href="/ur/jumma-time/london.html">London میں نمازِ جمعہ / Jummah کا وقت <span>برطانیہ</span></a><a class="city-link" href="/ur/jumma-time/birmingham.html">Birmingham میں نمازِ جمعہ / Jummah کا وقت <span>برطانیہ</span></a><a class="city-link" href="/ur/jumma-time/manchester.html">Manchester میں نمازِ جمعہ / Jummah کا وقت <span>برطانیہ</span></a><a class="city-link" href="/ur/jumma-time/new-york.html">New York City میں نمازِ جمعہ / Jummah کا وقت <span>امریکہ</span></a><a class="city-link" href="/ur/jumma-time/chicago.html">Chicago میں نمازِ جمعہ / Jummah کا وقت <span>امریکہ</span></a><a class="city-link" href="/ur/jumma-time/houston.html">Houston میں نمازِ جمعہ / Jummah کا وقت <span>امریکہ</span></a><a class="city-link" href="/ur/jumma-time/los-angeles.html">Los Angeles میں نمازِ جمعہ / Jummah کا وقت <span>امریکہ</span></a><a class="city-link" href="/ur/jumma-time/toronto.html">Toronto میں نمازِ جمعہ / Jummah کا وقت <span>کینیڈا</span></a><a class="city-link" href="/ur/jumma-time/dubai.html">Dubai میں نمازِ جمعہ / Jummah کا وقت <span>متحدہ عرب امارات</span></a><a class="city-link" href="/ur/jumma-time/sydney.html">Sydney میں نمازِ جمعہ / Jummah کا وقت <span>آسٹریلیا</span></a><a class="city-link" href="/ur/jumma-time/singapore.html">Singapore میں نمازِ جمعہ / Jummah کا وقت <span>سنگاپور</span></a><a class="city-link" href="/ur/jumma-time/kuala-lumpur.html">Kuala Lumpur میں نمازِ جمعہ / Jummah کا وقت <span>ملائشیا</span></a><a class="city-link" href="/ur/jumma-time/jakarta.html">Jakarta میں نمازِ جمعہ / Jummah کا وقت <span>انڈونیشیا</span></a><a class="city-link" href="/ur/jumma-time/surabaya.html">Surabaya میں نمازِ جمعہ / Jummah کا وقت <span>انڈونیشیا</span></a><a class="city-link" href="/ur/jumma-time/bandung.html">Bandung میں نمازِ جمعہ / Jummah کا وقت <span>انڈونیشیا</span></a><a class="city-link" href="/ur/jumma-time/medan.html">Medan میں نمازِ جمعہ / Jummah کا وقت <span>انڈونیشیا</span></a><a class="city-link" href="/ur/jumma-time/dhaka.html">Dhaka میں نمازِ جمعہ / Jummah کا وقت <span>بنگلہ دیش</span></a><a class="city-link" href="/ur/jumma-time/chittagong.html">Chittagong میں نمازِ جمعہ / Jummah کا وقت <span>بنگلہ دیش</span></a><a class="city-link" href="/ur/jumma-time/khulna.html">Khulna میں نمازِ جمعہ / Jummah کا وقت <span>بنگلہ دیش</span></a><a class="city-link" href="/ur/jumma-time/sylhet.html">Sylhet میں نمازِ جمعہ / Jummah کا وقت <span>بنگلہ دیش</span></a><a class="city-link" href="/ur/jumma-time/karachi.html">Karachi میں نمازِ جمعہ / Jummah کا وقت <span>پاکستان</span></a><a class="city-link" href="/ur/jumma-time/lahore.html">Lahore میں نمازِ جمعہ / Jummah کا وقت <span>پاکستان</span></a><a class="city-link" href="/ur/jumma-time/faisalabad.html">Faisalabad میں نمازِ جمعہ / Jummah کا وقت <span>پاکستان</span></a><a class="city-link" href="/ur/jumma-time/rawalpindi.html">Rawalpindi میں نمازِ جمعہ / Jummah کا وقت <span>پاکستان</span></a><a class="city-link" href="/ur/jumma-time/delhi.html">Delhi میں نمازِ جمعہ / Jummah کا وقت <span>بھارت</span></a><a class="city-link" href="/ur/jumma-time/mumbai.html">Mumbai میں نمازِ جمعہ / Jummah کا وقت <span>بھارت</span></a><a class="city-link" href="/ur/jumma-time/kolkata.html">Kolkata میں نمازِ جمعہ / Jummah کا وقت <span>بھارت</span></a><a class="city-link" href="/ur/jumma-time/bengaluru.html">Bengaluru میں نمازِ جمعہ / Jummah کا وقت <span>بھارت</span></a><a class="city-link" href="/ur/jumma-time/kabul.html">Kabul میں نمازِ جمعہ / Jummah کا وقت <span>افغانستان</span></a><a class="city-link" href="/ur/jumma-time/herat.html">Herat میں نمازِ جمعہ / Jummah کا وقت <span>افغانستان</span></a><a class="city-link" href="/ur/jumma-time/kandahar.html">Kandahar میں نمازِ جمعہ / Jummah کا وقت <span>افغانستان</span></a><a class="city-link" href="/ur/jumma-time/mazar-i-sharif.html">Mazar-i-Sharif میں نمازِ جمعہ / Jummah کا وقت <span>افغانستان</span></a><a class="city-link" href="/ur/jumma-time/male.html">Male میں نمازِ جمعہ / Jummah کا وقت <span>مالدیپ</span></a><a class="city-link" href="/ur/jumma-time/colombo.html">Colombo میں نمازِ جمعہ / Jummah کا وقت <span>سری لنکا</span></a><a class="city-link" href="/ur/jumma-time/cairo.html">Cairo میں نمازِ جمعہ / Jummah کا وقت <span>مصر</span></a><a class="city-link" href="/ur/jumma-time/alexandria.html">Alexandria میں نمازِ جمعہ / Jummah کا وقت <span>مصر</span></a><a class="city-link" href="/ur/jumma-time/giza.html">Giza میں نمازِ جمعہ / Jummah کا وقت <span>مصر</span></a><a class="city-link" href="/ur/jumma-time/casablanca.html">Casablanca میں نمازِ جمعہ / Jummah کا وقت <span>مراکش</span></a><a class="city-link" href="/ur/jumma-time/rabat.html">Rabat میں نمازِ جمعہ / Jummah کا وقت <span>مراکش</span></a><a class="city-link" href="/ur/jumma-time/fez.html">Fez میں نمازِ جمعہ / Jummah کا وقت <span>مراکش</span></a><a class="city-link" href="/ur/jumma-time/marrakesh.html">Marrakesh میں نمازِ جمعہ / Jummah کا وقت <span>مراکش</span></a><a class="city-link" href="/ur/jumma-time/algiers.html">Algiers میں نمازِ جمعہ / Jummah کا وقت <span>الجیریا</span></a><a class="city-link" href="/ur/jumma-time/oran.html">Oran میں نمازِ جمعہ / Jummah کا وقت <span>الجیریا</span></a><a class="city-link" href="/ur/jumma-time/tunis.html">Tunis میں نمازِ جمعہ / Jummah کا وقت <span>تونس</span></a><a class="city-link" href="/ur/jumma-time/sfax.html">Sfax میں نمازِ جمعہ / Jummah کا وقت <span>تونس</span></a><a class="city-link" href="/ur/jumma-time/tripoli.html">Tripoli میں نمازِ جمعہ / Jummah کا وقت <span>لیبیا</span></a><a class="city-link" href="/ur/jumma-time/benghazi.html">Benghazi میں نمازِ جمعہ / Jummah کا وقت <span>لیبیا</span></a><a class="city-link" href="/ur/jumma-time/khartoum.html">Khartoum میں نمازِ جمعہ / Jummah کا وقت <span>سوڈان</span></a><a class="city-link" href="/ur/jumma-time/omdurman.html">Omdurman میں نمازِ جمعہ / Jummah کا وقت <span>سوڈان</span></a><a class="city-link" href="/ur/jumma-time/mogadishu.html">Mogadishu میں نمازِ جمعہ / Jummah کا وقت <span>صومالیہ</span></a><a class="city-link" href="/ur/jumma-time/hargeisa.html">Hargeisa میں نمازِ جمعہ / Jummah کا وقت <span>صومالی لینڈ</span></a><a class="city-link" href="/ur/jumma-time/djibouti-city.html">Djibouti City میں نمازِ جمعہ / Jummah کا وقت <span>جبوتی</span></a><a class="city-link" href="/ur/jumma-time/nouakchott.html">Nouakchott میں نمازِ جمعہ / Jummah کا وقت <span>موریطانیہ</span></a><a class="city-link" href="/ur/jumma-time/dakar.html">Dakar میں نمازِ جمعہ / Jummah کا وقت <span>سینیگل</span></a><a class="city-link" href="/ur/jumma-time/bamako.html">Bamako میں نمازِ جمعہ / Jummah کا وقت <span>مالی</span></a><a class="city-link" href="/ur/jumma-time/conakry.html">Conakry میں نمازِ جمعہ / Jummah کا وقت <span>گنی</span></a><a class="city-link" href="/ur/jumma-time/freetown.html">Freetown میں نمازِ جمعہ / Jummah کا وقت <span>سیرالیون</span></a><a class="city-link" href="/ur/jumma-time/banjul.html">Banjul میں نمازِ جمعہ / Jummah کا وقت <span>گیمبیا</span></a><a class="city-link" href="/ur/jumma-time/kano.html">Kano میں نمازِ جمعہ / Jummah کا وقت <span>نائجیریا</span></a><a class="city-link" href="/ur/jumma-time/lagos.html">Lagos میں نمازِ جمعہ / Jummah کا وقت <span>نائجیریا</span></a><a class="city-link" href="/ur/jumma-time/abuja.html">Abuja میں نمازِ جمعہ / Jummah کا وقت <span>نائجیریا</span></a><a class="city-link" href="/ur/jumma-time/ibadan.html">Ibadan میں نمازِ جمعہ / Jummah کا وقت <span>نائجیریا</span></a><a class="city-link" href="/ur/jumma-time/niamey.html">Niamey میں نمازِ جمعہ / Jummah کا وقت <span>نائجر</span></a><a class="city-link" href="/ur/jumma-time/n-djamena.html">N'Djamena میں نمازِ جمعہ / Jummah کا وقت <span>چاڈ</span></a><a class="city-link" href="/ur/jumma-time/ouagadougou.html">Ouagadougou میں نمازِ جمعہ / Jummah کا وقت <span>برکینا فاسو</span></a><a class="city-link" href="/ur/jumma-time/abidjan.html">Abidjan میں نمازِ جمعہ / Jummah کا وقت <span>کوٹ ڈی آئیوری</span></a><a class="city-link" href="/ur/jumma-time/accra.html">Accra میں نمازِ جمعہ / Jummah کا وقت <span>گھانا</span></a><a class="city-link" href="/ur/jumma-time/addis-ababa.html">Addis Ababa میں نمازِ جمعہ / Jummah کا وقت <span>ایتھوپیا</span></a><a class="city-link" href="/ur/jumma-time/nairobi.html">Nairobi میں نمازِ جمعہ / Jummah کا وقت <span>کینیا</span></a><a class="city-link" href="/ur/jumma-time/mombasa.html">Mombasa میں نمازِ جمعہ / Jummah کا وقت <span>کینیا</span></a><a class="city-link" href="/ur/jumma-time/dar-es-salaam.html">Dar es Salaam میں نمازِ جمعہ / Jummah کا وقت <span>تنزانیہ</span></a><a class="city-link" href="/ur/jumma-time/kampala.html">Kampala میں نمازِ جمعہ / Jummah کا وقت <span>یوگنڈا</span></a><a class="city-link" href="/ur/jumma-time/kigali.html">Kigali میں نمازِ جمعہ / Jummah کا وقت <span>روانڈا</span></a><a class="city-link" href="/ur/jumma-time/johannesburg.html">Johannesburg میں نمازِ جمعہ / Jummah کا وقت <span>جنوبی افریقہ</span></a><a class="city-link" href="/ur/jumma-time/cape-town.html">Cape Town میں نمازِ جمعہ / Jummah کا وقت <span>جنوبی افریقہ</span></a><a class="city-link" href="/ur/jumma-time/istanbul.html">Istanbul میں نمازِ جمعہ / Jummah کا وقت <span>ترکیہ</span></a><a class="city-link" href="/ur/jumma-time/ankara.html">Ankara میں نمازِ جمعہ / Jummah کا وقت <span>ترکیہ</span></a><a class="city-link" href="/ur/jumma-time/izmir.html">Izmir میں نمازِ جمعہ / Jummah کا وقت <span>ترکیہ</span></a><a class="city-link" href="/ur/jumma-time/bursa.html">Bursa میں نمازِ جمعہ / Jummah کا وقت <span>ترکیہ</span></a><a class="city-link" href="/ur/jumma-time/tehran.html">Tehran میں نمازِ جمعہ / Jummah کا وقت <span>ایران</span></a><a class="city-link" href="/ur/jumma-time/mashhad.html">Mashhad میں نمازِ جمعہ / Jummah کا وقت <span>ایران</span></a><a class="city-link" href="/ur/jumma-time/isfahan.html">Isfahan میں نمازِ جمعہ / Jummah کا وقت <span>ایران</span></a><a class="city-link" href="/ur/jumma-time/tabriz.html">Tabriz میں نمازِ جمعہ / Jummah کا وقت <span>ایران</span></a><a class="city-link" href="/ur/jumma-time/baghdad.html">Baghdad میں نمازِ جمعہ / Jummah کا وقت <span>عراق</span></a><a class="city-link" href="/ur/jumma-time/basra.html">Basra میں نمازِ جمعہ / Jummah کا وقت <span>عراق</span></a><a class="city-link" href="/ur/jumma-time/erbil.html">Erbil میں نمازِ جمعہ / Jummah کا وقت <span>عراق</span></a><a class="city-link" href="/ur/jumma-time/mosul.html">Mosul میں نمازِ جمعہ / Jummah کا وقت <span>عراق</span></a><a class="city-link" href="/ur/jumma-time/damascus.html">Damascus میں نمازِ جمعہ / Jummah کا وقت <span>شام</span></a><a class="city-link" href="/ur/jumma-time/aleppo.html">Aleppo میں نمازِ جمعہ / Jummah کا وقت <span>شام</span></a><a class="city-link" href="/ur/jumma-time/amman.html">Amman میں نمازِ جمعہ / Jummah کا وقت <span>اردن</span></a><a class="city-link" href="/ur/jumma-time/zarqa.html">Zarqa میں نمازِ جمعہ / Jummah کا وقت <span>اردن</span></a><a class="city-link" href="/ur/jumma-time/beirut.html">Beirut میں نمازِ جمعہ / Jummah کا وقت <span>لبنان</span></a><a class="city-link" href="/ur/jumma-time/jerusalem.html">Jerusalem میں نمازِ جمعہ / Jummah کا وقت <span>فلسطینی خطے</span></a><a class="city-link" href="/ur/jumma-time/gaza-city.html">Gaza City میں نمازِ جمعہ / Jummah کا وقت <span>فلسطینی خطے</span></a><a class="city-link" href="/ur/jumma-time/ramallah.html">Ramallah میں نمازِ جمعہ / Jummah کا وقت <span>فلسطینی خطے</span></a><a class="city-link" href="/ur/jumma-time/nablus.html">Nablus میں نمازِ جمعہ / Jummah کا وقت <span>فلسطینی خطے</span></a><a class="city-link" href="/ur/jumma-time/sana-a.html">Sana'a میں نمازِ جمعہ / Jummah کا وقت <span>یمن</span></a><a class="city-link" href="/ur/jumma-time/aden.html">Aden میں نمازِ جمعہ / Jummah کا وقت <span>یمن</span></a><a class="city-link" href="/ur/jumma-time/taiz.html">Taiz میں نمازِ جمعہ / Jummah کا وقت <span>یمن</span></a><a class="city-link" href="/ur/jumma-time/riyadh.html">Riyadh میں نمازِ جمعہ / Jummah کا وقت <span>سعودی عرب</span></a><a class="city-link" href="/ur/jumma-time/jeddah.html">Jeddah میں نمازِ جمعہ / Jummah کا وقت <span>سعودی عرب</span></a><a class="city-link" href="/ur/jumma-time/makkah.html">Makkah میں نمازِ جمعہ / Jummah کا وقت <span>سعودی عرب</span></a><a class="city-link" href="/ur/jumma-time/madinah.html">Madinah میں نمازِ جمعہ / Jummah کا وقت <span>سعودی عرب</span></a><a class="city-link" href="/ur/jumma-time/doha.html">Doha میں نمازِ جمعہ / Jummah کا وقت <span>قطر</span></a><a class="city-link" href="/ur/jumma-time/kuwait-city.html">Kuwait City میں نمازِ جمعہ / Jummah کا وقت <span>کویت</span></a><a class="city-link" href="/ur/jumma-time/manama.html">Manama میں نمازِ جمعہ / Jummah کا وقت <span>بحرین</span></a><a class="city-link" href="/ur/jumma-time/muscat.html">Muscat میں نمازِ جمعہ / Jummah کا وقت <span>عمان</span></a><a class="city-link" href="/ur/jumma-time/salalah.html">Salalah میں نمازِ جمعہ / Jummah کا وقت <span>عمان</span></a><a class="city-link" href="/ur/jumma-time/abu-dhabi.html">Abu Dhabi میں نمازِ جمعہ / Jummah کا وقت <span>متحدہ عرب امارات</span></a><a class="city-link" href="/ur/jumma-time/sharjah.html">Sharjah میں نمازِ جمعہ / Jummah کا وقت <span>متحدہ عرب امارات</span></a><a class="city-link" href="/ur/jumma-time/ajman.html">Ajman میں نمازِ جمعہ / Jummah کا وقت <span>متحدہ عرب امارات</span></a><a class="city-link" href="/ur/jumma-time/johor-bahru.html">Johor Bahru میں نمازِ جمعہ / Jummah کا وقت <span>ملائشیا</span></a><a class="city-link" href="/ur/jumma-time/george-town.html">George Town میں نمازِ جمعہ / Jummah کا وقت <span>ملائشیا</span></a><a class="city-link" href="/ur/jumma-time/kota-kinabalu.html">Kota Kinabalu میں نمازِ جمعہ / Jummah کا وقت <span>ملائشیا</span></a><a class="city-link" href="/ur/jumma-time/bangkok.html">Bangkok میں نمازِ جمعہ / Jummah کا وقت <span>تھائی لینڈ</span></a><a class="city-link" href="/ur/jumma-time/chiang-mai.html">Chiang Mai میں نمازِ جمعہ / Jummah کا وقت <span>تھائی لینڈ</span></a><a class="city-link" href="/ur/jumma-time/pattani.html">Pattani میں نمازِ جمعہ / Jummah کا وقت <span>تھائی لینڈ</span></a><a class="city-link" href="/ur/jumma-time/phuket.html">Phuket میں نمازِ جمعہ / Jummah کا وقت <span>تھائی لینڈ</span></a><a class="city-link" href="/ur/jumma-time/manila.html">Manila میں نمازِ جمعہ / Jummah کا وقت <span>فلپائن</span></a><a class="city-link" href="/ur/jumma-time/quezon-city.html">Quezon City میں نمازِ جمعہ / Jummah کا وقت <span>فلپائن</span></a><a class="city-link" href="/ur/jumma-time/davao.html">Davao میں نمازِ جمعہ / Jummah کا وقت <span>فلپائن</span></a><a class="city-link" href="/ur/jumma-time/cebu.html">Cebu میں نمازِ جمعہ / Jummah کا وقت <span>فلپائن</span></a><a class="city-link" href="/ur/jumma-time/ho-chi-minh-city.html">Ho Chi Minh City میں نمازِ جمعہ / Jummah کا وقت <span>ویتنام</span></a><a class="city-link" href="/ur/jumma-time/hanoi.html">Hanoi میں نمازِ جمعہ / Jummah کا وقت <span>ویتنام</span></a><a class="city-link" href="/ur/jumma-time/phnom-penh.html">Phnom Penh میں نمازِ جمعہ / Jummah کا وقت <span>کمبوڈیا</span></a><a class="city-link" href="/ur/jumma-time/yangon.html">Yangon میں نمازِ جمعہ / Jummah کا وقت <span>میانمار (برما)</span></a><a class="city-link" href="/ur/jumma-time/mandalay.html">Mandalay میں نمازِ جمعہ / Jummah کا وقت <span>میانمار (برما)</span></a><a class="city-link" href="/ur/jumma-time/beijing.html">Beijing میں نمازِ جمعہ / Jummah کا وقت <span>چین</span></a><a class="city-link" href="/ur/jumma-time/shanghai.html">Shanghai میں نمازِ جمعہ / Jummah کا وقت <span>چین</span></a><a class="city-link" href="/ur/jumma-time/guangzhou.html">Guangzhou میں نمازِ جمعہ / Jummah کا وقت <span>چین</span></a><a class="city-link" href="/ur/jumma-time/shenzhen.html">Shenzhen میں نمازِ جمعہ / Jummah کا وقت <span>چین</span></a><a class="city-link" href="/ur/jumma-time/tokyo.html">Tokyo میں نمازِ جمعہ / Jummah کا وقت <span>جاپان</span></a><a class="city-link" href="/ur/jumma-time/osaka.html">Osaka میں نمازِ جمعہ / Jummah کا وقت <span>جاپان</span></a><a class="city-link" href="/ur/jumma-time/seoul.html">Seoul میں نمازِ جمعہ / Jummah کا وقت <span>جنوبی کوریا</span></a><a class="city-link" href="/ur/jumma-time/busan.html">Busan میں نمازِ جمعہ / Jummah کا وقت <span>جنوبی کوریا</span></a><a class="city-link" href="/ur/jumma-time/taipei.html">Taipei میں نمازِ جمعہ / Jummah کا وقت <span>تائیوان</span></a><a class="city-link" href="/ur/jumma-time/mexico-city.html">Mexico City میں نمازِ جمعہ / Jummah کا وقت <span>میکسیکو</span></a><a class="city-link" href="/ur/jumma-time/sao-paulo.html">Sao Paulo میں نمازِ جمعہ / Jummah کا وقت <span>برازیل</span></a><a class="city-link" href="/ur/jumma-time/rio-de-janeiro.html">Rio de Janeiro میں نمازِ جمعہ / Jummah کا وقت <span>برازیل</span></a><a class="city-link" href="/ur/jumma-time/buenos-aires.html">Buenos Aires میں نمازِ جمعہ / Jummah کا وقت <span>ارجنٹینا</span></a><a class="city-link" href="/ur/jumma-time/lima.html">Lima میں نمازِ جمعہ / Jummah کا وقت <span>پیرو</span></a><a class="city-link" href="/ur/jumma-time/bogota.html">Bogota میں نمازِ جمعہ / Jummah کا وقت <span>کولمبیا</span></a><a class="city-link" href="/ur/jumma-time/santiago.html">Santiago میں نمازِ جمعہ / Jummah کا وقت <span>چلی</span></a><a class="city-link" href="/ur/jumma-time/caracas.html">Caracas میں نمازِ جمعہ / Jummah کا وقت <span>وینزوئیلا</span></a><a class="city-link" href="/ur/jumma-time/quito.html">Quito میں نمازِ جمعہ / Jummah کا وقت <span>ایکواڈور</span></a><a class="city-link" href="/ur/jumma-time/guayaquil.html">Guayaquil میں نمازِ جمعہ / Jummah کا وقت <span>ایکواڈور</span></a><a class="city-link" href="/ur/jumma-time/panama-city.html">Panama City میں نمازِ جمعہ / Jummah کا وقت <span>پانامہ</span></a><a class="city-link" href="/ur/jumma-time/moscow.html">Moscow میں نمازِ جمعہ / Jummah کا وقت <span>روس</span></a><a class="city-link" href="/ur/jumma-time/saint-petersburg.html">Saint Petersburg میں نمازِ جمعہ / Jummah کا وقت <span>روس</span></a><a class="city-link" href="/ur/jumma-time/kyiv.html">Kyiv میں نمازِ جمعہ / Jummah کا وقت <span>یوکرین</span></a><a class="city-link" href="/ur/jumma-time/warsaw.html">Warsaw میں نمازِ جمعہ / Jummah کا وقت <span>پولینڈ</span></a><a class="city-link" href="/ur/jumma-time/berlin.html">Berlin میں نمازِ جمعہ / Jummah کا وقت <span>جرمنی</span></a><a class="city-link" href="/ur/jumma-time/paris.html">Paris میں نمازِ جمعہ / Jummah کا وقت <span>فرانس</span></a><a class="city-link" href="/ur/jumma-time/marseille.html">Marseille میں نمازِ جمعہ / Jummah کا وقت <span>فرانس</span></a><a class="city-link" href="/ur/jumma-time/madrid.html">Madrid میں نمازِ جمعہ / Jummah کا وقت <span>ہسپانیہ</span></a><a class="city-link" href="/ur/jumma-time/barcelona.html">Barcelona میں نمازِ جمعہ / Jummah کا وقت <span>ہسپانیہ</span></a><a class="city-link" href="/ur/jumma-time/milan.html">Milan میں نمازِ جمعہ / Jummah کا وقت <span>اٹلی</span></a><a class="city-link" href="/ur/jumma-time/rome.html">Rome میں نمازِ جمعہ / Jummah کا وقت <span>اٹلی</span></a><a class="city-link" href="/ur/jumma-time/vienna.html">Vienna میں نمازِ جمعہ / Jummah کا وقت <span>آسٹریا</span></a><a class="city-link" href="/ur/jumma-time/amsterdam.html">Amsterdam میں نمازِ جمعہ / Jummah کا وقت <span>نیدر لینڈز</span></a><a class="city-link" href="/ur/jumma-time/rotterdam.html">Rotterdam میں نمازِ جمعہ / Jummah کا وقت <span>نیدر لینڈز</span></a><a class="city-link" href="/ur/jumma-time/brussels.html">Brussels میں نمازِ جمعہ / Jummah کا وقت <span>بیلجیم</span></a><a class="city-link" href="/ur/jumma-time/stockholm.html">Stockholm میں نمازِ جمعہ / Jummah کا وقت <span>سویڈن</span></a><a class="city-link" href="/ur/jumma-time/oslo.html">Oslo میں نمازِ جمعہ / Jummah کا وقت <span>ناروے</span></a><a class="city-link" href="/ur/jumma-time/copenhagen.html">Copenhagen میں نمازِ جمعہ / Jummah کا وقت <span>ڈنمارک</span></a><a class="city-link" href="/ur/jumma-time/zurich.html">Zurich میں نمازِ جمعہ / Jummah کا وقت <span>سوئٹزر لینڈ</span></a><a class="city-link" href="/ur/jumma-time/geneva.html">Geneva میں نمازِ جمعہ / Jummah کا وقت <span>سوئٹزر لینڈ</span></a><a class="city-link" href="/ur/jumma-time/athens.html">Athens میں نمازِ جمعہ / Jummah کا وقت <span>یونان</span></a><a class="city-link" href="/ur/jumma-time/leeds.html">Leeds میں نمازِ جمعہ / Jummah کا وقت <span>برطانیہ</span></a><a class="city-link" href="/ur/jumma-time/montreal.html">Montreal میں نمازِ جمعہ / Jummah کا وقت <span>کینیڈا</span></a><a class="city-link" href="/ur/jumma-time/vancouver.html">Vancouver میں نمازِ جمعہ / Jummah کا وقت <span>کینیڈا</span></a><a class="city-link" href="/ur/jumma-time/calgary.html">Calgary میں نمازِ جمعہ / Jummah کا وقت <span>کینیڈا</span></a><a class="city-link" href="/ur/jumma-time/melbourne.html">Melbourne میں نمازِ جمعہ / Jummah کا وقت <span>آسٹریلیا</span></a><a class="city-link" href="/ur/jumma-time/brisbane.html">Brisbane میں نمازِ جمعہ / Jummah کا وقت <span>آسٹریلیا</span></a><a class="city-link" href="/ur/jumma-time/perth.html">Perth میں نمازِ جمعہ / Jummah کا وقت <span>آسٹریلیا</span></a><a class="city-link" href="/ur/jumma-time/auckland.html">Auckland میں نمازِ جمعہ / Jummah کا وقت <span>نیوزی لینڈ</span></a></div>
+    <!-- ─── DIRECTORY ─── -->
+    <section class="directory" aria-label="Masjid directory">
+      <div class="dir-tabs" role="tablist">
+        <button class="dir-tab is-active" data-tab="nearby" role="tab" aria-selected="true" data-i18n="dir.tabBrowse">مساجد</button>
+        <button class="dir-tab" data-tab="favorites" role="tab" aria-selected="false" data-i18n="dir.tabFavorites">محفوظ</button>
       </div>
+
+      <label class="dir-search">
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><circle cx="11" cy="11" r="6" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        <input type="search" id="search" data-i18n-placeholder="dir.searchPh" placeholder="مسجد یا شہر تلاش کریں" autocomplete="off">
+      </label>
+
+      <ol class="cards" id="list-nearby" data-panel="nearby"></ol>
+      <ol class="cards is-hidden" id="list-favorites" data-panel="favorites"></ol>
+
+      <p class="empty" id="empty-state" hidden="">
+        <span data-i18n="dir.empty">یہاں دکھانے کے لیے کچھ نہیں۔</span> <button class="link" id="empty-locate" type="button" data-i18n="dir.emptyLocate">قریبی مساجد تلاش کریں ←</button>
+      </p>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="wrap site-footer__grid">
-      <div>
-        <a class="brand" href="/ur/" aria-label="Jumma Time home"><span class="brand__name">Jumma Time</span></a>
-        <p style="font-size:0.9rem;max-width:34ch;margin-top:0.4rem">قریب ترین مسجد میں نمازِ جمعہ کا وقت تلاش کریں۔ Takbeer Time کمیونٹی کے ساتھ۔</p>
+
+  <!-- ─── MAP VIEW (full-screen takeover) ─── -->
+  <section class="mapview" id="mapview" aria-hidden="true" aria-label="Map of nearby masjids">
+    <header class="mapview__head">
+      <h2 data-i18n="map.title">آپ کے قریب مساجد</h2>
+      <div class="mapview__head-actions">
+        <button class="mapview__addbtn" id="map-add" type="button" data-i18n-title="map.addTitle" title="ڈائریکٹری میں مسجد شامل کریں">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+          <span data-i18n="map.addBtn">مسجد شامل کریں</span>
+        </button>
+        <button class="mapview__close" id="map-close" type="button" data-i18n-aria-label="map.closeAria" aria-label="نقشہ بند کریں">×</button>
       </div>
-      <div>
-        <h4>نمازِ جمعہ تلاش کریں</h4>
-        <a href="/ur/jumma-near-me.html">میرے قریب نمازِ جمعہ</a>
-        <a href="/ur/what-time-is-jumma.html">نمازِ جمعہ کا وقت</a>
-        <a href="/ur/jumma-while-traveling.html">سفر</a>
-        <a href="/ur/jumma-in-masjid.html">مسجد میں نمازِ جمعہ</a>
+    </header>
+
+    <!-- Add flow panel: details first, then tap/drag the pin to set location -->
+    <form class="mapview__addform" id="map-addform" hidden="">
+      <div class="mapview__addform-head">
+        <div>
+          <p class="mapview__addform-eyebrow">New masjid</p>
+          <h3>Add details and place the pin</h3>
+        </div>
       </div>
-      <div>
-        <h4>شہر</h4>
-        <div><a href="/ur/jumma-time/london.html">London میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/birmingham.html">Birmingham میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/manchester.html">Manchester میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/new-york.html">New York City میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/chicago.html">Chicago میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/houston.html">Houston میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/los-angeles.html">Los Angeles میں نمازِ جمعہ / Jummah کا وقت</a><a href="/ur/jumma-time/toronto.html">Toronto میں نمازِ جمعہ / Jummah کا وقت</a></div>
+      <p class="mapview__addform-help" id="addform-help">Enter the masjid name, then tap the map, drag the pin, or use the current map center for the exact location. City and country fill in automatically from the pin — adjust them if needed.</p>
+      <p class="mapview__addform-location" aria-live="polite">
+        <span id="addform-location-status">No location selected</span>
+        <span id="addform-coords">Tap map or use center</span>
+      </p>
+      <div class="mapview__addform-grid">
+        <label><span data-i18n="add.name">نام</span> <input name="name" required="" maxlength="120" data-i18n-placeholder="add.namePh" placeholder="مثلاً: مسجد الفلاح"></label>
+        <label><span data-i18n="add.city">شہر</span> <input name="city" required="" maxlength="80" data-i18n-placeholder="add.cityPh" placeholder="مثلاً: لاہور"></label>
+        <label><span data-i18n="add.country">ملک</span> <input name="country" required="" maxlength="80" data-i18n-placeholder="add.countryPh" placeholder="مثلاً: پاکستان"></label>
+        <label class="mapview__addform-full"><span data-i18n="add.address">پتہ</span> <input name="addressLine1" maxlength="200" data-i18n-placeholder="add.addressPh" placeholder="اختیاری — مثلاً: بلاک 4، گارڈن ٹاؤن"></label>
+        <label class="mapview__addform-full mapview__captcha">
+          <span>Human check</span>
+          <div class="mapview__captcha-row">
+            <strong id="addform-captcha-question">Loading question…</strong>
+            <button class="btn btn--ghost" type="button" id="map-addform-captcha-refresh">Refresh</button>
+          </div>
+          <input name="captchaAnswer" required="" inputmode="numeric" autocomplete="off" maxlength="8" placeholder="Answer">
+        </label>
       </div>
-      <div>
-        <h4>ایپ</h4>
-        <a href="https://play.google.com/store/apps/details?id=com.takbeertime.android" data-play="footer-ur" target="_blank" rel="noopener">مفت ایپ انسٹال کریں</a>
-        <a href="https://takbeertime.com/" target="_blank" rel="noopener">ویب ایپ استعمال کریں</a>
-        <a href="/ur/for-masjids.html">مساجد کے لیے</a>
+      <div class="mapview__addform-actions">
+        <button class="btn btn--ghost" type="button" id="map-addform-center">Use map center</button>
+        <button class="btn btn--primary" type="submit" data-i18n="add.submit">مسجد شامل کریں</button>
+        <button class="btn btn--ghost" type="button" id="map-addform-cancel" data-i18n="add.cancel">منسوخ</button>
       </div>
-      <div>
-        <h4>زبانیں</h4>
-        <div class="language-links"><a href="/">English</a><a href="/ar/">العربية</a><a href="/bn/">বাংলা</a><a href="/fa/">فارسی</a><a href="/fr/">Français</a><a href="/hi/">हिन्दी</a><a href="/id/">Bahasa Indonesia</a><a href="/ms/">Bahasa Melayu</a><a href="/tr/">Türkçe</a><a href="/ur/">اردو</a></div>
+    </form>
+
+    <div class="mapview__addhint" id="map-addhint" hidden="">
+      <span data-i18n="map.tapHint">نقشے پر اس مقام کو ٹیپ کریں جہاں مسجد ہے۔</span>
+      <button class="link" type="button" id="map-addhint-cancel" data-i18n="map.cancel">منسوخ</button>
+    </div>
+
+    <div id="map" class="mapview__canvas"></div>
+    <ol class="mapview__list" id="mapview-list"></ol>
+  </section>
+
+  <!-- ─── DETAIL DRAWER ─── -->
+  <aside class="drawer" id="drawer" aria-hidden="true" aria-labelledby="drawer-title">
+    <div class="drawer__scrim" data-close-drawer=""></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true">
+      <header class="drawer__head">
+        <button class="drawer__close" data-close-drawer="" data-i18n-aria-label="drawer.closeAria" aria-label="بند کریں">×</button>
+        <div class="drawer__hero-mark" aria-hidden="true">
+          <span class="drawer__hero-moon"></span>
+          <span class="drawer__hero-dome"></span>
+          <span class="drawer__hero-minaret drawer__hero-minaret--left"></span>
+          <span class="drawer__hero-minaret drawer__hero-minaret--right"></span>
+        </div>
+        <div class="drawer__status">
+          <span class="drawer__status-dot" aria-hidden="true"></span>
+          <span class="drawer__status-label" id="drawer-status" data-i18n="drawer.statusCommunity">Community masjid</span>
+          <span class="drawer__status-sep" aria-hidden="true">·</span>
+          <span class="drawer__status-distance" id="drawer-distance">nearby</span>
+        </div>
+        <div class="drawer__title-row">
+          <h2 class="drawer__title" id="drawer-title">—</h2>
+          <button class="drawer__rename" id="btn-rename-masjid" type="button" hidden="" data-i18n-aria-label="drawer.renameAria" aria-label="Name this masjid">
+            <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
+              <path d="M14.5 4.5 19.5 9.5 8.5 20.5 3 22 4.5 16.5Z M13 6l5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </button>
+        </div>
+        <p class="drawer__addr" id="drawer-addr">—</p>
+        <button class="drawer__head-default" id="btn-set-default" type="button" aria-pressed="false">
+          <span class="drawer__head-default-icon" aria-hidden="true">☆</span>
+          <span data-i18n="drawer.makeDefault">اسے میری ڈیفالٹ بنائیں</span>
+        </button>
+        <div class="keeper-credit" id="keeper-credit" hidden="">
+          <div class="keeper-credit__avatar" id="keeper-credit-avatar" aria-hidden="true">TK</div>
+          <div class="keeper-credit__body">
+            <p class="keeper-credit__meta">
+              <span data-i18n="drawer.byKeeper">اوقات از</span>
+              <span id="keeper-credit-rating">★ —</span>
+            </p>
+            <p class="keeper-credit__name">
+              <strong id="keeper-credit-name">—</strong>
+            </p>
+            <p class="keeper-credit__hint">
+              <span id="keeper-credit-hint">—</span>
+              <span id="keeper-credit-count"></span>
+            </p>
+          </div>
+          <button class="keeper-credit__switch" id="keeper-credit-switch" type="button" data-i18n="keeper.switch">Switch</button>
+        </div>
+      </header>
+
+      <section id="drawer-times-section">
+        <div class="drawer-times-head">
+          <h3 class="section-title" data-i18n="drawer.today">آج کی جماعت</h3>
+          <p class="drawer-times-updated" id="drawer-times-updated" hidden=""></p>
+        </div>
+        <table class="times" id="drawer-times"><tbody></tbody></table>
+        <div class="stale-pill" id="stale-pill" hidden="">
+          <div class="stale-pill__icon" aria-hidden="true">!</div>
+          <div class="stale-pill__body">
+            <p class="stale-pill__title" data-i18n="stale.title">These timings look stale</p>
+            <p class="stale-pill__sub">
+              <span data-i18n="stale.nudgePrefix">Nudge</span>
+              <strong id="stale-keeper-name">—</strong>
+              <span data-i18n="stale.nudgeSuffix">to refresh them — or submit your own.</span>
+            </p>
+          </div>
+          <button class="stale-pill__cta" id="btn-open-nudge" type="button" data-i18n="stale.cta">Nudge</button>
+        </div>
+        <div class="times-empty" id="times-empty" hidden="">
+          <div class="times-empty__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="36" height="36" fill="none">
+              <rect x="5" y="14" width="2" height="13" fill="currentColor"></rect>
+              <path d="M4.5 14Q6 11.5 7.5 14Z" fill="currentColor"></path>
+              <rect x="25" y="14" width="2" height="13" fill="currentColor"></rect>
+              <path d="M24.5 14Q26 11.5 27.5 14Z" fill="currentColor"></path>
+              <rect x="9" y="18" width="14" height="9" fill="currentColor"></rect>
+              <path d="M11 18C11 12 21 12 21 18Z" fill="currentColor"></path>
+              <path d="M14.5 8A2.5 2.5 0 1 0 14.5 4A2 2 0 1 1 14.5 8Z" fill="currentColor"></path>
+            </svg>
+          </div>
+          <p class="times-empty__lead" data-i18n="drawer.emptyLead">Be the first to add jamat times here.</p>
+          <button class="btn btn--primary times-empty__cta" id="btn-submit-from-empty" type="button" data-i18n="drawer.beFirst">پہلے بنیں — جماعت اوقات درج کریں</button>
+          <div class="jumma-shortcut">
+            <div class="jumma-shortcut__chip" aria-hidden="true">ج</div>
+            <div class="jumma-shortcut__body">
+              <p class="jumma-shortcut__title" data-i18n="drawer.jummaTitle">جمعہ کا وقت</p>
+            </div>
+            <button class="btn jumma-shortcut__cta" id="btn-submit-jumma-only" type="button" data-i18n="drawer.jummaCta">وقت شامل کریں</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="keepers-section" hidden="">
+        <div class="keepers-screen__head">
+          <p class="keepers-screen__masjid" id="keepers-screen-masjid">—</p>
+          <h3 class="keepers-screen__title" data-i18n="drawer.keepers">ٹائم کیپرز</h3>
+          <button class="keepers-screen__close" id="btn-close-keeper-screen" type="button" aria-label="Back to masjid details">×</button>
+        </div>
+        <div class="keepers-banner">
+          <span class="keepers-banner__icon" aria-hidden="true">ⓘ</span>
+          <p>
+            <span data-i18n="keepers.bannerBody1">Your app uses the</span>
+            <strong data-i18n="keepers.bannerBody2">highest-rated keeper</strong>
+            <span data-i18n="keepers.bannerBody3">by default. Switch by tapping</span>
+            <em data-i18n="keepers.useThese">Use these times</em>
+            <span data-i18n="keepers.bannerBody4">on any card.</span>
+          </p>
+        </div>
+        <ol class="keepers-list" id="keepers-list"></ol>
+      </section>
+
+      <section class="amenities-section">
+        <div class="amenities-section__head">
+          <h3 class="section-title" data-i18n="amenities.title">Masjid details</h3>
+          <span class="amenities-section__eyebrow" data-i18n="amenities.eyebrow">community-rated</span>
+        </div>
+        <ol class="amenities-list" id="drawer-amenities"></ol>
+        <button class="amenities-cta" id="btn-rate-masjid" type="button" data-i18n="amenities.rate">Rate this masjid</button>
+      </section>
+
+      <section class="drawer__actions">
+        <button class="btn btn--primary" id="btn-navigate" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 2 4 21l8-4 8 4-8-19Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"></path><path d="M12 2v15" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"></path></svg>
+          <span data-i18n="nav.navigate">راستہ</span>
+        </button>
+        <button class="btn btn--primary" id="btn-favorite" type="button">
+          <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6.5 5.5 5.5 0 0 1 21.5 12c-2.5 4.5-9.5 9-9.5 9Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"></path></svg>
+          <span data-i18n="drawer.favSave">پسندیدہ میں محفوظ کریں</span>
+        </button>
+        <button class="btn btn--ghost" id="btn-submit-update" type="button" data-i18n="drawer.submitUpdate">اوقات کی تازہ کاری بھیجیں</button>
+        <button class="btn btn--ghost" id="btn-edit-mosque" type="button" hidden="">Edit masjid details</button>
+        <button class="btn btn--ghost btn--danger" id="btn-close-mosque" type="button" hidden="" data-i18n="drawer.closedForever">اطلاع دیں: یہ مسجد مستقل طور پر بند ہو گئی ہے</button>
+        <button class="btn btn--ghost" id="btn-reactivate-mosque" type="button" hidden="">Reactivate masjid</button>
+      </section>
+
+      <section class="drawer__edit" id="edit-mosque-form" hidden="">
+        <h3 class="section-title">Edit masjid details</h3>
+        <p class="muted" id="edit-mosque-hint">You can edit the masjid details you added.</p>
+        <div class="submit-grid">
+          <label><span>Name</span> <input name="name" required="" maxlength="120"></label>
+          <label><span>City</span> <input name="city" required="" maxlength="80"></label>
+          <label><span>Country</span> <input name="country" required="" maxlength="80"></label>
+          <label><span>Address</span> <input name="addressLine1" maxlength="200"></label>
+        </div>
+        <div class="submit-actions">
+          <button class="btn btn--primary" id="btn-edit-confirm" type="button">Save details</button>
+          <button class="btn btn--ghost" id="btn-edit-cancel" type="button">Cancel</button>
+        </div>
+      </section>
+
+      <section class="drawer__submit" id="submit-form" hidden="">
+        <h3 class="section-title" data-i18n="submit.titleNew">نماز کے اوقات شامل کریں</h3>
+        <p class="muted" data-i18n="submit.noteNew">نامعلوم اوقات خالی چھوڑ دیں۔</p>
+        <!-- Filled by the timetable photo flow (js/app.js applyTimetableScan):
+             what the camera read, what differs from the current schedule,
+             and how far the board's clock is from the phone's. -->
+        <div class="submit-scan" id="submit-scan" hidden="" aria-live="polite">
+          <p class="submit-scan__title" data-i18n="scan.summaryTitle">آپ کی تصویر سے پڑھا گیا</p>
+          <ul class="submit-scan__changes" id="submit-scan-changes"></ul>
+          <p class="submit-scan__clock muted muted--small" id="submit-scan-clock" hidden=""></p>
+          <p class="submit-scan__extras muted muted--small" id="submit-scan-extras" hidden=""></p>
+          <p class="submit-scan__note muted muted--small" id="submit-scan-note" hidden=""></p>
+        </div>
+        <div class="submit-grid">
+          <label class="submit-grid__primary"><span data-i18n="prayer.jummah">جمعہ</span> <input type="time" name="jummah"></label>
+          <label><span data-i18n="prayer.jummah_2">جمعہ ۲</span> <input type="time" name="jummah_2"></label>
+          <label><span data-i18n="prayer.jummah_3">جمعہ ۳</span> <input type="time" name="jummah_3"></label>
+          <label><span data-i18n="prayer.fajr">فجر</span> <input type="time" name="fajr"></label>
+          <label><span data-i18n="prayer.dhuhr">ظہر</span> <input type="time" name="dhuhr"></label>
+          <label><span data-i18n="prayer.asr">عصر</span> <input type="time" name="asr"></label>
+          <label><span data-i18n="submit.maghribLabel">مغرب (غروب + …)</span>
+            <select name="maghribOffset">
+              <option value="0" data-i18n="submit.offsetAt">غروب پر</option>
+              <option value="1">+1 min</option>
+              <option value="2">+2 min</option>
+              <option value="3" selected="">+3 min</option>
+              <option value="4">+4 min</option>
+              <option value="5">+5 min</option>
+              <option value="7">+7 min</option>
+              <option value="10">+10 min</option>
+              <option value="15">+15 min</option>
+            </select>
+          </label>
+          <label><span data-i18n="prayer.isha">عشاء</span> <input type="time" name="isha"></label>
+        </div>
+        <label class="submit-notes"><span data-i18n="submit.notes">نوٹس (اختیاری)</span>
+          <textarea name="notes" rows="2" data-i18n-placeholder="submit.notesPh" placeholder="مثلاً: سردیوں کا شیڈول، مرکزی دروازے پر بورڈ"></textarea>
+        </label>
+        <div class="submit-actions">
+          <button class="btn btn--primary" id="btn-submit-confirm" type="button" data-i18n="submit.send">بھیجیں</button>
+          <button class="btn btn--ghost" id="btn-submit-cancel" type="button" data-i18n="submit.cancel">منسوخ</button>
+        </div>
+      </section>
+
+      <section id="recent-section">
+        <h3 class="section-title" data-i18n="drawer.recent">حالیہ مساہمات</h3>
+        <ul class="contributors" id="drawer-contributors"><li class="muted" data-i18n="drawer.loading">لوڈ ہو رہا ہے…</li></ul>
+      </section>
+    </div>
+  </aside>
+
+  <!-- ─── QAZA DRAWER ─── -->
+  <aside class="drawer qaza-drawer" id="qaza-drawer" aria-hidden="true" aria-labelledby="qaza-title">
+    <div class="drawer__scrim" data-close-qaza=""></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true">
+      <header class="drawer__head qaza-drawer__head">
+        <button class="drawer__close" data-close-qaza="" aria-label="Close qaza drawer">×</button>
+        <p class="drawer__eyebrow">Personal record</p>
+        <h2 class="drawer__title" id="qaza-title">Qaza Namaz</h2>
+        <p class="drawer__addr" id="qaza-summary">Record missed namaz and mark them prayed later.</p>
+      </header>
+
+      <section class="qaza-record">
+        <h3 class="section-title">Mark missed for a day</h3>
+        <label class="qaza-date">
+          <span>Date</span>
+          <input type="date" id="qaza-date">
+        </label>
+        <div class="qaza-prayers" id="qaza-prayers" aria-label="Select missed namaz"></div>
+        <div class="submit-actions qaza-actions">
+          <button class="btn btn--primary" id="qaza-record-btn" type="button">Record selected</button>
+          <button class="btn btn--ghost" id="qaza-today-btn" type="button">Today</button>
+        </div>
+      </section>
+
+      <section class="qaza-pending">
+        <h3 class="section-title">Unprayed qaza</h3>
+        <p class="muted muted--small" id="qaza-next-hint" hidden=""></p>
+        <ul class="qaza-list" id="qaza-list"></ul>
+        <p class="qaza-empty" id="qaza-empty" hidden="">No qaza namaz pending.</p>
+      </section>
+    </div>
+  </aside>
+
+  <aside class="nudge-sheet" id="nudge-sheet" aria-hidden="true" aria-labelledby="nudge-title">
+    <div class="nudge-sheet__scrim" data-close-nudge=""></div>
+    <div class="nudge-sheet__panel" role="dialog" aria-modal="true">
+      <div class="nudge-sheet__grabber" aria-hidden="true"></div>
+      <header class="nudge-sheet__head">
+        <div class="nudge-sheet__avatar" id="nudge-keeper-avatar" aria-hidden="true">—</div>
+        <div class="nudge-sheet__credit">
+          <p class="nudge-sheet__eyebrow" data-i18n="nudge.eyebrow">Suggest an update</p>
+          <p class="nudge-sheet__to">
+            <span data-i18n="nudge.toPrefix">To</span>
+            <strong id="nudge-keeper-name">—</strong>
+            <span class="nudge-sheet__sep">·</span>
+            <span id="nudge-masjid-name">—</span>
+          </p>
+        </div>
+      </header>
+      <h2 class="nudge-sheet__title" id="nudge-title" data-i18n="nudge.title">Suggest the right times</h2>
+      <p class="nudge-sheet__lede" data-i18n="nudge.lede">Tap any prayer to propose a new time. Leave them as-is to just send a heads-up.</p>
+      <ol class="nudge-sheet__list" id="nudge-prayer-list"></ol>
+      <p class="nudge-sheet__summary" id="nudge-summary" hidden="">
+        <span class="nudge-sheet__count" id="nudge-count">0</span>
+        <span data-i18n="nudge.changesProposed">changes proposed</span>
+        <span class="nudge-sheet__sep">·</span>
+        <span data-i18n="nudge.willSee">will see the diff</span>
+      </p>
+      <button class="nudge-sheet__alt" id="btn-nudge-become-keeper" type="button">
+        <span class="nudge-sheet__alt-icon" aria-hidden="true">✎</span>
+        <span class="nudge-sheet__alt-body">
+          <span class="nudge-sheet__alt-title" data-i18n="nudge.becomeTitle">I want to become a time keeper · earn ajar</span>
+          <span class="nudge-sheet__alt-sub" data-i18n="nudge.becomeSub">Submit your own timings — every prayer prayed earns ajar for you.</span>
+        </span>
+        <span aria-hidden="true">›</span>
+      </button>
+      <div class="nudge-sheet__actions">
+        <button class="btn btn--primary" id="btn-send-nudge" type="button" data-i18n="nudge.send">Send nudge</button>
+        <button class="btn btn--ghost" data-close-nudge="" type="button" data-i18n="nudge.cancel">Cancel</button>
       </div>
     </div>
-    <div class="wrap site-footer__legal"><p>&copy; 2026 Jumma Time. مفت، بغیر اشتہار کمیونٹی پروجیکٹ۔ اوقات مقامی نمازی شیئر کرتے ہیں؛ اپنی مسجد سے ضرور تصدیق کریں۔</p></div>
+  </aside>
+
+  <div class="nudge-time-popup" id="nudge-time-popup" aria-hidden="true" role="dialog" aria-labelledby="nudge-time-title">
+    <div class="nudge-time-popup__scrim" data-close-nudge-time=""></div>
+    <div class="nudge-time-popup__card">
+      <button class="modal__close" data-close-nudge-time="" aria-label="Close">×</button>
+      <p class="modal__eyebrow" data-i18n="nudge.timeEyebrow">Edit time</p>
+      <h2 id="nudge-time-title">Fajr</h2>
+      <p class="nudge-time-popup__current">
+        <span data-i18n="nudge.currentTime">Current</span>
+        <strong id="nudge-time-current">—</strong>
+      </p>
+      <label class="nudge-time-popup__field">
+        <span data-i18n="nudge.newTime">New time</span>
+        <input id="nudge-time-input" type="time">
+      </label>
+      <div class="nudge-time-popup__actions">
+        <button class="btn btn--primary" id="btn-nudge-time-apply" type="button" data-i18n="nudge.applyTime">Apply</button>
+        <button class="btn btn--ghost" id="btn-nudge-time-clear" type="button" data-i18n="nudge.clearTime">Clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── SUGGESTIONS INBOX MODAL ─── -->
+  <div class="modal" id="inbox-modal" aria-hidden="true" role="dialog" aria-labelledby="inbox-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card modal__card--wide">
+      <button class="modal__close" data-close-modal="" data-i18n-aria-label="drawer.closeAria" aria-label="بند کریں">×</button>
+      <h2 id="inbox-title" data-i18n="inbox.title">تجویز شدہ وقت کی تازہ کاریاں</h2>
+      <p class="muted muted--small" data-i18n="inbox.body">صارفین نے ان مساجد کے لیے نئی اوقات تجویز کی ہیں جن کے آپ ٹائم کیپر ہیں۔ قبول کریں تاکہ آپ کا ریکارڈ اپڈیٹ ہو (آپ کو فالو کرنے والے سب کو نئی اوقات نظر آئیں گی) یا مسترد کریں۔</p>
+      <div class="inbox-alerts" id="inbox-alerts" hidden="">
+        <span class="inbox-alerts__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9zM10 21a2 2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"></path></svg>
+        </span>
+        <span class="inbox-alerts__copy">
+          <strong id="inbox-alerts-title" data-i18n="inbox.alertsTitle">Phone alerts are off</strong>
+          <span id="inbox-alerts-body" data-i18n="inbox.alertsBody">Requests remain available in this inbox. Enable phone alerts to be notified when JummaTime is closed.</span>
+        </span>
+        <button class="btn btn--primary btn--small" id="inbox-alerts-enable" type="button" data-i18n="inbox.alertsEnable">Enable alerts</button>
+      </div>
+      <ol class="inbox-list" id="inbox-list"></ol>
+    </div>
+  </div>
+
+  <!-- ─── FIRST-RUN TIME KEEPER EXPLAINER ─── -->
+  <div class="modal keeper-intro" id="keeper-intro-modal" aria-hidden="true" role="dialog" aria-labelledby="keeper-intro-title">
+    <div class="modal__scrim" data-close-keeper-intro=""></div>
+    <div class="modal__card modal__card--wide">
+      <button class="modal__close" data-close-keeper-intro="" aria-label="Close">×</button>
+      <p class="modal__eyebrow" data-i18n="keeperIntro.eyebrow">Time keeper ratings</p>
+      <h2 id="keeper-intro-title" data-i18n="keeperIntro.title">One masjid can have several time keepers.</h2>
+      <p class="muted" data-i18n="keeperIntro.body">JummaTime chooses the highest-rated time keeper by default, so the app starts with the timings most likely to be trusted.</p>
+      <div class="keeper-intro__points">
+        <p data-i18n="keeperIntro.rating">Rating uses votes, fresh updates, verification, contribution history, and keeper trust.</p>
+        <p data-i18n="keeperIntro.followers">Followers show how many people use that keeper's timings.</p>
+        <p data-i18n="keeperIntro.choose">To use someone else's timings, open a masjid, scroll to Time keepers, and tap "Use this time keeper's timings."</p>
+      </div>
+      <button class="btn btn--primary keeper-intro__ok" type="button" data-close-keeper-intro="" data-i18n="keeperIntro.ok">I understand</button>
+    </div>
+  </div>
+
+  <!-- ─── SUGGEST-UPDATE MODAL (compose a new suggestion) ─── -->
+  <div class="modal" id="suggest-modal" aria-hidden="true" role="dialog" aria-labelledby="suggest-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal="" data-i18n-aria-label="drawer.closeAria" aria-label="بند کریں">×</button>
+      <h2 id="suggest-title"><span data-i18n="suggest.title">وقت کی تجویز بھیجیں</span></h2>
+      <p class="muted muted--small" id="suggest-target">—</p>
+      <div class="submit-grid">
+        <label class="submit-grid__primary"><span data-i18n="prayer.jummah">جمعہ</span> <input type="time" name="jummah"></label>
+        <label><span data-i18n="prayer.jummah_2">جمعہ ۲</span> <input type="time" name="jummah_2"></label>
+        <label><span data-i18n="prayer.jummah_3">جمعہ ۳</span> <input type="time" name="jummah_3"></label>
+        <label><span data-i18n="prayer.fajr">فجر</span> <input type="time" name="fajr"></label>
+        <label><span data-i18n="prayer.dhuhr">ظہر</span> <input type="time" name="dhuhr"></label>
+        <label><span data-i18n="prayer.asr">عصر</span> <input type="time" name="asr"></label>
+        <label><span data-i18n="submit.maghribLabel">مغرب (غروب + …)</span>
+          <select name="maghribOffset">
+            <option value="0" data-i18n="submit.offsetAt">غروب پر</option>
+            <option value="1">+1 min</option>
+            <option value="2">+2 min</option>
+            <option value="3" selected="">+3 min</option>
+            <option value="5">+5 min</option>
+            <option value="7">+7 min</option>
+            <option value="10">+10 min</option>
+            <option value="15">+15 min</option>
+          </select>
+        </label>
+        <label><span data-i18n="prayer.isha">عشاء</span> <input type="time" name="isha"></label>
+      </div>
+      <label class="submit-notes"><span data-i18n="suggest.notes">کیپر کے لیے نوٹ (اختیاری)</span>
+        <textarea name="notes" rows="2" data-i18n-placeholder="suggest.notesPh" placeholder="مثلاً: کل سے رمضان کا شیڈول"></textarea>
+      </label>
+      <div class="submit-actions">
+        <button class="btn btn--primary" id="suggest-send" type="button" data-i18n="suggest.send">تجویز بھیجیں</button>
+        <button class="btn btn--ghost" data-close-modal="" type="button" data-i18n="submit.cancel">منسوخ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── MASJID RATING MODAL ─── -->
+  <div class="modal rating-modal" id="rating-modal" aria-hidden="true" role="dialog" aria-labelledby="rating-title">
+    <div class="modal__scrim" data-close-rating=""></div>
+    <div class="modal__card rating-modal__card">
+      <button class="modal__close" data-close-rating="" data-i18n-aria-label="drawer.closeAria" aria-label="بند کریں">×</button>
+      <p class="modal__eyebrow" data-i18n="amenities.ratingEyebrow">Masjid rating</p>
+      <h2 id="rating-title" data-i18n="amenities.ratingTitle">Rate this masjid</h2>
+      <p class="muted muted--small" id="rating-target">—</p>
+      <label class="rating-modal__field">
+        <span data-i18n="amenities.ratingCategory">Category</span>
+        <select id="rating-kind">
+          <option value="size" data-i18n="amenities.size">Size</option>
+          <option value="wudu" data-i18n="amenities.wudu">Wudu area</option>
+          <option value="washrooms" data-i18n="amenities.washrooms">Washrooms</option>
+          <option value="accessibility" data-i18n="amenities.accessibility">Accessibility</option>
+        </select>
+      </label>
+      <div class="rating-modal__stars" id="rating-stars" role="radiogroup" aria-label="Rating out of five">
+        <button type="button" data-rating-value="1" aria-label="1 star">★</button>
+        <button type="button" data-rating-value="2" aria-label="2 stars">★</button>
+        <button type="button" data-rating-value="3" aria-label="3 stars">★</button>
+        <button type="button" data-rating-value="4" aria-label="4 stars">★</button>
+        <button type="button" data-rating-value="5" aria-label="5 stars">★</button>
+      </div>
+      <div class="submit-actions">
+        <button class="btn btn--primary" id="rating-save" type="button" data-i18n="amenities.ratingSave">Save rating</button>
+        <button class="btn btn--ghost" data-close-rating="" type="button" data-i18n="submit.cancel">منسوخ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── LOGIN MODAL ─── -->
+  <div class="modal" id="login-modal" aria-hidden="true" role="dialog" aria-labelledby="login-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal="" data-i18n-aria-label="drawer.closeAria" aria-label="بند کریں">×</button>
+      <h2 id="login-title" data-i18n="login.title">سائن ان کریں یا اکاؤنٹ بنائیں</h2>
+      <div id="login-entry">
+      <p class="muted" data-i18n="login.body">Google کے ساتھ جاری رکھیں یا اپنا ای میل اور پاس ورڈ درج کریں۔ نیا ای میل اکاؤنٹ بنانے کے لیے آپ کی تصدیق ضروری ہے۔</p>
+      <button class="btn btn--google" id="login-google" type="button" hidden="">
+        <svg class="login-google__icon" viewBox="0 0 18 18" width="18" height="18" aria-hidden="true">
+          <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.17-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.91c1.7-1.57 2.69-3.88 2.69-6.62z"></path>
+          <path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.34 0-4.32-1.58-5.03-3.71H.96v2.33A9 9 0 0 0 9 18z"></path>
+          <path fill="#FBBC05" d="M3.97 10.71c-.18-.54-.28-1.12-.28-1.71 0-.59.1-1.17.28-1.71V4.96H.96A9 9 0 0 0 0 9c0 1.45.35 2.82.96 4.04l3.01-2.33z"></path>
+          <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.96l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z"></path>
+        </svg>
+        <span data-i18n="login.google">Continue with Google</span>
+      </button>
+      <p class="muted muted--small" id="login-divider" hidden="" data-i18n="login.or">or with email</p>
+      <form id="login-form">
+        <input type="email" name="email" data-i18n-placeholder="login.emailPh" placeholder="you@example.com" required="" autocomplete="email">
+        <input type="password" name="password" data-i18n-placeholder="login.passwordPh" placeholder="Password" autocomplete="current-password" minlength="8">
+        <p class="login-form__hint muted muted--small" data-i18n="login.passwordHint">8+ characters. Email-only sign-in is available in local development only.</p>
+        <button class="btn btn--primary" type="submit" data-i18n="login.continue">جاری رکھیں</button>
+      </form>
+      </div>
+      <div id="signup-confirmation" hidden="" aria-live="polite">
+        <p data-i18n="login.signupBody">اس ای میل پتے کے لیے نیا اکاؤنٹ بنایا جائے گا:</p>
+        <p class="signup-email"><strong id="signup-email" dir="ltr"></strong></p>
+        <div class="signup-actions">
+          <button class="btn btn--primary" id="signup-confirm" type="button" data-i18n="login.signupConfirm">جی ہاں، میرا اکاؤنٹ بنائیں</button>
+          <button class="btn btn--ghost" id="signup-cancel" type="button" data-i18n="login.signupCancel">میں نے ای میل غلط لکھا ہے</button>
+        </div>
+      </div>
+      <p class="login-version muted muted--small" id="login-version" hidden="">Version</p>
+    </div>
+  </div>
+
+  <!-- ─── TOAST ─── -->
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden=""></div>
+
+  <!-- ─── PLEDGE MODAL (opens when the brand / logo is tapped) ─── -->
+  <div class="modal pledge-modal" id="pledge-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="pledge-modal-title">
+    <div class="modal__scrim" data-close-pledge=""></div>
+    <div class="modal__card pledge-modal__card">
+      <button class="modal__close" data-close-pledge="" data-i18n-aria-label="drawer.closeAria" aria-label="بند کریں">×</button>
+      <p class="foot__pledge">
+        <span class="foot__pledge-line" id="pledge-modal-title" data-i18n="footer.noAds">مفت۔ کوئی اشتہار نہیں۔</span>
+        <span class="foot__pledge-arabic" lang="ar" data-i18n="footer.sadqaArabic">صدقة في سبيل الله</span>
+        <span class="foot__pledge-trans" data-i18n="footer.sadqaTrans">یہ کاوش صدقہ فی سبیل اللہ ہے۔</span>
+      </p>
+      <p class="foot__sadqa" data-i18n="footer.sadqaJariaHtml:html"><strong>This is sadqa jaria.</strong> <a href="https://takbeertime.com/api-docs.html" target="_blank" rel="noopener">The API</a> is open — call it from your own app, your masjid's website, anywhere a jamat time is needed. One shared database, kept by volunteer timekeepers — please use the API rather than copy the data, so their work reaches everyone. There's an angel out there counting every API hit. Not us.</p>
+      <p class="foot__colophon" data-i18n="footer.colophon">امت کے لیے بنایا · اوپن سورس</p>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="foot">
+    <p data-i18n="footer.noAds">مفت۔ کوئی اشتہار نہیں۔</p>
+    <p class="foot__version" id="app-version" hidden="">Version</p>
+    <p class="foot__links">
+      <a href="https://takbeertime.com/privacy.html" data-i18n="footer.privacy">رازداری</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://takbeertime.com/terms.html" data-i18n="footer.terms">شرائط</a>
+      <span aria-hidden="true">·</span>
+      <a href="https://takbeertime.com/api-docs.html" data-i18n="footer.apiDocs">API</a>
+      <span aria-hidden="true">·</span>
+      <!-- In-app account deletion: hidden by js/delete-account.js until
+           the user is signed in. Authenticated click triggers an in-page
+           confirm dialog and DELETE /api/users/me. The fallback href
+           points at the no-auth public form for the same outcome. -->
+      <a href="https://takbeertime.com/delete-account.html" id="foot-delete-account" data-action="delete-account" data-i18n="footer.deleteAccount" hidden="">اکاؤنٹ حذف کریں</a>
+      <a href="https://takbeertime.com/delete-account.html" id="foot-delete-request" data-i18n="footer.deleteAccount">اکاؤنٹ حذف کریں</a>
+    </p>
   </footer>
-</body>
-</html>
+
+  <!-- ─── DELETE-ACCOUNT CONFIRM MODAL (in-app, signed-in users only) ─── -->
+  <div class="modal" id="delete-modal" aria-hidden="true" role="dialog" aria-labelledby="delete-modal-title">
+    <div class="modal__scrim" data-close-modal=""></div>
+    <div class="modal__card">
+      <button class="modal__close" data-close-modal="" aria-label="Close">×</button>
+      <h2 id="delete-modal-title">Delete your account?</h2>
+      <p class="muted">This is permanent. Here's exactly what happens:</p>
+      <ul class="muted muted--small" style="padding-left: 1.2rem; list-style: disc; line-height: 1.55; margin-bottom: 0.8rem;">
+        <li>Your account row (email, name, password hash, Firebase ID) is removed.</li>
+        <li>Your favourites, default masjid, preferred keepers, and reminder preferences are deleted.</li>
+        <li>Suggestions you've sent to time-keepers are deleted.</li>
+        <li>Submitted jamat timings stay in the directory but are re-attributed as "Deleted user," because other users are relying on them right now.</li>
+        <li>Your push-notification subscriptions on this device are dropped.</li>
+        <li>You'll be signed out and the page will reload.</li>
+      </ul>
+      <p class="muted muted--small">If you want specific submissions removed too, email <a href="mailto:qazi.junaid@gmail.com">qazi.junaid@gmail.com</a>.</p>
+      <div class="submit-actions">
+        <button class="btn btn--primary" id="delete-confirm" type="button" style="background: var(--crimson); color: var(--paper);">Yes, delete my account</button>
+        <button class="btn btn--ghost" data-close-modal="" type="button">Cancel</button>
+      </div>
+      <p class="delete-form-status" id="delete-modal-status" hidden="" style="margin-top: 0.8rem; font-size: 0.92rem;"></p>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="js/config.js?v=5"></script>
+  <script src="js/auth-exchange.js?v=1"></script>
+  <script type="module" src="js/auth.js"></script>
+  <script src="js/state.js?v=2"></script>
+  <script src="js/i18n.js?v=71"></script>
+  <script src="js/sun.js?v=36"></script>
+  <script src="js/timetable-reader.js?v=4"></script>
+  <script src="js/timetable-capture.js?v=1"></script>
+  <script src="js/api.js?v=47"></script>
+  <script src="js/components.js?v=57"></script>
+  <script src="js/reminders.js?v=37"></script>
+  <script src="js/app.js?v=84"></script>
+  <script src="js/delete-account.js?v=1"></script>
+
+
+</body></html>

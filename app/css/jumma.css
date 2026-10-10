@@ -1,0 +1,74 @@
+/* Variant-specific layout, isolated from the imported Takbeer stylesheet. */
+.drawer, .nudge-sheet, .nudge-time-popup, .mapview {
+  visibility: hidden;
+  transition: visibility 0s linear 320ms;
+}
+.drawer[aria-hidden="false"], .nudge-sheet[aria-hidden="false"],
+.nudge-time-popup[aria-hidden="false"], .mapview[aria-hidden="false"] {
+  visibility: visible;
+  transition: visibility 0s;
+}
+.next-card__date { margin: 0.5rem 0; font-size: 0.85rem; color: var(--brass-soft); }
+.next-card__countdown { display: flex; gap: 0.35rem; }
+.next-card__countdown .cd-num { font-size: 2.5rem; }
+.next-card__countdown .cd-unit { min-width: 2ch; flex: 1 1 0; }
+.next-card__countdown .cd-sep { font-size: 1.75rem; }
+.next-card__countdown .next-card__in { display: none; }
+.card { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.card__jummah-time { display: flex; flex-wrap: wrap; gap: 0 0.4rem; font-size: 1rem; line-height: 1.5; }
+.card__session { white-space: nowrap; }
+.card__name { overflow-wrap: anywhere; }
+.next-card__all-name { overflow-wrap: anywhere; line-height: 1.25; }
+.dir-search input { min-width: 0; }
+@media (max-width: 600px) {
+  .card { grid-template-columns: minmax(0, 1fr); }
+  .card__times { align-items: flex-start; text-align: start; }
+  .next-card__all-cols, .next-card__all-row {
+    grid-template-columns: minmax(64px, 1fr) 60px 46px 46px;
+    gap: 3px;
+  }
+  .next-card__all-name, .next-card__all-row.is-next .next-card__all-name { font-size: 0.85rem; }
+  .next-card__sun { font-size: 0.55rem; }
+  .next-card__jamat { font-size: 0.7rem; }
+}
+@media (max-width: 360px) {
+  .next-card__countdown .cd-num { font-size: 1.65rem; }
+  .next-card__countdown .cd-sep { font-size: 1.25rem; }
+}
+
+/* Keep the directory primary; daily tools stay available on demand. */
+:root {
+  --cream: #f5f7f6;
+  --beige: #ffffff;
+  --paper: #ffffff;
+  --paper-2: #eef2f1;
+  --paper-3: #d8e0dd;
+  --ink-2: #48544f;
+  --ink-4: #66746d;
+  --radius: 8px;
+}
+body { background-image: none; }
+.topbar { background: #ffffff; border-bottom: 1px solid var(--paper-3); }
+.card__name { font-family: var(--ui); font-size: 1.05rem; line-height: 1.4; }
+.card.is-default::before { display: none; }
+.card__jummah-label, .card__next, .card__city, .card__verified { letter-spacing: 0; }
+.hero { padding-top: 1.2rem; }
+.hero-top-row { gap: 1rem; margin-bottom: 1rem; }
+.headline { font-family: var(--ui); font-size: 2rem; line-height: 1.3; max-width: none; margin: 0; letter-spacing: 0; overflow-wrap: anywhere; }
+.hero-cards { display: flex; flex-direction: column; gap: 0.75rem; }
+.hero-cards > .next-card { width: 100%; flex: none; margin: 0; border-radius: 8px; }
+.hero-cards > .quick { order: 1; width: 100%; margin: 0; }
+.quick__btn { height: auto; min-height: 48px; border-radius: 8px; padding: 0.7rem 1rem; white-space: normal; }
+.sun-tools { order: 2; width: 100%; padding: 0.6rem 0; border-bottom: 1px solid var(--paper-3); }
+.daily-times summary, .sun-tools summary { cursor: pointer; font-size: 0.9rem; line-height: 1.5; overflow-wrap: anywhere; }
+.daily-times summary:focus-visible, .sun-tools summary:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+.sun-tools .sun-card { border: 0; box-shadow: none; background: transparent; padding: 0.75rem 0; margin: 0; }
+.sun-card__head { flex-wrap: wrap; }
+.sun-card__row { gap: 0.5rem; flex-wrap: wrap; }
+.foot { margin-top: 2rem; padding-top: 1rem; }
+.foot__links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+[hidden] { display: none !important; }
+@media (max-width: 600px) {
+  .headline { font-size: 1.5rem; }
+  .hero { padding-top: 0.8rem; }
+}
